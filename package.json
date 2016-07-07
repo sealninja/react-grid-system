@@ -2,7 +2,7 @@
   "name": "react-grid-system",
   "version": "1.0.0",
   "description": "A pure JS bootstrap-like grid system for React.",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/zoover/react-grid-system/issues"
   },
-  "homepage": "https://github.com/zoover/react-grid-system#readme"
+  "homepage": "https://github.com/zoover/react-grid-system#readme",
+  "dependencies": {
+    "react": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-dev-tasks": "^1.0.27",
+    "react-styleguidist": "^2.3.1"
+  }
 }
