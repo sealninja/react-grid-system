@@ -38,7 +38,10 @@ Row.propTypes = {
   /**
    * Content of the element
    */
-  children: _react2.default.PropTypes.node.isRequired,
+  children: _react2.default.PropTypes.node,
+  /**
+   * Optional styling
+   */
   style: _react2.default.PropTypes.object
 };
 

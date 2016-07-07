@@ -1,16 +1,20 @@
 import React from 'react';
 import getStyle from './style.css';
+import { getViewPort } from '../../util';
 
 export default class Col extends React.Component {
   static propTypes = {
     /**
-     * Content of the element
+     * Content of the component
      */
     children: React.PropTypes.node,
     xs: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
     sm: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
     md: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
     lg: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    /**
+     * Optional styling
+     */
     style: React.PropTypes.object,
   };
 
@@ -39,13 +43,7 @@ export default class Col extends React.Component {
   }
 
   setViewport = () => {
-    let viewport = 1600;
-    if (this.context.tablet) viewport = 900;
-    if (this.context.phone) viewport = 600;
-    if (typeof window !== 'undefined' && window.innerWidth) {
-      viewport = window.innerWidth;
-    }
-    this.setState({ viewport });
+    this.setState({ viewport: getViewPort(this.context) });
   }
 
   render = () => {

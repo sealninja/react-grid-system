@@ -13,7 +13,10 @@ Row.propTypes = {
   /**
    * Content of the element
    */
-  children: React.PropTypes.node.isRequired,
+  children: React.PropTypes.node,
+  /**
+   * Optional styling
+   */
   style: React.PropTypes.object,
 };
 

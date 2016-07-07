@@ -12,6 +12,8 @@ var _style = require('./style.css');
 
 var _style2 = _interopRequireDefault(_style);
 
+var _util = require('../../util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41,13 +43,7 @@ var Col = function (_React$Component) {
     }, _this.componentWillUnmount = function () {
       window.removeEventListener('resize', _this.setViewPort);
     }, _this.setViewport = function () {
-      var viewport = 1600;
-      if (_this.context.tablet) viewport = 900;
-      if (_this.context.phone) viewport = 600;
-      if (typeof window !== 'undefined' && window.innerWidth) {
-        viewport = window.innerWidth;
-      }
-      _this.setState({ viewport: viewport });
+      _this.setState({ viewport: (0, _util.getViewPort)(_this.context) });
     }, _this.render = function () {
       var style = (0, _style2.default)({
         xs: _this.props.xs,
@@ -70,13 +66,16 @@ var Col = function (_React$Component) {
 
 Col.propTypes = {
   /**
-   * Content of the element
+   * Content of the component
    */
   children: _react2.default.PropTypes.node,
   xs: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   sm: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   md: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   lg: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  /**
+   * Optional styling
+   */
   style: _react2.default.PropTypes.object
 };
 Col.defaultProps = {

@@ -3,7 +3,16 @@ const path = require('path');
 module.exports = {
   title: 'React Grid System',
   sections: [
-    { name: 'Grid', components: './src/grid/**/index.js', content: './src/grid/Readme.md' },
+    {
+      name: 'Grid',
+      components: './src/grid/**/index.js',
+      content: './src/grid/Readme.md',
+    },
+    {
+      name: 'Responsive utilities',
+      components: './src/utilities/**/index.js',
+      content: './src/utilities/Readme.md',
+    },
   ],
   serverPort: 4095,
   styleguideDir: './html',
