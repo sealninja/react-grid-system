@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const child = require('child_process');
-const exec = require('child_process').exec;
 require('gulp-dev-tasks');
 
 const source = ['src/**/*.js', 'src/**/*.jsx'];
