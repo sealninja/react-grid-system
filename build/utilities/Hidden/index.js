@@ -81,11 +81,7 @@ Hidden.propTypes = {
   /**
    * Hide on large devices
    */
-  lg: _react2.default.PropTypes.bool,
-  /**
-   * Optional styling
-   */
-  style: _react2.default.PropTypes.object
+  lg: _react2.default.PropTypes.bool
 };
 Hidden.contextTypes = {
   phone: _react2.default.PropTypes.bool,

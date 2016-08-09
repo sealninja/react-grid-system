@@ -81,11 +81,7 @@ Visible.propTypes = {
   /**
    * Show on large devices
    */
-  lg: _react2.default.PropTypes.bool,
-  /**
-   * Optional styling
-   */
-  style: _react2.default.PropTypes.object
+  lg: _react2.default.PropTypes.bool
 };
 Visible.contextTypes = {
   phone: _react2.default.PropTypes.bool,

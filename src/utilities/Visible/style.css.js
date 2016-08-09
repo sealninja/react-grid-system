@@ -1,7 +1,3 @@
-export const main = ({ moreStyle }) => ({
-  ...moreStyle,
-});
-
 export const visible = ({ viewport, xs, sm, md, lg }) => {
   // xs domain
   if (viewport < 768) return xs;

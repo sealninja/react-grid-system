@@ -24,10 +24,6 @@ export default class Hidden extends React.Component {
      * Hide on large devices
      */
     lg: React.PropTypes.bool,
-    /**
-     * Optional styling
-     */
-    style: React.PropTypes.object,
   };
 
   static contextTypes = {
