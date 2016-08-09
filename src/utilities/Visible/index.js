@@ -7,7 +7,7 @@ export default class Visible extends React.Component {
     /**
      * Content of the component
      */
-    children: React.PropTypes.node,
+    children: React.PropTypes.element,
     /**
      * Show on extra small devices
      */
@@ -66,10 +66,6 @@ export default class Visible extends React.Component {
       md: this.props.md,
       lg: this.props.lg,
     })) return false;
-    return (
-      <div style={style.main({ moreStyle: this.props.style })}>
-        {this.props.children}
-      </div>
-    );
+    return this.props.children;
   }
 }

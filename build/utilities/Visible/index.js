@@ -54,11 +54,7 @@ var Visible = function (_React$Component) {
         md: _this.props.md,
         lg: _this.props.lg
       })) return false;
-      return _react2.default.createElement(
-        'div',
-        { style: style.main({ moreStyle: _this.props.style }) },
-        _this.props.children
-      );
+      return _this.props.children;
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -69,7 +65,7 @@ Visible.propTypes = {
   /**
    * Content of the component
    */
-  children: _react2.default.PropTypes.node,
+  children: _react2.default.PropTypes.element,
   /**
    * Show on extra small devices
    */
