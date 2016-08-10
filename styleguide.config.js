@@ -4,7 +4,7 @@ module.exports = {
   title: 'React Grid System',
   sections: [
     {
-      name: 'Grid',
+      name: 'Responsive grid',
       components: './src/grid/**/index.js',
       content: './src/grid/Readme.md',
     },

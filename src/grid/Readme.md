@@ -1,3 +1,13 @@
+Github: [https://github.com/zoover/react-grid-system](https://github.com/zoover/react-grid-system)
+
+### Usage
+
+`
+npm install react-grid-system --save
+`
+
+### Grid aspects
+
 See how aspects of the grid system work across multiple devices with a handy table.
 
 | | Extra small devices Phones (<768px) | Small devices Tablets (≥768px) | Medium devices Desktops (≥992px) | Large devices Desktops (≥1200px)
