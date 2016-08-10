@@ -1,6 +1,6 @@
 Github: [https://github.com/zoover/react-grid-system](https://github.com/zoover/react-grid-system)
 
-### Usage
+### Installation
 
 `
 npm install react-grid-system --save
