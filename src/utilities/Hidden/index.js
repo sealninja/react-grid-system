@@ -47,7 +47,7 @@ export default class Hidden extends React.Component {
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setViewPort);
+    window.removeEventListener('resize', this.setViewport);
   }
 
   setViewport = () => {

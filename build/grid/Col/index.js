@@ -41,7 +41,7 @@ var Col = function (_React$Component) {
     }, _this.componentDidMount = function () {
       window.addEventListener('resize', _this.setViewport);
     }, _this.componentWillUnmount = function () {
-      window.removeEventListener('resize', _this.setViewPort);
+      window.removeEventListener('resize', _this.setViewport);
     }, _this.setViewport = function () {
       _this.setState({ viewport: (0, _util.getViewPort)(_this.context) });
     }, _this.render = function () {

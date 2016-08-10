@@ -36,7 +36,7 @@ export default class Container extends React.Component {
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setViewPort);
+    window.removeEventListener('resize', this.setViewport);
   }
 
   setViewport = () => {
