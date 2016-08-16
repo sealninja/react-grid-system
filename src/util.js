@@ -7,3 +7,7 @@ export const getViewPort = (context) => {
   }
   return viewport;
 };
+
+export const defaultBreakpoints = [768, 992, 1200];
+
+export const defaultContainerWidths = [750, 970, 1170];

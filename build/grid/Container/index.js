@@ -49,7 +49,9 @@ var Container = function (_React$Component) {
     }, _this.render = function () {
       var style = (0, _styleCss2.default)({
         fluid: _this.props.fluid,
-        viewport: _this.state.viewport
+        viewport: _this.state.viewport,
+        breakpoints: _this.context.breakpoints,
+        containerWidths: _this.context.containerWidths
       });
       return _react2.default.createElement(
         'div',
@@ -78,7 +80,9 @@ Container.propTypes = {
 };
 Container.contextTypes = {
   phone: _react2.default.PropTypes.bool,
-  tablet: _react2.default.PropTypes.bool
+  tablet: _react2.default.PropTypes.bool,
+  breakpoints: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number),
+  containerWidths: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number)
 };
 Container.defaultProps = {
   fluid: false

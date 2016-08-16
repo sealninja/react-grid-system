@@ -21,6 +21,8 @@ export default class Container extends React.Component {
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
+    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+    containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
   };
 
   static defaultProps = {
@@ -47,6 +49,8 @@ export default class Container extends React.Component {
     const style = getStyle({
       fluid: this.props.fluid,
       viewport: this.state.viewport,
+      breakpoints: this.context.breakpoints,
+      containerWidths: this.context.containerWidths,
     });
     return (
       <div style={{ ...style, ...this.props.style }}>

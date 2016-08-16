@@ -1,4 +1,8 @@
-export default ({ xs, sm, md, lg, viewport, moreStyle }) => {
+import { defaultBreakpoints } from '../../util';
+
+export default ({ xs, sm, md, lg, viewport, breakpoints, moreStyle }) => {
+  const theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+
   const styles = {
     padding: '0 15px',
     minHeight: '1px',
@@ -9,19 +13,19 @@ export default ({ xs, sm, md, lg, viewport, moreStyle }) => {
   };
 
   let colWidth = xs;
-  if (viewport < 768) { // xs domain
+  if (viewport < theBreakpoints[0]) { // xs domain, smaller than 768px by default
     styles.width = `${(100 / 12) * colWidth}%`;
     return styles;
   }
 
   colWidth = Math.min(colWidth, sm);
-  if (viewport < 992) { // sm domain
+  if (viewport < theBreakpoints[1]) { // sm domain, smaller than 992px by default
     styles.width = `${(100 / 12) * colWidth}%`;
     return styles;
   }
 
   colWidth = Math.min(colWidth, md);
-  if (viewport < 1200) { // md domain
+  if (viewport < theBreakpoints[2]) { // md domain, smaller than 1200px by default
     styles.width = `${(100 / 12) * colWidth}%`;
     return styles;
   }

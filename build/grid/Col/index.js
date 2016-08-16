@@ -51,6 +51,7 @@ var Col = function (_React$Component) {
         md: _this.props.md,
         lg: _this.props.lg,
         viewport: _this.state.viewport,
+        breakpoints: _this.context.breakpoints,
         moreStyle: _this.props.style
       });
       return _react2.default.createElement(
@@ -86,6 +87,7 @@ Col.defaultProps = {
 };
 Col.contextTypes = {
   phone: _react2.default.PropTypes.bool,
-  tablet: _react2.default.PropTypes.bool
+  tablet: _react2.default.PropTypes.bool,
+  breakpoints: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number)
 };
 exports.default = Col;

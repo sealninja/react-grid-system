@@ -28,6 +28,7 @@ export default class Col extends React.Component {
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
+    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
   };
 
   componentWillMount = () => {
@@ -53,6 +54,7 @@ export default class Col extends React.Component {
       md: this.props.md,
       lg: this.props.lg,
       viewport: this.state.viewport,
+      breakpoints: this.context.breakpoints,
       moreStyle: this.props.style,
     });
     return (
