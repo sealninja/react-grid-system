@@ -13,7 +13,7 @@ exports.default = function (_ref) {
   var containerWidths = _ref.containerWidths;
 
   var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : _util.defaultBreakpoints;
-  var theContainerWidths = containerWidths && containerWidths.length >= 3 ? breakpoints : _util.defaultContainerWidths;
+  var theContainerWidths = containerWidths && containerWidths.length >= 3 ? containerWidths : _util.defaultContainerWidths;
 
   var styles = {
     boxSizing: 'border-box',

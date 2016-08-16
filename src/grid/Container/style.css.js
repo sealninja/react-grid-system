@@ -4,7 +4,7 @@ export default ({ fluid, viewport, breakpoints, containerWidths }) => {
   const theBreakpoints =
     breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
   const theContainerWidths =
-    containerWidths && containerWidths.length >= 3 ? breakpoints : defaultContainerWidths;
+    containerWidths && containerWidths.length >= 3 ? containerWidths : defaultContainerWidths;
 
   const styles = {
     boxSizing: 'border-box',
