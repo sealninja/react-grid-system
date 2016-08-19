@@ -39,10 +39,17 @@ An example on how to use these:
 
 Live examples and documentation can be found at the GitHub pages: https://zoover.github.io/react-grid-system/
 
-## Server-side rendering
+## React context types
 
-In case you're also using React components in server-side rendering, every component in this library has two context types properties which can be used for this: `phone` and `tablet`. Both are booleans. The server can use the user-agent to determine whether the client is on a phone or tablet, and set the child context accordingly. The components will then use this context to render properly.
+The following child context types can be provided to the grid components, to alter their responsive behavior:
 
-For more information on using the user-agent to determine the device, see for example https://github.com/hgoebl/mobile-detect.js.
+| Context Type      | Default Value      | Description |
+| ----------------- | ------------------ | ------------------------------ |
+| `phone`           | `false`            | When set to `true`, a default viewport width of 375 pixels will be used, if the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
+| `tablet`          | `false`            | When set to `true`, a default viewport width of 768 pixels will be used, if the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
+| `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in class `sm`, `md`, and `lg`. |
+| `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in class `sm`, `md`, and `lg`. |
 
-For more information about context in React, see for example https://facebook.github.io/react/docs/context.html.
+For more information on using the user-agent to determine server-side whether a device is a phone or tablet, see for example https://github.com/hgoebl/mobile-detect.js.
+
+For more information about context in React, see https://facebook.github.io/react/docs/context.html.
