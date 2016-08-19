@@ -15,7 +15,7 @@ module.exports = {
     },
   ],
   serverPort: 4095,
-  styleguideDir: './html',
+  styleguideDir: './docs',
   updateWebpackConfig: webpackConfig => {
     const dirs = [
       path.resolve(__dirname, 'src'),
