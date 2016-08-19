@@ -45,10 +45,10 @@ The following child context types can be provided to the grid components, to alt
 
 | Context Type      | Default Value      | Description |
 | ----------------- | ------------------ | ------------------------------ |
-| `phone`           | `false`            | When set to `true`, a default viewport width of 375 pixels will be used, if the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
-| `tablet`          | `false`            | When set to `true`, a default viewport width of 768 pixels will be used, if the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
-| `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in class `sm`, `md`, and `lg`. |
-| `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in class `sm`, `md`, and `lg`. |
+| `phone`           | `false`            | When set to `true`, a default viewport width of 375 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
+| `tablet`          | `false`            | When set to `true`, a default viewport width of 768 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
+| `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
+| `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
 
 For more information on using the user-agent to determine server-side whether a device is a phone or tablet, see for example https://github.com/hgoebl/mobile-detect.js.
 
