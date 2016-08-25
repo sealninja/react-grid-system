@@ -28,7 +28,7 @@ var Container = function (_React$Component) {
   _inherits(Container, _React$Component);
 
   function Container() {
-    var _Object$getPrototypeO;
+    var _ref;
 
     var _temp, _this, _ret;
 
@@ -38,7 +38,7 @@ var Container = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Container)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.componentWillMount = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Container.__proto__ || Object.getPrototypeOf(Container)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
       _this.setViewport();
     }, _this.componentDidMount = function () {
       window.addEventListener('resize', _this.setViewport);

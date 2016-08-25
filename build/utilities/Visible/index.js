@@ -28,7 +28,7 @@ var Visible = function (_React$Component) {
   _inherits(Visible, _React$Component);
 
   function Visible() {
-    var _Object$getPrototypeO;
+    var _ref;
 
     var _temp, _this, _ret;
 
@@ -38,7 +38,7 @@ var Visible = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Visible)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.componentWillMount = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Visible.__proto__ || Object.getPrototypeOf(Visible)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
       _this.setViewport();
     }, _this.componentDidMount = function () {
       window.addEventListener('resize', _this.setViewport);
@@ -52,7 +52,8 @@ var Visible = function (_React$Component) {
         xs: _this.props.xs,
         sm: _this.props.sm,
         md: _this.props.md,
-        lg: _this.props.lg
+        lg: _this.props.lg,
+        breakpoints: _this.context.breakpoints
       })) return false;
       return _this.props.children;
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -85,7 +86,8 @@ Visible.propTypes = {
 };
 Visible.contextTypes = {
   phone: _react2.default.PropTypes.bool,
-  tablet: _react2.default.PropTypes.bool
+  tablet: _react2.default.PropTypes.bool,
+  breakpoints: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number)
 };
 Visible.defaultProps = {
   xs: false,

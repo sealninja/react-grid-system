@@ -29,6 +29,7 @@ export default class Hidden extends React.Component {
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
+    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
   };
 
   static defaultProps = {
@@ -61,6 +62,7 @@ export default class Hidden extends React.Component {
       sm: this.props.sm,
       md: this.props.md,
       lg: this.props.lg,
+      breakpoints: this.context.breakpoints,
     })) return false;
     return this.props.children;
   }

@@ -1,12 +1,16 @@
-export const visible = ({ viewport, xs, sm, md, lg }) => {
+import { defaultBreakpoints } from '../../util';
+
+export const visible = ({ viewport, xs, sm, md, lg, breakpoints }) => {
+  const theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+
   // xs domain
-  if (viewport < 768) return xs;
+  if (viewport < theBreakpoints[0]) return xs;
 
   // sm domain
-  if (viewport < 992) return sm;
+  if (viewport < theBreakpoints[1]) return sm;
 
   // md domain
-  if (viewport < 1200) return md;
+  if (viewport < theBreakpoints[2]) return md;
 
   // lg domain
   return lg;

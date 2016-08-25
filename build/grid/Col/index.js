@@ -26,7 +26,7 @@ var Col = function (_React$Component) {
   _inherits(Col, _React$Component);
 
   function Col() {
-    var _Object$getPrototypeO;
+    var _ref;
 
     var _temp, _this, _ret;
 
@@ -36,7 +36,7 @@ var Col = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Col)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.componentWillMount = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Col.__proto__ || Object.getPrototypeOf(Col)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
       _this.setViewport();
     }, _this.componentDidMount = function () {
       window.addEventListener('resize', _this.setViewport);
