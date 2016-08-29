@@ -1,5 +1,5 @@
 # react-grid-system
-A pure JS bootstrap-like responsive grid system for React.
+A pure JavaScript Bootstrap-like responsive grid system for React.
 
 [![npm version](https://badge.fury.io/js/react-grid-system.svg)](https://badge.fury.io/js/react-grid-system)
 
