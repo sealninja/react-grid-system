@@ -32,14 +32,16 @@ An example on how to use these:
 
 ```javascript
 <Visible xs sm><div>Visible on extra small and small</div></Visible>
+<Hidden xs sm><div>Hidden on extra small and small</div></Hidden>
 <Visible md lg><div>Visible on medium and large</div></Visible>
+<Hidden md lg><div>Hidden on medium and large</div></Hidden>
 ```
 
 ## Documentation
 
 Live examples and documentation can be found at the GitHub pages: https://zoover.github.io/react-grid-system/
 
-## React context types
+## Context types
 
 The following child context types can be provided to the grid components, to alter their responsive behavior:
 
@@ -50,6 +52,4 @@ The following child context types can be provided to the grid components, to alt
 | `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
 | `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
 
-For more information on using the user-agent to determine server-side whether a device is a phone or tablet, see for example https://github.com/hgoebl/mobile-detect.js.
-
-For more information about context in React, see https://facebook.github.io/react/docs/context.html.
+For more information on using the context types, see the example at https://github.com/zoover/react-grid-system/tree/master/example.
