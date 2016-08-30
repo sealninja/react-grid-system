@@ -44,11 +44,11 @@ class ExampleComponent extends React.Component {
       <h1>Responsive utilties example</h1>
 
       <p>
-        <span>Your current screen is </span>
-        <Visible xs><strong>extra small</strong></Visible>
-        <Visible sm><strong>small</strong></Visible>
-        <Visible md><strong>medium</strong></Visible>
-        <Visible lg><strong>large</strong></Visible>
+        <span>Your current screen class is </span>
+        <Visible xs><strong>xs</strong></Visible>
+        <Visible sm><strong>sm</strong></Visible>
+        <Visible md><strong>md</strong></Visible>
+        <Visible lg><strong>lg</strong></Visible>
         <span>.</span>
       </p>
 
