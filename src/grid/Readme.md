@@ -1,4 +1,4 @@
-A pure JavaScript Bootstrap-like responsive grid system for React.
+A pure React Bootstrap-like responsive grid system without CSS.
 
 Github: [https://github.com/zoover/react-grid-system](https://github.com/zoover/react-grid-system)
 
