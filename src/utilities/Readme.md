@@ -1,4 +1,4 @@
-Resize your browser or load on different devices to test the responsive utility classes.
+Resize your browser or load on different devices to test the responsive utility components.
 
 Green indicates the element is visible in your current viewport.
 

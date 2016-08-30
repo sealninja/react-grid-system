@@ -1,0 +1,44 @@
+{
+  "name": "react-grid-system-example",
+  "version": "1.0.0",
+  "description": "react-grid-system example",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoover/react-grid-system.git"
+  },
+  "keywords": [
+    "react",
+    "bootstap",
+    "grid",
+    "responsive",
+    "example"
+  ],
+  "author": "Zoover",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoover/react-grid-system/issues"
+  },
+  "homepage": "https://github.com/zoover/react-grid-system#readme",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.13.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-live-server": "0.0.30",
+    "mobile-detect": "^1.3.3",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-grid-system": "^1.2.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
