@@ -1,8 +1,8 @@
 // Grid
-export Col from './grid/Col/index.jsx';
-export Container from './grid/Container/index.jsx';
-export Row from './grid/Row/index.jsx';
+export Col from './grid/Col';
+export Container from './grid/Container';
+export Row from './grid/Row';
 
 // Utilities
-export Hidden from './utilities/Hidden/index.jsx';
-export Visible from './utilities/Visible/index.jsx';
+export Hidden from './utilities/Hidden';
+export Visible from './utilities/Visible';
