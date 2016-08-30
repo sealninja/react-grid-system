@@ -28,13 +28,22 @@ An example on how to use these:
 
 Three components are provided for creating responsive grids: `Visible` and `Hidden`.
 
-An example on how to use these:
+Some examples on how to use these:
 
 ```javascript
-<Visible xs sm><div>Visible on extra small and small</div></Visible>
-<Hidden xs sm><div>Hidden on extra small and small</div></Hidden>
-<Visible md lg><div>Visible on medium and large</div></Visible>
-<Hidden md lg><div>Hidden on medium and large</div></Hidden>
+<p>
+  <span>Your current screen is </span>
+  <Visible xs><strong>extra small</strong></Visible>
+  <Visible sm><strong>small</strong></Visible>
+  <Visible md><strong>medium</strong></Visible>
+  <Visible lg><strong>large</strong></Visible>
+  <span>.</span>
+</p>
+
+<Visible xs sm><p>Visible on extra small and small</p></Visible>
+<Hidden xs sm><p>Hidden on extra small and small</p></Hidden>
+<Visible md lg><p>Visible on medium and large</p></Visible>
+<Hidden md lg><p>Hidden on medium and large</p></Hidden>
 ```
 
 ## Context types
