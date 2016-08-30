@@ -1,5 +1,5 @@
 # react-grid-system
-A pure JavaScript Bootstrap-like responsive grid system for React.
+A pure React Bootstrap-like responsive grid system without CSS.
 
 [![npm version](https://badge.fury.io/js/react-grid-system.svg)](https://badge.fury.io/js/react-grid-system)
 
@@ -37,10 +37,6 @@ An example on how to use these:
 <Hidden md lg><div>Hidden on medium and large</div></Hidden>
 ```
 
-## Documentation
-
-Live examples and documentation can be found at the GitHub pages: https://zoover.github.io/react-grid-system/
-
 ## Context types
 
 The following child context types can be provided to the grid components, to alter their responsive behavior:
@@ -52,4 +48,8 @@ The following child context types can be provided to the grid components, to alt
 | `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
 | `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
 
-For more information on using the context types, see the example at https://github.com/zoover/react-grid-system/tree/master/example.
+## Example Application and Documentation
+
+An simple example application using all the features of `react-grid-system` can be found at https://github.com/zoover/react-grid-system/tree/master/example.
+
+More examples and documentation of all components can be found at the GitHub pages: https://zoover.github.io/react-grid-system/
