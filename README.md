@@ -50,16 +50,16 @@ Some examples on how to use these:
 
 ```html
 <Visible xs sm>
-  <p>Visible on extra small and small</p>
+  <p>Paragraph visible on extra small and small.</p>
 </Visible>
 <Hidden xs sm>
-  <p>Hidden on extra small and small</p>
+  <p>Paragraph hidden on extra small and small.</p>
 </Hidden>
 <Visible md lg>
-  <p>Visible on medium and large</p>
+  <p>Paragraph visible on medium and large.</p>
 </Visible>
 <Hidden md lg>
-  <p>Hidden on medium and large</p>
+  <p>Paragraph hidden on medium and large.</p>
 </Hidden>
 ```
 
@@ -71,8 +71,8 @@ The following child context types can be provided to the grid components, to alt
 | ----------------- | ------------------ | ------------------------------ |
 | `phone`           | `false`            | When set to `true`, a default viewport width of 375 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
 | `tablet`          | `false`            | When set to `true`, a default viewport width of 768 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
-| `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
-| `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
+| `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
+| `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in screen class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
 
 ## Example Application and Documentation
 
