@@ -5,34 +5,34 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
 
-var _Col2 = require('./grid/Col');
+var _index = require('./grid/Col/index.jsx');
 
-var _Col3 = _interopRequireDefault(_Col2);
+var _index2 = _interopRequireDefault(_index);
 
-var _Container2 = require('./grid/Container');
+var _index3 = require('./grid/Container/index.jsx');
 
-var _Container3 = _interopRequireDefault(_Container2);
+var _index4 = _interopRequireDefault(_index3);
 
-var _Row2 = require('./grid/Row');
+var _index5 = require('./grid/Row/index.jsx');
 
-var _Row3 = _interopRequireDefault(_Row2);
+var _index6 = _interopRequireDefault(_index5);
 
-var _Hidden2 = require('./utilities/Hidden');
+var _index7 = require('./utilities/Hidden/index.jsx');
 
-var _Hidden3 = _interopRequireDefault(_Hidden2);
+var _index8 = _interopRequireDefault(_index7);
 
-var _Visible2 = require('./utilities/Visible');
+var _index9 = require('./utilities/Visible/index.jsx');
 
-var _Visible3 = _interopRequireDefault(_Visible2);
+var _index10 = _interopRequireDefault(_index9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.Col = _Col3.default; // Grid
+exports.Col = _index2.default; // Grid
 
-exports.Container = _Container3.default;
-exports.Row = _Row3.default;
+exports.Container = _index4.default;
+exports.Row = _index6.default;
 
 // Utilities
 
-exports.Hidden = _Hidden3.default;
-exports.Visible = _Visible3.default;
+exports.Hidden = _index8.default;
+exports.Visible = _index10.default;

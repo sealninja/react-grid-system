@@ -1,3 +1,5 @@
+/* global window */
+
 import React from 'react';
 import getStyle from './style.css';
 import { getViewPort } from '../../util';

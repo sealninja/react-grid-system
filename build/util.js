@@ -3,6 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/* global window */
+
 var getViewPort = exports.getViewPort = function getViewPort(context) {
   var viewport = 1600;
   if (context.tablet) viewport = 768; // iPad portrait width

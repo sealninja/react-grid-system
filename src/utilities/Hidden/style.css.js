@@ -15,3 +15,5 @@ export const hidden = ({ viewport, xs, sm, md, lg, breakpoints }) => {
   // lg domain
   return lg;
 };
+
+export default hidden;

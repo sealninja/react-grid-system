@@ -1,5 +1,5 @@
 # react-grid-system
-A pure React Bootstrap-like responsive grid system without CSS.
+A no CSS Bootstrap-like responsive grid system for React.
 
 [![npm version](https://badge.fury.io/js/react-grid-system.svg)](https://badge.fury.io/js/react-grid-system)
 
@@ -15,7 +15,7 @@ Three components are provided for creating responsive grids: `Container`, `Row`,
 
 An example on how to use these:
 
-```javascript
+```
 <Container>
   <Row>
     <Col xs={12} md={8}>xs=12 md=8</Col>
@@ -30,7 +30,7 @@ Three components are provided for creating responsive grids: `Visible` and `Hidd
 
 Some examples on how to use these:
 
-```javascript
+```
 <p>
   <span>Your current screen is </span>
   <Visible xs><strong>extra small</strong></Visible>

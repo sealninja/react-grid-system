@@ -1,3 +1,5 @@
+/* global window */
+
 export const getViewPort = (context) => {
   let viewport = 1600;
   if (context.tablet) viewport = 768; // iPad portrait width

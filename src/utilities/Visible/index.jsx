@@ -1,27 +1,29 @@
+/* global window */
+
 import React from 'react';
 import * as style from './style.css.js';
 import { getViewPort } from '../../util';
 
-export default class Hidden extends React.Component {
+export default class Visible extends React.Component {
   static propTypes = {
     /**
      * Content of the component
      */
     children: React.PropTypes.element,
     /**
-     * Hide on extra small devices
+     * Show on extra small devices
      */
     xs: React.PropTypes.bool,
     /**
-     * Hide on small devices
+     * Show on small devices
      */
     sm: React.PropTypes.bool,
     /**
-     * Hide on medium devices
+     * Show on medium devices
      */
     md: React.PropTypes.bool,
     /**
-     * Hide on large devices
+     * Show on large devices
      */
     lg: React.PropTypes.bool,
   };
@@ -56,7 +58,7 @@ export default class Hidden extends React.Component {
   }
 
   render = () => {
-    if (style.hidden({
+    if (!style.visible({
       viewport: this.state.viewport,
       xs: this.props.xs,
       sm: this.props.sm,

@@ -29,3 +29,5 @@ var visible = exports.visible = function visible(_ref) {
   // lg domain
   return lg;
 };
+
+exports.default = visible;

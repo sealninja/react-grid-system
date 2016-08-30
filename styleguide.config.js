@@ -5,12 +5,12 @@ module.exports = {
   sections: [
     {
       name: 'Responsive grid',
-      components: './src/grid/**/index.js',
+      components: './src/grid/**/index.jsx',
       content: './src/grid/Readme.md',
     },
     {
       name: 'Responsive utilities',
-      components: './src/utilities/**/index.js',
+      components: './src/utilities/**/index.jsx',
       content: './src/utilities/Readme.md',
     },
   ],
@@ -23,7 +23,7 @@ module.exports = {
 
     webpackConfig.module.loaders.push(
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         include: dirs,
         loader: 'babel',
         query: {

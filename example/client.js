@@ -1,3 +1,4 @@
+/* global document */
 /* eslint no-console: "off" */
 
 import React from 'react';

@@ -1,42 +1,34 @@
+/* global window */
+
 import React from 'react';
-import * as style from './style.css.js';
+import getStyle from './style.css.js';
 import { getViewPort } from '../../util';
 
-export default class Visible extends React.Component {
+export default class Container extends React.Component {
   static propTypes = {
     /**
      * Content of the component
      */
-    children: React.PropTypes.element,
+    children: React.PropTypes.node,
     /**
-     * Show on extra small devices
+     * True makes the container full-width, false fixed-width
      */
-    xs: React.PropTypes.bool,
+    fluid: React.PropTypes.bool,
     /**
-     * Show on small devices
+     * Optional styling
      */
-    sm: React.PropTypes.bool,
-    /**
-     * Show on medium devices
-     */
-    md: React.PropTypes.bool,
-    /**
-     * Show on large devices
-     */
-    lg: React.PropTypes.bool,
+    style: React.PropTypes.object,
   };
 
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+    containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
   };
 
   static defaultProps = {
-    xs: false,
-    sm: false,
-    md: false,
-    lg: false,
+    fluid: false,
   };
 
   componentWillMount = () => {
@@ -56,14 +48,16 @@ export default class Visible extends React.Component {
   }
 
   render = () => {
-    if (!style.visible({
+    const style = getStyle({
+      fluid: this.props.fluid,
       viewport: this.state.viewport,
-      xs: this.props.xs,
-      sm: this.props.sm,
-      md: this.props.md,
-      lg: this.props.lg,
       breakpoints: this.context.breakpoints,
-    })) return false;
-    return this.props.children;
+      containerWidths: this.context.containerWidths,
+    });
+    return (
+      <div style={{ ...style, ...this.props.style }}>
+        {this.props.children}
+      </div>
+    );
   }
 }

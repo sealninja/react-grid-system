@@ -29,3 +29,5 @@ var hidden = exports.hidden = function hidden(_ref) {
   // lg domain
   return lg;
 };
+
+exports.default = hidden;

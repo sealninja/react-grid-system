@@ -3,9 +3,9 @@ import getStyle, { getBeforeStyle, getAfterStyle } from './style.css.js';
 
 const Row = ({ children, style }) => (
   <div style={getStyle({ moreStyle: style })}>
-    <span style={getBeforeStyle()}> </span>
+    <span style={getBeforeStyle()} />
     {children}
-    <span style={getAfterStyle()}> </span>
+    <span style={getAfterStyle()} />
   </div>
 );
 

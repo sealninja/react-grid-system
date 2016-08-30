@@ -20,17 +20,9 @@ var Row = function Row(_ref) {
   return _react2.default.createElement(
     'div',
     { style: (0, _styleCss2.default)({ moreStyle: style }) },
-    _react2.default.createElement(
-      'span',
-      { style: (0, _styleCss.getBeforeStyle)() },
-      ' '
-    ),
+    _react2.default.createElement('span', { style: (0, _styleCss.getBeforeStyle)() }),
     children,
-    _react2.default.createElement(
-      'span',
-      { style: (0, _styleCss.getAfterStyle)() },
-      ' '
-    )
+    _react2.default.createElement('span', { style: (0, _styleCss.getAfterStyle)() })
   );
 };
 
