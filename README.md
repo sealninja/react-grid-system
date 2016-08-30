@@ -15,11 +15,18 @@ Three components are provided for creating responsive grids: `Container`, `Row`,
 
 An example on how to use these:
 
-```
+```html
 <Container>
   <Row>
-    <Col xs={12} md={8}>xs=12 md=8</Col>
-    <Col xs={6} md={4}>xs=6 md=4</Col>
+    <Col sm={4}>
+      One of three columns
+    </Col>
+    <Col sm={4}>
+      One of three columns
+    </Col>
+    <Col sm={4}>
+      One of three columns
+    </Col>
   </Row>
 </Container>
 ```
@@ -30,7 +37,7 @@ Three components are provided for creating responsive grids: `Visible` and `Hidd
 
 Some examples on how to use these:
 
-```
+```html
 <p>
   <span>Your current screen is </span>
   <Visible xs><strong>extra small</strong></Visible>
@@ -39,11 +46,21 @@ Some examples on how to use these:
   <Visible lg><strong>large</strong></Visible>
   <span>.</span>
 </p>
+```
 
-<Visible xs sm><p>Visible on extra small and small</p></Visible>
-<Hidden xs sm><p>Hidden on extra small and small</p></Hidden>
-<Visible md lg><p>Visible on medium and large</p></Visible>
-<Hidden md lg><p>Hidden on medium and large</p></Hidden>
+```html
+<Visible xs sm>
+  <p>Visible on extra small and small</p>
+</Visible>
+<Hidden xs sm>
+  <p>Hidden on extra small and small</p>
+</Hidden>
+<Visible md lg>
+  <p>Visible on medium and large</p>
+</Visible>
+<Hidden md lg>
+  <p>Hidden on medium and large</p>
+</Hidden>
 ```
 
 ## Context types
