@@ -2,9 +2,9 @@
 
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
-import ExampleComponent from './index';
 import MobileDetect from 'mobile-detect';
 import express from 'express';
+import ExampleComponent from './index';
 
 const app = express();
 const port = 3000;
