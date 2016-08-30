@@ -27,10 +27,19 @@ class ExampleComponent extends React.Component {
     <Container>
       <h1>Responsive grid example</h1>
 
-      <Row>
-        <Col xs={12} md={8}>xs=12 md=8</Col>
-        <Col xs={6} md={4}>xs=6 md=4</Col>
-      </Row>
+      <Container>
+        <Row>
+          <Col sm={4}>
+            One of three columns
+          </Col>
+          <Col sm={4}>
+            One of three columns
+          </Col>
+          <Col sm={4}>
+            One of three columns
+          </Col>
+        </Row>
+      </Container>
 
       <h1>Responsive utilties example</h1>
 
@@ -43,10 +52,18 @@ class ExampleComponent extends React.Component {
         <span>.</span>
       </p>
 
-      <Visible xs sm><p>Visible on extra small and small</p></Visible>
-      <Hidden xs sm><p>Hidden on extra small and small</p></Hidden>
-      <Visible md lg><p>Visible on medium and large</p></Visible>
-      <Hidden md lg><p>Hidden on medium and large</p></Hidden>
+      <Visible xs sm>
+        <p>Paragraph visible on extra small and small.</p>
+      </Visible>
+      <Hidden xs sm>
+        <p>Paragraph hidden on extra small and small.</p>
+      </Hidden>
+      <Visible md lg>
+        <p>Paragraph visible on medium and large.</p>
+      </Visible>
+      <Hidden md lg>
+        <p>Paragraph hidden on medium and large.</p>
+      </Hidden>
 
     </Container>
   );
