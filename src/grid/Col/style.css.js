@@ -24,11 +24,11 @@ export default ({ xs, sm, md, lg, viewport, breakpoints, gutterWidth, moreStyle 
     styles.width = `${(100 / 12) * sm}%`;
   }
 
-  if (viewport >= theBreakpoints[0] && md) {
+  if (viewport >= theBreakpoints[1] && md) {
     styles.width = `${(100 / 12) * md}%`;
   }
 
-  if (viewport >= theBreakpoints[0] && lg) {
+  if (viewport >= theBreakpoints[2] && lg) {
     styles.width = `${(100 / 12) * lg}%`;
   }
 
