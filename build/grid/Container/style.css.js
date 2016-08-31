@@ -38,19 +38,16 @@ exports.default = function (_ref) {
   if (viewport >= theBreakpoints[0]) {
     // sm domain, bigger than or equal to 768px by default
     styles.maxWidth = theContainerWidths[0] + 'px'; // 750px by default
-    return styles;
   }
 
   if (viewport >= theBreakpoints[1]) {
     // md domain, bigger than or equal to 992px by default
     styles.maxWidth = theContainerWidths[1] + 'px'; // 970px by default
-    return styles;
   }
 
   if (viewport >= theBreakpoints[2]) {
     // lg domain, bigger than or equal to 1200px by default
     styles.maxWidth = theContainerWidths[2] + 'px'; // 1170px by default
-    return styles;
   }
 
   return styles;
