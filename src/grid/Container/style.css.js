@@ -1,40 +1,46 @@
-import { defaultBreakpoints, defaultContainerWidths } from '../../util';
+import { defaultBreakpoints, defaultContainerWidths, defaultGutterWidth } from '../../util';
 
-export default ({ fluid, viewport, breakpoints, containerWidths }) => {
+export default ({ fluid, viewport, breakpoints, containerWidths, gutterWidth, moreStyle }) => {
   const theBreakpoints =
     breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
   const theContainerWidths =
     containerWidths && containerWidths.length >= 3 ? containerWidths : defaultContainerWidths;
+  const theGutterWidth = gutterWidth || defaultGutterWidth;
 
   const styles = {
     boxSizing: 'border-box',
     position: 'relative',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingLeft: `${theGutterWidth / 2}px`,
+    paddingRight: `${theGutterWidth / 2}px`,
+    width: 'auto',
+    ...moreStyle,
   };
 
   if (fluid) {
     return styles;
   }
 
-  styles.padding = '0 15px';
-  styles.margin = '0 auto';
-  styles.maxWidth = '100%';
-
-  if (viewport < theBreakpoints[0]) { // xs domain, smaller than 768px by default
-    styles.width = 'auto';
+  if (viewport >= theBreakpoints[0]) { // sm domain, bigger than or equal to 768px by default
+    styles.maxWidth = `${theContainerWidths[0]}px`; // 750px by default
     return styles;
   }
 
-  if (viewport < theBreakpoints[1]) { // sm domain, smaller than 992px by default
-    styles.width = `${theContainerWidths[0]}px`; // 750px by default
+  if (viewport >= theBreakpoints[1]) { // md domain, bigger than or equal to 992px by default
+    styles.maxWidth = `${theContainerWidths[1]}px`; // 970px by default
     return styles;
   }
 
-  if (viewport < theBreakpoints[2]) { // md domain, smaller than 1200px by default
-    styles.width = `${theContainerWidths[1]}px`; // 970px by default
+  if (viewport >= theBreakpoints[2]) { // lg domain, bigger than or equal to 1200px by default
+    styles.maxWidth = `${theContainerWidths[2]}px`; // 1170px by default
     return styles;
   }
 
-  // lg domain
-  styles.width = `${theContainerWidths[2]}px`; // 1170px by default
   return styles;
 };
+
+export const getAfterStyle = () => ({
+  display: 'table',
+  clear: 'both',
+});

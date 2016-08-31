@@ -9,7 +9,10 @@ A no CSS Bootstrap-like responsive grid system for React.
 npm install react-grid-system --save
 ```
 
-## Responsive grid components
+## Responsive grid
+
+`react-grid-system` provides a responsive grid similar to Bootstrap (see: http://getbootstrap.com/css/#grid),
+except here **React components** are used, and **no CSS** is used at all.
 
 Three components are provided for creating responsive grids: `Container`, `Row`, and `Col`.
 
@@ -33,9 +36,11 @@ An example on how to use these:
 
 ## Responsive utilities
 
-Three components are provided for creating responsive grids: `Visible` and `Hidden`.
+Next to the grid, two components are provided for showing or hiding content: `Visible` and `Hidden`.
+The main difference between these two components and the similar CSS classes provided by Bootstrap is that
+these two components do not render the content at all when it should be hidden, instead of just hiding it with CSS.
 
-Some examples on how to use these:
+Some examples on how to use these components:
 
 ```html
 <p>
@@ -73,6 +78,7 @@ The following child context types can be provided to the grid components, to alt
 | `tablet`          | `false`            | When set to `true`, a default viewport width of 768 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
 | `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
 | `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in screen class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
+| `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 3 gutter width. |
 
 ## Example Application and Documentation
 

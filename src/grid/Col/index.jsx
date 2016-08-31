@@ -20,17 +20,11 @@ export default class Col extends React.Component {
     style: React.PropTypes.object,
   };
 
-  static defaultProps = {
-    xs: 12,
-    sm: 12,
-    md: 12,
-    lg: 12,
-  };
-
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+    gutterWidth: React.PropTypes.number,
   };
 
   componentWillMount = () => {
@@ -57,6 +51,7 @@ export default class Col extends React.Component {
       lg: this.props.lg,
       viewport: this.state.viewport,
       breakpoints: this.context.breakpoints,
+      gutterWidth: this.context.gutterWidth,
       moreStyle: this.props.style,
     });
     return (

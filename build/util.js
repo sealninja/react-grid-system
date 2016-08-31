@@ -18,3 +18,5 @@ var getViewPort = exports.getViewPort = function getViewPort(context) {
 var defaultBreakpoints = exports.defaultBreakpoints = [768, 992, 1200];
 
 var defaultContainerWidths = exports.defaultContainerWidths = [750, 970, 1170];
+
+var defaultGutterWidth = exports.defaultGutterWidth = 30;

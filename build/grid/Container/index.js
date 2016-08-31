@@ -4,15 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styleCss = require('./style.css.js');
+var _style = require('./style.css');
 
-var _styleCss2 = _interopRequireDefault(_styleCss);
+var _style2 = _interopRequireDefault(_style);
 
 var _util = require('../../util');
 
@@ -47,16 +45,19 @@ var Container = function (_React$Component) {
     }, _this.setViewport = function () {
       _this.setState({ viewport: (0, _util.getViewPort)(_this.context) });
     }, _this.render = function () {
-      var style = (0, _styleCss2.default)({
+      var style = (0, _style2.default)({
         fluid: _this.props.fluid,
         viewport: _this.state.viewport,
         breakpoints: _this.context.breakpoints,
-        containerWidths: _this.context.containerWidths
+        containerWidths: _this.context.containerWidths,
+        gutterWidth: _this.context.gutterWidth,
+        moreStyle: _this.props.style
       });
       return _react2.default.createElement(
         'div',
-        { style: _extends({}, style, _this.props.style) },
-        _this.props.children
+        { style: style },
+        _this.props.children,
+        _react2.default.createElement('span', { style: (0, _style.getAfterStyle)() })
       );
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -82,7 +83,8 @@ Container.contextTypes = {
   phone: _react2.default.PropTypes.bool,
   tablet: _react2.default.PropTypes.bool,
   breakpoints: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number),
-  containerWidths: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number)
+  containerWidths: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number),
+  gutterWidth: _react2.default.PropTypes.number
 };
 Container.defaultProps = {
   fluid: false
