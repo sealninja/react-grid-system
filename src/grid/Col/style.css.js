@@ -1,37 +1,36 @@
-import { defaultBreakpoints } from '../../util';
+import { defaultBreakpoints, defaultGutterWidth } from '../../util';
 
-export default ({ xs, sm, md, lg, viewport, breakpoints, moreStyle }) => {
+export default ({ xs, sm, md, lg, viewport, breakpoints, gutterWidth, moreStyle }) => {
   const theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+  const theGutterWidth = gutterWidth || defaultGutterWidth;
 
   const styles = {
-    padding: '0 15px',
-    minHeight: '1px',
     boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
+    position: 'relative',
+    minHeight: '1px',
+    paddingLeft: `${theGutterWidth / 2}px`,
+    paddingRight: `${theGutterWidth / 2}px`,
+    float: 'left',
     ...moreStyle,
   };
 
-  let colWidth = xs;
-  if (viewport < theBreakpoints[0]) { // xs domain, smaller than 768px by default
-    styles.width = `${(100 / 12) * colWidth}%`;
-    return styles;
+  styles.width = '100%';
+
+  if (xs) {
+    styles.width = `${(100 / 12) * xs}%`;
   }
 
-  colWidth = Math.min(colWidth, sm);
-  if (viewport < theBreakpoints[1]) { // sm domain, smaller than 992px by default
-    styles.width = `${(100 / 12) * colWidth}%`;
-    return styles;
+  if (viewport >= theBreakpoints[0] && sm) {
+    styles.width = `${(100 / 12) * sm}%`;
   }
 
-  colWidth = Math.min(colWidth, md);
-  if (viewport < theBreakpoints[2]) { // md domain, smaller than 1200px by default
-    styles.width = `${(100 / 12) * colWidth}%`;
-    return styles;
+  if (viewport >= theBreakpoints[1] && md) {
+    styles.width = `${(100 / 12) * md}%`;
   }
 
-  // lg domain
-  colWidth = Math.min(colWidth, lg);
-  styles.width = `${(100 / 12) * colWidth}%`;
+  if (viewport >= theBreakpoints[2] && lg) {
+    styles.width = `${(100 / 12) * lg}%`;
+  }
+
   return styles;
 };

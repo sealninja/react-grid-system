@@ -1,7 +1,7 @@
 /* global window */
 
 import React from 'react';
-import getStyle from './style.css.js';
+import getStyle, { getAfterStyle } from './style.css';
 import { getViewPort } from '../../util';
 
 export default class Container extends React.Component {
@@ -25,6 +25,7 @@ export default class Container extends React.Component {
     tablet: React.PropTypes.bool,
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
     containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
+    gutterWidth: React.PropTypes.number,
   };
 
   static defaultProps = {
@@ -53,10 +54,13 @@ export default class Container extends React.Component {
       viewport: this.state.viewport,
       breakpoints: this.context.breakpoints,
       containerWidths: this.context.containerWidths,
+      gutterWidth: this.context.gutterWidth,
+      moreStyle: this.props.style,
     });
     return (
-      <div style={{ ...style, ...this.props.style }}>
+      <div style={style}>
         {this.props.children}
+        <span style={getAfterStyle()} />
       </div>
     );
   }

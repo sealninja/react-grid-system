@@ -15,41 +15,38 @@ exports.default = function (_ref) {
   var lg = _ref.lg;
   var viewport = _ref.viewport;
   var breakpoints = _ref.breakpoints;
+  var gutterWidth = _ref.gutterWidth;
   var moreStyle = _ref.moreStyle;
 
   var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : _util.defaultBreakpoints;
+  var theGutterWidth = gutterWidth || _util.defaultGutterWidth;
 
   var styles = _extends({
-    padding: '0 15px',
-    minHeight: '1px',
     boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column'
+    position: 'relative',
+    minHeight: '1px',
+    paddingLeft: theGutterWidth / 2 + 'px',
+    paddingRight: theGutterWidth / 2 + 'px',
+    float: 'left'
   }, moreStyle);
 
-  var colWidth = xs;
-  if (viewport < theBreakpoints[0]) {
-    // xs domain, smaller than 768px by default
-    styles.width = 100 / 12 * colWidth + '%';
-    return styles;
+  styles.width = '100%';
+
+  if (xs) {
+    styles.width = 100 / 12 * xs + '%';
   }
 
-  colWidth = Math.min(colWidth, sm);
-  if (viewport < theBreakpoints[1]) {
-    // sm domain, smaller than 992px by default
-    styles.width = 100 / 12 * colWidth + '%';
-    return styles;
+  if (viewport >= theBreakpoints[0] && sm) {
+    styles.width = 100 / 12 * sm + '%';
   }
 
-  colWidth = Math.min(colWidth, md);
-  if (viewport < theBreakpoints[2]) {
-    // md domain, smaller than 1200px by default
-    styles.width = 100 / 12 * colWidth + '%';
-    return styles;
+  if (viewport >= theBreakpoints[1] && md) {
+    styles.width = 100 / 12 * md + '%';
   }
 
-  // lg domain
-  colWidth = Math.min(colWidth, lg);
-  styles.width = 100 / 12 * colWidth + '%';
+  if (viewport >= theBreakpoints[2] && lg) {
+    styles.width = 100 / 12 * lg + '%';
+  }
+
   return styles;
 };

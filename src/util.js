@@ -13,3 +13,5 @@ export const getViewPort = (context) => {
 export const defaultBreakpoints = [768, 992, 1200];
 
 export const defaultContainerWidths = [750, 970, 1170];
+
+export const defaultGutterWidth = 30;

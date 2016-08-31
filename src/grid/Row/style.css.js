@@ -1,13 +1,14 @@
-export default ({ moreStyle }) => ({
-  margin: '0 -15px',
-  display: 'flex',
-  flexWrap: 'wrap',
-  ...moreStyle,
-});
+import { defaultGutterWidth } from '../../util';
 
-export const getBeforeStyle = () => ({
-  display: 'table',
-});
+export default ({ gutterWidth, moreStyle }) => {
+  const theGutterWidth = gutterWidth || defaultGutterWidth;
+
+  return {
+    marginLeft: `-${theGutterWidth / 2}px`,
+    marginRight: `-${theGutterWidth / 2}px`,
+    ...moreStyle,
+  };
+};
 
 export const getAfterStyle = () => ({
   display: 'table',

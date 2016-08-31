@@ -1,26 +1,6 @@
 A no CSS Bootstrap-like responsive grid system for React.
 
-Github: [https://github.com/zoover/react-grid-system](https://github.com/zoover/react-grid-system)
-
-### Installation
-
-`
-npm install react-grid-system --save
-`
-
-### Grid aspects
-
-See how aspects of the grid system work across multiple devices with a handy table.
-
-| | Extra small devices Phones (<768px) | Small devices Tablets (≥768px) | Medium devices Desktops (≥992px) | Large devices Desktops (≥1200px)
-| ---- | --- | --- | --- | --- |
-| Grid behavior | Horizontal at all times | Collapsed to start, horizontal above breakpoints | ~ | ~ |
-| Container width | None (auto) | 750px | 970px | 1170px |
-| Property name | `xs` | `sm` | `md` | `lg` |
-| # of columns | 12 | ~ | ~ | ~|
-| Column width | Auto | ~62px | ~81px | ~97px |
-| Gutter width | 	30px (15px on each side of a column) | ~ | ~ | ~ |
-| Nestable | Yes | ~ | ~ | ~ |
+For more information on these components, view this project on GitHub: [https://github.com/zoover/react-grid-system](https://github.com/zoover/react-grid-system)
 
 ### Example: Stacked-to-horizontal
 
