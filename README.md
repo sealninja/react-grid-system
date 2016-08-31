@@ -12,7 +12,7 @@ npm install react-grid-system --save
 ## Responsive grid
 
 `react-grid-system` provides a responsive grid similar to Bootstrap (see: http://getbootstrap.com/css/#grid),
-except here **React components** are used, and **no CSS** is used at all.
+except here React components are used, and **no CSS** is needed at all.
 
 Three components are provided for creating responsive grids: `Container`, `Row`, and `Col`.
 
