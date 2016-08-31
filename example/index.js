@@ -14,6 +14,7 @@ class ExampleComponent extends React.Component {
     tablet: React.PropTypes.bool,
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
     containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
+    gutterWidth: React.PropTypes.number,
   };
 
   getChildContext = () => ({
@@ -21,25 +22,24 @@ class ExampleComponent extends React.Component {
     tablet: this.props.tablet,
     breakpoints: [768, 992, 1200],
     containerWidths: [750, 970, 1170],
+    gutterWidth: 30,
   });
 
   render = () => (
     <Container>
       <h1>Responsive grid example</h1>
 
-      <Container>
-        <Row>
-          <Col sm={4}>
-            One of three columns
-          </Col>
-          <Col sm={4}>
-            One of three columns
-          </Col>
-          <Col sm={4}>
-            One of three columns
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col sm={4}>
+          One of three columns
+        </Col>
+        <Col sm={4}>
+          One of three columns
+        </Col>
+        <Col sm={4}>
+          One of three columns
+        </Col>
+      </Row>
 
       <h1>Responsive utilties example</h1>
 
