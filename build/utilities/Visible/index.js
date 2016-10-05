@@ -14,6 +14,10 @@ var style = _interopRequireWildcard(_styleCss);
 
 var _util = require('../../util');
 
+var _RenderAny = require('../../support/RenderAny');
+
+var _RenderAny2 = _interopRequireDefault(_RenderAny);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -55,7 +59,11 @@ var Visible = function (_React$Component) {
         lg: _this.props.lg,
         breakpoints: _this.context.breakpoints
       })) return false;
-      return _this.props.children;
+      return _react2.default.createElement(
+        _RenderAny2.default,
+        null,
+        _this.props.children
+      );
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -66,7 +74,7 @@ Visible.propTypes = {
   /**
    * Content of the component
    */
-  children: _react2.default.PropTypes.element,
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.element, _react2.default.PropTypes.node, _react2.default.PropTypes.func]),
   /**
    * Show on extra small devices
    */

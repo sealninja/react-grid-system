@@ -3,13 +3,18 @@
 import React from 'react';
 import * as style from './style.css.js';
 import { getViewPort } from '../../util';
+import RenderAny from '../../support/RenderAny';
 
 export default class Visible extends React.Component {
   static propTypes = {
     /**
      * Content of the component
      */
-    children: React.PropTypes.element,
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.element,
+      React.PropTypes.node,
+      React.PropTypes.func,
+    ]),
     /**
      * Show on extra small devices
      */
@@ -66,6 +71,6 @@ export default class Visible extends React.Component {
       lg: this.props.lg,
       breakpoints: this.context.breakpoints,
     })) return false;
-    return this.props.children;
+    return <RenderAny>{this.props.children}</RenderAny>;
   }
 }
