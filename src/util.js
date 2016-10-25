@@ -15,3 +15,13 @@ export const defaultBreakpoints = [768, 992, 1200];
 export const defaultContainerWidths = [750, 970, 1170];
 
 export const defaultGutterWidth = 30;
+
+export const getSize = (viewport, breakpoints) => {
+  const theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+
+  if (viewport >= theBreakpoints[0]) { return 'sm'; }
+  if (viewport >= theBreakpoints[1]) { return 'md'; }
+  if (viewport >= theBreakpoints[2]) { return 'lg'; }
+
+  return 'md';
+}
