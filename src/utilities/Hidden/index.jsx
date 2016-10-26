@@ -1,8 +1,8 @@
 /* global window */
 
 import React from 'react';
-import * as style from './style.css.js';
-import { getViewPort } from '../../util';
+import * as style from './style.css';
+import { getScreenClass } from '../../utils';
 import RenderAny from '../../support/RenderAny';
 
 export default class Hidden extends React.Component {
@@ -47,29 +47,28 @@ export default class Hidden extends React.Component {
   };
 
   componentWillMount = () => {
-    this.setViewport();
+    this.setScreenClass();
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', this.setViewport);
+    window.addEventListener('resize', this.setScreenClass);
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setViewport);
+    window.removeEventListener('resize', this.setScreenClass);
   }
 
-  setViewport = () => {
-    this.setState({ viewport: getViewPort(this.context) });
+  setScreenClass = () => {
+    this.setState({ screenClass: getScreenClass(this.context) });
   }
 
   render = () => {
     if (style.hidden({
-      viewport: this.state.viewport,
+      screenClass: this.state.screenClass,
       xs: this.props.xs,
       sm: this.props.sm,
       md: this.props.md,
       lg: this.props.lg,
-      breakpoints: this.context.breakpoints,
     })) return false;
     return <RenderAny>{this.props.children}</RenderAny>;
   }

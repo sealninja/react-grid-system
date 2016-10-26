@@ -3,31 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.visible = undefined;
-
-var _util = require('../../util');
-
 var visible = exports.visible = function visible(_ref) {
-  var viewport = _ref.viewport;
-  var xs = _ref.xs;
-  var sm = _ref.sm;
-  var md = _ref.md;
-  var lg = _ref.lg;
-  var breakpoints = _ref.breakpoints;
+  var screenClass = _ref.screenClass,
+      xs = _ref.xs,
+      sm = _ref.sm,
+      md = _ref.md,
+      lg = _ref.lg;
 
-  var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : _util.defaultBreakpoints;
-
-  // xs domain
-  if (viewport < theBreakpoints[0]) return xs;
-
-  // sm domain
-  if (viewport < theBreakpoints[1]) return sm;
-
-  // md domain
-  if (viewport < theBreakpoints[2]) return md;
-
-  // lg domain
-  return lg;
+  if (screenClass === 'lg') return lg;
+  if (screenClass === 'md') return md;
+  if (screenClass === 'sm') return sm;
+  return xs;
 };
 
 exports.default = visible;

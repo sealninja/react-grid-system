@@ -7,19 +7,19 @@ exports.getAfterStyle = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _util = require('../../util');
+var _utils = require('../../utils');
 
 exports.default = function (_ref) {
-  var fluid = _ref.fluid;
-  var viewport = _ref.viewport;
-  var breakpoints = _ref.breakpoints;
-  var containerWidths = _ref.containerWidths;
-  var gutterWidth = _ref.gutterWidth;
-  var moreStyle = _ref.moreStyle;
+  var fluid = _ref.fluid,
+      viewport = _ref.viewport,
+      breakpoints = _ref.breakpoints,
+      containerWidths = _ref.containerWidths,
+      gutterWidth = _ref.gutterWidth,
+      moreStyle = _ref.moreStyle;
 
-  var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : _util.defaultBreakpoints;
-  var theContainerWidths = containerWidths && containerWidths.length >= 3 ? containerWidths : _util.defaultContainerWidths;
-  var theGutterWidth = gutterWidth || _util.defaultGutterWidth;
+  var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : _utils.defaultBreakpoints;
+  var theContainerWidths = containerWidths && containerWidths.length >= 3 ? containerWidths : _utils.defaultContainerWidths;
+  var theGutterWidth = gutterWidth || _utils.defaultGutterWidth;
 
   var styles = _extends({
     boxSizing: 'border-box',
