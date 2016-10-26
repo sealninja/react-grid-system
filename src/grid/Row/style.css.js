@@ -1,4 +1,4 @@
-import { defaultGutterWidth } from '../../util';
+import { defaultGutterWidth } from '../../utils';
 
 export default ({ gutterWidth, moreStyle }) => {
   const theGutterWidth = gutterWidth || defaultGutterWidth;

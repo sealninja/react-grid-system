@@ -59,7 +59,7 @@ Row.propTypes = {
   /**
    * Optional styling
    */
-  style: _react2.default.PropTypes.object
+  style: _react2.default.PropTypes.objectOf(_react2.default.PropTypes.oneOfType([_react2.default.PropTypes.number, _react2.default.PropTypes.string]))
 };
 Row.contextTypes = {
   gutterWidth: _react2.default.PropTypes.number

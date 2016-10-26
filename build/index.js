@@ -3,7 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
+exports.getScreenClass = exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
+
+var _utils = require('./utils');
+
+Object.defineProperty(exports, 'getScreenClass', {
+  enumerable: true,
+  get: function get() {
+    return _utils.getScreenClass;
+  }
+});
 
 var _Col2 = require('./grid/Col');
 

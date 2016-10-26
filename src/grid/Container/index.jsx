@@ -2,7 +2,7 @@
 
 import React from 'react';
 import getStyle, { getAfterStyle } from './style.css';
-import { getViewPort } from '../../util';
+import { getViewPort } from '../../utils';
 
 export default class Container extends React.Component {
   static propTypes = {
@@ -17,7 +17,12 @@ export default class Container extends React.Component {
     /**
      * Optional styling
      */
-    style: React.PropTypes.object,
+    style: React.PropTypes.objectOf(
+       React.PropTypes.oneOfType([
+         React.PropTypes.number,
+         React.PropTypes.string,
+       ])
+     ),
   };
 
   static contextTypes = {

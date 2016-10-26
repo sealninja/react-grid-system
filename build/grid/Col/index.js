@@ -12,7 +12,7 @@ var _style = require('./style.css');
 
 var _style2 = _interopRequireDefault(_style);
 
-var _util = require('../../util');
+var _utils = require('../../utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43,7 +43,7 @@ var Col = function (_React$Component) {
     }, _this.componentWillUnmount = function () {
       window.removeEventListener('resize', _this.setViewport);
     }, _this.setViewport = function () {
-      _this.setState({ viewport: (0, _util.getViewPort)(_this.context) });
+      _this.setState({ viewport: (0, _utils.getViewPort)(_this.context) });
     }, _this.render = function () {
       var style = (0, _style2.default)({
         xs: _this.props.xs,
@@ -78,7 +78,7 @@ Col.propTypes = {
   /**
    * Optional styling
    */
-  style: _react2.default.PropTypes.object
+  style: _react2.default.PropTypes.objectOf(_react2.default.PropTypes.oneOfType([_react2.default.PropTypes.number, _react2.default.PropTypes.string]))
 };
 Col.contextTypes = {
   phone: _react2.default.PropTypes.bool,

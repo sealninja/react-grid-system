@@ -1,4 +1,4 @@
-import { defaultBreakpoints, defaultContainerWidths, defaultGutterWidth } from '../../util';
+import { defaultBreakpoints, defaultContainerWidths, defaultGutterWidth } from '../../utils';
 
 export default ({ fluid, viewport, breakpoints, containerWidths, gutterWidth, moreStyle }) => {
   const theBreakpoints =

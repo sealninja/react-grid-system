@@ -1,4 +1,4 @@
-import { defaultBreakpoints, defaultGutterWidth } from '../../util';
+import { defaultBreakpoints, defaultGutterWidth } from '../../utils';
 
 export default ({ xs, sm, md, lg, viewport, breakpoints, gutterWidth, moreStyle }) => {
   const theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;

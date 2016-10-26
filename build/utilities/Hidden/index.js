@@ -8,11 +8,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styleCss = require('./style.css.js');
+var _style = require('./style.css');
 
-var style = _interopRequireWildcard(_styleCss);
+var style = _interopRequireWildcard(_style);
 
-var _util = require('../../util');
+var _utils = require('../../utils');
 
 var _RenderAny = require('../../support/RenderAny');
 
@@ -43,21 +43,20 @@ var Hidden = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Hidden.__proto__ || Object.getPrototypeOf(Hidden)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
-      _this.setViewport();
+      _this.setScreenClass();
     }, _this.componentDidMount = function () {
-      window.addEventListener('resize', _this.setViewport);
+      window.addEventListener('resize', _this.setScreenClass);
     }, _this.componentWillUnmount = function () {
-      window.removeEventListener('resize', _this.setViewport);
-    }, _this.setViewport = function () {
-      _this.setState({ viewport: (0, _util.getViewPort)(_this.context) });
+      window.removeEventListener('resize', _this.setScreenClass);
+    }, _this.setScreenClass = function () {
+      _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
       if (style.hidden({
-        viewport: _this.state.viewport,
+        screenClass: _this.state.screenClass,
         xs: _this.props.xs,
         sm: _this.props.sm,
         md: _this.props.md,
-        lg: _this.props.lg,
-        breakpoints: _this.context.breakpoints
+        lg: _this.props.lg
       })) return false;
       return _react2.default.createElement(
         _RenderAny2.default,
