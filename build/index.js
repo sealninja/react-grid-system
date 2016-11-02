@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getScreenClass = exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
+exports.getScreenClass = exports.ScreenClassRender = exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
 
 var _utils = require('./utils');
 
@@ -45,3 +45,4 @@ exports.Row = _Row3.default;
 
 exports.Hidden = _Hidden3.default;
 exports.Visible = _Visible3.default;
+exports.ScreenClassRender = _Visible3.default;
