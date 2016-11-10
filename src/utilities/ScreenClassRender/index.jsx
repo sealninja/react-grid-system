@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { getScreenClass } from '../../utils';
+import RenderAny from '../../support/RenderAny';
 
 export default class ScreenClassRender extends React.Component {
   static propTypes = {
@@ -43,7 +44,7 @@ export default class ScreenClassRender extends React.Component {
 
   render = () => {
     if (this.props.render) {
-      return this.props.render(this.state.screenClass);
+      return <RenderAny>{this.props.render(this.state.screenClass)}</RenderAny>;
     }
     if (this.props.children && this.props.style) {
       const clonedElement = React.cloneElement(this.props.children, { style: this.getStyle() });

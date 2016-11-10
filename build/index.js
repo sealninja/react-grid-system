@@ -3,16 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getScreenClass = exports.ScreenClassRender = exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
-
-var _utils = require('./utils');
-
-Object.defineProperty(exports, 'getScreenClass', {
-  enumerable: true,
-  get: function get() {
-    return _utils.getScreenClass;
-  }
-});
+exports.ScreenClassRender = exports.Visible = exports.Hidden = exports.Row = exports.Container = exports.Col = undefined;
 
 var _Col2 = require('./grid/Col');
 
@@ -34,6 +25,10 @@ var _Visible2 = require('./utilities/Visible');
 
 var _Visible3 = _interopRequireDefault(_Visible2);
 
+var _ScreenClassRender2 = require('./utilities/ScreenClassRender');
+
+var _ScreenClassRender3 = _interopRequireDefault(_ScreenClassRender2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Col = _Col3.default; // Grid
@@ -45,4 +40,4 @@ exports.Row = _Row3.default;
 
 exports.Hidden = _Hidden3.default;
 exports.Visible = _Visible3.default;
-exports.ScreenClassRender = _Visible3.default;
+exports.ScreenClassRender = _ScreenClassRender3.default;

@@ -6,5 +6,4 @@ export Row from './grid/Row';
 // Utilities
 export Hidden from './utilities/Hidden';
 export Visible from './utilities/Visible';
-export ScreenClassRender from './utilities/Visible';
-export { getScreenClass } from './utils';
+export ScreenClassRender from './utilities/ScreenClassRender';
