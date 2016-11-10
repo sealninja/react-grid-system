@@ -43,8 +43,14 @@ var ScreenClassRender = function (_React$Component) {
     }, _this.getStyle = function () {
       return _this.props.style(_this.state.screenClass);
     }, _this.render = function () {
-      var clonedElement = _react2.default.cloneElement(_this.props.children, { style: _this.getStyle() });
-      return clonedElement;
+      if (_this.props.render) {
+        return _this.props.render(_this.state.screenClass);
+      }
+      if (_this.props.children && _this.props.style) {
+        var clonedElement = _react2.default.cloneElement(_this.props.children, { style: _this.getStyle() });
+        return clonedElement;
+      }
+      return false;
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -55,12 +61,13 @@ ScreenClassRender.propTypes = {
   /**
    * Content of the component
    */
-  children: _react2.default.PropTypes.element.isRequired,
+  children: _react2.default.PropTypes.element,
   /**
    * A function returning the style for the children.
    * This function gets the screen class as a parameter.
    */
-  style: _react2.default.PropTypes.func.isRequired
+  style: _react2.default.PropTypes.func,
+  render: _react2.default.PropTypes.func
 };
 ScreenClassRender.contextTypes = {
   phone: _react2.default.PropTypes.bool,
