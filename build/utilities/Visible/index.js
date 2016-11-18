@@ -48,13 +48,8 @@ var Visible = function (_React$Component) {
       window.addEventListener('resize', _this.setScreenClass);
     }, _this.componentWillUnmount = function () {
       window.removeEventListener('resize', _this.setScreenClass);
-    }, _this.getOrientation = function () {
-      return window.outerWidth < window.outerHeight ? 'portrait' : 'landscape';
     }, _this.setScreenClass = function () {
-      _this.setState({
-        screenClass: (0, _utils.getScreenClass)(_this.context),
-        orientation: _this.getOrientation()
-      });
+      _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
       if (!style.visible({
         screenClass: _this.state.screenClass,

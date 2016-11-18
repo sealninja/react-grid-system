@@ -71,15 +71,8 @@ export default class Visible extends React.Component {
     window.removeEventListener('resize', this.setScreenClass);
   }
 
-  getOrientation = () => {
-    return window.outerWidth < window.outerHeight ? 'portrait' : 'landscape';
-  }
-
   setScreenClass = () => {
-    this.setState({
-      screenClass: getScreenClass(this.context),
-      orientation: this.getOrientation(),
-    });
+    this.setState({ screenClass: getScreenClass(this.context) });
   }
 
   render = () => {
