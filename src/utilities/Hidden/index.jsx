@@ -31,6 +31,10 @@ export default class Hidden extends React.Component {
      * Hide on large devices
      */
     lg: React.PropTypes.bool,
+    /**
+     * Hide on xlarge devices
+     */
+    xl: React.PropTypes.bool,
   };
 
   static contextTypes = {
@@ -44,6 +48,7 @@ export default class Hidden extends React.Component {
     sm: false,
     md: false,
     lg: false,
+    xl: false,
   };
 
   componentWillMount = () => {
@@ -69,6 +74,7 @@ export default class Hidden extends React.Component {
       sm: this.props.sm,
       md: this.props.md,
       lg: this.props.lg,
+      xl: this.props.xl,
     })) return false;
     return <RenderAny>{this.props.children}</RenderAny>;
   }

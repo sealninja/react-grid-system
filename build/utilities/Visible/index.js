@@ -48,15 +48,23 @@ var Visible = function (_React$Component) {
       window.addEventListener('resize', _this.setScreenClass);
     }, _this.componentWillUnmount = function () {
       window.removeEventListener('resize', _this.setScreenClass);
-    }, _this.setScreenClass = function () {
-      _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
+    }, _this.getOrientation = function () {
+      return window.outerWidth < window.outerHeight ? 'portrait' : 'landscape';
+    }, _this.setScreenClass = function (e) {
+      _this.setState({
+        screenClass: (0, _utils.getScreenClass)(_this.context),
+        orientation: _this.getOrientation()
+      });
     }, _this.render = function () {
       if (!style.visible({
         screenClass: _this.state.screenClass,
+        orientation: _this.state.orientation,
         xs: _this.props.xs,
         sm: _this.props.sm,
         md: _this.props.md,
-        lg: _this.props.lg
+        lg: _this.props.lg,
+        portrait: _this.props.portrait,
+        landscape: _this.props.landscape
       })) return false;
       return _react2.default.createElement(
         _RenderAny2.default,
@@ -89,7 +97,15 @@ Visible.propTypes = {
   /**
    * Show on large devices
    */
-  lg: _react2.default.PropTypes.bool
+  lg: _react2.default.PropTypes.bool,
+  /**
+   * Show on portrait mode
+   */
+  portrait: _react2.default.PropTypes.bool,
+  /**
+   * Show on landscape mode
+   */
+  landscape: _react2.default.PropTypes.bool
 };
 Visible.contextTypes = {
   phone: _react2.default.PropTypes.bool,
@@ -100,6 +116,8 @@ Visible.defaultProps = {
   xs: false,
   sm: false,
   md: false,
-  lg: false
+  lg: false,
+  portrait: false,
+  landscape: false
 };
 exports.default = Visible;
