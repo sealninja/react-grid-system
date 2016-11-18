@@ -2,18 +2,20 @@
 
 import React from 'react';
 import { getScreenClass } from '../../utils';
+import RenderAny from '../../support/RenderAny';
 
 export default class ScreenClassRender extends React.Component {
   static propTypes = {
     /**
      * Content of the component
      */
-    children: React.PropTypes.element.isRequired,
+    children: React.PropTypes.element,
     /**
      * A function returning the style for the children.
      * This function gets the screen class as a parameter.
      */
-    style: React.PropTypes.func.isRequired,
+    style: React.PropTypes.func,
+    render: React.PropTypes.func,
   };
 
   static contextTypes = {
@@ -41,7 +43,13 @@ export default class ScreenClassRender extends React.Component {
   getStyle = () => this.props.style(this.state.screenClass);
 
   render = () => {
-    const clonedElement = React.cloneElement(this.props.children, { style: this.getStyle() });
-    return clonedElement;
+    if (this.props.render) {
+      return <RenderAny>{this.props.render(this.state.screenClass)}</RenderAny>;
+    }
+    if (this.props.children && this.props.style) {
+      const clonedElement = React.cloneElement(this.props.children, { style: this.getStyle() });
+      return clonedElement;
+    }
+    return false;
   }
 }
