@@ -122,8 +122,6 @@ Visible.defaultProps = {
   sm: false,
   md: false,
   lg: false,
-  xl: false,
-  portrait: false,
-  landscape: false
+  xl: false
 };
 exports.default = Visible;

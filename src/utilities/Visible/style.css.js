@@ -1,5 +1,5 @@
 export const visible = ({
-  screenClass, orientation, xs, sm, md, lg, xl, portrait, landscape 
+  screenClass, xs, sm, md, lg, xl,
 }) => {
   if (screenClass === 'xl') return xl;
   if (screenClass === 'lg') return lg;

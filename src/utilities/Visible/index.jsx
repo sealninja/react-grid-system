@@ -57,8 +57,6 @@ export default class Visible extends React.Component {
     md: false,
     lg: false,
     xl: false,
-    portrait: false,
-    landscape: false,
   };
 
   componentWillMount = () => {
