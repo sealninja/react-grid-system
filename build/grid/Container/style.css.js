@@ -17,8 +17,8 @@ exports.default = function (_ref) {
       gutterWidth = _ref.gutterWidth,
       moreStyle = _ref.moreStyle;
 
-  var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : _utils.defaultBreakpoints;
-  var theContainerWidths = containerWidths && containerWidths.length >= 3 ? containerWidths : _utils.defaultContainerWidths;
+  var theBreakpoints = breakpoints && breakpoints.length >= 4 ? breakpoints : _utils.defaultBreakpoints;
+  var theContainerWidths = containerWidths && containerWidths.length >= 4 ? containerWidths : _utils.defaultContainerWidths;
   var theGutterWidth = gutterWidth || _utils.defaultGutterWidth;
 
   var styles = _extends({
@@ -48,6 +48,11 @@ exports.default = function (_ref) {
   if (viewport >= theBreakpoints[2]) {
     // lg domain, bigger than or equal to 1200px by default
     styles.maxWidth = theContainerWidths[2] + 'px'; // 1170px by default
+  }
+
+  if (viewport >= theBreakpoints[3]) {
+    // xl domain, bigger than or equal to 1350px by default
+    styles.maxWidth = theContainerWidths[3] + 'px'; // 1320px by default
   }
 
   return styles;

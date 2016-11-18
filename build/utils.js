@@ -18,9 +18,9 @@ var getViewPort = exports.getViewPort = function getViewPort(_ref) {
   return viewport;
 };
 
-var defaultBreakpoints = exports.defaultBreakpoints = [768, 992, 1200];
+var defaultBreakpoints = exports.defaultBreakpoints = [768, 992, 1200, 1350];
 
-var defaultContainerWidths = exports.defaultContainerWidths = [750, 970, 1170];
+var defaultContainerWidths = exports.defaultContainerWidths = [750, 970, 1170, 1320];
 
 var defaultGutterWidth = exports.defaultGutterWidth = 30;
 
@@ -29,10 +29,13 @@ var getScreenClass = exports.getScreenClass = function getScreenClass(_ref2) {
       tablet = _ref2.tablet,
       breakpoints = _ref2.breakpoints;
 
-  var theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+  var theBreakpoints = breakpoints && breakpoints.length >= 4 ? breakpoints : defaultBreakpoints;
 
   var viewport = getViewPort({ phone: phone, tablet: tablet });
 
+  if (viewport >= theBreakpoints[3]) {
+    return 'xl';
+  }
   if (viewport >= theBreakpoints[2]) {
     return 'lg';
   }

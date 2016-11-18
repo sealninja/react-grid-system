@@ -50,6 +50,7 @@ var Col = function (_React$Component) {
         sm: _this.props.sm,
         md: _this.props.md,
         lg: _this.props.lg,
+        xl: _this.props.xl,
         viewport: _this.state.viewport,
         breakpoints: _this.context.breakpoints,
         gutterWidth: _this.context.gutterWidth,
@@ -75,6 +76,7 @@ Col.propTypes = {
   sm: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   md: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   lg: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  xl: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   /**
    * Optional styling
    */

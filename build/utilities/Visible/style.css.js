@@ -10,9 +10,11 @@ var visible = exports.visible = function visible(_ref) {
       sm = _ref.sm,
       md = _ref.md,
       lg = _ref.lg,
+      xl = _ref.xl,
       portrait = _ref.portrait,
       landscape = _ref.landscape;
 
+  if (screenClass === 'xl') return xl;
   if (screenClass === 'lg') return lg;
   if (screenClass === 'md') return md;
   if (screenClass === 'sm') return sm;

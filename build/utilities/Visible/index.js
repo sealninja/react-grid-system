@@ -50,7 +50,7 @@ var Visible = function (_React$Component) {
       window.removeEventListener('resize', _this.setScreenClass);
     }, _this.getOrientation = function () {
       return window.outerWidth < window.outerHeight ? 'portrait' : 'landscape';
-    }, _this.setScreenClass = function (e) {
+    }, _this.setScreenClass = function () {
       _this.setState({
         screenClass: (0, _utils.getScreenClass)(_this.context),
         orientation: _this.getOrientation()
@@ -63,6 +63,7 @@ var Visible = function (_React$Component) {
         sm: _this.props.sm,
         md: _this.props.md,
         lg: _this.props.lg,
+        xl: _this.props.xl,
         portrait: _this.props.portrait,
         landscape: _this.props.landscape
       })) return false;
@@ -99,6 +100,10 @@ Visible.propTypes = {
    */
   lg: _react2.default.PropTypes.bool,
   /**
+   * Show on xl devices
+   */
+  xl: _react2.default.PropTypes.bool,
+  /**
    * Show on portrait mode
    */
   portrait: _react2.default.PropTypes.bool,
@@ -117,6 +122,7 @@ Visible.defaultProps = {
   sm: false,
   md: false,
   lg: false,
+  xl: false,
   portrait: false,
   landscape: false
 };
