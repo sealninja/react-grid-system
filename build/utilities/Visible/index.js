@@ -53,14 +53,11 @@ var Visible = function (_React$Component) {
     }, _this.render = function () {
       if (!style.visible({
         screenClass: _this.state.screenClass,
-        orientation: _this.state.orientation,
         xs: _this.props.xs,
         sm: _this.props.sm,
         md: _this.props.md,
         lg: _this.props.lg,
-        xl: _this.props.xl,
-        portrait: _this.props.portrait,
-        landscape: _this.props.landscape
+        xl: _this.props.xl
       })) return false;
       return _react2.default.createElement(
         _RenderAny2.default,
@@ -97,15 +94,7 @@ Visible.propTypes = {
   /**
    * Show on xl devices
    */
-  xl: _react2.default.PropTypes.bool,
-  /**
-   * Show on portrait mode
-   */
-  portrait: _react2.default.PropTypes.bool,
-  /**
-   * Show on landscape mode
-   */
-  landscape: _react2.default.PropTypes.bool
+  xl: _react2.default.PropTypes.bool
 };
 Visible.contextTypes = {
   phone: _react2.default.PropTypes.bool,

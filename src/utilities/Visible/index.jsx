@@ -35,14 +35,6 @@ export default class Visible extends React.Component {
      * Show on xl devices
      */
     xl: React.PropTypes.bool,
-    /**
-     * Show on portrait mode
-     */
-    portrait: React.PropTypes.bool,
-    /**
-     * Show on landscape mode
-     */
-    landscape: React.PropTypes.bool,
   };
 
   static contextTypes = {
@@ -78,14 +70,11 @@ export default class Visible extends React.Component {
   render = () => {
     if (!style.visible({
       screenClass: this.state.screenClass,
-      orientation: this.state.orientation,
       xs: this.props.xs,
       sm: this.props.sm,
       md: this.props.md,
       lg: this.props.lg,
       xl: this.props.xl,
-      portrait: this.props.portrait,
-      landscape: this.props.landscape,
     })) return false;
     return <RenderAny>{this.props.children}</RenderAny>;
   }
