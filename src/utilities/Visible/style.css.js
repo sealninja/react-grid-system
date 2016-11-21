@@ -2,6 +2,7 @@ export const visible = ({
   screenClass, xs, sm, md, lg, xl,
 }) => {
   if (screenClass === 'xl') return xl;
+  if (screenClass === 'xl' && !xl) return lg;
   if (screenClass === 'lg') return lg;
   if (screenClass === 'md') return md;
   if (screenClass === 'sm') return sm;
