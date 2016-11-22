@@ -3,6 +3,9 @@ Example usage, rendering a different font size for each screen class:
 ```
 
 const styleFunction = (screenClass) => {
+  if (screenClass == 'xl') {
+    return { fontSize: '60px' };
+  }
   if (screenClass == 'lg') {
     return { fontSize: '40px' };
   }

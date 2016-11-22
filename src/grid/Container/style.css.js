@@ -2,9 +2,9 @@ import { defaultBreakpoints, defaultContainerWidths, defaultGutterWidth } from '
 
 export default ({ fluid, viewport, breakpoints, containerWidths, gutterWidth, moreStyle }) => {
   const theBreakpoints =
-    breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+    breakpoints && breakpoints.length >= 4 ? breakpoints : defaultBreakpoints;
   const theContainerWidths =
-    containerWidths && containerWidths.length >= 3 ? containerWidths : defaultContainerWidths;
+    containerWidths && containerWidths.length >= 4 ? containerWidths : defaultContainerWidths;
   const theGutterWidth = gutterWidth || defaultGutterWidth;
 
   const styles = {
@@ -32,6 +32,10 @@ export default ({ fluid, viewport, breakpoints, containerWidths, gutterWidth, mo
 
   if (viewport >= theBreakpoints[2]) { // lg domain, bigger than or equal to 1200px by default
     styles.maxWidth = `${theContainerWidths[2]}px`; // 1170px by default
+  }
+
+  if (viewport >= theBreakpoints[3]) { // xl domain, bigger than or equal to 1350px by default
+    styles.maxWidth = `${theContainerWidths[3]}px`; // 1320px by default
   }
 
   return styles;

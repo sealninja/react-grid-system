@@ -1,7 +1,7 @@
 import { defaultBreakpoints, defaultGutterWidth } from '../../utils';
 
-export default ({ xs, sm, md, lg, viewport, breakpoints, gutterWidth, moreStyle }) => {
-  const theBreakpoints = breakpoints && breakpoints.length >= 3 ? breakpoints : defaultBreakpoints;
+export default ({ xs, sm, md, lg, xl, viewport, breakpoints, gutterWidth, moreStyle }) => {
+  const theBreakpoints = breakpoints && breakpoints.length >= 4 ? breakpoints : defaultBreakpoints;
   const theGutterWidth = gutterWidth || defaultGutterWidth;
 
   const styles = {
@@ -30,6 +30,10 @@ export default ({ xs, sm, md, lg, viewport, breakpoints, gutterWidth, moreStyle 
 
   if (viewport >= theBreakpoints[2] && lg) {
     styles.width = `${(100 / 12) * lg}%`;
+  }
+
+  if (viewport >= theBreakpoints[3] && xl) {
+    styles.width = `${(100 / 12) * xl}%`;
   }
 
   return styles;

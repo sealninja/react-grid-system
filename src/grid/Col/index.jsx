@@ -14,6 +14,7 @@ export default class Col extends React.Component {
     sm: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
     md: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
     lg: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    xl: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
     /**
      * Optional styling
      */
@@ -54,6 +55,7 @@ export default class Col extends React.Component {
       sm: this.props.sm,
       md: this.props.md,
       lg: this.props.lg,
+      xl: this.props.xl,
       viewport: this.state.viewport,
       breakpoints: this.context.breakpoints,
       gutterWidth: this.context.gutterWidth,

@@ -8,8 +8,10 @@ var visible = exports.visible = function visible(_ref) {
       xs = _ref.xs,
       sm = _ref.sm,
       md = _ref.md,
-      lg = _ref.lg;
+      lg = _ref.lg,
+      xl = _ref.xl;
 
+  if (screenClass === 'xl') return xl;
   if (screenClass === 'lg') return lg;
   if (screenClass === 'md') return md;
   if (screenClass === 'sm') return sm;

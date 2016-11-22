@@ -56,7 +56,8 @@ var Visible = function (_React$Component) {
         xs: _this.props.xs,
         sm: _this.props.sm,
         md: _this.props.md,
-        lg: _this.props.lg
+        lg: _this.props.lg,
+        xl: _this.props.xl
       })) return false;
       return _react2.default.createElement(
         _RenderAny2.default,
@@ -89,7 +90,11 @@ Visible.propTypes = {
   /**
    * Show on large devices
    */
-  lg: _react2.default.PropTypes.bool
+  lg: _react2.default.PropTypes.bool,
+  /**
+   * Show on xl devices
+   */
+  xl: _react2.default.PropTypes.bool
 };
 Visible.contextTypes = {
   phone: _react2.default.PropTypes.bool,
@@ -100,6 +105,7 @@ Visible.defaultProps = {
   xs: false,
   sm: false,
   md: false,
-  lg: false
+  lg: false,
+  xl: false
 };
 exports.default = Visible;
