@@ -49,6 +49,7 @@ Some examples on how to use these components:
   <Visible sm><strong>sm</strong></Visible>
   <Visible md><strong>md</strong></Visible>
   <Visible lg><strong>lg</strong></Visible>
+  <Visible xl><strong>xl</strong></Visible>
   <span>.</span>
 </p>
 ```
@@ -76,9 +77,9 @@ The following child context types can be provided to the grid components, to alt
 | ----------------- | ------------------ | ------------------------------ |
 | `phone`           | `false`            | When set to `true`, a default viewport width of 375 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
 | `tablet`          | `false`            | When set to `true`, a default viewport width of 768 pixels will be used, in case the viewport width cannot be determined by using the `window` object. This is useful for server-side rendering. |
-| `breakpoints`     | `[768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 breakpoints. |
-| `containerWidths` | `[750, 970, 1170]` | The container widths in pixels of devices in screen class `sm`, `md`, and `lg`. The default values are based on the Bootstrap 3 container widths. |
-| `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 3 gutter width. |
+| `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
+| `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
+| `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
 
 ## Example Application and Documentation
 

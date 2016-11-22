@@ -10,9 +10,9 @@ export const getViewPort = ({ phone, tablet }) => {
   return viewport;
 };
 
-export const defaultBreakpoints = [768, 992, 1200, 1350];
+export const defaultBreakpoints = [576, 768, 992, 1200];
 
-export const defaultContainerWidths = [750, 970, 1170, 1320];
+export const defaultContainerWidths = [540, 750, 960, 1140];
 
 export const defaultGutterWidth = 30;
 
