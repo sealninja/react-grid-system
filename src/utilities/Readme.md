@@ -6,9 +6,7 @@ Green indicates the element is visible in your current viewport.
 <Row>
   <Col xs={6} sm={3}>
     <Hidden xs><div style={{ color: 'gray' }}>Extra small</div></Hidden>
-    <Visible xs portrait><div style={{ color: 'green' }}>Visible on extra small portrait</div></Visible>
-    <Visible xs landscape><div style={{ color: 'green' }}>Visible on extra small landscape</div></Visible>
-    <Visible xs portrait landscape><div style={{ color: 'green' }}>Visible on extra small both</div></Visible>
+    <Visible xs><div style={{ color: 'green' }}>Visible on extra small</div></Visible>
   </Col>
   <Col xs={6} sm={3}>
     <Hidden sm><div style={{ color: 'gray' }}>Small</div></Hidden>
@@ -21,6 +19,10 @@ Green indicates the element is visible in your current viewport.
   <Col xs={6} sm={3}>
     <Hidden lg><div style={{ color: 'gray' }}>Large</div></Hidden>
     <Visible lg><div style={{ color: 'green' }}>Visible on large</div></Visible>
+  </Col>
+  <Col xs={6} sm={3}>
+    <Hidden xl><div style={{ color: 'gray' }}>Extra large</div></Hidden>
+    <Visible xl><div style={{ color: 'green' }}>Visible on extra large</div></Visible>
   </Col>
 </Row>
 ```
