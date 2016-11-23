@@ -1,7 +1,7 @@
 # react-grid-system
 A no CSS Bootstrap-like responsive grid system for React.
 
-[![npm version](https://badge.fury.io/js/react-grid-system.svg)](https://badge.fury.io/js/react-grid-system)
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 ## Installation
 
@@ -101,3 +101,8 @@ The following child context types can be provided to the grid components, to alt
 An simple example application using all the features of `react-grid-system` can be found at https://github.com/zoover/react-grid-system/tree/master/example.
 
 More examples and documentation of all components can be found at the GitHub pages: https://zoover.github.io/react-grid-system/
+
+[downloads-image]: http://img.shields.io/npm/dm/react-grid-system.svg
+
+[npm-url]: https://npmjs.org/package/react-grid-system
+[npm-image]: http://img.shields.io/npm/v/react-grid-system.svg
