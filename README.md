@@ -72,7 +72,7 @@ Some examples on how to use these components:
 Next to that, the `ScreenClassRender` utility is provided, for rendering a component differently based on the screen class.
 An example on how to use this:
 
-```
+```html
 const styleFunction = (screenClass) => {
   if (screenClass === 'xl') return { fontSize: '60px' };
   if (screenClass === 'lg') return { fontSize: '40px' };
