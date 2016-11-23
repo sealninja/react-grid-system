@@ -69,6 +69,21 @@ Some examples on how to use these components:
 </Hidden>
 ```
 
+Next to that, the `ScreenClassRender` utility is provided, for rendering a component differently based on the screen class.
+An example on how to use this:
+
+```
+const styleFunction = (screenClass) => {
+  if (screenClass === 'xl') return { fontSize: '60px' };
+  if (screenClass === 'lg') return { fontSize: '40px' };
+  if (screenClass === 'md') return { fontSize: '30px' };
+  if (screenClass === 'sm') return { fontSize: '20px' };
+  return { fontSize: '10px' };
+};
+
+<ScreenClassRender style={styleFunction}><p>Some text</p></ScreenClassRender>
+```
+
 ## Context types
 
 The following child context types can be provided to the grid components, to alter their responsive behavior:
