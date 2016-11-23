@@ -37,13 +37,13 @@ var Col = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Col.__proto__ || Object.getPrototypeOf(Col)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
-      _this.setViewport();
+      _this.setScreenClass();
     }, _this.componentDidMount = function () {
-      window.addEventListener('resize', _this.setViewport);
+      window.addEventListener('resize', _this.setScreenClass);
     }, _this.componentWillUnmount = function () {
-      window.removeEventListener('resize', _this.setViewport);
-    }, _this.setViewport = function () {
-      _this.setState({ viewport: (0, _utils.getViewPort)(_this.context) });
+      window.removeEventListener('resize', _this.setScreenClass);
+    }, _this.setScreenClass = function () {
+      _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
       var style = (0, _style2.default)({
         xs: _this.props.xs,
@@ -51,8 +51,7 @@ var Col = function (_React$Component) {
         md: _this.props.md,
         lg: _this.props.lg,
         xl: _this.props.xl,
-        viewport: _this.state.viewport,
-        breakpoints: _this.context.breakpoints,
+        screenClass: _this.state.screenClass,
         gutterWidth: _this.context.gutterWidth,
         moreStyle: _this.props.style
       });

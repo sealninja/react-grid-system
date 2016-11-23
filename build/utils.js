@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 /* global window */
 
-var getViewPort = exports.getViewPort = function getViewPort(_ref) {
+var getViewPort = function getViewPort(_ref) {
   var phone = _ref.phone,
       tablet = _ref.tablet;
 
@@ -29,21 +29,15 @@ var getScreenClass = exports.getScreenClass = function getScreenClass(_ref2) {
       tablet = _ref2.tablet,
       breakpoints = _ref2.breakpoints;
 
-  var theBreakpoints = breakpoints && breakpoints.length >= 4 ? breakpoints : defaultBreakpoints;
-
+  var theBreakpoints = breakpoints && breakpoints.length ? breakpoints : defaultBreakpoints;
   var viewport = getViewPort({ phone: phone, tablet: tablet });
 
-  if (viewport >= theBreakpoints[3]) {
-    return 'xl';
-  }
-  if (viewport >= theBreakpoints[2]) {
-    return 'lg';
-  }
-  if (viewport >= theBreakpoints[1]) {
-    return 'md';
-  }
-  if (viewport >= theBreakpoints[0]) {
-    return 'sm';
-  }
-  return 'xs';
+  var screenClass = 'xs';
+
+  if (theBreakpoints[0] && viewport >= theBreakpoints[0]) screenClass = 'sm';
+  if (theBreakpoints[1] && viewport >= theBreakpoints[1]) screenClass = 'md';
+  if (theBreakpoints[2] && viewport >= theBreakpoints[2]) screenClass = 'lg';
+  if (theBreakpoints[3] && viewport >= theBreakpoints[3]) screenClass = 'xl';
+
+  return screenClass;
 };

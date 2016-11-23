@@ -1,10 +1,9 @@
-import { defaultBreakpoints, defaultContainerWidths, defaultGutterWidth } from '../../utils';
+import { defaultContainerWidths, defaultGutterWidth } from '../../utils';
 
-export default ({ fluid, viewport, breakpoints, containerWidths, gutterWidth, moreStyle }) => {
-  const theBreakpoints =
-    breakpoints && breakpoints.length >= 4 ? breakpoints : defaultBreakpoints;
-  const theContainerWidths =
-    containerWidths && containerWidths.length >= 4 ? containerWidths : defaultContainerWidths;
+export default ({ fluid, screenClass, containerWidths, gutterWidth, moreStyle }) => {
+  const theContainerWidths = containerWidths && containerWidths.length
+    ? containerWidths
+    : defaultContainerWidths;
   const theGutterWidth = gutterWidth || defaultGutterWidth;
 
   const styles = {
@@ -22,20 +21,20 @@ export default ({ fluid, viewport, breakpoints, containerWidths, gutterWidth, mo
     return styles;
   }
 
-  if (viewport >= theBreakpoints[0]) { // sm domain, bigger than or equal to 768px by default
-    styles.maxWidth = `${theContainerWidths[0]}px`; // 750px by default
+  if (screenClass === 'sm' && theContainerWidths[0]) {
+    styles.maxWidth = `${theContainerWidths[0]}px`;
   }
 
-  if (viewport >= theBreakpoints[1]) { // md domain, bigger than or equal to 992px by default
-    styles.maxWidth = `${theContainerWidths[1]}px`; // 970px by default
+  if (screenClass === 'md' && theContainerWidths[1]) {
+    styles.maxWidth = `${theContainerWidths[1]}px`;
   }
 
-  if (viewport >= theBreakpoints[2]) { // lg domain, bigger than or equal to 1200px by default
-    styles.maxWidth = `${theContainerWidths[2]}px`; // 1170px by default
+  if (screenClass === 'lg' && theContainerWidths[2]) {
+    styles.maxWidth = `${theContainerWidths[2]}px`;
   }
 
-  if (viewport >= theBreakpoints[3]) { // xl domain, bigger than or equal to 1350px by default
-    styles.maxWidth = `${theContainerWidths[3]}px`; // 1320px by default
+  if (screenClass === 'xl' && theContainerWidths[3]) {
+    styles.maxWidth = `${theContainerWidths[3]}px`;
   }
 
   return styles;

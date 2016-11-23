@@ -37,18 +37,17 @@ var Container = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Container.__proto__ || Object.getPrototypeOf(Container)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
-      _this.setViewport();
+      _this.setScreenClass();
     }, _this.componentDidMount = function () {
-      window.addEventListener('resize', _this.setViewport);
+      window.addEventListener('resize', _this.setScreenClass);
     }, _this.componentWillUnmount = function () {
-      window.removeEventListener('resize', _this.setViewport);
-    }, _this.setViewport = function () {
-      _this.setState({ viewport: (0, _utils.getViewPort)(_this.context) });
+      window.removeEventListener('resize', _this.setScreenClass);
+    }, _this.setScreenClass = function () {
+      _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
       var style = (0, _style2.default)({
         fluid: _this.props.fluid,
-        viewport: _this.state.viewport,
-        breakpoints: _this.context.breakpoints,
+        screenClass: _this.state.screenClass,
         containerWidths: _this.context.containerWidths,
         gutterWidth: _this.context.gutterWidth,
         moreStyle: _this.props.style

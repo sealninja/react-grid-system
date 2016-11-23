@@ -2,7 +2,7 @@
 
 import React from 'react';
 import getStyle from './style.css';
-import { getViewPort } from '../../utils';
+import { getScreenClass } from '../../utils';
 
 export default class Col extends React.Component {
   static propTypes = {
@@ -34,19 +34,19 @@ export default class Col extends React.Component {
   };
 
   componentWillMount = () => {
-    this.setViewport();
+    this.setScreenClass();
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', this.setViewport);
+    window.addEventListener('resize', this.setScreenClass);
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setViewport);
+    window.removeEventListener('resize', this.setScreenClass);
   }
 
-  setViewport = () => {
-    this.setState({ viewport: getViewPort(this.context) });
+  setScreenClass = () => {
+    this.setState({ screenClass: getScreenClass(this.context) });
   }
 
   render = () => {
@@ -56,8 +56,7 @@ export default class Col extends React.Component {
       md: this.props.md,
       lg: this.props.lg,
       xl: this.props.xl,
-      viewport: this.state.viewport,
-      breakpoints: this.context.breakpoints,
+      screenClass: this.state.screenClass,
       gutterWidth: this.context.gutterWidth,
       moreStyle: this.props.style,
     });

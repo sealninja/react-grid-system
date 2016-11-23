@@ -14,12 +14,10 @@ exports.default = function (_ref) {
       md = _ref.md,
       lg = _ref.lg,
       xl = _ref.xl,
-      viewport = _ref.viewport,
-      breakpoints = _ref.breakpoints,
+      screenClass = _ref.screenClass,
       gutterWidth = _ref.gutterWidth,
       moreStyle = _ref.moreStyle;
 
-  var theBreakpoints = breakpoints && breakpoints.length >= 4 ? breakpoints : _utils.defaultBreakpoints;
   var theGutterWidth = gutterWidth || _utils.defaultGutterWidth;
 
   var styles = _extends({
@@ -37,19 +35,19 @@ exports.default = function (_ref) {
     styles.width = 100 / 12 * xs + '%';
   }
 
-  if (viewport >= theBreakpoints[0] && sm) {
+  if (sm && ['sm', 'md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
     styles.width = 100 / 12 * sm + '%';
   }
 
-  if (viewport >= theBreakpoints[1] && md) {
+  if (md && ['md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
     styles.width = 100 / 12 * md + '%';
   }
 
-  if (viewport >= theBreakpoints[2] && lg) {
+  if (lg && ['lg', 'xl'].indexOf(screenClass) >= 0) {
     styles.width = 100 / 12 * lg + '%';
   }
 
-  if (viewport >= theBreakpoints[3] && xl) {
+  if (xl && ['xl'].indexOf(screenClass) >= 0) {
     styles.width = 100 / 12 * xl + '%';
   }
 

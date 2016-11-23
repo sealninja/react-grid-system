@@ -1,6 +1,6 @@
 /* global window */
 
-export const getViewPort = ({ phone, tablet }) => {
+const getViewPort = ({ phone, tablet }) => {
   let viewport = 1600;
   if (tablet) viewport = 768; // iPad portrait width
   if (phone) viewport = 375; // iPhone 6 width
@@ -17,13 +17,15 @@ export const defaultContainerWidths = [540, 750, 960, 1140];
 export const defaultGutterWidth = 30;
 
 export const getScreenClass = ({ phone, tablet, breakpoints }) => {
-  const theBreakpoints = breakpoints && breakpoints.length >= 4 ? breakpoints : defaultBreakpoints;
-
+  const theBreakpoints = breakpoints && breakpoints.length ? breakpoints : defaultBreakpoints;
   const viewport = getViewPort({ phone, tablet });
 
-  if (viewport >= theBreakpoints[3]) { return 'xl'; }
-  if (viewport >= theBreakpoints[2]) { return 'lg'; }
-  if (viewport >= theBreakpoints[1]) { return 'md'; }
-  if (viewport >= theBreakpoints[0]) { return 'sm'; }
-  return 'xs';
+  let screenClass = 'xs';
+
+  if (theBreakpoints[0] && viewport >= theBreakpoints[0]) screenClass = 'sm';
+  if (theBreakpoints[1] && viewport >= theBreakpoints[1]) screenClass = 'md';
+  if (theBreakpoints[2] && viewport >= theBreakpoints[2]) screenClass = 'lg';
+  if (theBreakpoints[3] && viewport >= theBreakpoints[3]) screenClass = 'xl';
+
+  return screenClass;
 };
