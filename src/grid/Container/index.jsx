@@ -43,7 +43,7 @@ export default class Container extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', throttle(this.setScreenClass, 300));
+    window.addEventListener('resize', throttle(this.setScreenClass, 100));
   }
 
   componentWillUnmount = () => {
