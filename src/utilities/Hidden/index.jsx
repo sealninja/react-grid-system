@@ -1,6 +1,7 @@
 /* global window */
 
 import React from 'react';
+import { throttle } from 'lodash';
 import * as style from './style.css';
 import { getScreenClass } from '../../utils';
 import RenderAny from '../../support/RenderAny';
@@ -56,7 +57,7 @@ export default class Hidden extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', this.setScreenClass);
+    window.addEventListener('resize', throttle(this.setScreenClass, 100));
   }
 
   componentWillUnmount = () => {

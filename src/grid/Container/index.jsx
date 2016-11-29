@@ -1,6 +1,7 @@
 /* global window */
 
 import React from 'react';
+import { throttle } from 'lodash';
 import getStyle, { getAfterStyle } from './style.css';
 import { getScreenClass } from '../../utils';
 
@@ -42,7 +43,7 @@ export default class Container extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', this.setScreenClass);
+    window.addEventListener('resize', throttle(this.setScreenClass, 100));
   }
 
   componentWillUnmount = () => {

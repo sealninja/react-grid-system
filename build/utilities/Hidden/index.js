@@ -8,6 +8,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _lodash = require('lodash');
+
 var _style = require('./style.css');
 
 var style = _interopRequireWildcard(_style);
@@ -45,7 +47,7 @@ var Hidden = function (_React$Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Hidden.__proto__ || Object.getPrototypeOf(Hidden)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
       _this.setScreenClass();
     }, _this.componentDidMount = function () {
-      window.addEventListener('resize', _this.setScreenClass);
+      window.addEventListener('resize', (0, _lodash.throttle)(_this.setScreenClass, 100));
     }, _this.componentWillUnmount = function () {
       window.removeEventListener('resize', _this.setScreenClass);
     }, _this.setScreenClass = function () {
