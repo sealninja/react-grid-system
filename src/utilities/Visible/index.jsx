@@ -57,11 +57,12 @@ export default class Visible extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('resize', throttle(this.setScreenClass, 100));
+    this.eventListener = throttle(this.setScreenClass, 100);
+    window.addEventListener('resize', this.eventListener);
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setScreenClass);
+    window.removeEventListener('resize', this.eventListener);
   }
 
   setScreenClass = () => {
