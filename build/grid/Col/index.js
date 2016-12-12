@@ -49,11 +49,11 @@ var Col = function (_React$Component) {
       _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
       var style = (0, _style2.default)({
-        xs: _this.props.xs,
-        sm: _this.props.sm,
-        md: _this.props.md,
-        lg: _this.props.lg,
-        xl: _this.props.xl,
+        xs: (0, _utils.normalizeColumnWidth)(_this.props.xs),
+        sm: (0, _utils.normalizeColumnWidth)(_this.props.sm),
+        md: (0, _utils.normalizeColumnWidth)(_this.props.md),
+        lg: (0, _utils.normalizeColumnWidth)(_this.props.lg),
+        xl: (0, _utils.normalizeColumnWidth)(_this.props.xl),
         screenClass: _this.state.screenClass,
         gutterWidth: _this.context.gutterWidth,
         moreStyle: _this.props.style
@@ -71,14 +71,29 @@ var Col = function (_React$Component) {
 
 Col.propTypes = {
   /**
-   * Content of the component
+   * Content of the column
    */
   children: _react2.default.PropTypes.node,
-  xs: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-  sm: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-  md: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-  lg: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-  xl: _react2.default.PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  /**
+   * The width of the column for screenclass `xs`, between 0 and 12
+   */
+  xs: _react2.default.PropTypes.number,
+  /**
+   * The width of the column for screenclass `sm`, between 0 and 12
+   */
+  sm: _react2.default.PropTypes.number,
+  /**
+   * The width of the column for screenclass `md`, between 0 and 12
+   */
+  md: _react2.default.PropTypes.number,
+  /**
+   * The width of the column for screenclass `lg`, between 0 and 12
+   */
+  lg: _react2.default.PropTypes.number,
+  /**
+   * The width of the column for screenclass `xl`, between 0 and 12
+   */
+  xl: _react2.default.PropTypes.number,
   /**
    * Optional styling
    */

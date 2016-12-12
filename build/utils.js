@@ -41,3 +41,8 @@ var getScreenClass = exports.getScreenClass = function getScreenClass(_ref2) {
 
   return screenClass;
 };
+
+var normalizeColumnWidth = exports.normalizeColumnWidth = function normalizeColumnWidth(width) {
+  if (typeof width !== 'number') return undefined;
+  return Math.max(0, Math.min(12, width));
+};

@@ -29,3 +29,8 @@ export const getScreenClass = ({ phone, tablet, breakpoints }) => {
 
   return screenClass;
 };
+
+export const normalizeColumnWidth = (width) => {
+  if (typeof width !== 'number') return undefined;
+  return Math.max(0, Math.min(12, width));
+};
