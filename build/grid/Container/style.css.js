@@ -17,7 +17,7 @@ exports.default = function (_ref) {
       moreStyle = _ref.moreStyle;
 
   var theContainerWidths = containerWidths && containerWidths.length ? containerWidths : _utils.defaultContainerWidths;
-  var theGutterWidth = gutterWidth || _utils.defaultGutterWidth;
+  var theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : _utils.defaultGutterWidth;
 
   var styles = _extends({
     boxSizing: 'border-box',

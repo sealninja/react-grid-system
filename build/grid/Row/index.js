@@ -43,7 +43,15 @@ var Row = function (_React$Component) {
         'div',
         { style: style },
         _this.props.children,
-        _react2.default.createElement('span', { style: (0, _style.getAfterStyle)() })
+        _react2.default.createElement(
+          'div',
+          { style: (0, _style.getAfterStyle)() },
+          _react2.default.createElement(
+            'span',
+            { style: (0, _style.getAfterContentStyle)() },
+            '\xA0'
+          )
+        )
       );
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }

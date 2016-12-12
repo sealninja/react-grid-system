@@ -4,7 +4,7 @@ export default ({ fluid, screenClass, containerWidths, gutterWidth, moreStyle })
   const theContainerWidths = containerWidths && containerWidths.length
     ? containerWidths
     : defaultContainerWidths;
-  const theGutterWidth = gutterWidth || defaultGutterWidth;
+  const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {
     boxSizing: 'border-box',

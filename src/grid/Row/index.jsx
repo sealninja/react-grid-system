@@ -1,7 +1,7 @@
 /* eslint react/prefer-stateless-function: "off" */
 
 import React from 'react';
-import getStyle, { getAfterStyle } from './style.css';
+import getStyle, { getAfterStyle, getAfterContentStyle } from './style.css';
 
 export default class Row extends React.Component {
   static propTypes = {
@@ -32,7 +32,7 @@ export default class Row extends React.Component {
     return (
       <div style={style}>
         {this.props.children}
-        <span style={getAfterStyle()} />
+        <div style={getAfterStyle()}><span style={getAfterContentStyle()}>&nbsp;</span></div>
       </div>
     );
   }

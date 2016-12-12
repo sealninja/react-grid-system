@@ -1,7 +1,7 @@
 import { defaultGutterWidth } from '../../utils';
 
 export default ({ xs, sm, md, lg, xl, screenClass, gutterWidth, moreStyle }) => {
-  const theGutterWidth = gutterWidth || defaultGutterWidth;
+  const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {
     boxSizing: 'border-box',
