@@ -94,6 +94,28 @@ For more information on these components, view this project on GitHub: [https://
 </Row>
 ```
 
+### Example: Offsetting columns
+
+```
+<Row>
+  <Col md={4} style={{ border: '1px solid silver' }}>md=4</Col>
+  <Col md={4} offset={{ md: 4 }} style={{ border: '1px solid silver' }}>md=4 offset-md=4</Col>
+</Row>
+```
+
+```
+<Row>
+  <Col md={3} offset={{ md: 3 }} style={{ border: '1px solid silver' }}>md=3 offset-md=3</Col>
+  <Col md={3} offset={{ md: 3 }} style={{ border: '1px solid silver' }}>md=3 offset-md=3</Col>
+</Row>
+```
+
+```
+<Row>
+  <Col md={6} offset={{ md: 3 }} style={{ border: '1px solid silver' }}>md=6 offset-md=3</Col>
+</Row>
+```
+
 ### Example: Nesting columns
 
 ```
