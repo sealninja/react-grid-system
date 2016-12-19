@@ -3,7 +3,7 @@
 import React from 'react';
 import { throttle } from 'lodash';
 import getStyle from './style.css';
-import { getScreenClass, normalizeColumnWidth } from '../../utils';
+import { getScreenClass } from '../../utils';
 
 export default class Col extends React.Component {
   static propTypes = {
@@ -31,6 +31,16 @@ export default class Col extends React.Component {
      * The width of the column for screenclass `xl`, between 0 and 12
      */
     xl: React.PropTypes.number,
+    /**
+     * The offset of this column for all screenclasses
+     */
+    offset: React.PropTypes.shape({
+      xs: React.PropTypes.number,
+      sm: React.PropTypes.number,
+      md: React.PropTypes.number,
+      lg: React.PropTypes.number,
+      xl: React.PropTypes.number,
+    }),
     /**
      * Optional styling
      */
@@ -68,11 +78,12 @@ export default class Col extends React.Component {
 
   render = () => {
     const style = getStyle({
-      xs: normalizeColumnWidth(this.props.xs),
-      sm: normalizeColumnWidth(this.props.sm),
-      md: normalizeColumnWidth(this.props.md),
-      lg: normalizeColumnWidth(this.props.lg),
-      xl: normalizeColumnWidth(this.props.xl),
+      xs: this.props.xs,
+      sm: this.props.sm,
+      md: this.props.md,
+      lg: this.props.lg,
+      xl: this.props.xl,
+      offset: this.props.offset,
       screenClass: this.state.screenClass,
       gutterWidth: this.context.gutterWidth,
       moreStyle: this.props.style,

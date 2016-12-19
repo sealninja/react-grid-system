@@ -8,12 +8,20 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _utils = require('../../utils');
 
+var getWidth = function getWidth(width) {
+  var colWidth = (0, _utils.normalizeColumnWidth)(width);
+  if (colWidth) return 100 / 12 * colWidth + '%';
+  return undefined;
+};
+
 exports.default = function (_ref) {
   var xs = _ref.xs,
       sm = _ref.sm,
       md = _ref.md,
       lg = _ref.lg,
       xl = _ref.xl,
+      _ref$offset = _ref.offset,
+      offset = _ref$offset === undefined ? {} : _ref$offset,
       screenClass = _ref.screenClass,
       gutterWidth = _ref.gutterWidth,
       moreStyle = _ref.moreStyle;
@@ -29,27 +37,34 @@ exports.default = function (_ref) {
     float: 'left'
   }, moreStyle);
 
-  styles.width = '100%';
+  var width = null;
+  var marginLeft = null;
 
-  if (xs) {
-    styles.width = 100 / 12 * xs + '%';
+  if (['xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(xl);
+    marginLeft = marginLeft || getWidth(offset.xl);
   }
 
-  if (sm && ['sm', 'md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
-    styles.width = 100 / 12 * sm + '%';
+  if (['lg', 'xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(lg);
+    marginLeft = marginLeft || getWidth(offset.lg);
   }
 
-  if (md && ['md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
-    styles.width = 100 / 12 * md + '%';
+  if (['md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(md);
+    marginLeft = marginLeft || getWidth(offset.md);
   }
 
-  if (lg && ['lg', 'xl'].indexOf(screenClass) >= 0) {
-    styles.width = 100 / 12 * lg + '%';
+  if (['sm', 'md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(sm);
+    marginLeft = marginLeft || getWidth(offset.sm);
   }
 
-  if (xl && ['xl'].indexOf(screenClass) >= 0) {
-    styles.width = 100 / 12 * xl + '%';
-  }
+  width = width || getWidth(xs) || '100%';
+  marginLeft = marginLeft || getWidth(offset.xs) || '0%';
+
+  styles.width = width;
+  styles.marginLeft = marginLeft;
 
   return styles;
 };
