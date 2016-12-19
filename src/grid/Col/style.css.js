@@ -1,6 +1,12 @@
-import { defaultGutterWidth } from '../../utils';
+import { defaultGutterWidth, normalizeColumnWidth } from '../../utils';
 
-export default ({ xs, sm, md, lg, xl, screenClass, gutterWidth, moreStyle }) => {
+const getWidth = (width) => {
+  const colWidth = normalizeColumnWidth(width);
+  if (colWidth) return `${(100 / 12) * colWidth}%`;
+  return undefined;
+};
+
+export default ({ xs, sm, md, lg, xl, offset = {}, screenClass, gutterWidth, moreStyle }) => {
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {
@@ -13,27 +19,34 @@ export default ({ xs, sm, md, lg, xl, screenClass, gutterWidth, moreStyle }) => 
     ...moreStyle,
   };
 
-  styles.width = '100%';
+  let width = null;
+  let marginLeft = null;
 
-  if (xs) {
-    styles.width = `${(100 / 12) * xs}%`;
+  if (['xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(xl);
+    marginLeft = marginLeft || getWidth(offset.xl);
   }
 
-  if (sm && ['sm', 'md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
-    styles.width = `${(100 / 12) * sm}%`;
+  if (['lg', 'xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(lg);
+    marginLeft = marginLeft || getWidth(offset.lg);
   }
 
-  if (md && ['md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
-    styles.width = `${(100 / 12) * md}%`;
+  if (['md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(md);
+    marginLeft = marginLeft || getWidth(offset.md);
   }
 
-  if (lg && ['lg', 'xl'].indexOf(screenClass) >= 0) {
-    styles.width = `${(100 / 12) * lg}%`;
+  if (['sm', 'md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
+    width = width || getWidth(sm);
+    marginLeft = marginLeft || getWidth(offset.sm);
   }
 
-  if (xl && ['xl'].indexOf(screenClass) >= 0) {
-    styles.width = `${(100 / 12) * xl}%`;
-  }
+  width = width || getWidth(xs) || '100%';
+  marginLeft = marginLeft || getWidth(offset.xs) || '0%';
+
+  styles.width = width;
+  styles.marginLeft = marginLeft;
 
   return styles;
 };

@@ -49,11 +49,12 @@ var Col = function (_React$Component) {
       _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
       var style = (0, _style2.default)({
-        xs: (0, _utils.normalizeColumnWidth)(_this.props.xs),
-        sm: (0, _utils.normalizeColumnWidth)(_this.props.sm),
-        md: (0, _utils.normalizeColumnWidth)(_this.props.md),
-        lg: (0, _utils.normalizeColumnWidth)(_this.props.lg),
-        xl: (0, _utils.normalizeColumnWidth)(_this.props.xl),
+        xs: _this.props.xs,
+        sm: _this.props.sm,
+        md: _this.props.md,
+        lg: _this.props.lg,
+        xl: _this.props.xl,
+        offset: _this.props.offset,
         screenClass: _this.state.screenClass,
         gutterWidth: _this.context.gutterWidth,
         moreStyle: _this.props.style
@@ -94,6 +95,16 @@ Col.propTypes = {
    * The width of the column for screenclass `xl`, between 0 and 12
    */
   xl: _react2.default.PropTypes.number,
+  /**
+   * The offset of this column for all screenclasses
+   */
+  offset: _react2.default.PropTypes.shape({
+    xs: _react2.default.PropTypes.number,
+    sm: _react2.default.PropTypes.number,
+    md: _react2.default.PropTypes.number,
+    lg: _react2.default.PropTypes.number,
+    xl: _react2.default.PropTypes.number
+  }),
   /**
    * Optional styling
    */
