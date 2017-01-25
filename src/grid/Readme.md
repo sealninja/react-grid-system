@@ -1,6 +1,6 @@
 A no CSS Bootstrap-like responsive grid system for React.
 
-For more information on these components, view this project on GitHub: [https://github.com/zoover/react-grid-system](https://github.com/zoover/react-grid-system)
+For more information on these components, view this project on GitHub: [https://github.com/JSxMachina/react-grid-system](https://github.com/JSxMachina/react-grid-system)
 
 ### Example: Stacked-to-horizontal
 

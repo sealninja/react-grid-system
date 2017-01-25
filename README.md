@@ -98,9 +98,9 @@ The following child context types can be provided to the grid components, to alt
 
 ## Example Application and Documentation
 
-An simple example application using all the features of `react-grid-system` can be found at https://github.com/zoover/react-grid-system/tree/master/example.
+An simple example application using all the features of `react-grid-system` can be found at https://github.com/JSxMachina/react-grid-system/tree/master/example.
 
-More examples and documentation of all components can be found at the GitHub pages: https://zoover.github.io/react-grid-system/
+More examples and documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
 
 [downloads-image]: http://img.shields.io/npm/dm/react-grid-system.svg
 
