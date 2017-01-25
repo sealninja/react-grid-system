@@ -77,7 +77,7 @@ Hidden.propTypes = {
   /**
    * Content of the component
    */
-  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.element, _react2.default.PropTypes.node, _react2.default.PropTypes.func]),
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.element, _react2.default.PropTypes.node, _react2.default.PropTypes.func]).isRequired,
   /**
    * Hide on extra small devices
    */

@@ -15,7 +15,7 @@ export default class Hidden extends React.Component {
       React.PropTypes.element,
       React.PropTypes.node,
       React.PropTypes.func,
-    ]),
+    ]).isRequired,
     /**
      * Hide on extra small devices
      */

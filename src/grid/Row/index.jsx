@@ -8,7 +8,7 @@ export default class Row extends React.Component {
     /**
      * Content of the element
      */
-    children: React.PropTypes.node,
+    children: React.PropTypes.node.isRequired,
     /**
      * Optional styling
      */
@@ -16,22 +16,27 @@ export default class Row extends React.Component {
        React.PropTypes.oneOfType([
          React.PropTypes.number,
          React.PropTypes.string,
-       ])
+       ]),
      ),
   };
+
+  static defaultProps = {
+    style: {},
+  }
 
   static contextTypes = {
     gutterWidth: React.PropTypes.number,
   };
 
   render = () => {
-    const style = getStyle({
+    const { children, style, ...otherProps } = this.props;
+    const theStyle = getStyle({
       gutterWidth: this.context.gutterWidth,
-      moreStyle: this.props.style,
+      moreStyle: style,
     });
     return (
-      <div style={style}>
-        {this.props.children}
+      <div style={theStyle} {...otherProps}>
+        {children}
         <div style={getAfterStyle()}><span style={getAfterContentStyle()}>&nbsp;</span></div>
       </div>
     );

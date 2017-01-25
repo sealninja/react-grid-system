@@ -15,10 +15,10 @@ exports.default = function (_ref) {
 
   var theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : _utils.defaultGutterWidth;
 
-  return _extends({
+  return _extends({}, moreStyle, {
     marginLeft: '-' + theGutterWidth / 2 + 'px',
     marginRight: '-' + theGutterWidth / 2 + 'px'
-  }, moreStyle);
+  });
 };
 
 var getAfterStyle = exports.getAfterStyle = function getAfterStyle() {

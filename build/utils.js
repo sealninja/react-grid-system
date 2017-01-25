@@ -18,6 +18,8 @@ var getViewPort = function getViewPort(_ref) {
   return viewport;
 };
 
+var screenClasses = exports.screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
+
 var defaultBreakpoints = exports.defaultBreakpoints = [576, 768, 992, 1200];
 
 var defaultContainerWidths = exports.defaultContainerWidths = [540, 750, 960, 1140];
@@ -43,6 +45,5 @@ var getScreenClass = exports.getScreenClass = function getScreenClass(_ref2) {
 };
 
 var normalizeColumnWidth = exports.normalizeColumnWidth = function normalizeColumnWidth(width) {
-  if (typeof width !== 'number') return undefined;
   return Math.max(0, Math.min(12, width));
 };

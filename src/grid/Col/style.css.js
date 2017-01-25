@@ -1,51 +1,33 @@
-import { defaultGutterWidth, normalizeColumnWidth } from '../../utils';
+import { defaultGutterWidth, normalizeColumnWidth, screenClasses } from '../../utils';
 
-const getWidth = (width) => {
+const getWidth = (width, defaultWidth = 12) => {
+  if (typeof width !== 'number') return undefined;
   const colWidth = normalizeColumnWidth(width);
-  if (colWidth) return `${(100 / 12) * colWidth}%`;
-  return undefined;
+  if (colWidth === defaultWidth) return undefined;
+  return `${(100 / 12) * colWidth}%`;
 };
 
-export default ({ xs, sm, md, lg, xl, offset = {}, screenClass, gutterWidth, moreStyle }) => {
+export default ({ width = {}, offset = {}, screenClass, gutterWidth, moreStyle }) => {
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {
+    ...moreStyle,
     boxSizing: 'border-box',
     minHeight: '1px',
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     float: 'left',
-    ...moreStyle,
   };
 
-  let width = null;
-  let marginLeft = null;
+  styles.width = '100%';
+  styles.marginLeft = '0%';
 
-  if (['xl'].indexOf(screenClass) >= 0) {
-    width = width || getWidth(xl);
-    marginLeft = marginLeft || getWidth(offset.xl);
-  }
-
-  if (['lg', 'xl'].indexOf(screenClass) >= 0) {
-    width = width || getWidth(lg);
-    marginLeft = marginLeft || getWidth(offset.lg);
-  }
-
-  if (['md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
-    width = width || getWidth(md);
-    marginLeft = marginLeft || getWidth(offset.md);
-  }
-
-  if (['sm', 'md', 'lg', 'xl'].indexOf(screenClass) >= 0) {
-    width = width || getWidth(sm);
-    marginLeft = marginLeft || getWidth(offset.sm);
-  }
-
-  width = width || getWidth(xs) || '100%';
-  marginLeft = marginLeft || getWidth(offset.xs) || '0%';
-
-  styles.width = width;
-  styles.marginLeft = marginLeft;
+  screenClasses.forEach((size, index) => {
+    if (screenClasses.indexOf(screenClass) >= index) {
+      styles.width = getWidth(width[size]) || styles.width;
+      styles.marginLeft = getWidth(offset[size]) || styles.marginLeft;
+    }
+  });
 
   return styles;
 };

@@ -10,7 +10,7 @@ export default class Col extends React.Component {
     /**
      * Content of the column
      */
-    children: React.PropTypes.node,
+    children: React.PropTypes.node.isRequired,
     /**
      * The width of the column for screenclass `xs`, between 0 and 12
      */
@@ -48,9 +48,19 @@ export default class Col extends React.Component {
       React.PropTypes.oneOfType([
         React.PropTypes.number,
         React.PropTypes.string,
-      ])
+      ]),
     ),
   };
+
+  static defaultProps = {
+    xs: 12,
+    sm: 12,
+    md: 12,
+    lg: 12,
+    xl: 12,
+    offset: {},
+    style: {},
+  }
 
   static contextTypes = {
     phone: React.PropTypes.bool,
@@ -77,20 +87,17 @@ export default class Col extends React.Component {
   }
 
   render = () => {
-    const style = getStyle({
-      xs: this.props.xs,
-      sm: this.props.sm,
-      md: this.props.md,
-      lg: this.props.lg,
-      xl: this.props.xl,
-      offset: this.props.offset,
+    const { children, xs, sm, md, lg, xl, offset, style, ...otherProps } = this.props;
+    const theStyle = getStyle({
+      width: { xs, sm, md, lg, xl },
+      offset,
       screenClass: this.state.screenClass,
       gutterWidth: this.context.gutterWidth,
-      moreStyle: this.props.style,
+      moreStyle: style,
     });
     return (
-      <div style={style}>
-        {this.props.children}
+      <div style={theStyle} {...otherProps}>
+        {children}
       </div>
     );
   };

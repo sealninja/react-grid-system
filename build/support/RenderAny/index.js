@@ -29,7 +29,7 @@ var RenderAny = function RenderAny(_ref) {
 };
 
 RenderAny.propTypes = {
-  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.element, _react2.default.PropTypes.node, _react2.default.PropTypes.func])
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.element, _react2.default.PropTypes.node, _react2.default.PropTypes.func]).isRequired
 };
 
 exports.default = RenderAny;

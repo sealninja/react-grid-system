@@ -19,7 +19,7 @@ exports.default = function (_ref) {
   var theContainerWidths = containerWidths && containerWidths.length ? containerWidths : _utils.defaultContainerWidths;
   var theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : _utils.defaultGutterWidth;
 
-  var styles = _extends({
+  var styles = _extends({}, moreStyle, {
     boxSizing: 'border-box',
     position: 'relative',
     marginLeft: 'auto',
@@ -27,7 +27,7 @@ exports.default = function (_ref) {
     paddingLeft: theGutterWidth / 2 + 'px',
     paddingRight: theGutterWidth / 2 + 'px',
     width: 'auto'
-  }, moreStyle);
+  });
 
   if (fluid) {
     return styles;

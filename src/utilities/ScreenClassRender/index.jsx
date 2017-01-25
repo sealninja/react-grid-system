@@ -10,7 +10,7 @@ export default class ScreenClassRender extends React.Component {
     /**
      * Content of the component
      */
-    children: React.PropTypes.element,
+    children: React.PropTypes.element.isRequired,
     /**
      * A function returning the style for the children.
      * This function gets the screen class as a parameter.
@@ -18,6 +18,11 @@ export default class ScreenClassRender extends React.Component {
     style: React.PropTypes.func,
     render: React.PropTypes.func,
   };
+
+  static defaultProps = {
+    style: null,
+    render: null,
+  }
 
   static contextTypes = {
     phone: React.PropTypes.bool,
@@ -48,7 +53,7 @@ export default class ScreenClassRender extends React.Component {
     if (this.props.render) {
       return <RenderAny>{this.props.render(this.state.screenClass)}</RenderAny>;
     }
-    if (this.props.children && this.props.style) {
+    if (this.props.style) {
       const clonedElement = React.cloneElement(this.props.children, { style: this.getStyle() });
       return clonedElement;
     }

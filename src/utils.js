@@ -10,6 +10,8 @@ const getViewPort = ({ phone, tablet }) => {
   return viewport;
 };
 
+export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
+
 export const defaultBreakpoints = [576, 768, 992, 1200];
 
 export const defaultContainerWidths = [540, 750, 960, 1140];
@@ -30,7 +32,4 @@ export const getScreenClass = ({ phone, tablet, breakpoints }) => {
   return screenClass;
 };
 
-export const normalizeColumnWidth = (width) => {
-  if (typeof width !== 'number') return undefined;
-  return Math.max(0, Math.min(12, width));
-};
+export const normalizeColumnWidth = width => Math.max(0, Math.min(12, width));

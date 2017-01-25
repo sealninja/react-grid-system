@@ -15,7 +15,7 @@ export default class Visible extends React.Component {
       React.PropTypes.element,
       React.PropTypes.node,
       React.PropTypes.func,
-    ]),
+    ]).isRequired,
     /**
      * Show on extra small devices
      */

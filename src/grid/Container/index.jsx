@@ -10,7 +10,7 @@ export default class Container extends React.Component {
     /**
      * Content of the component
      */
-    children: React.PropTypes.node,
+    children: React.PropTypes.node.isRequired,
     /**
      * True makes the container full-width, false fixed-width
      */
@@ -22,7 +22,7 @@ export default class Container extends React.Component {
        React.PropTypes.oneOfType([
          React.PropTypes.number,
          React.PropTypes.string,
-       ])
+       ]),
      ),
   };
 
@@ -36,6 +36,7 @@ export default class Container extends React.Component {
 
   static defaultProps = {
     fluid: false,
+    style: {},
   };
 
   componentWillMount = () => {
@@ -56,16 +57,17 @@ export default class Container extends React.Component {
   }
 
   render = () => {
-    const style = getStyle({
-      fluid: this.props.fluid,
+    const { children, fluid, style, ...otherProps } = this.props;
+    const theStyle = getStyle({
+      fluid,
       screenClass: this.state.screenClass,
       containerWidths: this.context.containerWidths,
       gutterWidth: this.context.gutterWidth,
-      moreStyle: this.props.style,
+      moreStyle: style,
     });
     return (
-      <div style={style}>
-        {this.props.children}
+      <div style={theStyle} {...otherProps}>
+        {children}
         <span style={getAfterStyle()} />
       </div>
     );

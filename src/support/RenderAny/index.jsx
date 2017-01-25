@@ -15,7 +15,7 @@ RenderAny.propTypes = {
     React.PropTypes.element,
     React.PropTypes.node,
     React.PropTypes.func,
-  ]),
+  ]).isRequired,
 };
 
 export default RenderAny;

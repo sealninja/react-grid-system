@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -17,6 +19,8 @@ var _style2 = _interopRequireDefault(_style);
 var _utils = require('../../utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -48,17 +52,23 @@ var Container = function (_React$Component) {
     }, _this.setScreenClass = function () {
       _this.setState({ screenClass: (0, _utils.getScreenClass)(_this.context) });
     }, _this.render = function () {
-      var style = (0, _style2.default)({
-        fluid: _this.props.fluid,
+      var _this$props = _this.props,
+          children = _this$props.children,
+          fluid = _this$props.fluid,
+          style = _this$props.style,
+          otherProps = _objectWithoutProperties(_this$props, ['children', 'fluid', 'style']);
+
+      var theStyle = (0, _style2.default)({
+        fluid: fluid,
         screenClass: _this.state.screenClass,
         containerWidths: _this.context.containerWidths,
         gutterWidth: _this.context.gutterWidth,
-        moreStyle: _this.props.style
+        moreStyle: style
       });
       return _react2.default.createElement(
         'div',
-        { style: style },
-        _this.props.children,
+        _extends({ style: theStyle }, otherProps),
+        children,
         _react2.default.createElement('span', { style: (0, _style.getAfterStyle)() })
       );
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -71,7 +81,7 @@ Container.propTypes = {
   /**
    * Content of the component
    */
-  children: _react2.default.PropTypes.node,
+  children: _react2.default.PropTypes.node.isRequired,
   /**
    * True makes the container full-width, false fixed-width
    */
@@ -89,6 +99,7 @@ Container.contextTypes = {
   gutterWidth: _react2.default.PropTypes.number
 };
 Container.defaultProps = {
-  fluid: false
+  fluid: false,
+  style: {}
 };
 exports.default = Container;
