@@ -1,7 +1,7 @@
 # react-grid-system
 A no CSS Bootstrap-like responsive grid system for React.
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+[![NPM version][version-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 ## Installation
 
@@ -102,7 +102,7 @@ An simple example application using all the features of `react-grid-system` can 
 
 More examples and documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
 
-[downloads-image]: http://img.shields.io/npm/dm/react-grid-system.svg
+[version-image]: https://img.shields.io/npm/v/react-grid-system.svg
+[downloads-image]: https://img.shields.io/npm/dm/react-grid-system.svg
 
 [npm-url]: https://npmjs.org/package/react-grid-system
-[npm-image]: http://img.shields.io/npm/v/react-grid-system.svg
