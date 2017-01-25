@@ -11,7 +11,6 @@ export default ({ xs, sm, md, lg, xl, offset = {}, screenClass, gutterWidth, mor
 
   const styles = {
     boxSizing: 'border-box',
-    position: 'relative',
     minHeight: '1px',
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,

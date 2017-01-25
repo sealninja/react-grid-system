@@ -30,7 +30,6 @@ exports.default = function (_ref) {
 
   var styles = _extends({
     boxSizing: 'border-box',
-    position: 'relative',
     minHeight: '1px',
     paddingLeft: theGutterWidth / 2 + 'px',
     paddingRight: theGutterWidth / 2 + 'px',
