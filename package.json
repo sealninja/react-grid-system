@@ -4,7 +4,10 @@
   "description": "A no CSS Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf build",
+    "build": "gulp build",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -42,9 +45,10 @@
     "babel-preset-stage-1": "^6.22.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-lint-tasks": "^1.5.2",
+    "gulp-lint-tasks": "^1.5.5",
     "react-dom": "^15.4.2",
     "react-styleguidist": "^4.6.3",
-    "webpack": "^1.14.0"
+    "rimraf": "^2.5.4",
+    "webpack": "^2.2.1"
   }
 }
