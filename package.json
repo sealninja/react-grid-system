@@ -1,6 +1,6 @@
 {
   "name": "react-grid-system",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "A no CSS Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
   "scripts": {
