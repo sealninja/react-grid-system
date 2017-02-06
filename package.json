@@ -9,6 +9,9 @@
     "build": "gulp build",
     "prepublish": "npm run clean && npm run build"
   },
+  "files": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JSxMachina/react-grid-system.git"
