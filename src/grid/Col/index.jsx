@@ -10,7 +10,7 @@ export default class Col extends React.Component {
     /**
      * Content of the column
      */
-    children: React.PropTypes.node.isRequired,
+    children: React.PropTypes.node,
     /**
      * The width of the column for screenclass `xs`, between 0 and 12
      */
@@ -53,6 +53,7 @@ export default class Col extends React.Component {
   };
 
   static defaultProps = {
+    children: null,
     xs: 12,
     sm: 12,
     md: 12,

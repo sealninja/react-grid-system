@@ -11,12 +11,12 @@ export default ({ width = {}, offset = {}, screenClass, gutterWidth, moreStyle }
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {
-    ...moreStyle,
     boxSizing: 'border-box',
     minHeight: '1px',
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     float: 'left',
+    ...moreStyle,
   };
 
   styles.width = '100%';

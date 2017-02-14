@@ -7,7 +7,6 @@ export default ({ fluid, screenClass, containerWidths, gutterWidth, moreStyle })
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {
-    ...moreStyle,
     boxSizing: 'border-box',
     position: 'relative',
     marginLeft: 'auto',
@@ -15,6 +14,7 @@ export default ({ fluid, screenClass, containerWidths, gutterWidth, moreStyle })
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     width: 'auto',
+    ...moreStyle,
   };
 
   if (fluid) {
