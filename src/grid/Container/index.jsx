@@ -29,6 +29,7 @@ export default class Container extends React.Component {
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
+    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
     containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
     gutterWidth: React.PropTypes.number,

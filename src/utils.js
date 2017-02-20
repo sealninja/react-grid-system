@@ -1,13 +1,11 @@
 /* global window */
+/* eslint "no-console": "off" */
 
-const getViewPort = ({ phone, tablet }) => {
-  let viewport = 1600;
-  if (tablet) viewport = 768; // iPad portrait width
-  if (phone) viewport = 375; // iPhone 6 width
+const getViewPort = () => {
   if (typeof window !== 'undefined' && window.innerWidth) {
-    viewport = window.innerWidth;
+    return window.innerWidth;
   }
-  return viewport;
+  return null;
 };
 
 export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
@@ -18,16 +16,27 @@ export const defaultContainerWidths = [540, 750, 960, 1140];
 
 export const defaultGutterWidth = 30;
 
-export const getScreenClass = ({ phone, tablet, breakpoints }) => {
+export const getScreenClass = ({ phone, tablet, serverSideScreenClass, breakpoints }) => {
+  if (typeof phone !== 'undefined') {
+    console.error('react-grid-system: Context type "phone" is deprecated, please use "serverSideScreenClass" instead.');
+  }
+  if (typeof tablet !== 'undefined') {
+    console.error('react-grid-system: Context type "tablet" is deprecated, please use "serverSideScreenClass" instead.');
+  }
   const theBreakpoints = breakpoints && breakpoints.length ? breakpoints : defaultBreakpoints;
+
+  let screenClass = serverSideScreenClass || 'xl';
+  if (phone) screenClass = 'xs';
+  if (tablet) screenClass = 'md';
+
   const viewport = getViewPort({ phone, tablet });
-
-  let screenClass = 'xs';
-
-  if (theBreakpoints[0] && viewport >= theBreakpoints[0]) screenClass = 'sm';
-  if (theBreakpoints[1] && viewport >= theBreakpoints[1]) screenClass = 'md';
-  if (theBreakpoints[2] && viewport >= theBreakpoints[2]) screenClass = 'lg';
-  if (theBreakpoints[3] && viewport >= theBreakpoints[3]) screenClass = 'xl';
+  if (viewport) {
+    screenClass = 'xs';
+    if (theBreakpoints[0] && viewport >= theBreakpoints[0]) screenClass = 'sm';
+    if (theBreakpoints[1] && viewport >= theBreakpoints[1]) screenClass = 'md';
+    if (theBreakpoints[2] && viewport >= theBreakpoints[2]) screenClass = 'lg';
+    if (theBreakpoints[3] && viewport >= theBreakpoints[3]) screenClass = 'xl';
+  }
 
   return screenClass;
 };

@@ -41,6 +41,7 @@ export default class Hidden extends React.Component {
   static contextTypes = {
     phone: React.PropTypes.bool,
     tablet: React.PropTypes.bool,
+    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
   };
 

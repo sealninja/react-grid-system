@@ -1,29 +1,31 @@
 /* eslint max-len: "off" */
 
 import React from 'react';
-import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
+import { Container, Row, Col, Visible, Hidden, ScreenClassRender } from 'react-grid-system';
 
 class ExampleComponent extends React.Component {
   static propTypes = {
-    phone: React.PropTypes.bool,
-    tablet: React.PropTypes.bool,
+    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   };
 
   static childContextTypes = {
-    phone: React.PropTypes.bool,
-    tablet: React.PropTypes.bool,
+    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
     breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
     containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
     gutterWidth: React.PropTypes.number,
   };
 
   getChildContext = () => ({
-    phone: this.props.phone,
-    tablet: this.props.tablet,
-    breakpoints: [768, 992, 1200],
-    containerWidths: [750, 970, 1170],
-    gutterWidth: 30,
+    serverSideScreenClass: this.props.serverSideScreenClass,
   });
+
+  styleFunction = (screenClass) => {
+    if (screenClass === 'xl') return { fontSize: '60px' };
+    if (screenClass === 'lg') return { fontSize: '40px' };
+    if (screenClass === 'md') return { fontSize: '30px' };
+    if (screenClass === 'sm') return { fontSize: '20px' };
+    return { fontSize: '10px' };
+  };
 
   render = () => (
     <Container>
@@ -49,6 +51,7 @@ class ExampleComponent extends React.Component {
         <Visible sm><strong>sm</strong></Visible>
         <Visible md><strong>md</strong></Visible>
         <Visible lg><strong>lg</strong></Visible>
+        <Visible xl><strong>xl</strong></Visible>
         <span>.</span>
       </p>
 
@@ -64,6 +67,8 @@ class ExampleComponent extends React.Component {
       <Hidden md lg>
         <p>Paragraph hidden on medium and large.</p>
       </Hidden>
+
+      <ScreenClassRender style={this.styleFunction}><p>Some text which font size depends on the screen class.</p></ScreenClassRender>
 
     </Container>
   );

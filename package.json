@@ -51,7 +51,7 @@
     "gulp-lint-tasks": "^1.5.5",
     "react-dom": "^15.4.2",
     "react-styleguidist": "^4.6.3",
-    "rimraf": "^2.5.4",
+    "rimraf": "^2.6.0",
     "webpack": "^2.2.1"
   }
 }

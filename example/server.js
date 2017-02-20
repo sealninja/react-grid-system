@@ -14,17 +14,19 @@ app.use('/build', express.static('./build'));
 app.get('/', (req, res) => {
   const md = new MobileDetect(req.headers['user-agent']);
 
-  const phone = md.phone() !== null;
-  const tablet = md.tablet() !== null;
+  let serverSideScreenClass = 'xl';
+  if (md.phone() !== null) serverSideScreenClass = 'xs';
+  if (md.tablet() !== null) serverSideScreenClass = 'md';
 
   const content = ReactDomServer.renderToString(
-    <ExampleComponent phone={phone} tablet={tablet} />
+    <ExampleComponent serverSideScreenClass={serverSideScreenClass} />
   );
   res.send(`
     <!DOCTYPE html>
     <html>
       <head>
         <title>react-grid-system example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
       </head>
       <body>
         <div id="app">${content}</div>
