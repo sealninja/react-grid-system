@@ -93,7 +93,7 @@ The following child context types can be provided to the grid components, to alt
 | `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
 | `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
 | `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
-| `serverSideScreenClass` | `sm` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering based on the user agent. See also the example application below. |
+| `serverSideScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering based on the user agent. See also the example application below. |
 | `phone`           | `false`            | *deprecated* When set to `true`, a server-side screen class of `xs` will be used. |
 | `tablet`          | `false`            | *deprecated* When set to `true`, a server-side screen class of `md` will be used. |
 
