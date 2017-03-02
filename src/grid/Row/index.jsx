@@ -1,7 +1,6 @@
-/* eslint react/prefer-stateless-function: "off" */
-
 import React from 'react';
-import getStyle, { getAfterStyle, getAfterContentStyle } from './style.css';
+import getStyle from './style.css';
+import ClearFix from '../../utilities/ClearFix';
 
 export default class Row extends React.Component {
   static propTypes = {
@@ -37,7 +36,7 @@ export default class Row extends React.Component {
     return (
       <div style={theStyle} {...otherProps}>
         {children}
-        <div style={getAfterStyle()}><span style={getAfterContentStyle()}>&nbsp;</span></div>
+        <ClearFix xs sm md lg xl />
       </div>
     );
   }
