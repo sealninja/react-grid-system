@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { throttle } from 'lodash';
-import * as style from './style.css';
+import * as style from './style';
 import { getScreenClass } from '../../utils';
 import RenderAny from '../../support/RenderAny';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Visible from '../Visible';
-import { getAfterStyle, getAfterContentStyle } from './style.css';
+import { getAfterStyle, getAfterContentStyle } from './style';
 
 export default class ClearFix extends React.Component {
   static propTypes = {

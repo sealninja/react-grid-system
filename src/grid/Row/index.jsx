@@ -1,5 +1,5 @@
 import React from 'react';
-import getStyle from './style.css';
+import getStyle from './style';
 import ClearFix from '../../utilities/ClearFix';
 
 export default class Row extends React.Component {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { throttle } from 'lodash';
-import getStyle from './style.css';
+import getStyle from './style';
 import { getScreenClass } from '../../utils';
 
 export default class Col extends React.Component {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { throttle } from 'lodash';
-import getStyle, { getAfterStyle } from './style.css';
+import getStyle, { getAfterStyle } from './style';
 import { getScreenClass } from '../../utils';
 
 export default class Container extends React.Component {
