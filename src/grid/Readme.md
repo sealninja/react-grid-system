@@ -4,6 +4,24 @@ For more information on these components, view this project on GitHub: [https://
 
 Resize your browser or load on different devices to test the grid system.
 
+### Example: Fluid containers conditionals
+```
+<div style={{ width: '1000px', height: '200px' }}>
+  <Container fluid md style={{ backgroundColor: '#34495e' }}>
+    <Row style={{ backgroundColor: '#2c3e50' }}>
+      <Col md={8} style={{ color: 'white', height: '100px' }}>md=8</Col>
+      <Col md={4} style={{ color: 'white', height: '100px' }}>md=4</Col>
+    </Row>
+  </Container>
+  <Container style={{ backgroundColor: '#34495e' }}>
+    <Row style={{ backgroundColor: '#2c3e50' }}>
+      <Col md={8} style={{ backgroundColor: '#e67e22', height: '100px' }}>md=8</Col>
+      <Col md={4} style={{ backgroundColor: '#e74c3c', height: '100px' }}>md=4</Col>
+    </Row>
+  </Container>
+</div>
+```
+
 ### Example: Stacked-to-horizontal
 
 ```

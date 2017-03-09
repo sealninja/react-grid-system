@@ -1,6 +1,13 @@
 import { defaultContainerWidths, defaultGutterWidth } from '../../utils';
 
-export default ({ fluid, screenClass, containerWidths, gutterWidth, moreStyle }) => {
+export default ({
+  fluid,
+  xs, sm, md, lg, xl,
+  screenClass,
+  containerWidths,
+  gutterWidth,
+  moreStyle,
+}) => {
   const theContainerWidths = containerWidths && containerWidths.length
     ? containerWidths
     : defaultContainerWidths;
@@ -17,23 +24,23 @@ export default ({ fluid, screenClass, containerWidths, gutterWidth, moreStyle })
     ...moreStyle,
   };
 
-  if (fluid) {
+  if (fluid && (!sm && !md && !lg && !xl)) {
     return styles;
   }
 
-  if (screenClass === 'sm' && theContainerWidths[0]) {
+  if (screenClass === 'sm' && theContainerWidths[0] && !sm && !xs) {
     styles.maxWidth = `${theContainerWidths[0]}px`;
   }
 
-  if (screenClass === 'md' && theContainerWidths[1]) {
+  if (screenClass === 'md' && theContainerWidths[1] && !md) {
     styles.maxWidth = `${theContainerWidths[1]}px`;
   }
 
-  if (screenClass === 'lg' && theContainerWidths[2]) {
+  if (screenClass === 'lg' && theContainerWidths[2] && !lg) {
     styles.maxWidth = `${theContainerWidths[2]}px`;
   }
 
-  if (screenClass === 'xl' && theContainerWidths[3]) {
+  if (screenClass === 'xl' && theContainerWidths[3] && !xl) {
     styles.maxWidth = `${theContainerWidths[3]}px`;
   }
 

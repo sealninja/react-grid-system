@@ -16,6 +16,31 @@ export default class Container extends React.Component {
      */
     fluid: React.PropTypes.bool,
     /**
+     * This is in combination with fluid enabled
+     * True makes container fluid only in xs, not present means fluid everywhere
+     */
+    xs: React.PropTypes.bool,
+    /**
+     * This is in combination with fluid enabled
+     * True makes container fluid only in sm, not present means fluid everywhere
+     */
+    sm: React.PropTypes.bool,
+    /**
+     * This is in combination with fluid enabled
+     * True makes container fluid only in md, not present means fluid everywhere
+     */
+    md: React.PropTypes.bool,
+    /**
+     * This is in combination with fluid enabled
+     * True makes container fluid only in lg, not present means fluid everywhere
+     */
+    lg: React.PropTypes.bool,
+    /**
+     * This is in combination with fluid enabled
+     * True makes container fluid only in xl, not present means fluid everywhere
+     */
+    xl: React.PropTypes.bool,
+    /**
      * Optional styling
      */
     style: React.PropTypes.objectOf(
@@ -37,6 +62,11 @@ export default class Container extends React.Component {
 
   static defaultProps = {
     fluid: false,
+    xs: false,
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false,
     style: {},
   };
 
@@ -58,9 +88,14 @@ export default class Container extends React.Component {
   }
 
   render = () => {
-    const { children, fluid, style, ...otherProps } = this.props;
+    const { children, fluid, xs, sm, md, lg, xl, style, ...otherProps } = this.props;
     const theStyle = getStyle({
       fluid,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
       screenClass: this.state.screenClass,
       containerWidths: this.context.containerWidths,
       gutterWidth: this.context.gutterWidth,
