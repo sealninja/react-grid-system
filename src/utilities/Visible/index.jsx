@@ -1,7 +1,7 @@
 /* global window */
 
 import React from 'react';
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 import * as style from './style';
 import { getScreenClass } from '../../utils';
 import RenderAny from '../../support/RenderAny';
