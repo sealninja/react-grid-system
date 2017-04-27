@@ -170,3 +170,12 @@ Resize your browser or load on different devices to test the grid system.
   </Col>
 </Row>
 ```
+
+### Example: Column ordering
+
+```
+<Row>
+  <Col md={9} push={{ md: 3 }} style={{ border: '1px solid silver' }}>md=9 push-md=3</Col>
+  <Col md={3} pull={{ md: 9 }} style={{ border: '1px solid silver' }}>md=3 pull-md=9</Col>
+</Row>
+```

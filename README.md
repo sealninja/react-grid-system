@@ -3,13 +3,22 @@ A no CSS Bootstrap-like responsive grid system for React.
 
 [![NPM version][version-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
+## Table of contents
+
+* [Installation](#installation)
+* [Getting started](#getting-started)
+* [Context types](#context-types)
+* [API reference](#api-reference)
+* [Example application with SSR](#example-application-with-ssr)
+
 ## Installation
 
 ```
 npm install react-grid-system --save
 ```
+## Getting started
 
-## Responsive grid
+### Responsive grid
 
 `react-grid-system` provides a responsive grid similar to Bootstrap (see: http://getbootstrap.com/css/#grid),
 except here, it's React components only, and **no CSS** is used at all.
@@ -34,7 +43,7 @@ An example on how to use these:
 </Container>
 ```
 
-## Responsive utilities
+### Responsive utilities
 
 Next to the grid, two components are provided for showing or hiding content: `Visible` and `Hidden`.
 The main difference between these two components and the similar CSS classes provided by Bootstrap is that
@@ -110,15 +119,17 @@ The following child context types can be provided to the grid components, to alt
 | `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
 | `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
 | `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
-| `serverSideScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering based on the user agent. See also the example application below. |
+| `serverSideScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
 | `phone`           | `false`            | *deprecated* When set to `true`, a server-side screen class of `xs` will be used. |
 | `tablet`          | `false`            | *deprecated* When set to `true`, a server-side screen class of `md` will be used. |
 
-## Example Application and Documentation
+## API reference
 
-An simple example application using all the features of `react-grid-system` can be found at https://github.com/JSxMachina/react-grid-system/tree/master/example.
+The API reference and further documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
 
-More examples and documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
+## Example application with SSR
+
+An example application with server-side rendering using all the features of `react-grid-system` can be found at https://github.com/JSxMachina/react-grid-system/tree/master/example.
 
 [version-image]: https://img.shields.io/npm/v/react-grid-system.svg
 [downloads-image]: https://img.shields.io/npm/dm/react-grid-system.svg

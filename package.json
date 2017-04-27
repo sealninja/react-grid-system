@@ -58,7 +58,6 @@
     "react-dom": "15.5.4",
     "react-styleguidist": "4.6.3",
     "rimraf": "2.6.1",
-    "snapguidist": "1.1.1",
     "webpack": "1.15.0"
   }
 }

@@ -42,6 +42,26 @@ export default class Col extends React.Component {
       xl: React.PropTypes.number,
     }),
     /**
+    * The amount this column is pushed to the right for all screenclasses
+    */
+    push: React.PropTypes.shape({
+      xs: React.PropTypes.number,
+      sm: React.PropTypes.number,
+      md: React.PropTypes.number,
+      lg: React.PropTypes.number,
+      xl: React.PropTypes.number,
+    }),
+    /**
+     * The amount this column is pulled to the left for all screenclasses
+     */
+    pull: React.PropTypes.shape({
+      xs: React.PropTypes.number,
+      sm: React.PropTypes.number,
+      md: React.PropTypes.number,
+      lg: React.PropTypes.number,
+      xl: React.PropTypes.number,
+    }),
+    /**
      * Optional styling
      */
     style: React.PropTypes.objectOf(
@@ -60,6 +80,8 @@ export default class Col extends React.Component {
     lg: 12,
     xl: 12,
     offset: {},
+    push: {},
+    pull: {},
     style: {},
   }
 
@@ -89,10 +111,12 @@ export default class Col extends React.Component {
   }
 
   render = () => {
-    const { children, xs, sm, md, lg, xl, offset, style, ...otherProps } = this.props;
+    const { children, xs, sm, md, lg, xl, offset, pull, push, style, ...otherProps } = this.props;
     const theStyle = getStyle({
       width: { xs, sm, md, lg, xl },
       offset,
+      pull,
+      push,
       screenClass: this.state.screenClass,
       gutterWidth: this.context.gutterWidth,
       moreStyle: style,
