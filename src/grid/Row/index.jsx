@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import getStyle from './style';
 import ClearFix from '../../utilities/ClearFix';
 
@@ -7,14 +8,14 @@ export default class Row extends React.Component {
     /**
      * Content of the element
      */
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
     /**
      * Optional styling
      */
-    style: React.PropTypes.objectOf(
-       React.PropTypes.oneOfType([
-         React.PropTypes.number,
-         React.PropTypes.string,
+    style: PropTypes.objectOf(
+       PropTypes.oneOfType([
+         PropTypes.number,
+         PropTypes.string,
        ]),
      ),
   };
@@ -24,7 +25,7 @@ export default class Row extends React.Component {
   }
 
   static contextTypes = {
-    gutterWidth: React.PropTypes.number,
+    gutterWidth: PropTypes.number,
   };
 
   render = () => {

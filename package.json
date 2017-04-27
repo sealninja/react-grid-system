@@ -42,6 +42,7 @@
   "homepage": "https://github.com/JSxMachina/react-grid-system#readme",
   "dependencies": {
     "lodash": "4.17.4",
+    "prop-types": "15.5.8",
     "react": "15.5.4"
   },
   "devDependencies": {

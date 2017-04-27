@@ -1,34 +1,33 @@
 /* global window */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import { getScreenClass } from '../../utils';
-import RenderAny from '../../support/RenderAny';
 
 export default class ScreenClassRender extends React.Component {
   static propTypes = {
     /**
      * Content of the component
      */
-    children: React.PropTypes.element.isRequired,
+    children: PropTypes.element.isRequired,
     /**
      * A function returning the style for the children.
-     * This function gets the screen class as a parameter.
+     * This function gets the screen class as the first parameter,
+     * and the props of the child element as the second parameter
      */
-    style: React.PropTypes.func,
-    render: React.PropTypes.func,
+    style: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     style: null,
-    render: null,
   }
 
   static contextTypes = {
-    phone: React.PropTypes.bool,
-    tablet: React.PropTypes.bool,
-    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+    phone: PropTypes.bool,
+    tablet: PropTypes.bool,
+    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    breakpoints: PropTypes.arrayOf(PropTypes.number),
   };
 
   componentWillMount = () => {
@@ -48,16 +47,7 @@ export default class ScreenClassRender extends React.Component {
     this.setState({ screenClass: getScreenClass(this.context) });
   }
 
-  getStyle = () => this.props.style(this.state.screenClass);
+  getStyle = () => this.props.style(this.state.screenClass, this.props.children.props);
 
-  render = () => {
-    if (this.props.render) {
-      return <RenderAny>{this.props.render(this.state.screenClass)}</RenderAny>;
-    }
-    if (this.props.style) {
-      const clonedElement = React.cloneElement(this.props.children, { style: this.getStyle() });
-      return clonedElement;
-    }
-    return false;
-  }
+  render = () => React.cloneElement(this.props.children, { style: this.getStyle() });
 }

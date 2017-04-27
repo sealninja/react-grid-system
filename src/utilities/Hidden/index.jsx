@@ -1,6 +1,7 @@
 /* global window */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import * as style from './style';
 import { getScreenClass } from '../../utils';
@@ -11,38 +12,38 @@ export default class Hidden extends React.Component {
     /**
      * Content of the component
      */
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.element,
-      React.PropTypes.node,
-      React.PropTypes.func,
+    children: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.node,
+      PropTypes.func,
     ]).isRequired,
     /**
      * Hide on extra small devices
      */
-    xs: React.PropTypes.bool,
+    xs: PropTypes.bool,
     /**
      * Hide on small devices
      */
-    sm: React.PropTypes.bool,
+    sm: PropTypes.bool,
     /**
      * Hide on medium devices
      */
-    md: React.PropTypes.bool,
+    md: PropTypes.bool,
     /**
      * Hide on large devices
      */
-    lg: React.PropTypes.bool,
+    lg: PropTypes.bool,
     /**
      * Hide on xlarge devices
      */
-    xl: React.PropTypes.bool,
+    xl: PropTypes.bool,
   };
 
   static contextTypes = {
-    phone: React.PropTypes.bool,
-    tablet: React.PropTypes.bool,
-    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
+    phone: PropTypes.bool,
+    tablet: PropTypes.bool,
+    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    breakpoints: PropTypes.arrayOf(PropTypes.number),
   };
 
   static defaultProps = {

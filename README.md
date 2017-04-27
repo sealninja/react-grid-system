@@ -82,15 +82,19 @@ Next to that, the `ScreenClassRender` component is provided, for rendering a com
 An example on how to use this:
 
 ```html
-const styleFunction = (screenClass) => {
-  if (screenClass === 'xl') return { fontSize: '60px' };
-  if (screenClass === 'lg') return { fontSize: '40px' };
-  if (screenClass === 'md') return { fontSize: '30px' };
-  if (screenClass === 'sm') return { fontSize: '20px' };
-  return { fontSize: '10px' };
+const styleFunction = (screenClass, props) => {
+  let fontSize = 10;
+  if (screenClass === 'sm') fontSize = 20;
+  if (screenClass === 'md') fontSize = 30;
+  if (screenClass === 'lg') fontSize = 40;
+  if (screenClass === 'xl') fontSize = 50;
+  return {
+      fontSize: `${fontSize}px`,
+      ...props.style,
+   };
 };
 
-<ScreenClassRender style={styleFunction}><p>Some text which font size depends on the screen class.</p></ScreenClassRender>
+<ScreenClassRender style={styleFunction}><p style={{ color: 'red' }}>Some red text, which font size depends on the screen class.</p></ScreenClassRender>
 ```
 
 Finally, a `ClearFix` component can be used for resetting a row. This is sometimes needed when not all columns have the same height. For example:

@@ -19,12 +19,16 @@ class ExampleComponent extends React.Component {
     serverSideScreenClass: this.props.serverSideScreenClass,
   });
 
-  styleFunction = (screenClass) => {
-    if (screenClass === 'xl') return { fontSize: '60px' };
-    if (screenClass === 'lg') return { fontSize: '40px' };
-    if (screenClass === 'md') return { fontSize: '30px' };
-    if (screenClass === 'sm') return { fontSize: '20px' };
-    return { fontSize: '10px' };
+  styleFunction = (screenClass, props) => {
+    let fontSize = 10;
+    if (screenClass === 'sm') fontSize = 20;
+    if (screenClass === 'md') fontSize = 30;
+    if (screenClass === 'lg') fontSize = 40;
+    if (screenClass === 'xl') fontSize = 50;
+    return {
+      fontSize: `${fontSize}px`,
+      ...props.style,
+    };
   };
 
   render = () => (
@@ -68,7 +72,7 @@ class ExampleComponent extends React.Component {
         <p>Paragraph hidden on medium and large.</p>
       </Hidden>
 
-      <ScreenClassRender style={this.styleFunction}><p>Some text which font size depends on the screen class.</p></ScreenClassRender>
+      <ScreenClassRender style={this.styleFunction}><p style={{ color: 'red' }}>Some red text, which font size depends on the screen class.</p></ScreenClassRender>
 
     </Container>
   );

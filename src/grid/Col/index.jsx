@@ -1,6 +1,7 @@
 /* global window */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import getStyle from './style';
 import { getScreenClass } from '../../utils';
@@ -10,66 +11,70 @@ export default class Col extends React.Component {
     /**
      * Content of the column
      */
-    children: React.PropTypes.node,
+    children: PropTypes.node,
     /**
      * The width of the column for screenclass `xs`, between 0 and 12
      */
-    xs: React.PropTypes.number,
+    xs: PropTypes.number,
     /**
      * The width of the column for screenclass `sm`, between 0 and 12
      */
-    sm: React.PropTypes.number,
+    sm: PropTypes.number,
     /**
      * The width of the column for screenclass `md`, between 0 and 12
      */
-    md: React.PropTypes.number,
+    md: PropTypes.number,
     /**
      * The width of the column for screenclass `lg`, between 0 and 12
      */
-    lg: React.PropTypes.number,
+    lg: PropTypes.number,
     /**
      * The width of the column for screenclass `xl`, between 0 and 12
      */
-    xl: React.PropTypes.number,
+    xl: PropTypes.number,
     /**
      * The offset of this column for all screenclasses
      */
-    offset: React.PropTypes.shape({
-      xs: React.PropTypes.number,
-      sm: React.PropTypes.number,
-      md: React.PropTypes.number,
-      lg: React.PropTypes.number,
-      xl: React.PropTypes.number,
+    offset: PropTypes.shape({
+      xs: PropTypes.number,
+      sm: PropTypes.number,
+      md: PropTypes.number,
+      lg: PropTypes.number,
+      xl: PropTypes.number,
     }),
     /**
     * The amount this column is pushed to the right for all screenclasses
     */
-    push: React.PropTypes.shape({
-      xs: React.PropTypes.number,
-      sm: React.PropTypes.number,
-      md: React.PropTypes.number,
-      lg: React.PropTypes.number,
-      xl: React.PropTypes.number,
+    push: PropTypes.shape({
+      xs: PropTypes.number,
+      sm: PropTypes.number,
+      md: PropTypes.number,
+      lg: PropTypes.number,
+      xl: PropTypes.number,
     }),
     /**
      * The amount this column is pulled to the left for all screenclasses
      */
-    pull: React.PropTypes.shape({
-      xs: React.PropTypes.number,
-      sm: React.PropTypes.number,
-      md: React.PropTypes.number,
-      lg: React.PropTypes.number,
-      xl: React.PropTypes.number,
+    pull: PropTypes.shape({
+      xs: PropTypes.number,
+      sm: PropTypes.number,
+      md: PropTypes.number,
+      lg: PropTypes.number,
+      xl: PropTypes.number,
     }),
     /**
      * Optional styling
      */
-    style: React.PropTypes.objectOf(
-      React.PropTypes.oneOfType([
-        React.PropTypes.number,
-        React.PropTypes.string,
+    style: PropTypes.objectOf(
+      PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
       ]),
     ),
+    /**
+     * Set to apply some debug styling
+     */
+    debug: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -83,14 +88,15 @@ export default class Col extends React.Component {
     push: {},
     pull: {},
     style: {},
+    debug: false,
   }
 
   static contextTypes = {
-    phone: React.PropTypes.bool,
-    tablet: React.PropTypes.bool,
-    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
-    gutterWidth: React.PropTypes.number,
+    phone: PropTypes.bool,
+    tablet: PropTypes.bool,
+    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    breakpoints: PropTypes.arrayOf(PropTypes.number),
+    gutterWidth: PropTypes.number,
   };
 
   componentWillMount = () => {
@@ -111,12 +117,16 @@ export default class Col extends React.Component {
   }
 
   render = () => {
-    const { children, xs, sm, md, lg, xl, offset, pull, push, style, ...otherProps } = this.props;
+    const {
+        children, xs, sm, md, lg, xl, offset, pull, push, debug, style,
+        ...otherProps
+    } = this.props;
     const theStyle = getStyle({
       width: { xs, sm, md, lg, xl },
       offset,
       pull,
       push,
+      debug,
       screenClass: this.state.screenClass,
       gutterWidth: this.context.gutterWidth,
       moreStyle: style,

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RenderAny = ({ children }) => {
   if (typeof children === 'function') {
@@ -11,10 +12,10 @@ const RenderAny = ({ children }) => {
 };
 
 RenderAny.propTypes = {
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.node,
-    React.PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.node,
+    PropTypes.func,
   ]).isRequired,
 };
 

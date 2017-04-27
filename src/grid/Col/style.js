@@ -12,6 +12,7 @@ export default ({
     offset = {},
     pull = {},
     push = {},
+    debug,
     screenClass,
     gutterWidth,
 moreStyle }) => {
@@ -26,6 +27,13 @@ moreStyle }) => {
     float: 'left',
     ...moreStyle,
   };
+
+  if (debug) {
+    styles.paddingTop = '10px';
+    styles.paddingBottom = '10px';
+    styles.border = '1px solid rgba(86,86,86,.2)';
+    styles.background = 'rgba(86,86,86,.15)';
+  }
 
   styles.width = '100%';
   styles.marginLeft = '0%';

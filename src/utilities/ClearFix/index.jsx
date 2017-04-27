@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Visible from '../Visible';
 import { getAfterStyle, getAfterContentStyle } from './style';
 
@@ -7,23 +8,23 @@ export default class ClearFix extends React.Component {
     /**
      * Show on extra small devices
      */
-    xs: React.PropTypes.bool,
+    xs: PropTypes.bool,
     /**
      * Show on small devices
      */
-    sm: React.PropTypes.bool,
+    sm: PropTypes.bool,
     /**
      * Show on medium devices
      */
-    md: React.PropTypes.bool,
+    md: PropTypes.bool,
     /**
      * Show on large devices
      */
-    lg: React.PropTypes.bool,
+    lg: PropTypes.bool,
     /**
      * Show on xl devices
      */
-    xl: React.PropTypes.bool,
+    xl: PropTypes.bool,
   };
 
   static defaultProps = {
