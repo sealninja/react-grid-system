@@ -1,9 +1,12 @@
 /* eslint comma-dangle: off */
+/* eslint import/no-extraneous-dependencies: "off" */
 
 const path = require('path');
+const version = require('./package.json').version;
+const snapguidist = require('snapguidist');
 
-module.exports = {
-  title: 'React Grid System',
+module.exports = snapguidist({
+  title: `React Grid System (v${version})`,
   sections: [
     {
       name: 'Responsive grid',
@@ -37,4 +40,4 @@ module.exports = {
     return webpackConfig;
   },
   template: './src/index.html',
-};
+});

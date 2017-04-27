@@ -4,10 +4,12 @@
   "description": "A no CSS Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
   "scripts": {
+    "start": "styleguidist server",
+    "build": "rimraf build && babel src -d build",
+    "docs": "rimraf docs && styleguidist build",
+    "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.jsx src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf build",
-    "build": "gulp build",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run build"
   },
   "files": [
     "build"
@@ -39,19 +41,24 @@
   },
   "homepage": "https://github.com/JSxMachina/react-grid-system#readme",
   "dependencies": {
-    "lodash": "^4.17.4",
-    "react": "^15.4.2"
+    "lodash": "4.17.4",
+    "react": "15.5.4"
   },
   "devDependencies": {
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-preset-stage-1": "^6.22.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-lint-tasks": "^1.5.5",
-    "react-dom": "^15.4.2",
-    "react-styleguidist": "^4.6.3",
-    "rimraf": "^2.6.0",
-    "webpack": "^2.2.1"
+    "babel-cli": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-preset-latest": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-1": "6.24.1",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.3",
+    "react-dom": "15.5.4",
+    "react-styleguidist": "4.6.3",
+    "rimraf": "2.6.1",
+    "snapguidist": "1.1.1",
+    "webpack": "1.15.0"
   }
 }
