@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import { getScreenClass } from '../../utils';
+import RenderAny from '../../support/RenderAny';
 
 export default class ScreenClassRender extends React.Component {
   static propTypes = {
@@ -13,14 +14,21 @@ export default class ScreenClassRender extends React.Component {
     children: PropTypes.element.isRequired,
     /**
      * A function returning the style for the children.
-     * This function gets the screen class as the first parameter,
-     * and the props of the child element as the second parameter
+     * Will be called with two arguments: the screen class and
+     * the props of the child element.
      */
-    style: PropTypes.func.isRequired,
+    style: PropTypes.func,
+    /**
+     * A function which return value will be rendered.
+     * Will be called with one argument: the screen class.
+     * When set, the props children and style will be ignored.
+     */
+    render: PropTypes.func,
   };
 
   static defaultProps = {
     style: null,
+    render: null,
   }
 
   static contextTypes = {
@@ -49,5 +57,13 @@ export default class ScreenClassRender extends React.Component {
 
   getStyle = () => this.props.style(this.state.screenClass, this.props.children.props);
 
-  render = () => React.cloneElement(this.props.children, { style: this.getStyle() });
+  render = () => {
+    if (this.props.render) {
+      return <RenderAny>{this.props.render(this.state.screenClass)}</RenderAny>;
+    }
+    if (this.props.style) {
+      return React.cloneElement(this.props.children, { style: this.getStyle() });
+    }
+    return false;
+  }
 }
