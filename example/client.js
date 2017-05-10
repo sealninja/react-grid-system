@@ -4,12 +4,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import ExampleComponent from './index';
+import ExampleComponent from './ExampleComponent';
 
 render(
   <ExampleComponent />,
   document.getElementById('app'),
   () => {
     console.info('react-grid-system example rendered client-side.');
-  }
+  },
 );

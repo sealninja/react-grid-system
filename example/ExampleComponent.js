@@ -1,22 +1,24 @@
-/* eslint max-len: "off" */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Row, Col, Visible, Hidden, ScreenClassRender } from 'react-grid-system';
 
 class ExampleComponent extends React.Component {
   static propTypes = {
-    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
   };
 
+  static defaultProps = {
+    serverSideScreenClass: 'xl',
+  }
+
   static childContextTypes = {
-    serverSideScreenClass: React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: React.PropTypes.arrayOf(React.PropTypes.number),
-    containerWidths: React.PropTypes.arrayOf(React.PropTypes.number),
-    gutterWidth: React.PropTypes.number,
+    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    breakpoints: PropTypes.arrayOf(PropTypes.number),
   };
 
   getChildContext = () => ({
     serverSideScreenClass: this.props.serverSideScreenClass,
+    breakpoints: [576, 768, 800, 1200],
   });
 
   styleFunction = (screenClass, props) => {
