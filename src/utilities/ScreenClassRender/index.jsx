@@ -11,7 +11,7 @@ export default class ScreenClassRender extends React.Component {
     /**
      * Content of the component
      */
-    children: PropTypes.element.isRequired,
+    children: PropTypes.element,
     /**
      * A function returning the style for the children.
      * Will be called with two arguments: the screen class and
@@ -27,6 +27,7 @@ export default class ScreenClassRender extends React.Component {
   };
 
   static defaultProps = {
+    children: null,
     style: null,
     render: null,
   }
