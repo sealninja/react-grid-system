@@ -40,14 +40,12 @@ moreStyle }) => {
   styles.right = 'auto';
   styles.left = 'auto';
 
-  screenClasses.forEach((size, index) => {
-    if (screenClasses.indexOf(screenClass) >= index) {
-      styles.width = getWidth(width[size]) || styles.width;
-      styles.marginLeft = getWidth(offset[size]) || styles.marginLeft;
-      styles.right = getWidth(pull[size]) || styles.right;
-      styles.left = getWidth(push[size]) || styles.left;
-    }
-  });
+  if (screenClasses.indexOf(screenClass) >= 0) {
+      styles.width = getWidth(width[screenClass]) || styles.width;
+      styles.marginLeft = getWidth(offset[screenClass]) || styles.marginLeft;
+      styles.right = getWidth(pull[screenClass]) || styles.right;
+      styles.left = getWidth(push[screenClass]) || styles.left;
+  }
 
   return styles;
 };
