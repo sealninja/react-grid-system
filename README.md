@@ -116,7 +116,7 @@ Finally, a `ClearFix` component can be used for resetting a row. This is sometim
 
 ## Context types
 
-The following child context types can be provided to the grid components, to alter their responsive behavior:
+The following child context types can be provided to the grid components, to alter their responsive behavior. An example on how to use them can be found in the [Example application with SSR](#example-application-with-ssr) below.
 
 | Context Type      | Default Value      | Description |
 | ----------------- | ------------------ | ------------------------------ |
