@@ -12,7 +12,8 @@
     "prepublish": "npm run build"
   },
   "files": [
-    "build"
+    "build",
+    "src"
   ],
   "repository": {
     "type": "git",
