@@ -9,7 +9,7 @@
     "docs": "rimraf docs && styleguidist build",
     "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.jsx src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "files": [
     "build",
@@ -42,9 +42,9 @@
   },
   "homepage": "https://github.com/JSxMachina/react-grid-system#readme",
   "dependencies": {
-    "lodash": "4.17.4",
-    "prop-types": "15.5.8",
-    "react": "15.5.4"
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.0",
+    "react": "^15.5.0"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
