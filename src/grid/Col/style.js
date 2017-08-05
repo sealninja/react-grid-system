@@ -1,9 +1,8 @@
 import { defaultGutterWidth, normalizeColumnWidth, screenClasses } from '../../utils';
 
-const getWidth = (width, defaultWidth = 12) => {
+const getWidth = (width) => {
   if (typeof width !== 'number') return undefined;
   const colWidth = normalizeColumnWidth(width);
-  if (colWidth === defaultWidth) return undefined;
   return `${(100 / 12) * colWidth}%`;
 };
 

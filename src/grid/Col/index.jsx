@@ -79,11 +79,11 @@ export default class Col extends React.Component {
 
   static defaultProps = {
     children: null,
-    xs: 12,
-    sm: 12,
-    md: 12,
-    lg: 12,
-    xl: 12,
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
     offset: {},
     push: {},
     pull: {},
