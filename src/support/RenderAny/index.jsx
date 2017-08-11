@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RenderAny = ({ children }) => {
+  if (!children) return null;
   if (typeof children === 'function') {
     return children();
   }
@@ -16,7 +17,11 @@ RenderAny.propTypes = {
     PropTypes.element,
     PropTypes.node,
     PropTypes.func,
-  ]).isRequired,
+  ]),
+};
+
+RenderAny.defaultProps = {
+  children: null,
 };
 
 export default RenderAny;
