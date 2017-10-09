@@ -21,6 +21,9 @@ export default ({
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     width: 'auto',
+    display: 'flex',
+    flexWrap: 'nowrap',
+    flexDirection: 'column',
     ...moreStyle,
   };
 

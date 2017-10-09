@@ -124,8 +124,6 @@ The following child context types can be provided to the grid components, to alt
 | `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
 | `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
 | `serverSideScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
-| `phone`           | `false`            | *deprecated* When set to `true`, a server-side screen class of `xs` will be used. |
-| `tablet`          | `false`            | *deprecated* When set to `true`, a server-side screen class of `md` will be used. |
 
 ## API reference
 
@@ -133,7 +131,7 @@ The API reference and further documentation of all components can be found at th
 
 ## Example application with SSR
 
-An example application with server-side rendering using all the features of `react-grid-system` can be found at https://github.com/JSxMachina/react-grid-system/tree/master/example.
+An example application with server-side rendering using all the features of `react-grid-system` can be found at https://github.com/gerbenmeyer/react-ssr-example.
 
 [version-image]: https://img.shields.io/npm/v/react-grid-system.svg
 [downloads-image]: https://img.shields.io/npm/dm/react-grid-system.svg

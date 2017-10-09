@@ -16,20 +16,12 @@ export const defaultContainerWidths = [540, 750, 960, 1140];
 
 export const defaultGutterWidth = 30;
 
-export const getScreenClass = ({ phone, tablet, serverSideScreenClass, breakpoints }) => {
-  if (typeof phone !== 'undefined') {
-    console.error('react-grid-system: Context type "phone" is deprecated, please use "serverSideScreenClass" instead.');
-  }
-  if (typeof tablet !== 'undefined') {
-    console.error('react-grid-system: Context type "tablet" is deprecated, please use "serverSideScreenClass" instead.');
-  }
+export const getScreenClass = ({ serverSideScreenClass, breakpoints }) => {
   const theBreakpoints = breakpoints && breakpoints.length ? breakpoints : defaultBreakpoints;
 
   let screenClass = serverSideScreenClass || 'xl';
-  if (phone) screenClass = 'xs';
-  if (tablet) screenClass = 'md';
 
-  const viewport = getViewPort({ phone, tablet });
+  const viewport = getViewPort();
   if (viewport) {
     screenClass = 'xs';
     if (theBreakpoints[0] && viewport >= theBreakpoints[0]) screenClass = 'sm';

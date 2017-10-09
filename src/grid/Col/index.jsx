@@ -87,13 +87,12 @@ export default class Col extends React.Component {
     offset: {},
     push: {},
     pull: {},
+    align: 'normal',
     style: {},
     debug: false,
   }
 
   static contextTypes = {
-    phone: PropTypes.bool,
-    tablet: PropTypes.bool,
     serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
     breakpoints: PropTypes.arrayOf(PropTypes.number),
     gutterWidth: PropTypes.number,
