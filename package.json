@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build"
   },
+  "types": "./index.d.ts",
   "files": [
     "build",
     "src"
