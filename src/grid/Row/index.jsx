@@ -20,13 +20,11 @@ export default class Row extends React.Component {
     /**
     * Optional styling
     */
-    style: PropTypes.objectOf(
-       PropTypes.oneOfType([
-         PropTypes.number,
-         PropTypes.string,
-       ]),
-     ),
-     /**
+    style: PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ])),
+    /**
       * Set to apply some debug styling
       */
     debug: PropTypes.bool,
@@ -44,7 +42,9 @@ export default class Row extends React.Component {
   };
 
   render = () => {
-    const { children, style, align, grow, debug, ...otherProps } = this.props;
+    const {
+      children, style, align, grow, debug, ...otherProps
+    } = this.props;
     const theStyle = getStyle({
       gutterWidth: this.context.gutterWidth,
       align,

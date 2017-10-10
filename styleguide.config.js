@@ -1,7 +1,6 @@
 /* eslint comma-dangle: off */
 
-const path = require('path');
-const version = require('./package.json').version;
+const { version } = require('./package.json');
 
 module.exports = {
   title: `React Grid System (v${version})`,
@@ -20,22 +19,17 @@ module.exports = {
   serverPort: 4095,
   styleguideDir: './docs',
   showCode: true,
-  updateWebpackConfig: (webpackConfig) => {
-    const dirs = [
-      path.resolve(__dirname, 'src'),
-    ];
-
-    webpackConfig.module.loaders.push(
-      {
-        test: /\.jsx?$/,
-        include: dirs,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'stage-1', 'react'],
+  showUsage: true,
+  webpackConfig: {
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
         },
-      }
-    );
-    return webpackConfig;
+      ],
+    },
   },
   template: './src/index.html',
 };

@@ -44,12 +44,10 @@ export default class Container extends React.Component {
     /**
      * Optional styling
      */
-    style: PropTypes.objectOf(
-       PropTypes.oneOfType([
-         PropTypes.number,
-         PropTypes.string,
-       ]),
-     ),
+    style: PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ])),
   };
 
   static contextTypes = {
@@ -87,7 +85,9 @@ export default class Container extends React.Component {
   }
 
   render = () => {
-    const { children, fluid, xs, sm, md, lg, xl, style, ...otherProps } = this.props;
+    const {
+      children, fluid, xs, sm, md, lg, xl, style, ...otherProps
+    } = this.props;
     const theStyle = getStyle({
       fluid,
       xs,

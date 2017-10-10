@@ -1,6 +1,8 @@
 import { defaultGutterWidth } from '../../utils';
 
-export default ({ gutterWidth, align, grow, debug, moreStyle }) => {
+export default ({
+  gutterWidth, align, grow, debug, moreStyle,
+}) => {
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   let alignItems = align;

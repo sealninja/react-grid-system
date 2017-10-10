@@ -9,14 +9,15 @@ const getWidth = (width) => {
 };
 
 export default ({
-    width = {},
-    offset = {},
-    pull = {},
-    push = {},
-    debug,
-    screenClass,
-    gutterWidth,
-moreStyle }) => {
+  width = {},
+  offset = {},
+  pull = {},
+  push = {},
+  debug,
+  screenClass,
+  gutterWidth,
+  moreStyle,
+}) => {
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
   const styles = {

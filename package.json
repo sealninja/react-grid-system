@@ -43,23 +43,25 @@
   "homepage": "https://github.com/JSxMachina/react-grid-system#readme",
   "dependencies": {
     "lodash": "^4.17.4",
-    "prop-types": "^15.5.0",
-    "react": "^15.5.0"
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0"
   },
   "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-eslint": "7.2.3",
-    "babel-preset-latest": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-1": "6.24.1",
-    "eslint": "3.19.0",
-    "eslint-config-airbnb": "14.1.0",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "4.0.0",
-    "eslint-plugin-react": "6.10.3",
-    "react-dom": "15.5.4",
-    "react-styleguidist": "4.6.3",
-    "rimraf": "2.6.1",
-    "webpack": "1.15.0"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "react-dom": "^16.0.0",
+    "react-styleguidist": "^6.0.28",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.6.0"
   }
 }

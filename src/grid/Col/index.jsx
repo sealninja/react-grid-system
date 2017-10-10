@@ -65,12 +65,10 @@ export default class Col extends React.Component {
     /**
      * Optional styling
      */
-    style: PropTypes.objectOf(
-      PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-      ]),
-    ),
+    style: PropTypes.objectOf(PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ])),
     /**
      * Set to apply some debug styling
      */
@@ -87,7 +85,6 @@ export default class Col extends React.Component {
     offset: {},
     push: {},
     pull: {},
-    align: 'normal',
     style: {},
     debug: false,
   }
@@ -117,11 +114,13 @@ export default class Col extends React.Component {
 
   render = () => {
     const {
-        children, xs, sm, md, lg, xl, offset, pull, push, debug, style,
-        ...otherProps
+      children, xs, sm, md, lg, xl, offset, pull, push, debug, style,
+      ...otherProps
     } = this.props;
     const theStyle = getStyle({
-      width: { xs, sm, md, lg, xl },
+      width: {
+        xs, sm, md, lg, xl,
+      },
       offset,
       pull,
       push,
