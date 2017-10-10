@@ -23,6 +23,8 @@ moreStyle }) => {
     boxSizing: 'border-box',
     minHeight: '1px',
     position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     width: '100%',
@@ -30,10 +32,8 @@ moreStyle }) => {
   };
 
   if (debug) {
-    styles.paddingTop = '10px';
-    styles.paddingBottom = '10px';
-    styles.border = '1px solid rgba(86,86,86,.2)';
-    styles.background = 'rgba(86,86,86,.15)';
+    styles.outline = '1px solid silver';
+    styles.background = 'rgba(0,0,0,.05)';
   }
 
   styles.flexBasis = '100%';

@@ -18,8 +18,7 @@ export default ({ gutterWidth, align, grow, debug, moreStyle }) => {
   };
 
   if (debug) {
-    styles.marginBottom = '15px';
-    styles.background = '#f5f5f5';
+    styles.background = 'rgba(128,128,128,.05)';
   }
 
   return styles;
