@@ -6,7 +6,7 @@
   "scripts": {
     "start": "styleguidist server",
     "build": "rimraf build && babel src -d build",
-    "docs": "rimraf docs && styleguidist build",
+    "docs": "styleguidist build",
     "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.jsx src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build"
@@ -62,6 +62,7 @@
     "react-dom": "^16.0.0",
     "react-styleguidist": "^6.0.28",
     "rimraf": "^2.6.2",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-blocks": "^1.0.0-rc"
   }
 }
