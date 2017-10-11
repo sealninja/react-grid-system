@@ -14,7 +14,7 @@ export default class Row extends React.Component {
     */
     align: PropTypes.oneOf(['normal', 'start', 'center', 'end']),
     /**
-    * Grow this row
+    * No gutter for this row
     */
     nogutter: PropTypes.bool,
     /**
