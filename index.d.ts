@@ -55,7 +55,8 @@ declare module 'react-grid-system' {
         align?: Align,
         grow?: boolean,
         debug?: boolean,
-        style?: object
+        style?: object,
+        nogutter?: boolean
     }
 
     type ClearFixProps = {
