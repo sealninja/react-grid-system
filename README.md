@@ -14,6 +14,10 @@ A no CSS Bootstrap-like responsive grid system for React.
 ## Installation
 
 ```
+# Install react peer dependency
+npm install react@16
+
+# Install react grid system
 npm install react-grid-system --save
 ```
 ## Getting started
