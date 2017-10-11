@@ -1,6 +1,5 @@
-import * as React from "react";
-
-declare namespace ReactGridSystem {
+declare module 'react-grid-system' {
+    import * as React from 'react';
     enum Align {
         Normal = "normal",
         Start = "start",
@@ -12,21 +11,21 @@ declare namespace ReactGridSystem {
         sm?: boolean,
         md?: boolean,
         lg?: boolean,
-        xl?: boolean,
+        xl?: boolean
     }
     type Push = {
         xs?: boolean,
         sm?: boolean,
         md?: boolean,
         lg?: boolean,
-        xl?: boolean,
+        xl?: boolean
     }
     type Pull = {
         xs?: boolean,
         sm?: boolean,
         md?: boolean,
         lg?: boolean,
-        xl?: boolean,
+        xl?: boolean
     }
     type ColProps = {
         debug?: boolean,
@@ -39,7 +38,7 @@ declare namespace ReactGridSystem {
         offset?: Offsets,
         push?: Push,
         pull?: Pull,
-
+        style?: object
     }
 
     type ContainerProps = {
@@ -48,13 +47,15 @@ declare namespace ReactGridSystem {
         md?: boolean,
         lg?: boolean,
         xl?: boolean
-        fluid?: boolean
+        fluid?: boolean,
+        style?: object
     }
 
     type RowProps = {
         align?: Align,
         grow?: boolean,
-        debug?: boolean
+        debug?: boolean,
+        style?: object
     }
 
     type ClearFixProps = {
@@ -93,4 +94,3 @@ declare namespace ReactGridSystem {
     export class ScreenClassRender extends React.Component<ScreenClassRenderProps, any> {}
     export class Visible extends React.Component<VisibleProps, any> {}
 }
-export = ReactGridSystem;
