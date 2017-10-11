@@ -29,6 +29,7 @@ export default ({
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     width: '100%',
+    overflow: 'hidden',
     ...moreStyle,
   };
 
