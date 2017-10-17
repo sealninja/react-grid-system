@@ -56,10 +56,10 @@ export default class Row extends React.Component {
 
   render = () => {
     const {
-      children, style, align, grow, debug, ...otherProps
+      children, style, align, grow, debug, nogutter, ...otherProps
     } = this.props;
     const theStyle = getStyle({
-      gutterWidth: this.props.nogutter ? 0 : this.context.gutterWidth,
+      gutterWidth: nogutter ? 0 : this.context.gutterWidth,
       align,
       grow,
       debug,
