@@ -53,7 +53,6 @@ declare module 'react-grid-system' {
 
     type RowProps = {
         align?: Align,
-        grow?: boolean,
         debug?: boolean,
         style?: object,
         nogutter?: boolean

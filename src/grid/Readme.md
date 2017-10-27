@@ -177,24 +177,3 @@ Resize your browser or load on different devices to test the grid system.
   </Row>
 </Container>
 ```
-
-### Example: Row growing
-```
-<Container fluid style={{ height: '300px', lineHeight: '32px' }}>
-  <Row debug>
-    <Col debug>
-      Normal row
-    </Col>
-  </Row>
-  <Row grow debug>
-    <Col debug>
-      Grown row
-    </Col>
-  </Row>
-  <Row debug>
-    <Col debug>
-      Normal row
-    </Col>
-  </Row>
-</Container>
-```

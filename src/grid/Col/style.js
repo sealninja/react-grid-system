@@ -24,8 +24,6 @@ export default ({
     boxSizing: 'border-box',
     minHeight: '1px',
     position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
     paddingLeft: `${theGutterWidth / 2}px`,
     paddingRight: `${theGutterWidth / 2}px`,
     width: '100%',

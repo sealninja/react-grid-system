@@ -18,10 +18,6 @@ export default class Row extends React.Component {
     */
     nogutter: PropTypes.bool,
     /**
-    * Grow this row
-    */
-    grow: PropTypes.bool,
-    /**
     * Optional styling
     */
     style: PropTypes.objectOf(PropTypes.oneOfType([
@@ -37,7 +33,6 @@ export default class Row extends React.Component {
   static defaultProps = {
     align: 'normal',
     nogutter: false,
-    grow: false,
     style: {},
     debug: false,
   }
@@ -56,12 +51,11 @@ export default class Row extends React.Component {
 
   render = () => {
     const {
-      children, style, align, grow, debug, nogutter, ...otherProps
+      children, style, align, debug, nogutter, ...otherProps
     } = this.props;
     const theStyle = getStyle({
       gutterWidth: nogutter ? 0 : this.context.gutterWidth,
       align,
-      grow,
       debug,
       moreStyle: style,
     });

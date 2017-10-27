@@ -1,7 +1,7 @@
 import { defaultGutterWidth } from '../../utils';
 
 export default ({
-  gutterWidth, align, grow, debug, moreStyle,
+  gutterWidth, align, debug, moreStyle,
 }) => {
   const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
 
@@ -14,7 +14,8 @@ export default ({
     marginRight: `-${theGutterWidth / 2}px`,
     display: 'flex',
     flexWrap: 'wrap',
-    flexGrow: grow ? 1 : 0,
+    flexGrow: 0,
+    flexShrink: 0,
     alignItems,
     ...moreStyle,
   };
