@@ -7,11 +7,11 @@ declare module 'react-grid-system' {
         End = "end"
     }
     type Offsets = {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
+        xs?: number,
+        sm?: number,
+        md?: number,
+        lg?: number,
+        xl?: number
     }
     type Push = {
         xs?: boolean,
