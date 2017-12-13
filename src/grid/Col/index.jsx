@@ -105,6 +105,7 @@ export default class Col extends React.Component {
   }
 
   componentWillUnmount = () => {
+    this.eventListener.cancel();
     window.removeEventListener('resize', this.eventListener);
   }
 

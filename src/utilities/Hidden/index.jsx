@@ -62,6 +62,7 @@ export default class Hidden extends React.Component {
   }
 
   componentWillUnmount = () => {
+    this.eventListener.cancel();
     window.removeEventListener('resize', this.eventListener);
   }
 
