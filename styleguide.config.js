@@ -1,4 +1,6 @@
 /* eslint comma-dangle: off */
+/* eslint import/no-extraneous-dependencies: off */
+
 const { createConfig, babel, postcss } = require('webpack-blocks');
 
 const { version } = require('./package.json');
@@ -24,6 +26,5 @@ module.exports = {
   webpackConfig: createConfig([
     babel(),
     postcss()
-  ]),
-  template: './src/index.html'
+  ])
 };

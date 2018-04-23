@@ -5,7 +5,7 @@
   "main": "./build/index.js",
   "scripts": {
     "start": "styleguidist server",
-    "build": "rimraf build && babel src -d build",
+    "build": "rm -rf build && babel src -d build",
     "docs": "styleguidist build",
     "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.jsx src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,16 +28,6 @@
     "responsive"
   ],
   "author": "JSxMachina",
-  "contributors": [
-    {
-      "name": "Gerben Meyer",
-      "url": "https://github.com/gerbenmeyer"
-    },
-    {
-      "name": "Mohamed Ben Mohamed",
-      "url": "https://github.com/tikider"
-    }
-  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JSxMachina/react-grid-system/issues"
@@ -47,27 +37,25 @@
     "react": "^16.0.0"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "prop-types": "^15.6.0"
+    "lodash": "^4.17.5",
+    "prop-types": "^15.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.1",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "eslint": "^4.8.0",
-    "eslint-config-airbnb": "^16.0.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-styleguidist": "^6.0.30",
-    "rimraf": "^2.6.2",
-    "webpack": "^3.7.1",
-    "webpack-blocks": "^1.0.0-rc"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-styleguidist": "^7.0.8",
+    "webpack": "^4.6.0",
+    "webpack-blocks": "^1.0.0"
   }
 }
