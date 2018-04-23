@@ -85,19 +85,11 @@ Some examples on how to use these components:
 Next to that, the `ScreenClassRender` component is provided, for rendering a component differently based on the screen class. An example on how to use this:
 
 ```html
-const styleFunction = (screenClass, props) => {
-  let fontSize = 10;
-  if (screenClass === 'sm') fontSize = 20;
-  if (screenClass === 'md') fontSize = 30;
-  if (screenClass === 'lg') fontSize = 40;
-  if (screenClass === 'xl') fontSize = 50;
-  return {
-      fontSize: `${fontSize}px`,
-      ...props.style,
-   };
-};
-
-<ScreenClassRender style={styleFunction}><p style={{ color: 'red' }}>Some red text, which font size depends on the screen class.</p></ScreenClassRender>
+<ScreenClassRender render={(screenClass) => (
+  <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+    Screen class: {screenClass}
+  </p>
+)} />
 ```
 
 ## Context types

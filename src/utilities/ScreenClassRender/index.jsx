@@ -1,4 +1,5 @@
 /* global window */
+/* eslint no-console: off */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -8,19 +9,16 @@ import { getScreenClass } from '../../utils';
 export default class ScreenClassRender extends React.Component {
   static propTypes = {
     /**
-     * Content of the component
+     * Deprecated, will be removed in the next major release
      */
     children: PropTypes.element,
     /**
-     * A function returning the style for the children.
-     * Will be called with two arguments: the screen class and
-     * the props of the child element.
+     * Deprecated, will be removed in the next major release
      */
     style: PropTypes.func,
     /**
-     * A function which return value will be rendered.
+     * The function which return value will be rendered.
      * Will be called with one argument: the screen class.
-     * When set, the props children and style will be ignored.
      */
     render: PropTypes.func,
   };
@@ -60,6 +58,7 @@ export default class ScreenClassRender extends React.Component {
     if (this.props.render) {
       return <React.Fragment>{this.props.render(this.state.screenClass)}</React.Fragment>;
     }
+    console.info('Please use the render prop of ScreenClassRender. Using style and children is deprecated and will be removed in the next major release.');
     if (this.props.style) {
       return React.cloneElement(this.props.children, { style: this.getStyle() });
     }

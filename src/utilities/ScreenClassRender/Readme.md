@@ -1,17 +1,10 @@
-Example usage, rendering a different font size for each screen class:
+Example usage, rendering a font size based on the screen class:
 
 ```
-const styleFunction = (screenClass, props) => {
-  let fontSize = 10;
-  if (screenClass === 'sm') fontSize = 20;
-  if (screenClass === 'md') fontSize = 30;
-  if (screenClass === 'lg') fontSize = 40;
-  if (screenClass === 'xl') fontSize = 50;
-  return {
-      fontSize: `${fontSize}px`,
-      ...props.style,
-   };
-};
+<ScreenClassRender render={(screenClass) => (
+  <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+    Screen class: {screenClass}
+  </p>
+)} />
 
-<ScreenClassRender style={styleFunction}><p style={{ color: 'red' }}>Some text</p></ScreenClassRender>
 ```
