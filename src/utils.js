@@ -16,6 +16,8 @@ export const defaultContainerWidths = [540, 750, 960, 1140];
 
 export const defaultGutterWidth = 30;
 
+export const defaultGridColumns = 12;
+
 export const getScreenClass = ({ serverSideScreenClass, breakpoints }) => {
   const theBreakpoints = breakpoints && breakpoints.length ? breakpoints : defaultBreakpoints;
 
