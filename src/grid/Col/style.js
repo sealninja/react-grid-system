@@ -5,7 +5,7 @@ const hasWidth = widths => Object.keys(widths).reduce((acc, cur) => acc || width
 const getWidth = (width, gridColumns) => {
   if (typeof width !== 'number') return undefined;
   const colWidth = normalizeColumnWidth(width);
-  return `${100 / gridColumns * colWidth}%`;
+  return `${(100 / gridColumns) * colWidth}%`;
 };
 
 export default ({
