@@ -93,6 +93,7 @@ export default class Col extends React.Component {
     serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
     breakpoints: PropTypes.arrayOf(PropTypes.number),
     gutterWidth: PropTypes.number,
+    gridColumns: PropTypes.number,
   };
 
   componentWillMount = () => {
@@ -129,6 +130,7 @@ export default class Col extends React.Component {
       screenClass: this.state.screenClass,
       gutterWidth: this.context.gutterWidth,
       moreStyle: style,
+      gridColumns: this.context.gridColumns,
     });
     return (
       <div style={theStyle} {...otherProps}>
