@@ -1,5 +1,5 @@
 # react-grid-system
-A no CSS Bootstrap-like responsive grid system for React.
+A powerful Bootstrap-like responsive grid system for React.
 
 [![NPM version][version-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
@@ -8,7 +8,7 @@ A no CSS Bootstrap-like responsive grid system for React.
 * [Installation](#installation)
 * [Getting started](#getting-started)
 * [Context types](#context-types)
-* [API reference](#api-reference)
+* [API documentation](#api-documentation)
 * [Example application with SSR](#example-application-with-ssr)
 
 ## Installation
@@ -24,7 +24,7 @@ npm install react-grid-system --save
 
 ### Responsive grid
 
-`react-grid-system` provides a responsive grid similar to Bootstrap (see: https://getbootstrap.com/docs/3.3/css/#grid), except here, it's React components only. Even no CSS or class names are used.
+`react-grid-system` provides a responsive grid similar to Bootstrap (see: https://getbootstrap.com/docs/4.1/layout/grid/). However, `react-grid-system` is purely React, even no CSS or class names are used. Moreover, it adds various powerful features, such as setting breakpoints and gutter widths through React's context.
 
 Three components are provided for creating responsive grids: `Container`, `Row`, and `Col`.
 
@@ -45,6 +45,8 @@ An example on how to use these:
   </Row>
 </Container>
 ```
+
+For all features of these components, please have a look at the API documentation: https://JSxMachina.github.io/react-grid-system/
 
 ### Responsive utilities
 
@@ -107,11 +109,12 @@ The following child context types can be provided to the grid components, to alt
 | `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
 | `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
 | `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
+| `gridColumns` | `12` | The number of colums in the grid . |
 | `serverSideScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
 
-## API reference
+## API documentation
 
-The API reference and further documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
+Extensive documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
 
 ## Example application with SSR
 
