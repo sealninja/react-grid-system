@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getStyle from './style';
-import ClearFix from '../../utilities/ClearFix';
 
 export default class Row extends React.Component {
   static propTypes = {
@@ -62,7 +61,6 @@ export default class Row extends React.Component {
     return (
       <div style={theStyle} {...otherProps}>
         {children}
-        <ClearFix xs sm md lg xl />
       </div>
     );
   }

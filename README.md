@@ -24,8 +24,7 @@ npm install react-grid-system --save
 
 ### Responsive grid
 
-`react-grid-system` provides a responsive grid similar to Bootstrap (see: https://getbootstrap.com/docs/3.3/css/#grid),
-except here, it's React components only. Even no CSS or class names are used.
+`react-grid-system` provides a responsive grid similar to Bootstrap (see: https://getbootstrap.com/docs/3.3/css/#grid), except here, it's React components only. Even no CSS or class names are used.
 
 Three components are provided for creating responsive grids: `Container`, `Row`, and `Col`.
 
@@ -50,8 +49,7 @@ An example on how to use these:
 ### Responsive utilities
 
 Next to the grid, two components are provided for showing or hiding content: `Visible` and `Hidden`.
-The main difference between these two components and the similar CSS classes provided by Bootstrap is that
-these two components do not render the content at all when it should be hidden, instead of just hiding it with CSS.
+The main difference between these two components and the similar CSS classes provided by Bootstrap is that these two components do not render the content at all when it should be hidden, instead of just hiding it with CSS.
 
 Some examples on how to use these components:
 
@@ -82,8 +80,7 @@ Some examples on how to use these components:
 </Hidden>
 ```
 
-Next to that, the `ScreenClassRender` component is provided, for rendering a component differently based on the screen class.
-An example on how to use this:
+Next to that, the `ScreenClassRender` component is provided, for rendering a component differently based on the screen class. An example on how to use this:
 
 ```html
 const styleFunction = (screenClass, props) => {
@@ -99,23 +96,6 @@ const styleFunction = (screenClass, props) => {
 };
 
 <ScreenClassRender style={styleFunction}><p style={{ color: 'red' }}>Some red text, which font size depends on the screen class.</p></ScreenClassRender>
-```
-
-Finally, a `ClearFix` component can be used for resetting a row. This is sometimes needed when not all columns have the same height. For example:
-
-```html
-<Row>
-  <Col xs={6} sm={3}>
-    xs=6 sm=3<br />
-    This column has a lot more height, so a clearfix is needed for screenclass xs.
-  </Col>
-  <Col xs={6} sm={3}>xs=6 sm=3</Col>
-
-  <ClearFix xs />
-
-  <Col xs={6} sm={3}>xs=6 sm=3</Col>
-  <Col xs={6} sm={3}>xs=6 sm=3</Col>
-</Row>
 ```
 
 ## Context types
