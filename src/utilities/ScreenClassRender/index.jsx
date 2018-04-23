@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import { getScreenClass } from '../../utils';
-import RenderAny from '../../support/RenderAny';
 
 export default class ScreenClassRender extends React.Component {
   static propTypes = {
@@ -59,7 +58,7 @@ export default class ScreenClassRender extends React.Component {
 
   render = () => {
     if (this.props.render) {
-      return <RenderAny>{this.props.render(this.state.screenClass)}</RenderAny>;
+      return <React.Fragment>{this.props.render(this.state.screenClass)}</React.Fragment>;
     }
     if (this.props.style) {
       return React.cloneElement(this.props.children, { style: this.getStyle() });

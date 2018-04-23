@@ -5,18 +5,13 @@ import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import * as style from './style';
 import { getScreenClass } from '../../utils';
-import RenderAny from '../../support/RenderAny';
 
 export default class Visible extends React.Component {
   static propTypes = {
     /**
      * Content of the component
      */
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.node,
-      PropTypes.func,
-    ]).isRequired,
+    children: PropTypes.node.isRequired,
     /**
      * Show on extra small devices
      */
@@ -79,6 +74,6 @@ export default class Visible extends React.Component {
       lg: this.props.lg,
       xl: this.props.xl,
     })) return false;
-    return <RenderAny>{this.props.children}</RenderAny>;
+    return <React.Fragment>{this.props.children}</React.Fragment>;
   }
 }
