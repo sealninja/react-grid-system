@@ -1,11 +1,11 @@
-import { defaultGutterWidth, normalizeColumnWidth, screenClasses, defaultGridColumns } from '../../utils';
+import { defaultGutterWidth, screenClasses, defaultGridColumns } from '../../utils';
 
 const hasWidth = widths => Object.keys(widths).reduce((acc, cur) => acc || widths[cur], false);
 
 const getWidth = (width, gridColumns) => {
   if (typeof width !== 'number') return undefined;
-  const colWidth = normalizeColumnWidth(width);
-  return `${(100 / gridColumns) * colWidth}%`;
+  const normalizedWidth = Math.max(0, Math.min(gridColumns, width));
+  return `${(100 / gridColumns) * normalizedWidth}%`;
 };
 
 export default ({

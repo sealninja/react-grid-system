@@ -34,5 +34,3 @@ export const getScreenClass = ({ serverSideScreenClass, breakpoints }) => {
 
   return screenClass;
 };
-
-export const normalizeColumnWidth = width => Math.max(0, Math.min(12, width));
