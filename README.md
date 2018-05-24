@@ -104,7 +104,7 @@ import { ScreenClassRender } from 'react-grid-system';
 
 The following settings can be configured, to alter the responsive behavior of the grid components:
 
-| Configuration      | Default Value      | Description |
+| Setting      | Default Value      | Description |
 | ----------------- | ------------------ | ------------------------------ |
 | `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
 | `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
@@ -112,7 +112,7 @@ The following settings can be configured, to alter the responsive behavior of th
 | `gridColumns` | `12` | The number of colums in the grid . |
 | `defaultScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
 
-These can be set in the following way:
+These settings can be configured in the following way:
 
 ```javascript
 import { setConfiguration } from 'react-grid-system';
