@@ -7,7 +7,7 @@ A powerful Bootstrap-like responsive grid system for React.
 
 * [Installation](#installation)
 * [Getting started](#getting-started)
-* [Context types](#context-types)
+* [Configuration](#configuration)
 * [API documentation](#api-documentation)
 * [Example application with SSR](#example-application-with-ssr)
 
@@ -30,7 +30,9 @@ Three components are provided for creating responsive grids: `Container`, `Row`,
 
 An example on how to use these:
 
-```html
+```javascript
+import { Container, Row, Col } from 'react-grid-system';
+
 <Container>
   <Row>
     <Col sm={4}>
@@ -55,7 +57,9 @@ The main difference between these two components and the similar CSS classes pro
 
 Some examples on how to use these components:
 
-```html
+```javascript
+import { Visible } from 'react-grid-system';
+
 <p>
   <span>Your current screen class is </span>
   <Visible xs><strong>xs</strong></Visible>
@@ -67,7 +71,9 @@ Some examples on how to use these components:
 </p>
 ```
 
-```html
+```javascript
+import { Visible, Hidden } from 'react-grid-system';
+
 <Visible xs sm>
   <p>Paragraph visible on extra small and small.</p>
 </Visible>
@@ -84,25 +90,37 @@ Some examples on how to use these components:
 
 Next to that, the `ScreenClassRender` component is provided, for rendering a component differently based on the screen class. An example on how to use this:
 
-```html
-<ScreenClassRender render={(screenClass) => (
+```javascript
+import { ScreenClassRender } from 'react-grid-system';
+
+<ScreenClassRender render={screenClass => (
   <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
     Screen class: {screenClass}
   </p>
 )} />
 ```
 
-## Context types
+## Configuration
 
-The following child context types can be provided to the grid components, to alter their responsive behavior. An example on how to use them can be found in the [Example application with SSR](#example-application-with-ssr) below.
+The following settings can be configured, to alter the responsive behavior of the grid components:
 
-| Context Type      | Default Value      | Description |
+| Configuration      | Default Value      | Description |
 | ----------------- | ------------------ | ------------------------------ |
 | `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
 | `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
 | `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
 | `gridColumns` | `12` | The number of colums in the grid . |
-| `serverSideScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
+| `defaultScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
+
+These can be set in the following way:
+
+```javascript
+import { setConfiguration } from 'react-grid-system';
+
+setConfiguration({ defaultScreenClass: 'sm', gridColumns: 20 });
+```
+
+ An example on how to use them can be found in the [Example application with SSR](#example-application-with-ssr) below.
 
 ## API documentation
 

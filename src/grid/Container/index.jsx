@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import getStyle, { getAfterStyle } from './style';
+import { getConfiguration } from '../../config';
 import { getScreenClass } from '../../utils';
 
 export default class Container extends React.Component {
@@ -50,13 +51,6 @@ export default class Container extends React.Component {
     ])),
   };
 
-  static contextTypes = {
-    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: PropTypes.arrayOf(PropTypes.number),
-    containerWidths: PropTypes.arrayOf(PropTypes.number),
-    gutterWidth: PropTypes.number,
-  };
-
   static defaultProps = {
     fluid: false,
     xs: false,
@@ -67,11 +61,15 @@ export default class Container extends React.Component {
     style: {},
   };
 
-  componentWillMount = () => {
-    this.setScreenClass();
+  constructor(props) {
+    super(props);
+    this.state = {
+      screenClass: getConfiguration().defaultScreenClass,
+    };
   }
 
   componentDidMount = () => {
+    this.setScreenClass();
     this.eventListener = throttle(this.setScreenClass, 100);
     window.addEventListener('resize', this.eventListener);
   }
@@ -82,7 +80,7 @@ export default class Container extends React.Component {
   }
 
   setScreenClass = () => {
-    this.setState({ screenClass: getScreenClass(this.context) });
+    this.setState({ screenClass: getScreenClass() });
   }
 
   render = () => {
@@ -97,8 +95,8 @@ export default class Container extends React.Component {
       lg,
       xl,
       screenClass: this.state.screenClass,
-      containerWidths: this.context.containerWidths,
-      gutterWidth: this.context.gutterWidth,
+      containerWidths: getConfiguration().containerWidths,
+      gutterWidth: getConfiguration().gutterWidth,
       moreStyle: style,
     });
     return (

@@ -1,6 +1,8 @@
 /* global window */
 /* eslint "no-console": "off" */
 
+import { getConfiguration } from './config';
+
 const getViewPort = () => {
   if (typeof window !== 'undefined' && window.innerWidth) {
     return window.innerWidth;
@@ -10,26 +12,17 @@ const getViewPort = () => {
 
 export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
 
-export const defaultBreakpoints = [576, 768, 992, 1200];
-
-export const defaultContainerWidths = [540, 750, 960, 1140];
-
-export const defaultGutterWidth = 30;
-
-export const defaultGridColumns = 12;
-
-export const getScreenClass = ({ serverSideScreenClass, breakpoints }) => {
-  const theBreakpoints = breakpoints && breakpoints.length ? breakpoints : defaultBreakpoints;
-
-  let screenClass = serverSideScreenClass || 'xl';
+export const getScreenClass = () => {
+  const { breakpoints, defaultScreenClass } = getConfiguration();
+  let screenClass = defaultScreenClass;
 
   const viewport = getViewPort();
   if (viewport) {
     screenClass = 'xs';
-    if (theBreakpoints[0] && viewport >= theBreakpoints[0]) screenClass = 'sm';
-    if (theBreakpoints[1] && viewport >= theBreakpoints[1]) screenClass = 'md';
-    if (theBreakpoints[2] && viewport >= theBreakpoints[2]) screenClass = 'lg';
-    if (theBreakpoints[3] && viewport >= theBreakpoints[3]) screenClass = 'xl';
+    if (breakpoints[0] && viewport >= breakpoints[0]) screenClass = 'sm';
+    if (breakpoints[1] && viewport >= breakpoints[1]) screenClass = 'md';
+    if (breakpoints[2] && viewport >= breakpoints[2]) screenClass = 'lg';
+    if (breakpoints[3] && viewport >= breakpoints[3]) screenClass = 'xl';
   }
 
   return screenClass;

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getStyle from './style';
+import { getConfiguration } from '../../config';
 
 export default class Row extends React.Component {
   static propTypes = {
@@ -36,24 +37,12 @@ export default class Row extends React.Component {
     debug: false,
   }
 
-  static contextTypes = {
-    gutterWidth: PropTypes.number,
-  };
-
-  static childContextTypes = {
-    gutterWidth: PropTypes.number,
-  };
-
-  getChildContext = () => ({
-    gutterWidth: this.props.nogutter ? 0 : this.context.gutterWidth,
-  });
-
   render = () => {
     const {
       children, style, align, debug, nogutter, ...otherProps
     } = this.props;
     const theStyle = getStyle({
-      gutterWidth: nogutter ? 0 : this.context.gutterWidth,
+      gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
       align,
       debug,
       moreStyle: style,

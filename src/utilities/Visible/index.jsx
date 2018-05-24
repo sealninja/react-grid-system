@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import * as style from './style';
+import { getConfiguration } from '../../config';
 import { getScreenClass } from '../../utils';
 
 export default class Visible extends React.Component {
@@ -34,11 +35,6 @@ export default class Visible extends React.Component {
     xl: PropTypes.bool,
   };
 
-  static contextTypes = {
-    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: PropTypes.arrayOf(PropTypes.number),
-  };
-
   static defaultProps = {
     xs: false,
     sm: false,
@@ -47,11 +43,15 @@ export default class Visible extends React.Component {
     xl: false,
   };
 
-  componentWillMount = () => {
-    this.setScreenClass();
+  constructor(props) {
+    super(props);
+    this.state = {
+      screenClass: getConfiguration().defaultScreenClass,
+    };
   }
 
   componentDidMount = () => {
+    this.setScreenClass();
     this.eventListener = throttle(this.setScreenClass, 100);
     window.addEventListener('resize', this.eventListener);
   }
@@ -62,7 +62,7 @@ export default class Visible extends React.Component {
   }
 
   setScreenClass = () => {
-    this.setState({ screenClass: getScreenClass(this.context) });
+    this.setState({ screenClass: getScreenClass() });
   }
 
   render = () => {

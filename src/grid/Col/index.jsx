@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import getStyle from './style';
+import { getConfiguration } from '../../config';
 import { getScreenClass } from '../../utils';
 
 export default class Col extends React.Component {
@@ -89,18 +90,15 @@ export default class Col extends React.Component {
     debug: false,
   }
 
-  static contextTypes = {
-    serverSideScreenClass: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    breakpoints: PropTypes.arrayOf(PropTypes.number),
-    gutterWidth: PropTypes.number,
-    gridColumns: PropTypes.number,
-  };
-
-  componentWillMount = () => {
-    this.setScreenClass();
+  constructor(props) {
+    super(props);
+    this.state = {
+      screenClass: getConfiguration().defaultScreenClass,
+    };
   }
 
   componentDidMount = () => {
+    this.setScreenClass();
     this.eventListener = throttle(this.setScreenClass, 100);
     window.addEventListener('resize', this.eventListener);
   }
@@ -111,7 +109,7 @@ export default class Col extends React.Component {
   }
 
   setScreenClass = () => {
-    this.setState({ screenClass: getScreenClass(this.context) });
+    this.setState({ screenClass: getScreenClass() });
   }
 
   render = () => {
@@ -128,9 +126,9 @@ export default class Col extends React.Component {
       push,
       debug,
       screenClass: this.state.screenClass,
-      gutterWidth: this.context.gutterWidth,
+      gutterWidth: getConfiguration().gutterWidth,
+      gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
-      gridColumns: this.context.gridColumns,
     });
     return (
       <div style={theStyle} {...otherProps}>
