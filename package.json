@@ -1,7 +1,7 @@
 {
   "name": "react-grid-system",
   "version": "4.1.0",
-  "description": "A no CSS Bootstrap-like responsive grid system for React.",
+  "description": "A powerful Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
   "scripts": {
     "start": "styleguidist server",
