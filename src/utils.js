@@ -3,6 +3,8 @@
 
 import { getConfiguration } from './config';
 
+export const defaultGutterWidth = 30;
+
 const getViewPort = () => {
   if (typeof window !== 'undefined' && window.innerWidth) {
     return window.innerWidth;
