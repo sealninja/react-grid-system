@@ -1,17 +1,13 @@
-import { defaultGutterWidth } from '../../utils';
-
 export default ({
   gutterWidth, align, debug, moreStyle,
 }) => {
-  const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
-
   let alignItems = align;
   if (align === 'start') alignItems = 'flex-start';
   if (align === 'end') alignItems = 'flex-end';
 
   const styles = {
-    marginLeft: `-${theGutterWidth / 2}px`,
-    marginRight: `-${theGutterWidth / 2}px`,
+    marginLeft: `-${gutterWidth / 2}px`,
+    marginRight: `-${gutterWidth / 2}px`,
     display: 'flex',
     flexWrap: 'wrap',
     flexGrow: 0,

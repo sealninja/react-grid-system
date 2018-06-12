@@ -1,4 +1,4 @@
-import { defaultGutterWidth, screenClasses, defaultGridColumns } from '../../utils';
+import { screenClasses } from '../../utils';
 
 const hasWidth = widths => Object.keys(widths).reduce((acc, cur) => acc || widths[cur], false);
 
@@ -19,15 +19,12 @@ export default ({
   moreStyle,
   gridColumns,
 }) => {
-  const theGutterWidth = typeof gutterWidth === 'number' ? gutterWidth : defaultGutterWidth;
-  const theGridColumns = typeof gridColumns === 'number' ? gridColumns : defaultGridColumns;
-
   const styles = {
     boxSizing: 'border-box',
     minHeight: '1px',
     position: 'relative',
-    paddingLeft: `${theGutterWidth / 2}px`,
-    paddingRight: `${theGutterWidth / 2}px`,
+    paddingLeft: `${gutterWidth / 2}px`,
+    paddingRight: `${gutterWidth / 2}px`,
     width: '100%',
     overflow: 'hidden',
     ...moreStyle,
@@ -48,11 +45,11 @@ export default ({
 
   screenClasses.forEach((size, index) => {
     if (screenClasses.indexOf(screenClass) >= index) {
-      styles.flexBasis = getWidth(width[size], theGridColumns) || styles.flexBasis;
-      styles.maxWidth = getWidth(width[size], theGridColumns) || styles.maxWidth;
-      styles.marginLeft = getWidth(offset[size], theGridColumns) || styles.marginLeft;
-      styles.right = getWidth(pull[size], theGridColumns) || styles.right;
-      styles.left = getWidth(push[size], theGridColumns) || styles.left;
+      styles.flexBasis = getWidth(width[size], gridColumns) || styles.flexBasis;
+      styles.maxWidth = getWidth(width[size], gridColumns) || styles.maxWidth;
+      styles.marginLeft = getWidth(offset[size], gridColumns) || styles.marginLeft;
+      styles.right = getWidth(pull[size], gridColumns) || styles.right;
+      styles.left = getWidth(push[size], gridColumns) || styles.left;
     }
   });
 
