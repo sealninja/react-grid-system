@@ -1,11 +1,6 @@
 declare module 'react-grid-system' {
-    import * as React from 'react';
-    enum Align {
-        Normal = "normal",
-        Start = "start",
-        Center = "center",
-        End = "end"
-    }
+    import * as React from 'react'
+    type Align = "normal" | "start" | "center" | "end"
     type Offsets = {
         xs?: number,
         sm?: number,
