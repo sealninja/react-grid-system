@@ -6,6 +6,7 @@ import throttle from 'lodash/throttle';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
 import { getScreenClass } from '../../utils';
+import { NoGutterContext } from '../Row';
 
 export default class Col extends React.Component {
   static propTypes = {
@@ -112,7 +113,7 @@ export default class Col extends React.Component {
     this.setState({ screenClass: getScreenClass() });
   }
 
-  render = () => {
+  renderCol = (nogutter) => {
     const {
       children, xs, sm, md, lg, xl, offset, pull, push, debug, style,
       ...otherProps
@@ -126,7 +127,7 @@ export default class Col extends React.Component {
       push,
       debug,
       screenClass: this.state.screenClass,
-      gutterWidth: getConfiguration().gutterWidth,
+      gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
       gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
     });
@@ -136,4 +137,10 @@ export default class Col extends React.Component {
       </div>
     );
   };
+
+  render = () => (
+    <NoGutterContext.Consumer>
+      {nogutter => this.renderCol(nogutter)}
+    </NoGutterContext.Consumer>
+  );
 }

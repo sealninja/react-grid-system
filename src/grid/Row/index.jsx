@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
 
+export const NoGutterContext = React.createContext(false);
+
 export default class Row extends React.Component {
   static propTypes = {
     /**
@@ -49,7 +51,9 @@ export default class Row extends React.Component {
     });
     return (
       <div style={theStyle} {...otherProps}>
-        {children}
+        <NoGutterContext.Provider value={this.props.nogutter}>
+          {children}
+        </NoGutterContext.Provider>
       </div>
     );
   }
