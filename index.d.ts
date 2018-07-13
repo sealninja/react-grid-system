@@ -22,7 +22,7 @@ declare module 'react-grid-system' {
         lg?: boolean,
         xl?: boolean
     }
-    type ColProps = {
+    type ColProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         debug?: boolean,
         align?: Align
         xs?: number,
@@ -36,7 +36,7 @@ declare module 'react-grid-system' {
         style?: object
     }
 
-    type ContainerProps = {
+    type ContainerProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         xs?: boolean,
         sm?: boolean,
         md?: boolean,
@@ -46,7 +46,7 @@ declare module 'react-grid-system' {
         style?: object
     }
 
-    type RowProps = {
+    type RowProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         align?: Align,
         debug?: boolean,
         style?: object,
