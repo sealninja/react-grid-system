@@ -81,6 +81,15 @@ declare module 'react-grid-system' {
         xl?: boolean
     }
 
+    type Configuration = {
+        breakpoints?: Array<number>,
+        containerWidths?: Array<number>,
+        gutterWidth?: number,
+        gridColumns?: number,
+        defaultScreenClass?: "xs" | "sm" | "md" | "lg" | "xl"
+    }
+    export function setConfiguration(configuration: Configuration): void
+
     export class Col extends React.Component<ColProps, any> {}
     export class Container extends React.Component<ContainerProps, any> {}
     export class Row extends React.Component<RowProps, any> {}
