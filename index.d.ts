@@ -9,18 +9,18 @@ declare module 'react-grid-system' {
         xl?: number
     }
     type Push = {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
+        xs?: number,
+        sm?: number,
+        md?: number,
+        lg?: number,
+        xl?: number
     }
     type Pull = {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
+        xs?: number,
+        sm?: number,
+        md?: number,
+        lg?: number,
+        xl?: number
     }
     type ColProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         debug?: boolean,
