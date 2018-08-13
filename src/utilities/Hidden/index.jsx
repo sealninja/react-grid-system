@@ -74,6 +74,10 @@ export default class Hidden extends React.Component {
       lg: this.props.lg,
       xl: this.props.xl,
     })) return false;
-    return <React.Fragment>{this.props.children}</React.Fragment>;
+    return (
+      <React.Fragment>
+        {this.props.children}
+      </React.Fragment>
+    );
   }
 }

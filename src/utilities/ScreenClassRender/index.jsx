@@ -39,6 +39,8 @@ export default class ScreenClassRender extends React.Component {
   }
 
   render = () => (
-    <React.Fragment>{this.props.render(this.state.screenClass)}</React.Fragment>
+    <React.Fragment>
+      {this.props.render(this.state.screenClass)}
+    </React.Fragment>
   );
 }

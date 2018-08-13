@@ -21,8 +21,8 @@ module.exports = {
   ],
   serverPort: 4095,
   styleguideDir: './docs',
-  showCode: true,
-  showUsage: true,
+  exampleMode: 'expand',
+  usageMode: 'expand',
   webpackConfig: createConfig([
     babel(),
     postcss()

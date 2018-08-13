@@ -9,4 +9,3 @@ export const visible = ({
 };
 
 export default visible;
-

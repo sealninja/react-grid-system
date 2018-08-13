@@ -3,6 +3,7 @@
   "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": "off",
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "react/destructuring-assignment": "off"
   }
 }
