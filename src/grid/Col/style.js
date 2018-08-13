@@ -26,7 +26,6 @@ export default ({
     paddingLeft: `${gutterWidth / 2}px`,
     paddingRight: `${gutterWidth / 2}px`,
     width: '100%',
-    overflow: 'hidden',
     ...moreStyle,
   };
 
