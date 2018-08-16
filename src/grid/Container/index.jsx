@@ -1,6 +1,6 @@
 /* global window */
 
-import React from 'react';
+import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import getStyle, { getAfterStyle } from './style';
@@ -49,6 +49,13 @@ export default class Container extends React.Component {
       PropTypes.number,
       PropTypes.string,
     ])),
+    /**
+     * Use your own component
+     */
+    component: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string,
+    ]),
   };
 
   static defaultProps = {
@@ -59,6 +66,7 @@ export default class Container extends React.Component {
     lg: false,
     xl: false,
     style: {},
+    component: 'div',
   };
 
   constructor(props) {
@@ -85,7 +93,7 @@ export default class Container extends React.Component {
 
   render = () => {
     const {
-      children, fluid, xs, sm, md, lg, xl, style, ...otherProps
+      children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
     } = this.props;
     const theStyle = getStyle({
       fluid,
@@ -99,11 +107,11 @@ export default class Container extends React.Component {
       gutterWidth: getConfiguration().gutterWidth,
       moreStyle: style,
     });
-    return (
-      <div style={theStyle} {...otherProps}>
-        {children}
-        <span style={getAfterStyle()} />
-      </div>
-    );
+    return createElement(component, {
+      style: theStyle,
+      ...otherProps,
+    },
+    [children,
+      <span style={getAfterStyle()} />]);
   }
 }

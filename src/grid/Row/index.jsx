@@ -30,6 +30,13 @@ export default class Row extends React.Component {
       * Set to apply some debug styling
       */
     debug: PropTypes.bool,
+    /**
+     * Use your own component
+     */
+    component: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string,
+    ]),
   };
 
   static defaultProps = {
@@ -37,11 +44,12 @@ export default class Row extends React.Component {
     nogutter: false,
     style: {},
     debug: false,
+    component: 'div',
   }
 
   render = () => {
     const {
-      children, style, align, debug, nogutter, ...otherProps
+      children, style, align, debug, nogutter, component, ...otherProps
     } = this.props;
     const theStyle = getStyle({
       gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
@@ -49,12 +57,9 @@ export default class Row extends React.Component {
       debug,
       moreStyle: style,
     });
-    return (
-      <div style={theStyle} {...otherProps}>
-        <NoGutterContext.Provider value={this.props.nogutter}>
-          {children}
-        </NoGutterContext.Provider>
-      </div>
-    );
+    return React.createElement(component, { style: theStyle, ...otherProps },
+      <NoGutterContext.Provider value={nogutter}>
+        { children }
+      </NoGutterContext.Provider>);
   }
 }
