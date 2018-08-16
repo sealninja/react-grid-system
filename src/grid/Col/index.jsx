@@ -1,6 +1,6 @@
 /* global window */
 
-import React from 'react';
+import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import getStyle from './style';
@@ -75,6 +75,10 @@ export default class Col extends React.Component {
      * Set to apply some debug styling
      */
     debug: PropTypes.bool,
+    /**
+     * Use your own component
+     */
+    component: PropTypes.element,
   };
 
   static defaultProps = {
@@ -89,6 +93,7 @@ export default class Col extends React.Component {
     pull: {},
     style: {},
     debug: false,
+    component: 'div',
   }
 
   constructor(props) {
@@ -115,7 +120,7 @@ export default class Col extends React.Component {
 
   renderCol = (nogutter) => {
     const {
-      children, xs, sm, md, lg, xl, offset, pull, push, debug, style,
+      children, xs, sm, md, lg, xl, offset, pull, push, debug, style, component,
       ...otherProps
     } = this.props;
     const theStyle = getStyle({
@@ -131,11 +136,7 @@ export default class Col extends React.Component {
       gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
     });
-    return (
-      <div style={theStyle} {...otherProps}>
-        {children}
-      </div>
-    );
+    return createElement(component, { style: theStyle, ...otherProps, children });
   };
 
   render = () => (
