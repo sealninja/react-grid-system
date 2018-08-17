@@ -81,14 +81,21 @@ declare module 'react-grid-system' {
         xl?: boolean
     }
 
+    type ScreenClass = "xs" | "sm" | "md" | "lg" | "xl";
+
+    type WithScreenClassProps = {
+        screenClass: ScreenClass
+    }
+    
     type Configuration = {
         breakpoints?: Array<number>,
         containerWidths?: Array<number>,
         gutterWidth?: number,
         gridColumns?: number,
-        defaultScreenClass?: "xs" | "sm" | "md" | "lg" | "xl"
+        defaultScreenClass?: ScreenClass
     }
     export function setConfiguration(configuration: Configuration): void
+    export function withScreenClass(Component: React.Component<any, any>) : React.Component<WithScreenClassProps, any>
 
     export class Col extends React.Component<ColProps, any> {}
     export class Container extends React.Component<ContainerProps, any> {}

@@ -88,8 +88,9 @@ import { Visible, Hidden } from 'react-grid-system';
 </Hidden>
 ```
 
-Next to that, the `ScreenClassRender` component is provided, for rendering a component differently based on the screen class. An example on how to use this:
+Next to that, the `ScreenClassRender` component and the `withScreenClass` HOC are provided, for rendering a component differently based on the screen class. Both can be used to achieve the same result; the choice is primarily stylistic. An example on how to use these:
 
+ScreenClassRender Component
 ```javascript
 import { ScreenClassRender } from 'react-grid-system';
 
@@ -98,6 +99,26 @@ import { ScreenClassRender } from 'react-grid-system';
     Screen class: {screenClass}
   </p>
 )} />
+```
+
+withScreenClass HOC
+```javascript
+import { withScreenClass } from 'react-grid-system';
+
+function ResponsiveFontSizeExample(props) {
+    const {
+      screenClass, // added by withScreenClass HOC
+    } = props;
+
+    return (
+        <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+            Screen class: {screenClass}
+        </p>
+    );
+}
+
+export default withScreenClass(ResponsiveFontSizeExample);
+
 ```
 
 ## Configuration
