@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import getStyle from './style';
+import React from 'react';
 import { getConfiguration } from '../../config';
+import getStyle from './style';
 
 export const NoGutterContext = React.createContext(false);
 
@@ -12,54 +12,68 @@ export default class Row extends React.Component {
      */
     children: PropTypes.node.isRequired,
     /**
-    * Column alignment
-    */
-    align: PropTypes.oneOf(['normal', 'start', 'center', 'end']),
+     * Vertical column alignment
+     */ align: PropTypes.oneOf(['normal', 'start', 'center', 'end']),
     /**
-    * No gutter for this row
-    */
-    nogutter: PropTypes.bool,
+     * Horizontal column alignment
+     */ justify: PropTypes.oneOf([
+      'start',
+      'center',
+      'end',
+      'between',
+      'around',
+      'initial',
+      'inherit',
+    ]),
     /**
-    * Optional styling
-    */
-    style: PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
+     * No gutter for this row
+     */ nogutter: PropTypes.bool,
     /**
-      * Set to apply some debug styling
-      */
-    debug: PropTypes.bool,
+     * Optional styling
+     */ style: PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    ),
+    /**
+     * Set to apply some debug styling
+     */ debug: PropTypes.bool,
     /**
      * Use your own component
-     */
-    component: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.string,
-    ]),
+     */ component: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   };
 
   static defaultProps = {
     align: 'normal',
+    justify: 'flex-start',
     nogutter: false,
     style: {},
     debug: false,
     component: 'div',
-  }
+  };
 
   render = () => {
     const {
-      children, style, align, debug, nogutter, component, ...otherProps
+      children,
+      style,
+      align,
+      justify,
+      debug,
+      nogutter,
+      component,
+      ...otherProps
     } = this.props;
     const theStyle = getStyle({
       gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
       align,
+      justify,
       debug,
       moreStyle: style,
     });
-    return React.createElement(component, { style: theStyle, ...otherProps },
+    return React.createElement(
+      component,
+      { style: theStyle, ...otherProps },
       <NoGutterContext.Provider value={nogutter}>
-        { children }
-      </NoGutterContext.Provider>);
-  }
+        {children}
+      </NoGutterContext.Provider>,
+    );
+  };
 }
