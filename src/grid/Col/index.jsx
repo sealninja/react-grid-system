@@ -79,7 +79,7 @@ export default class Col extends React.Component {
      * Use your own component
      */
     component: PropTypes.oneOfType([
-      PropTypes.element,
+      PropTypes.func,
       PropTypes.string,
     ]),
   };

@@ -34,7 +34,7 @@ export default class Row extends React.Component {
      * Use your own component
      */
     component: PropTypes.oneOfType([
-      PropTypes.element,
+      PropTypes.func,
       PropTypes.string,
     ]),
   };
