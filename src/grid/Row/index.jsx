@@ -38,7 +38,11 @@ export default class Row extends React.Component {
      */ debug: PropTypes.bool,
     /**
      * Use your own component
-     */ component: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+     */
+    component: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.string,
+    ]),
   };
 
   static defaultProps = {

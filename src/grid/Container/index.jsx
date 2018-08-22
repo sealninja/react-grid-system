@@ -53,7 +53,7 @@ export default class Container extends React.Component {
      * Use your own component
      */
     component: PropTypes.oneOfType([
-      PropTypes.element,
+      PropTypes.func,
       PropTypes.string,
     ]),
   };
@@ -111,7 +111,9 @@ export default class Container extends React.Component {
       style: theStyle,
       ...otherProps,
     },
-    [children,
-      <span style={getAfterStyle()} />]);
+      <React.Fragment>
+        {children}
+        <span style={getAfterStyle()} />
+      </React.Fragment>);
   }
 }
