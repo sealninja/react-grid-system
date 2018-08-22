@@ -111,7 +111,9 @@ export default class Container extends React.Component {
       style: theStyle,
       ...otherProps,
     },
-    [children,
-      <span style={getAfterStyle()} />]);
+      <React.Fragment>
+        {children}
+        <span style={getAfterStyle()} />
+      </React.Fragment>);
   }
 }
