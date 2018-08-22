@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getConfiguration } from '../../config';
 import getStyle from './style';
 
@@ -13,10 +13,12 @@ export default class Row extends React.Component {
     children: PropTypes.node.isRequired,
     /**
      * Vertical column alignment
-     */ align: PropTypes.oneOf(['normal', 'start', 'center', 'end']),
+     */
+    align: PropTypes.oneOf(['normal', 'start', 'center', 'end']),
     /**
      * Horizontal column alignment
-     */ justify: PropTypes.oneOf([
+     */
+    justify: PropTypes.oneOf([
       'start',
       'center',
       'end',
@@ -27,15 +29,18 @@ export default class Row extends React.Component {
     ]),
     /**
      * No gutter for this row
-     */ nogutter: PropTypes.bool,
+     */
+    nogutter: PropTypes.bool,
     /**
      * Optional styling
-     */ style: PropTypes.objectOf(
+     */
+    style: PropTypes.objectOf(
       PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     ),
     /**
      * Set to apply some debug styling
-     */ debug: PropTypes.bool,
+     */
+    debug: PropTypes.bool,
     /**
      * Use your own component
      */

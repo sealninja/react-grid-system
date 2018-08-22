@@ -17,7 +17,15 @@ export default ({
   if (justify === 'inherit') justifyContent = 'inherit';
 
   const styles = {
-    marginLeft: `-${gutterWidth / 2}px`, marginRight: `-${gutterWidth / 2}px`, display: 'flex', flexWrap: 'wrap', flexGrow: 0, flexShrink: 0, alignItems, justifyContent, ...moreStyle,
+    marginLeft: `-${gutterWidth / 2}px`,
+    marginRight: `-${gutterWidth / 2}px`,
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexGrow: 0,
+    flexShrink: 0,
+    alignItems,
+    justifyContent,
+    ...moreStyle,
   };
 
   if (debug) {
