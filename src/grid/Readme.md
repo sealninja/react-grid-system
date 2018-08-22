@@ -116,6 +116,54 @@ Resize your browser or load on different devices to test the grid system.
 </Container>
 ```
 
+### Example: Horizontal alignment
+
+```
+<Container fluid style={{ lineHeight: '32px' }}>
+  <Row justify="start" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+  <Row justify="center" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+  <Row justify="end" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+  <Row justify="between" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+  <Row justify="around" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+  <Row justify="initial" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+  <Row justify="inherit" style={{ height: '75px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+</Container>
+```
+
 ### Example: Offsetting columns
 
 ```
