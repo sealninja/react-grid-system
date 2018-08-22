@@ -52,7 +52,7 @@ export default class Row extends React.Component {
 
   static defaultProps = {
     align: 'normal',
-    justify: 'flex-start',
+    justify: 'start',
     nogutter: false,
     style: {},
     debug: false,
