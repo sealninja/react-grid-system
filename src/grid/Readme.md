@@ -1,4 +1,4 @@
-A no CSS Bootstrap-like responsive grid system for React.
+A powerful Bootstrap-like responsive grid system for React.
 
 For more information on these components, view this project on GitHub: [https://github.com/JSxMachina/react-grid-system](https://github.com/JSxMachina/react-grid-system)
 
