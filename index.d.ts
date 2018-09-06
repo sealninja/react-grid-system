@@ -1,6 +1,9 @@
 declare module 'react-grid-system' {
-    import * as React from 'react'
-    type Align = "normal" | "start" | "center" | "end"
+    import * as React from 'react';
+
+    type Align = 'normal' | 'start' | 'center' | 'end'
+    type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'initial' | 'inherit';
+
     type Offsets = {
         xs?: number,
         sm?: number,
@@ -8,6 +11,7 @@ declare module 'react-grid-system' {
         lg?: number,
         xl?: number
     }
+
     type Push = {
         xs?: number,
         sm?: number,
@@ -15,6 +19,7 @@ declare module 'react-grid-system' {
         lg?: number,
         xl?: number
     }
+
     type Pull = {
         xs?: number,
         sm?: number,
@@ -22,6 +27,7 @@ declare module 'react-grid-system' {
         lg?: number,
         xl?: number
     }
+
     type ColProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         debug?: boolean,
         align?: Align
@@ -48,6 +54,7 @@ declare module 'react-grid-system' {
 
     type RowProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         align?: Align,
+        justify?: Justify,
         debug?: boolean,
         style?: object,
         nogutter?: boolean
@@ -86,15 +93,16 @@ declare module 'react-grid-system' {
         containerWidths?: Array<number>,
         gutterWidth?: number,
         gridColumns?: number,
-        defaultScreenClass?: "xs" | "sm" | "md" | "lg" | "xl"
+        defaultScreenClass?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     }
+
     export function setConfiguration(configuration: Configuration): void
 
-    export class Col extends React.Component<ColProps, any> {}
-    export class Container extends React.Component<ContainerProps, any> {}
-    export class Row extends React.Component<RowProps, any> {}
-    export class ClearFix extends React.Component<ClearFixProps, any> {}
-    export class Hidden extends React.Component<HiddenProps, any> {}
-    export class ScreenClassRender extends React.Component<ScreenClassRenderProps, any> {}
-    export class Visible extends React.Component<VisibleProps, any> {}
+    export class Col extends React.Component<ColProps, any> { }
+    export class Container extends React.Component<ContainerProps, any> { }
+    export class Row extends React.Component<RowProps, any> { }
+    export class ClearFix extends React.Component<ClearFixProps, any> { }
+    export class Hidden extends React.Component<HiddenProps, any> { }
+    export class ScreenClassRender extends React.Component<ScreenClassRenderProps, any> { }
+    export class Visible extends React.Component<VisibleProps, any> { }
 }
