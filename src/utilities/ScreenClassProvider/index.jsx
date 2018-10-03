@@ -1,15 +1,16 @@
 /* global window */
-
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { getScreenClass } from '../../utils';
 import { getConfiguration } from '../../config';
 
-export const ScreenClassContext = React.createContext();
+export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
+
+export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
 export default class ScreenClassProvider extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+    children: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -20,7 +21,6 @@ export default class ScreenClassProvider extends PureComponent {
     };
 
     this.setScreenClass = this.setScreenClass.bind(this);
-    // this.handleResize = this.handleResize.bind(this);
   }
 
   componentDidMount() {
@@ -39,17 +39,12 @@ export default class ScreenClassProvider extends PureComponent {
     }
   }
 
-  // handleResize() {
-  //   if (window.requestAnimationFrame) {
-  //     window.requestAnimationFrame(this.setScreenClass);
-  //   }
-  // }
-
   render() {
+    const { screenClass } = this.state;
     const { children } = this.props;
 
     return (
-      <ScreenClassContext.Provider value={this.state.screenClass}>
+      <ScreenClassContext.Provider value={screenClass}>
         {children}
       </ScreenClassContext.Provider>
     );

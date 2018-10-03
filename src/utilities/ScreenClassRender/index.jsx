@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ScreenClassContext } from '../ScreenClassContext';
+import ScreenClassResolver from '../ScreenClassResolver';
 
 export default class ScreenClassRender extends React.PureComponent {
   static propTypes = {
@@ -12,8 +12,8 @@ export default class ScreenClassRender extends React.PureComponent {
   };
 
   render = () => (
-    <ScreenClassContext.Consumer>
+    <ScreenClassResolver>
       {screenClass => this.props.render(screenClass)}
-    </ScreenClassContext.Consumer>
+    </ScreenClassResolver>
   );
 }

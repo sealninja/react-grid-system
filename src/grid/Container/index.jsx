@@ -2,7 +2,7 @@ import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import getStyle, { getAfterStyle } from './style';
 import { getConfiguration } from '../../config';
-import { ScreenClassContext } from '../../utilities/ScreenClassContext';
+import ScreenClassResolver from '../../utilities/ScreenClassResolver';
 
 export default class Container extends React.PureComponent {
   static propTypes = {
@@ -66,7 +66,7 @@ export default class Container extends React.PureComponent {
     } = this.props;
 
     return (
-      <ScreenClassContext.Consumer>
+      <ScreenClassResolver>
         {screenClass => createElement(
           component,
           {
@@ -90,7 +90,7 @@ export default class Container extends React.PureComponent {
           </React.Fragment>,
         )
         }
-      </ScreenClassContext.Consumer>
+      </ScreenClassResolver>
     );
   }
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
 import { NoGutterContext } from '../Row';
-import { ScreenClassContext } from '../../utilities/ScreenClassContext';
+import ScreenClassResolver from '../../utilities/ScreenClassResolver';
 
 export default class Col extends React.PureComponent {
   static propTypes = {
@@ -127,12 +127,12 @@ export default class Col extends React.PureComponent {
   };
 
   render = () => (
-    <ScreenClassContext.Consumer>
+    <ScreenClassResolver>
       {screenClass => (
         <NoGutterContext.Consumer>
           {nogutter => this.renderCol(nogutter, screenClass)}
         </NoGutterContext.Consumer>
       )}
-    </ScreenClassContext.Consumer>
+    </ScreenClassResolver>
   );
 }

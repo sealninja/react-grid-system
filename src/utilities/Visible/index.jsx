@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as style from './style';
-import { ScreenClassContext } from '../ScreenClassContext';
+import ScreenClassResolver from '../ScreenClassResolver';
 
 export default class Visible extends React.PureComponent {
   static propTypes = {
@@ -40,7 +40,7 @@ export default class Visible extends React.PureComponent {
   };
 
   render = () => (
-    <ScreenClassContext.Consumer>
+    <ScreenClassResolver>
       {screenClass => (!style.visible({
         screenClass,
         xs: this.props.xs,
@@ -52,6 +52,6 @@ export default class Visible extends React.PureComponent {
         ? null
         : this.props.children)
       }
-    </ScreenClassContext.Consumer>
+    </ScreenClassResolver>
   );
 }
