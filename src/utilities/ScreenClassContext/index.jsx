@@ -1,7 +1,6 @@
 /* global window */
 
 import React, { PureComponent } from 'react';
-import throttle from 'lodash/throttle';
 import PropTypes from 'prop-types';
 import { getScreenClass } from '../../utils';
 import { getConfiguration } from '../../config';
@@ -21,33 +20,30 @@ export default class ScreenClassProvider extends PureComponent {
     };
 
     this.setScreenClass = this.setScreenClass.bind(this);
-    this.handleResize = this.handleResize.bind(this);
+    // this.handleResize = this.handleResize.bind(this);
   }
 
   componentDidMount() {
     this.setScreenClass();
-    this.eventListener = throttle(this.handleResize, 100);
-    window.addEventListener('resize', this.eventListener, false);
+    window.addEventListener('resize', this.setScreenClass, false);
   }
 
   componentWillUnmount() {
-    this.eventListener.cancel();
-    window.addEventListener('resize', this.eventListener, false);
+    window.addEventListener('resize', this.setScreenClass, false);
   }
 
   setScreenClass() {
-    console.log('SetScreenClass');
     const currScreenClass = getScreenClass();
     if (currScreenClass !== this.state.screenClass) {
       this.setState({ screenClass: currScreenClass });
     }
   }
 
-  handleResize() {
-    if (window.requestAnimationFrame) {
-      window.requestAnimationFrame(this.setScreenClass);
-    }
-  }
+  // handleResize() {
+  //   if (window.requestAnimationFrame) {
+  //     window.requestAnimationFrame(this.setScreenClass);
+  //   }
+  // }
 
   render() {
     const { children } = this.props;
