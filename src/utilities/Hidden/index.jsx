@@ -7,7 +7,7 @@ import * as style from './style';
 import { getConfiguration } from '../../config';
 import { getScreenClass } from '../../utils';
 
-export default class Hidden extends React.Component {
+export default class Hidden extends React.PureComponent {
   static propTypes = {
     /**
      * Content of the component

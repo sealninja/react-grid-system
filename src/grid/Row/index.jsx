@@ -5,7 +5,7 @@ import getStyle from './style';
 
 export const NoGutterContext = React.createContext(false);
 
-export default class Row extends React.Component {
+export default class Row extends React.PureComponent {
   static propTypes = {
     /**
      * Content of the element

@@ -7,4 +7,5 @@ export Row from './grid/Row';
 export Hidden from './utilities/Hidden';
 export Visible from './utilities/Visible';
 export ScreenClassRender from './utilities/ScreenClassRender';
+export ScreenClassProvider, { ScreenClassContext } from './utilities/ScreenClassContext';
 export { setConfiguration } from './config';
