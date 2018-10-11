@@ -4,10 +4,11 @@ import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import getStyle from './style';
-import { getConfiguration } from '../../config';
+import { getConfiguration, ScreenContextConsumer } from '../../config';
 import { getScreenClass } from '../../utils';
 import { NoGutterContext } from '../Row';
 
+@ScreenContextConsumer
 export default class Col extends React.Component {
   static propTypes = {
     /**
@@ -99,8 +100,9 @@ export default class Col extends React.Component {
     component: 'div',
   }
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context)
+    console.log("COL.this:", this)
     this.state = {
       screenClass: getConfiguration().defaultScreenClass,
     };
@@ -134,7 +136,7 @@ export default class Col extends React.Component {
       pull,
       push,
       debug,
-      screenClass: this.state.screenClass,
+      screenClass: !this.props.rect ? this.state.screenClass : getScreenClass(this.props.rect),
       gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
       gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
