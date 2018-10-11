@@ -4,9 +4,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import * as style from './style';
-import { getConfiguration } from '../../config';
+import { getConfiguration, ScreenContextConsumer } from '../../config';
 import { getScreenClass } from '../../utils';
 
+@ScreenContextConsumer
 export default class Hidden extends React.Component {
   static propTypes = {
     /**
@@ -67,7 +68,7 @@ export default class Hidden extends React.Component {
 
   render = () => {
     if (style.hidden({
-      screenClass: this.state.screenClass,
+      screenClass: !this.props.rect ? this.state.screenClass : getScreenClass(this.props.rect),
       xs: this.props.xs,
       sm: this.props.sm,
       md: this.props.md,
