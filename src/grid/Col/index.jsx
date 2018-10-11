@@ -102,7 +102,6 @@ export default class Col extends React.Component {
 
   constructor(props, context) {
     super(props, context)
-    console.log("COL.this:", this)
     this.state = {
       screenClass: getConfiguration().defaultScreenClass,
     };
