@@ -10,6 +10,9 @@ export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
 export default class ScreenClassProvider extends PureComponent {
   static propTypes = {
+    /**
+     * Children of the ScreenClassProvider - this should be all your child React nodes.
+     */
     children: PropTypes.func.isRequired,
   };
 

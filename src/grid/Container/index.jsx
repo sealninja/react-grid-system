@@ -2,7 +2,7 @@ import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import getStyle, { getAfterStyle } from './style';
 import { getConfiguration } from '../../config';
-import ScreenClassResolver from '../../utilities/ScreenClassResolver';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Container extends React.PureComponent {
   static propTypes = {

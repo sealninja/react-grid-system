@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
 import { NoGutterContext } from '../Row';
-import ScreenClassResolver from '../../utilities/ScreenClassResolver';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Col extends React.PureComponent {
   static propTypes = {

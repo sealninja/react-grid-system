@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ScreenClassResolver from '../ScreenClassResolver';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class ScreenClassRender extends React.PureComponent {
   static propTypes = {

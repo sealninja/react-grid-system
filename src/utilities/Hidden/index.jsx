@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as style from './style';
-import ScreenClassResolver from '../ScreenClassResolver';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Hidden extends React.PureComponent {
   static propTypes = {
