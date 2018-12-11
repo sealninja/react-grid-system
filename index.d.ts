@@ -96,7 +96,7 @@ declare module 'react-grid-system' {
         defaultScreenClass?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     }
 
-    type ScreenClassProvider = {
+    type ScreenClassProviderProps = {
         children: Function
     }
 
@@ -109,5 +109,5 @@ declare module 'react-grid-system' {
     export class Hidden extends React.Component<HiddenProps, any> { }
     export class ScreenClassRender extends React.Component<ScreenClassRenderProps, any> { }
     export class Visible extends React.Component<VisibleProps, any> { }
-    export class ScreenClassProvider extends React.Component<ScreenClassProvider, any> { }
+    export class ScreenClassProvider extends React.Component<ScreenClassProviderProps, any> { }
 }
