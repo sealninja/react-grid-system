@@ -19,9 +19,9 @@ module.exports = {
       content: './src/utilities/Readme.md',
     },
     {
-      name: 'ScreenClassProvider API',
+      name: 'ScreenClass Context API',
       components: './src/context/ScreenClassProvider/index.jsx',
-      content: './src/context/ScreenClassProvider/Readme.md',
+      content: './src/context/Readme.md',
     },
   ],
   serverPort: 4095,

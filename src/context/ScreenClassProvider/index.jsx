@@ -11,7 +11,7 @@ export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 export default class ScreenClassProvider extends PureComponent {
   static propTypes = {
     /**
-     * Children of the ScreenClassProvider - this should be all your child React nodes.
+     * children of the ScreenClassProvider - this should be all your child React nodes that are using react-grid-system.
      */
     children: PropTypes.func.isRequired,
   };
@@ -47,9 +47,7 @@ export default class ScreenClassProvider extends PureComponent {
     const { children } = this.props;
 
     return (
-      <ScreenClassContext.Provider value={screenClass}>
-        {children}
-      </ScreenClassContext.Provider>
+      <ScreenClassContext.Provider value={screenClass}>{children}</ScreenClassContext.Provider>
     );
   }
 }
