@@ -32,7 +32,7 @@ export default class ScreenClassProvider extends PureComponent {
   }
 
   componentWillUnmount() {
-    window.addEventListener('resize', this.setScreenClass, false);
+    window.removeEventListener('resize', this.setScreenClass, false);
   }
 
   setScreenClass() {
