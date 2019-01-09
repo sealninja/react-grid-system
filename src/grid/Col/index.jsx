@@ -1,14 +1,11 @@
-/* global window */
-
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
-import throttle from 'lodash/throttle';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
-import { getScreenClass } from '../../utils';
 import { NoGutterContext } from '../Row';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class Col extends React.Component {
+export default class Col extends React.PureComponent {
   static propTypes = {
     /**
      * Content of the column
@@ -45,8 +42,8 @@ export default class Col extends React.Component {
       xl: PropTypes.number,
     }),
     /**
-    * The amount this column is pushed to the right for all screenclasses
-    */
+     * The amount this column is pushed to the right for all screenclasses
+     */
     push: PropTypes.shape({
       xs: PropTypes.number,
       sm: PropTypes.number,
@@ -67,10 +64,7 @@ export default class Col extends React.Component {
     /**
      * Optional styling
      */
-    style: PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
+    style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
     /**
      * Set to apply some debug styling
      */
@@ -78,10 +72,7 @@ export default class Col extends React.Component {
     /**
      * Use your own component
      */
-    component: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.string,
-    ]),
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   };
 
   static defaultProps = {
@@ -97,44 +88,37 @@ export default class Col extends React.Component {
     style: {},
     debug: false,
     component: 'div',
-  }
+  };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      screenClass: getConfiguration().defaultScreenClass,
-    };
-  }
-
-  componentDidMount = () => {
-    this.setScreenClass();
-    this.eventListener = throttle(this.setScreenClass, 100);
-    window.addEventListener('resize', this.eventListener);
-  }
-
-  componentWillUnmount = () => {
-    this.eventListener.cancel();
-    window.removeEventListener('resize', this.eventListener);
-  }
-
-  setScreenClass = () => {
-    this.setState({ screenClass: getScreenClass() });
-  }
-
-  renderCol = (nogutter) => {
+  renderCol = (nogutter, screenClass) => {
     const {
-      children, xs, sm, md, lg, xl, offset, pull, push, debug, style, component,
+      children,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
+      offset,
+      pull,
+      push,
+      debug,
+      style,
+      component,
       ...otherProps
     } = this.props;
     const theStyle = getStyle({
       width: {
-        xs, sm, md, lg, xl,
+        xs,
+        sm,
+        md,
+        lg,
+        xl,
       },
       offset,
       pull,
       push,
       debug,
-      screenClass: this.state.screenClass,
+      screenClass,
       gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
       gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
@@ -143,8 +127,12 @@ export default class Col extends React.Component {
   };
 
   render = () => (
-    <NoGutterContext.Consumer>
-      {nogutter => this.renderCol(nogutter)}
-    </NoGutterContext.Consumer>
+    <ScreenClassResolver>
+      {screenClass => (
+        <NoGutterContext.Consumer>
+          {nogutter => this.renderCol(nogutter, screenClass)}
+        </NoGutterContext.Consumer>
+      )}
+    </ScreenClassResolver>
   );
 }

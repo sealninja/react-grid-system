@@ -1,13 +1,10 @@
-/* global window */
-
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
-import throttle from 'lodash/throttle';
 import getStyle, { getAfterStyle } from './style';
 import { getConfiguration } from '../../config';
-import { getScreenClass } from '../../utils';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class Container extends React.Component {
+export default class Container extends React.PureComponent {
   static propTypes = {
     /**
      * Content of the component
@@ -45,17 +42,11 @@ export default class Container extends React.Component {
     /**
      * Optional styling
      */
-    style: PropTypes.objectOf(PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ])),
+    style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
     /**
      * Use your own component
      */
-    component: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.string,
-    ]),
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   };
 
   static defaultProps = {
@@ -69,51 +60,37 @@ export default class Container extends React.Component {
     component: 'div',
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      screenClass: getConfiguration().defaultScreenClass,
-    };
-  }
-
-  componentDidMount = () => {
-    this.setScreenClass();
-    this.eventListener = throttle(this.setScreenClass, 100);
-    window.addEventListener('resize', this.eventListener);
-  }
-
-  componentWillUnmount = () => {
-    this.eventListener.cancel();
-    window.removeEventListener('resize', this.eventListener);
-  }
-
-  setScreenClass = () => {
-    this.setState({ screenClass: getScreenClass() });
-  }
-
-  render = () => {
+  render() {
     const {
       children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
     } = this.props;
-    const theStyle = getStyle({
-      fluid,
-      xs,
-      sm,
-      md,
-      lg,
-      xl,
-      screenClass: this.state.screenClass,
-      containerWidths: getConfiguration().containerWidths,
-      gutterWidth: getConfiguration().gutterWidth,
-      moreStyle: style,
-    });
-    return createElement(component, {
-      style: theStyle,
-      ...otherProps,
-    },
-      <React.Fragment>
-        {children}
-        <span style={getAfterStyle()} />
-      </React.Fragment>);
+
+    return (
+      <ScreenClassResolver>
+        {screenClass => createElement(
+          component,
+          {
+            style: getStyle({
+              fluid,
+              xs,
+              sm,
+              md,
+              lg,
+              xl,
+              screenClass: screenClass || this.state.screenClass,
+              containerWidths: getConfiguration().containerWidths,
+              gutterWidth: getConfiguration().gutterWidth,
+              moreStyle: style,
+            }),
+            ...otherProps,
+          },
+          <React.Fragment>
+            {children}
+            <span style={getAfterStyle()} />
+          </React.Fragment>,
+        )
+        }
+      </ScreenClassResolver>
+    );
   }
 }

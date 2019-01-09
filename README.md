@@ -104,13 +104,13 @@ import { ScreenClassRender } from 'react-grid-system';
 
 The following settings can be configured, to alter the responsive behavior of the grid components:
 
-| Setting      | Default Value      | Description |
-| ----------------- | ------------------ | ------------------------------ |
-| `breakpoints`     | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints. |
-| `containerWidths` | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths. |
-| `gutterWidth` | `30` | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width. |
-| `gridColumns` | `12` | The number of colums in the grid . |
-| `defaultScreenClass` | `xl` | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
+| Setting              | Default Value           | Description                                                                                                                                                                                   |
+| -------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `breakpoints`        | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints.                                           |
+| `containerWidths`    | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths.                                       |
+| `gutterWidth`        | `30`                    | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width.                                             |
+| `gridColumns`        | `12`                    | The number of colums in the grid .                                                                                                                                                            |
+| `defaultScreenClass` | `xl`                    | The screen class used when the view port cannot be determined using `window`. This is useful for server-side rendering (SSR) based on the user agent. See also the example application below. |
 
 These settings can be configured in the following way:
 
@@ -121,6 +121,37 @@ setConfiguration({ defaultScreenClass: 'sm', gridColumns: 20 });
 ```
 
  An example on how to use them can be found in the [Example application with SSR](#example-application-with-ssr) below.
+
+## ScreenClass Context API
+
+Internally, every component that requires the current `screenClass` (which is a human-readable string version of the `window.innerWidth` relating to the user's breakpoints) subscribes to a `ScreenClassProvider`. The provider utilizes the [React Context API](https://reactjs.org/docs/context.html) to send down the current `screenClass` as it updates. By default, each instance of every component subscribes to a separate provider, creating `resize` listeners for each. This can cut down renders during a resize event from ~300 to 4 (one for each breakpoint) making the grid much more performant.
+
+### Do I need to change anything in my code?
+
+This new API is entirely opt-in and current implementations will continue to work. However, for a signficiant performance increase, you will need to add the `ScreenClassProvider` to your application, typically at the highest level in the React node tree (i.e, App.js).
+
+
+### How do I use the ScreenClassProvider?
+
+```jsx static
+import React from 'react';
+import { ScreenClassProvider } from 'react-grid-system';
+
+export default function App() {
+  return (
+    <ScreenClassProvider>
+      <Header />
+      <Page />
+      <Footer />
+    </ScreenClassProvider>
+  );
+}
+```
+
+Internally, the `ScreenClassProvider` attaches a `resize` listener and then updates `state.screenClass` exclusively when a new breakpoint is hit. The `state.screenClass` value is then attached to `ScreenClassContext.Provider`. ScreenClass-dependent components are wrapped with `ScreenClassResolver` which checks to see if there is a valid provider above it and provides one if there is not.
+
+The performance benefit comes from _you_ adding a `ScreenClassProvider` to your application which allows `react-grid-system` components to subscribe to **one source of truth** for the ScreenClass.
+
 
 ## API documentation
 

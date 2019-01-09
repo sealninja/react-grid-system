@@ -1,13 +1,9 @@
-/* global window */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import throttle from 'lodash/throttle';
 import * as style from './style';
-import { getConfiguration } from '../../config';
-import { getScreenClass } from '../../utils';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class Hidden extends React.Component {
+export default class Hidden extends React.PureComponent {
   static propTypes = {
     /**
      * Content of the component
@@ -43,41 +39,19 @@ export default class Hidden extends React.Component {
     xl: false,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      screenClass: getConfiguration().defaultScreenClass,
-    };
-  }
-
-  componentDidMount = () => {
-    this.setScreenClass();
-    this.eventListener = throttle(this.setScreenClass, 100);
-    window.addEventListener('resize', this.eventListener);
-  }
-
-  componentWillUnmount = () => {
-    this.eventListener.cancel();
-    window.removeEventListener('resize', this.eventListener);
-  }
-
-  setScreenClass = () => {
-    this.setState({ screenClass: getScreenClass() });
-  }
-
-  render = () => {
-    if (style.hidden({
-      screenClass: this.state.screenClass,
-      xs: this.props.xs,
-      sm: this.props.sm,
-      md: this.props.md,
-      lg: this.props.lg,
-      xl: this.props.xl,
-    })) return false;
-    return (
-      <React.Fragment>
-        {this.props.children}
-      </React.Fragment>
-    );
-  }
+  render = () => (
+    <ScreenClassResolver>
+      {screenClass => (style.hidden({
+        screenClass,
+        xs: this.props.xs,
+        sm: this.props.sm,
+        md: this.props.md,
+        lg: this.props.lg,
+        xl: this.props.xl,
+      })
+        ? null
+        : this.props.children)
+      }
+    </ScreenClassResolver>
+  );
 }

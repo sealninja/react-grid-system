@@ -1,6 +1,10 @@
 export default ({
   fluid,
-  xs, sm, md, lg, xl,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
   screenClass,
   containerWidths,
   gutterWidth,
