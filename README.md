@@ -8,8 +8,8 @@ A powerful Bootstrap-like responsive grid system for React.
 * [Installation](#installation)
 * [Getting started](#getting-started)
 * [Configuration](#configuration)
-* [API documentation](#api-documentation)
 * [ScreenClass Context API](#screenclass-context-api)
+* [API documentation](#api-documentation)
 * [Example application with SSR](#example-application-with-ssr)
 
 ## Installation
