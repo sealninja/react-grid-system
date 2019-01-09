@@ -14,7 +14,7 @@ export default class ScreenClassProvider extends PureComponent {
      * Children of the ScreenClassProvider.
      * This should be all your child React nodes that are using `react-grid-system`.
      */
-    children: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired,
   };
 
   constructor(props) {
