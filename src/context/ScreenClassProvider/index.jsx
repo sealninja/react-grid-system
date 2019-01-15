@@ -15,11 +15,21 @@ export default class ScreenClassProvider extends PureComponent {
      * This should be all your child React nodes that are using `react-grid-system`.
      */
     children: PropTypes.node.isRequired,
+    /**
+     * Boolean to determine wether self should be used as source.
+     * When provided, screen class is derived from self instead of the window.
+     */
+    useSelfAsSource: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    useSelfAsSource: false,
   };
 
   constructor(props) {
     super(props);
 
+    this.screenClassRef = React.createRef();
     this.state = {
       screenClass: getConfiguration().defaultScreenClass,
     };
@@ -37,7 +47,12 @@ export default class ScreenClassProvider extends PureComponent {
   }
 
   setScreenClass() {
-    const currScreenClass = getScreenClass();
+    const { useSelfAsSource } = this.props;
+
+    const screenClassSource = useSelfAsSource && this.screenClassRef
+      ? this.screenClassRef.current
+      : undefined;
+    const currScreenClass = getScreenClass({ source: screenClassSource });
     if (currScreenClass !== this.state.screenClass) {
       this.setState({ screenClass: currScreenClass });
     }
@@ -48,7 +63,9 @@ export default class ScreenClassProvider extends PureComponent {
     const { children } = this.props;
 
     return (
-      <ScreenClassContext.Provider value={screenClass}>{children}</ScreenClassContext.Provider>
+      <ScreenClassContext.Provider value={screenClass} ref={this.screenClassRef}>
+        {children}
+      </ScreenClassContext.Provider>
     );
   }
 }
