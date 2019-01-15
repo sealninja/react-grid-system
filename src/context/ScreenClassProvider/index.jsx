@@ -15,6 +15,15 @@ export default class ScreenClassProvider extends PureComponent {
      * This should be all your child React nodes that are using `react-grid-system`.
      */
     children: PropTypes.node.isRequired,
+    /**
+     * Boolean to determine whether own width should be used as source.
+     * When provided, the screen class is derived from own dimensions instead of the window.
+     */
+    useOwnWidth: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    useOwnWidth: false,
   };
 
   constructor(props) {
@@ -24,6 +33,7 @@ export default class ScreenClassProvider extends PureComponent {
       screenClass: getConfiguration().defaultScreenClass,
     };
 
+    this.screenClassRef = React.createRef();
     this.setScreenClass = this.setScreenClass.bind(this);
   }
 
@@ -37,7 +47,10 @@ export default class ScreenClassProvider extends PureComponent {
   }
 
   setScreenClass() {
-    const currScreenClass = getScreenClass();
+    const { useOwnWidth } = this.props;
+
+    const source = useOwnWidth && this.screenClassRef && this.screenClassRef.current;
+    const currScreenClass = getScreenClass(source);
     if (currScreenClass !== this.state.screenClass) {
       this.setState({ screenClass: currScreenClass });
     }
@@ -45,10 +58,15 @@ export default class ScreenClassProvider extends PureComponent {
 
   render() {
     const { screenClass } = this.state;
-    const { children } = this.props;
+    const { children, useOwnWidth } = this.props;
 
     return (
-      <ScreenClassContext.Provider value={screenClass}>{children}</ScreenClassContext.Provider>
+      <ScreenClassContext.Provider value={screenClass}>
+        {useOwnWidth
+          ? <div ref={this.screenClassRef}>{children}</div>
+          : <React.Fragment>{children}</React.Fragment>
+        }
+      </ScreenClassContext.Provider>
     );
   }
 }
