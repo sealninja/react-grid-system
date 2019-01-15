@@ -4,7 +4,7 @@
 import { getConfiguration } from './config';
 
 const getViewPort = (source) => {
-  if (typeof source !== 'undefined' && source.clientWidth) {
+  if (source && source.clientWidth) {
     return source.clientWidth;
   }
   if (typeof window !== 'undefined' && window.innerWidth) {
