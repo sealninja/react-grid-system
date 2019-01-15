@@ -68,7 +68,7 @@ export default class ScreenClassProvider extends PureComponent {
       <ScreenClassContext.Provider value={screenClass}>
         {useSelfAsSource
           ? <div ref={this.screenClassRef}>{children}</div>
-          : <>{children}</>
+          : <React.Fragment>{children}</React.Fragment>
         }
       </ScreenClassContext.Provider>
     );
