@@ -64,7 +64,7 @@ export default class ScreenClassProvider extends PureComponent {
       <ScreenClassContext.Provider value={screenClass}>
         {useOwnWidth
           ? <div ref={this.screenClassRef}>{children}</div>
-          : <React.Fragment>{children}</React.Fragment>
+          : { children }
         }
       </ScreenClassContext.Provider>
     );
