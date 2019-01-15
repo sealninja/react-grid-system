@@ -53,10 +53,8 @@ export default class ScreenClassProvider extends PureComponent {
       console.log(this.screenClassRef);
     }
 
-    const screenClassSource = useSelfAsSource && this.screenClassRef
-      ? this.screenClassRef.current
-      : undefined;
-    const currScreenClass = getScreenClass({ source: screenClassSource });
+    const source = useSelfAsSource && this.screenClassRef ? this.screenClassRef.current : undefined;
+    const currScreenClass = getScreenClass({ source });
     if (currScreenClass !== this.state.screenClass) {
       this.setState({ screenClass: currScreenClass });
     }
@@ -64,11 +62,14 @@ export default class ScreenClassProvider extends PureComponent {
 
   render() {
     const { screenClass } = this.state;
-    const { children } = this.props;
+    const { children, useSelfAsSource } = this.props;
 
     return (
-      <ScreenClassContext.Provider value={screenClass} ref={this.screenClassRef}>
-        {children}
+      <ScreenClassContext.Provider value={screenClass}>
+        {useSelfAsSource
+          ? <div ref={this.screenClassRef}>{children}</div>
+          : <>{children}</>
+        }
       </ScreenClassContext.Provider>
     );
   }
