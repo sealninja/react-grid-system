@@ -49,6 +49,10 @@ export default class ScreenClassProvider extends PureComponent {
   setScreenClass() {
     const { useSelfAsSource } = this.props;
 
+    if (useSelfAsSource) {
+      console.log(this.screenClassRef);
+    }
+
     const screenClassSource = useSelfAsSource && this.screenClassRef
       ? this.screenClassRef.current
       : undefined;
