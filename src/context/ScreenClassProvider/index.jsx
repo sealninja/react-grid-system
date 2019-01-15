@@ -16,24 +16,24 @@ export default class ScreenClassProvider extends PureComponent {
      */
     children: PropTypes.node.isRequired,
     /**
-     * Boolean to determine wether self should be used as source.
-     * When provided, screen class is derived from self instead of the window.
+     * Boolean to determine whether own width should be used as source.
+     * When provided, the screen class is derived from own dimensions instead of the window.
      */
-    useSelfAsSource: PropTypes.bool,
+    useOwnWidth: PropTypes.bool,
   };
 
   static defaultProps = {
-    useSelfAsSource: false,
+    useOwnWidth: false,
   };
 
   constructor(props) {
     super(props);
 
-    this.screenClassRef = React.createRef();
     this.state = {
       screenClass: getConfiguration().defaultScreenClass,
     };
 
+    this.screenClassRef = React.createRef();
     this.setScreenClass = this.setScreenClass.bind(this);
   }
 
@@ -47,14 +47,10 @@ export default class ScreenClassProvider extends PureComponent {
   }
 
   setScreenClass() {
-    const { useSelfAsSource } = this.props;
+    const { useOwnWidth } = this.props;
 
-    if (useSelfAsSource) {
-      console.log(this.screenClassRef);
-    }
-
-    const source = useSelfAsSource && this.screenClassRef ? this.screenClassRef.current : undefined;
-    const currScreenClass = getScreenClass({ source });
+    const source = useOwnWidth && this.screenClassRef && this.screenClassRef.current;
+    const currScreenClass = getScreenClass(source);
     if (currScreenClass !== this.state.screenClass) {
       this.setState({ screenClass: currScreenClass });
     }
@@ -62,11 +58,11 @@ export default class ScreenClassProvider extends PureComponent {
 
   render() {
     const { screenClass } = this.state;
-    const { children, useSelfAsSource } = this.props;
+    const { children, useOwnWidth } = this.props;
 
     return (
       <ScreenClassContext.Provider value={screenClass}>
-        {useSelfAsSource
+        {useOwnWidth
           ? <div ref={this.screenClassRef}>{children}</div>
           : <React.Fragment>{children}</React.Fragment>
         }

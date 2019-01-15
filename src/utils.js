@@ -4,9 +4,6 @@
 import { getConfiguration } from './config';
 
 const getViewPort = (source) => {
-  if (source) {
-    console.log(source);
-  }
   if (source && source.clientWidth) {
     return source.clientWidth;
   }
@@ -18,7 +15,7 @@ const getViewPort = (source) => {
 
 export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
 
-export const getScreenClass = ({ source }) => {
+export const getScreenClass = (source) => {
   const { breakpoints, defaultScreenClass } = getConfiguration();
   let screenClass = defaultScreenClass;
 
