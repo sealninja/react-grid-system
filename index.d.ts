@@ -39,7 +39,8 @@ declare module 'react-grid-system' {
         offset?: Offsets,
         push?: Push,
         pull?: Pull,
-        style?: object
+        style?: object,
+        component?: () => string | string
     }
 
     type ContainerProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
@@ -49,7 +50,8 @@ declare module 'react-grid-system' {
         lg?: boolean,
         xl?: boolean
         fluid?: boolean,
-        style?: object
+        style?: object,
+        component?: () => string | string
     }
 
     type RowProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
@@ -57,7 +59,8 @@ declare module 'react-grid-system' {
         justify?: Justify,
         debug?: boolean,
         style?: object,
-        nogutter?: boolean
+        nogutter?: boolean,
+        component?: () => string | string
     }
 
     type ClearFixProps = {
