@@ -113,6 +113,12 @@ Resize your browser or load on different devices to test the grid system.
     <Col debug>2 of 3</Col>
     <Col debug>3 of 3</Col>
   </Row>
+  <br />
+  <Row align="stretch" debug>
+    <Col debug>1 of 3</Col>
+    <Col debug>2 of 3</Col>
+    <Col debug>3 of 3</Col>
+  </Row>
 </Container>
 ```
 
