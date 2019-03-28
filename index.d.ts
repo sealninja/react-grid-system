@@ -100,7 +100,7 @@ declare module 'react-grid-system' {
     }
 
     type ScreenClassProviderProps = {
-        children: Function
+        children: React.ReactNode
     }
 
     export function setConfiguration(configuration: Configuration): void
