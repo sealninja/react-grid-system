@@ -14,7 +14,7 @@ export default class Row extends React.PureComponent {
     /**
      * Vertical column alignment
      */
-    align: PropTypes.oneOf(['normal', 'start', 'center', 'end']),
+    align: PropTypes.oneOf(['normal', 'start', 'center', 'end', 'stretch']),
     /**
      * Horizontal column alignment
      */
