@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getConfiguration } from '../../config';
 import getStyle from './style';
 
-export const NoGutterContext = React.createContext(false);
+export const GutterWidthContext = React.createContext(false);
 
 export default class Row extends React.PureComponent {
   static propTypes = {
@@ -32,6 +32,10 @@ export default class Row extends React.PureComponent {
      */
     nogutter: PropTypes.bool,
     /**
+     * Custom gutter width for this row
+     */
+    gutterWidth: PropTypes.number,
+    /**
      * Optional styling
      */
     style: PropTypes.objectOf(
@@ -54,6 +58,7 @@ export default class Row extends React.PureComponent {
     align: 'normal',
     justify: 'start',
     nogutter: false,
+    gutterWidth: null,
     style: {},
     debug: false,
     component: 'div',
@@ -67,11 +72,15 @@ export default class Row extends React.PureComponent {
       justify,
       debug,
       nogutter,
+      gutterWidth,
       component,
       ...otherProps
     } = this.props;
+    let theGutterWidth = getConfiguration().gutterWidth;
+    if (nogutter) theGutterWidth = 0;
+    if (typeof gutterWidth === 'number') theGutterWidth = gutterWidth;
     const theStyle = getStyle({
-      gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
+      gutterWidth: theGutterWidth,
       align,
       justify,
       debug,
@@ -80,9 +89,9 @@ export default class Row extends React.PureComponent {
     return React.createElement(
       component,
       { style: theStyle, ...otherProps },
-      <NoGutterContext.Provider value={nogutter}>
+      <GutterWidthContext.Provider value={theGutterWidth}>
         {children}
-      </NoGutterContext.Provider>,
+      </GutterWidthContext.Provider>,
     );
   };
 }

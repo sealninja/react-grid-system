@@ -2,7 +2,7 @@ import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
-import { NoGutterContext } from '../Row';
+import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Col extends React.PureComponent {
@@ -90,7 +90,7 @@ export default class Col extends React.PureComponent {
     component: 'div',
   };
 
-  renderCol = (nogutter, screenClass) => {
+  renderCol = (gutterWidth, screenClass) => {
     const {
       children,
       xs,
@@ -119,7 +119,7 @@ export default class Col extends React.PureComponent {
       push,
       debug,
       screenClass,
-      gutterWidth: nogutter ? 0 : getConfiguration().gutterWidth,
+      gutterWidth,
       gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
     });
@@ -129,9 +129,9 @@ export default class Col extends React.PureComponent {
   render = () => (
     <ScreenClassResolver>
       {screenClass => (
-        <NoGutterContext.Consumer>
-          {nogutter => this.renderCol(nogutter, screenClass)}
-        </NoGutterContext.Consumer>
+        <GutterWidthContext.Consumer>
+          {gutterWidth => this.renderCol(gutterWidth, screenClass)}
+        </GutterWidthContext.Consumer>
       )}
     </ScreenClassResolver>
   );

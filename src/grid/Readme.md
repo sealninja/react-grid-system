@@ -221,11 +221,16 @@ Resize your browser or load on different devices to test the grid system.
 </Container>
 ```
 
-### Example: No gutter
+### Example: Custom gutter width
 
 ```
 <Container fluid style={{ lineHeight: '32px' }}>
   <Row nogutter debug>
+    <Col md={8} debug>md=8</Col>
+    <Col md={4} debug>md=4</Col>
+  </Row>
+  <br />
+  <Row gutterWidth={16} debug>
     <Col md={8} debug>md=8</Col>
     <Col md={4} debug>md=4</Col>
   </Row>
