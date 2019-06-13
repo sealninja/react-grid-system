@@ -47,7 +47,8 @@ export default ({
       const currentWidth = getWidth(width[size], gridColumns);
       const isSizedToContent = width[size] === 'content';
 
-      styles.flexBasis = (isSizedToContent ? 0 : (currentWidth || styles.flexBasis));
+      styles.flexBasis = (isSizedToContent ? 'auto' : (currentWidth || styles.flexBasis));
+      styles.width = (isSizedToContent ? 'auto' : width);
       styles.maxWidth = currentWidth || styles.maxWidth;
       styles.marginLeft = getWidth(offset[size], gridColumns) || styles.marginLeft;
       styles.right = getWidth(pull[size], gridColumns) || styles.right;
