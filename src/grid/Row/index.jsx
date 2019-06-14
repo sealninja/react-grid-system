@@ -48,10 +48,7 @@ export default class Row extends React.PureComponent {
     /**
      * Use your own component
      */
-    component: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.string,
-    ]),
+    component: PropTypes.elementType,
   };
 
   static defaultProps = {
