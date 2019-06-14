@@ -60,6 +60,14 @@ export default class Container extends React.PureComponent {
     component: 'div',
   };
 
+  constructor(props) {
+    super(props);
+
+    const { component } = props;
+    const { componentDecorator } = getConfiguration();
+    this.decoratedComponent = componentDecorator(component);
+  }
+
   render() {
     const {
       children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
@@ -68,7 +76,7 @@ export default class Container extends React.PureComponent {
     return (
       <ScreenClassResolver>
         {screenClass => createElement(
-          component,
+          this.decoratedComponent,
           {
             style: getStyle({
               fluid,

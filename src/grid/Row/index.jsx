@@ -64,6 +64,14 @@ export default class Row extends React.PureComponent {
     component: 'div',
   };
 
+  constructor(props) {
+    super(props);
+
+    const { component } = props;
+    const { componentDecorator } = getConfiguration();
+    this.decoratedComponent = componentDecorator(component);
+  }
+
   render = () => {
     const {
       children,
@@ -87,7 +95,7 @@ export default class Row extends React.PureComponent {
       moreStyle: style,
     });
     return React.createElement(
-      component,
+      this.decoratedComponent,
       { style: theStyle, ...otherProps },
       <GutterWidthContext.Provider value={theGutterWidth}>
         {children}

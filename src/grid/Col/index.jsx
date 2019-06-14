@@ -90,6 +90,14 @@ export default class Col extends React.PureComponent {
     component: 'div',
   };
 
+  constructor(props) {
+    super(props);
+
+    const { component } = props;
+    const { componentDecorator } = getConfiguration();
+    this.decoratedComponent = componentDecorator(component);
+  }
+
   renderCol = (gutterWidth, screenClass) => {
     const {
       children,
@@ -123,7 +131,8 @@ export default class Col extends React.PureComponent {
       gridColumns: getConfiguration().gridColumns,
       moreStyle: style,
     });
-    return createElement(component, { style: theStyle, ...otherProps, children });
+
+    return createElement(this.decoratedComponent, { style: theStyle, ...otherProps, children });
   };
 
   render = () => (

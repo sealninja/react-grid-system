@@ -4,6 +4,7 @@ let configuration = {
   gutterWidth: 30,
   gridColumns: 12,
   defaultScreenClass: 'xl',
+  componentDecorator: Component => Component,
 };
 
 export const getConfiguration = () => configuration;
