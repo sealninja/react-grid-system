@@ -5,7 +5,7 @@
   "main": "./build/index.js",
   "scripts": {
     "start": "styleguidist server",
-    "build": "rm -rf build && babel src -d build",
+    "build": "rimraf build && babel src -d build",
     "docs": "styleguidist build",
     "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.jsx src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -54,6 +54,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-styleguidist": "^8.0.6",
+    "rimraf": "^2.6.3",
     "webpack": "^4.28.1",
     "webpack-blocks": "^1.0.0"
   }
