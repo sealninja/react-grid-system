@@ -49,6 +49,10 @@ export default class Row extends React.PureComponent {
      * Use your own component
      */
     component: PropTypes.elementType,
+    /**
+     * Whether the cols should not wrap
+     */
+    nowrap: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -71,6 +75,7 @@ export default class Row extends React.PureComponent {
       nogutter,
       gutterWidth,
       component,
+      nowrap,
       ...otherProps
     } = this.props;
     let theGutterWidth = getConfiguration().gutterWidth;
@@ -82,6 +87,7 @@ export default class Row extends React.PureComponent {
       justify,
       debug,
       moreStyle: style,
+      nowrap,
     });
     return React.createElement(
       component,

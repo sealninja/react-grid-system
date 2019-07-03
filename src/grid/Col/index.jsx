@@ -12,25 +12,40 @@ export default class Col extends React.PureComponent {
      */
     children: PropTypes.node,
     /**
-     * The width of the column for screenclass `xs`, between 0 and 12
+     * The width of the column for screenclass `xs`, either a number between 0 and 12, or "content"
      */
-    xs: PropTypes.number,
+    xs: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['content']),
+    ]),
     /**
-     * The width of the column for screenclass `sm`, between 0 and 12
+     * The width of the column for screenclass `sm`, either a number between 0 and 12, or "content"
      */
-    sm: PropTypes.number,
+    sm: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['content']),
+    ]),
     /**
-     * The width of the column for screenclass `md`, between 0 and 12
+     * The width of the column for screenclass `md`, either a number between 0 and 12, or "content"
      */
-    md: PropTypes.number,
+    md: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['content']),
+    ]),
     /**
-     * The width of the column for screenclass `lg`, between 0 and 12
+     * The width of the column for screenclass `lg`, either a number between 0 and 12, or "content"
      */
-    lg: PropTypes.number,
+    lg: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['content']),
+    ]),
     /**
-     * The width of the column for screenclass `xl`, between 0 and 12
+     * The width of the column for screenclass `xl`, either a number between 0 and 12, or "content"
      */
-    xl: PropTypes.number,
+    xl: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['content']),
+    ]),
     /**
      * The offset of this column for all screenclasses
      */
