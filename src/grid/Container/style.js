@@ -17,6 +17,7 @@ export default ({
     marginRight: 'auto',
     paddingLeft: `${gutterWidth / 2}px`,
     paddingRight: `${gutterWidth / 2}px`,
+    width: 100%,
     ...moreStyle,
   };
 
