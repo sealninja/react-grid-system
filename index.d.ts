@@ -60,7 +60,8 @@ declare module 'react-grid-system' {
         debug?: boolean,
         style?: object,
         nogutter?: boolean,
-        component?: () => string | string
+        component?: () => string | string,
+        gutterWidth?: string
     }
 
     type ClearFixProps = {
