@@ -1,5 +1,5 @@
 export default ({
-  gutterWidth, align, justify, debug, moreStyle,
+  gutterWidth, align, justify, debug, moreStyle, nowrap,
 }) => {
   // Vertical alignment
   let alignItems = align;
@@ -20,7 +20,7 @@ export default ({
     marginLeft: `-${gutterWidth / 2}px`,
     marginRight: `-${gutterWidth / 2}px`,
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: nowrap ? 'nowrap' : 'wrap',
     flexGrow: 0,
     flexShrink: 0,
     alignItems,

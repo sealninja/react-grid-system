@@ -236,3 +236,14 @@ Resize your browser or load on different devices to test the grid system.
   </Row>
 </Container>
 ```
+
+### Example: Column width adapted to content
+
+```
+<Container fluid style={{ lineHeight: '32px' }}>
+  <Row debug>
+    <Col debug>Logo (Flexible column)</Col>
+    <Col xs="content" debug> Menu with x-items</Col>
+  </Row>
+</Container>
+```
