@@ -1,7 +1,9 @@
 # react-grid-system
 A powerful Bootstrap-like responsive grid system for React.
 
-[![NPM version][version-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+[![NPM version](https://img.shields.io/npm/v/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
+[![Downloads](https://img.shields.io/npm/dm/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
+[![Dependency Status](https://img.shields.io/david/JSxMachina/react-grid-system?style=flat-square)](https://david-dm.org/JSxMachina/react-grid-system)
 
 ## Table of contents
 
@@ -161,8 +163,3 @@ Extensive documentation of all components can be found at the GitHub pages: http
 ## Example application with SSR
 
 An example application with server-side rendering using all the features of `react-grid-system` can be found at https://github.com/gerbenmeyer/react-ssr-example.
-
-[version-image]: https://img.shields.io/npm/v/react-grid-system.svg
-[downloads-image]: https://img.shields.io/npm/dm/react-grid-system.svg
-
-[npm-url]: https://npmjs.org/package/react-grid-system
