@@ -63,6 +63,7 @@ export default class Row extends React.PureComponent {
     style: {},
     debug: false,
     component: 'div',
+    nowrap: false,
   };
 
   render = () => {
