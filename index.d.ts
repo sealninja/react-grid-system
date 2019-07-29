@@ -1,7 +1,7 @@
 declare module 'react-grid-system' {
     import * as React from 'react';
 
-    type Align = 'normal' | 'start' | 'center' | 'end'
+    type Align = 'normal' | 'start' | 'center' | 'end' | 'stretch'
     type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'initial' | 'inherit';
 
     type Offsets = {
@@ -30,7 +30,6 @@ declare module 'react-grid-system' {
 
     type ColProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         debug?: boolean,
-        align?: Align
         xs?: number,
         sm?: number,
         md?: number,
