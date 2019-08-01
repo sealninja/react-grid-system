@@ -5,15 +5,6 @@ A powerful Bootstrap-like responsive grid system for React.
 [![Downloads](https://img.shields.io/npm/dm/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
 [![Dependency Status](https://img.shields.io/david/sealninja/react-grid-system?style=flat-square)](https://david-dm.org/sealninja/react-grid-system)
 
-## Table of contents
-
-* [Installation](#installation)
-* [Getting started](#getting-started)
-* [Configuration](#configuration)
-* [ScreenClass Context API](#screenclass-context-api)
-* [API documentation](#api-documentation)
-* [Example application with SSR](#example-application-with-ssr)
-
 ## Installation
 
 ```
@@ -163,3 +154,9 @@ Extensive documentation of all components can be found at the GitHub pages: http
 ## Example application with SSR
 
 An example application with server-side rendering using features of `react-grid-system` can be found at https://github.com/sealninja/react-ssr-example.
+
+## License
+
+MIT
+
+<a href="https://sealninja.com"><img src="https://sealninja.com/assets/badge.png" alt="Sealninja" height="96"></a>
