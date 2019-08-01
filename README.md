@@ -3,7 +3,7 @@ A powerful Bootstrap-like responsive grid system for React.
 
 [![NPM version](https://img.shields.io/npm/v/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
 [![Downloads](https://img.shields.io/npm/dm/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
-[![Dependency Status](https://img.shields.io/david/JSxMachina/react-grid-system?style=flat-square)](https://david-dm.org/JSxMachina/react-grid-system)
+[![Dependency Status](https://img.shields.io/david/sealninja/react-grid-system?style=flat-square)](https://david-dm.org/sealninja/react-grid-system)
 
 ## Table of contents
 
@@ -51,7 +51,7 @@ import { Container, Row, Col } from 'react-grid-system';
 </Container>
 ```
 
-For all features of these components, please have a look at the API documentation: https://JSxMachina.github.io/react-grid-system/
+For all features of these components, please have a look at the API documentation: https://sealninja.github.io/react-grid-system/
 
 ### Responsive utilities
 
@@ -158,7 +158,7 @@ The performance benefit comes from _you_ adding a `ScreenClassProvider` to your 
 
 ## API documentation
 
-Extensive documentation of all components can be found at the GitHub pages: https://JSxMachina.github.io/react-grid-system/
+Extensive documentation of all components can be found at the GitHub pages: https://sealninja.github.io/react-grid-system/
 
 ## Example application with SSR
 

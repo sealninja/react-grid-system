@@ -1,6 +1,6 @@
 A powerful Bootstrap-like responsive grid system for React.
 
-For more information on these components, view this project on GitHub: [https://github.com/JSxMachina/react-grid-system](https://github.com/JSxMachina/react-grid-system)
+For more information on these components, view this project on GitHub: [https://github.com/sealninja/react-grid-system](https://github.com/sealninja/react-grid-system)
 
 Resize your browser or load on different devices to test the grid system.
 

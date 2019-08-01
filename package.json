@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JSxMachina/react-grid-system.git"
+    "url": "git+https://github.com/sealninja/react-grid-system.git"
   },
   "keywords": [
     "react",
@@ -27,12 +27,12 @@
     "grid",
     "responsive"
   ],
-  "author": "JSxMachina",
-  "license": "ISC",
+  "author": "Sealninja",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JSxMachina/react-grid-system/issues"
+    "url": "https://github.com/sealninja/react-grid-system/issues"
   },
-  "homepage": "https://github.com/JSxMachina/react-grid-system#readme",
+  "homepage": "https://sealninja.com",
   "peerDependencies": {
     "react": "^16.0.0"
   },
