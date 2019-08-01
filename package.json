@@ -1,6 +1,6 @@
 {
   "name": "react-grid-system",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "A powerful Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
   "scripts": {
