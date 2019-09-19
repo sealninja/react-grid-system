@@ -1,9 +1,9 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import getStyle from './style';
-import { getConfiguration } from '../../config';
 import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
+import { CustomGridColumnsContext } from '../Container';
 
 export default class Col extends React.PureComponent {
   static propTypes = {
@@ -105,7 +105,7 @@ export default class Col extends React.PureComponent {
     component: 'div',
   };
 
-  renderCol = (gutterWidth, screenClass) => {
+  renderCol = (gutterWidth, screenClass, gridColumns) => {
     const {
       children,
       xs,
@@ -135,7 +135,7 @@ export default class Col extends React.PureComponent {
       debug,
       screenClass,
       gutterWidth,
-      gridColumns: getConfiguration().gridColumns,
+      gridColumns,
       moreStyle: style,
     });
     return createElement(component, { style: theStyle, ...otherProps, children });
@@ -144,9 +144,13 @@ export default class Col extends React.PureComponent {
   render = () => (
     <ScreenClassResolver>
       {screenClass => (
-        <GutterWidthContext.Consumer>
-          {gutterWidth => this.renderCol(gutterWidth, screenClass)}
-        </GutterWidthContext.Consumer>
+        <CustomGridColumnsContext.Consumer>
+          {gridColumns => (
+            <GutterWidthContext.Consumer>
+              {gutterWidth => this.renderCol(gutterWidth, screenClass, gridColumns)}
+            </GutterWidthContext.Consumer>
+          )}
+        </CustomGridColumnsContext.Consumer>
       )}
     </ScreenClassResolver>
   );

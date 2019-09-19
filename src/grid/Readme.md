@@ -247,3 +247,24 @@ Resize your browser or load on different devices to test the grid system.
   </Row>
 </Container>
 ```
+
+You can define a custom grid columns value to specific Container
+
+### Example: Custom grid columns param
+
+```
+<Container fluid style={{ lineHeight: '32px' }} gridColumns={15}>
+  <Row debug>
+    <Col lg={10} debug>1 of 2</Col>
+    <Col lg={5} debug>2 of 2</Col>
+  </Row>
+  <br />
+  <Row debug>
+    <Col debug>1 of 3</Col>
+    <Col debug>2 of 3</Col>
+    <Col debug>3 of 3</Col>
+  </Row>
+</Container>
+```
+
+
