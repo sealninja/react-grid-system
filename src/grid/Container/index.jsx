@@ -4,6 +4,8 @@ import getStyle, { getAfterStyle } from './style';
 import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
+export const CustomGridColumnsContext = React.createContext(getConfiguration().gridColumns);
+
 export default class Container extends React.PureComponent {
   static propTypes = {
     /**
@@ -47,6 +49,10 @@ export default class Container extends React.PureComponent {
      * Use your own component
      */
     component: PropTypes.elementType,
+    /**
+     * Use your own gridColumns value for Container
+     */
+    gridColumns: PropTypes.number,
   };
 
   static defaultProps = {
@@ -58,11 +64,12 @@ export default class Container extends React.PureComponent {
     xl: false,
     style: {},
     component: 'div',
+    gridColumns: getConfiguration().gridColumns,
   };
 
   render() {
     const {
-      children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
+      children, fluid, xs, sm, md, lg, xl, style, component, gridColumns, ...otherProps
     } = this.props;
 
     return (
@@ -85,8 +92,10 @@ export default class Container extends React.PureComponent {
             ...otherProps,
           },
           <React.Fragment>
-            {children}
-            <span style={getAfterStyle()} />
+            <CustomGridColumnsContext.Provider value={gridColumns}>
+              {children}
+              <span style={getAfterStyle()} />
+            </CustomGridColumnsContext.Provider>
           </React.Fragment>,
         )
         }
