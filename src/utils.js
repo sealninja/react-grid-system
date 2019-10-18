@@ -1,11 +1,13 @@
 /* global window */
 /* eslint "no-console": "off" */
 
+import { useState, useEffect } from 'react';
 import { getConfiguration } from './config';
 
 const getViewPort = (source) => {
-  if (source && source.clientWidth) {
-    return source.clientWidth;
+  console.log(source);
+  if (source && source.current && source.current.clientWidth) {
+    return source.current.clientWidth;
   }
   if (typeof window !== 'undefined' && window.innerWidth) {
     return window.innerWidth;
@@ -27,6 +29,25 @@ export const getScreenClass = (source) => {
     if (breakpoints[2] && viewport >= breakpoints[2]) screenClass = 'lg';
     if (breakpoints[3] && viewport >= breakpoints[3]) screenClass = 'xl';
   }
+
+  return screenClass;
+};
+
+export const useScreenClass = (source) => {
+  const [screenClass, setScreenClass] = useState(getConfiguration().defaultScreenClass);
+
+  useEffect(() => {
+    function handleWindowResized() {
+      setScreenClass(getScreenClass(source));
+    }
+
+    window.addEventListener('resize', handleWindowResized, false);
+    handleWindowResized();
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResized, false);
+    };
+  });
 
   return screenClass;
 };

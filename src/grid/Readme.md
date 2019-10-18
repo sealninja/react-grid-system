@@ -51,10 +51,12 @@ Resize your browser or load on different devices to test the grid system.
     <Col md={4} debug>md=4</Col>
   </Row>
   <br />
-  <Row debug>
-    <Col md={6} debug>md=6</Col>
-    <Col md={6} debug>md=6</Col>
-  </Row>
+  <ScreenClassProvider useOwnWidth>
+    <Row debug>
+      <Col md={6} debug>md=6</Col>
+      <Col md={6} debug>md=6</Col>
+    </Row>
+  </ScreenClassProvider>
 </Container>
 ```
 

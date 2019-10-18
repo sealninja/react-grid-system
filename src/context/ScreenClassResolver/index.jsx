@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import ScreenClassProvider, { ScreenClassContext, NO_PROVIDER_FLAG } from '../ScreenClassProvider';
 
 export default class ScreenClassResolver extends Component {
-  static propTypes = {
-    children: PropTypes.func.isRequired,
-  };
-
   render() {
     const { children } = this.props;
     return (
@@ -16,7 +12,7 @@ export default class ScreenClassResolver extends Component {
             return (
               <ScreenClassProvider>
                 <ScreenClassContext.Consumer>
-                  {screenClassResolved => children(screenClassResolved)}
+                  {(screenClassResolved) => children(screenClassResolved)}
                 </ScreenClassContext.Consumer>
               </ScreenClassProvider>
             );
@@ -27,3 +23,7 @@ export default class ScreenClassResolver extends Component {
     );
   }
 }
+
+ScreenClassResolver.propTypes = {
+  children: PropTypes.func.isRequired,
+};

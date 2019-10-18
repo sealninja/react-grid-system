@@ -9,3 +9,4 @@ export { default as Visible } from './utilities/Visible';
 export { default as ScreenClassRender } from './utilities/ScreenClassRender';
 export { default as ScreenClassProvider, ScreenClassContext } from './context/ScreenClassProvider';
 export { setConfiguration } from './config';
+export { useScreenClass } from './utils';

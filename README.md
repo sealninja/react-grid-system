@@ -94,6 +94,23 @@ import { ScreenClassRender } from 'react-grid-system';
 )} />
 ```
 
+Alternatively, the `useScreenClass` hook can be used for rendering a component differently based on the screen class. An example on how to use this:
+
+```javascript
+import React from 'react';
+import { useScreenClass } from 'react-grid-system';
+
+function Example() {
+  const screenClass = useScreenClass();
+
+  return (
+    <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+      Screen class: {screenClass}
+    </p>
+  );
+}
+```
+
 ## Configuration
 
 The following settings can be configured, to alter the responsive behavior of the grid components:

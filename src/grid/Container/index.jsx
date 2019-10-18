@@ -5,61 +5,6 @@ import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Container extends React.PureComponent {
-  static propTypes = {
-    /**
-     * Content of the component
-     */
-    children: PropTypes.node.isRequired,
-    /**
-     * True makes the container full-width, false fixed-width
-     */
-    fluid: PropTypes.bool,
-    /**
-     * This is in combination with fluid enabled
-     * True makes container fluid only in xs, not present means fluid everywhere
-     */
-    xs: PropTypes.bool,
-    /**
-     * This is in combination with fluid enabled
-     * True makes container fluid only in sm, not present means fluid everywhere
-     */
-    sm: PropTypes.bool,
-    /**
-     * This is in combination with fluid enabled
-     * True makes container fluid only in md, not present means fluid everywhere
-     */
-    md: PropTypes.bool,
-    /**
-     * This is in combination with fluid enabled
-     * True makes container fluid only in lg, not present means fluid everywhere
-     */
-    lg: PropTypes.bool,
-    /**
-     * This is in combination with fluid enabled
-     * True makes container fluid only in xl, not present means fluid everywhere
-     */
-    xl: PropTypes.bool,
-    /**
-     * Optional styling
-     */
-    style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
-    /**
-     * Use your own component
-     */
-    component: PropTypes.elementType,
-  };
-
-  static defaultProps = {
-    fluid: false,
-    xs: false,
-    sm: false,
-    md: false,
-    lg: false,
-    xl: false,
-    style: {},
-    component: 'div',
-  };
-
   render() {
     const {
       children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
@@ -67,7 +12,7 @@ export default class Container extends React.PureComponent {
 
     return (
       <ScreenClassResolver>
-        {screenClass => createElement(
+        {(screenClass) => createElement(
           component,
           {
             style: getStyle({
@@ -84,13 +29,67 @@ export default class Container extends React.PureComponent {
             }),
             ...otherProps,
           },
-          <React.Fragment>
+          <>
             {children}
             <span style={getAfterStyle()} />
-          </React.Fragment>,
-        )
-        }
+          </>,
+        )}
       </ScreenClassResolver>
     );
   }
 }
+
+Container.propTypes = {
+  /**
+   * Content of the component
+   */
+  children: PropTypes.node.isRequired,
+  /**
+   * True makes the container full-width, false fixed-width
+   */
+  fluid: PropTypes.bool,
+  /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in xs, not present means fluid everywhere
+   */
+  xs: PropTypes.bool,
+  /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in sm, not present means fluid everywhere
+   */
+  sm: PropTypes.bool,
+  /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in md, not present means fluid everywhere
+   */
+  md: PropTypes.bool,
+  /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in lg, not present means fluid everywhere
+   */
+  lg: PropTypes.bool,
+  /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in xl, not present means fluid everywhere
+   */
+  xl: PropTypes.bool,
+  /**
+   * Optional styling
+   */
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+  /**
+   * Use your own component
+   */
+  component: PropTypes.elementType,
+};
+
+Container.defaultProps = {
+  fluid: false,
+  xs: false,
+  sm: false,
+  md: false,
+  lg: false,
+  xl: false,
+  style: {},
+  component: 'div',
+};
