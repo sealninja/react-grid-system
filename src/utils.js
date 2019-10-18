@@ -1,11 +1,9 @@
 /* global window */
-/* eslint "no-console": "off" */
 
 import { useState, useEffect } from 'react';
 import { getConfiguration } from './config';
 
 const getViewPort = (source) => {
-  console.log(source);
   if (source && source.current && source.current.clientWidth) {
     return source.current.clientWidth;
   }
