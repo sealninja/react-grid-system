@@ -17,28 +17,23 @@ const getViewPort = (source) => {
 
 export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
 
-export const getScreenClass = (source) => {
-  const { breakpoints, defaultScreenClass } = getConfiguration();
-  let screenClass = defaultScreenClass;
-
-  const viewport = getViewPort(source);
-  if (viewport) {
-    screenClass = 'xs';
-    if (breakpoints[0] && viewport >= breakpoints[0]) screenClass = 'sm';
-    if (breakpoints[1] && viewport >= breakpoints[1]) screenClass = 'md';
-    if (breakpoints[2] && viewport >= breakpoints[2]) screenClass = 'lg';
-    if (breakpoints[3] && viewport >= breakpoints[3]) screenClass = 'xl';
-  }
-
-  return screenClass;
-};
-
 export const useScreenClass = (source) => {
   const [screenClass, setScreenClass] = useState(getConfiguration().defaultScreenClass);
 
   useEffect(() => {
     function handleWindowResized() {
-      setScreenClass(getScreenClass(source));
+      const { breakpoints, defaultScreenClass } = getConfiguration();
+      let newScreenClass = defaultScreenClass;
+
+      const viewport = getViewPort(source);
+      if (viewport) {
+        newScreenClass = 'xs';
+        if (newScreenClass[0] && viewport >= breakpoints[0]) newScreenClass = 'sm';
+        if (breakpoints[1] && viewport >= breakpoints[1]) newScreenClass = 'md';
+        if (breakpoints[2] && viewport >= breakpoints[2]) newScreenClass = 'lg';
+        if (breakpoints[3] && viewport >= breakpoints[3]) newScreenClass = 'xl';
+      }
+      setScreenClass(newScreenClass);
     }
 
     window.addEventListener('resize', handleWindowResized, false);

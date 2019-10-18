@@ -102,7 +102,6 @@ import { useScreenClass } from 'react-grid-system';
 
 function Example() {
   const screenClass = useScreenClass();
-
   return (
     <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
       Screen class: {screenClass}
