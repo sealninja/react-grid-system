@@ -1,8 +1,3 @@
-/* eslint comma-dangle: off */
-/* eslint import/no-extraneous-dependencies: off */
-
-const { createConfig, babel, postcss } = require('webpack-blocks');
-
 const { version } = require('./package.json');
 
 module.exports = {
@@ -28,5 +23,15 @@ module.exports = {
   styleguideDir: './docs',
   exampleMode: 'expand',
   usageMode: 'expand',
-  webpackConfig: createConfig([babel(), postcss()]),
+  webpackConfig: {
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+      ],
+    },
+  },
 };
