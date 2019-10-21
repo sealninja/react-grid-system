@@ -1,6 +1,6 @@
 {
   "name": "react-grid-system",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "A powerful Bootstrap-like responsive grid system for React.",
   "main": "./build/index.js",
   "scripts": {
@@ -47,12 +47,7 @@
     "@babel/preset-react": "^7.6.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "eslint": "^6.5.1",    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
