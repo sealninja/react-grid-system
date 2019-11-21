@@ -7,8 +7,8 @@ const getViewPort = (source) => {
   if (source && source.current && source.current.clientWidth) {
     return source.current.clientWidth;
   }
-  if (typeof window !== 'undefined' && window.innerWidth) {
-    return window.innerWidth;
+  if (typeof document !== 'undefined' && document.body && document.body.clientWidth) {
+    return document.body.clientWidth;
   }
   return null;
 };
