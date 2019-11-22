@@ -8,3 +8,5 @@ Example usage, rendering a font size based on the screen class:
 )} />
 
 ```
+
+Alternatively, the `useScreenClass` hook can be used for rendering a component differently based on the screen class.

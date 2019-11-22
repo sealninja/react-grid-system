@@ -8,10 +8,6 @@ A powerful Bootstrap-like responsive grid system for React.
 ## Installation
 
 ```
-# Install react peer dependency
-npm install react@16
-
-# Install react grid system
 npm install react-grid-system --save
 ```
 ## Getting started
@@ -94,18 +90,32 @@ import { ScreenClassRender } from 'react-grid-system';
 )} />
 ```
 
-Alternatively, the `useScreenClass` hook can be used for rendering a component differently based on the screen class. An example on how to use this:
+Alternatively, the `useScreenClass` hook can be used for rendering a component differently based on the screen class. Some examples on how to use this:
 
 ```javascript
 import React from 'react';
 import { useScreenClass } from 'react-grid-system';
 
-function Example() {
+// responsive component based the screen width
+function Example1() {
   const screenClass = useScreenClass();
   return (
     <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
       Screen class: {screenClass}
     </p>
+  );
+}
+
+// responsive component based the div width
+function Example2() {
+  const elementRef = useRef(null);
+  const screenClass = useScreenClass(elementRef);
+  return (
+    <div ref={elementRef}>
+      <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+        Screen class: {screenClass}
+      </p>
+    </div>
   );
 }
 ```
