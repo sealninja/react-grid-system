@@ -184,5 +184,3 @@ An example application with server-side rendering using features of `react-grid-
 ## License
 
 MIT
-
-<a href="https://sealninja.com"><img src="https://sealninja.com/assets/badge.png" alt="Sealninja" height="96"></a>
