@@ -6,6 +6,15 @@ import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 export default class Col extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { hasMounted: false };
+  }
+
+  componentDidMount() {
+    this.setState({ hasMounted: true });
+  }
+
   renderCol = (gutterWidth, screenClass) => {
     const {
       children,
@@ -22,23 +31,26 @@ export default class Col extends React.PureComponent {
       component,
       ...otherProps
     } = this.props;
-    const theStyle = getStyle({
-      width: {
-        xs,
-        sm,
-        md,
-        lg,
-        xl,
-      },
-      offset,
-      pull,
-      push,
-      debug,
-      screenClass,
-      gutterWidth,
-      gridColumns: getConfiguration().gridColumns,
-      moreStyle: style,
-    });
+    const { hasMounted } = this.state;
+    const theStyle = hasMounted
+      ? getStyle({
+        width: {
+          xs,
+          sm,
+          md,
+          lg,
+          xl,
+        },
+        offset,
+        pull,
+        push,
+        debug,
+        screenClass,
+        gutterWidth,
+        gridColumns: getConfiguration().gridColumns,
+        moreStyle: style,
+      })
+      : undefined;
     return createElement(component, { style: theStyle, ...otherProps, children });
   };
 
@@ -61,38 +73,23 @@ Col.propTypes = {
   /**
    * The width of the column for screenclass `xs`, either a number between 0 and 12, or "content"
    */
-  xs: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.oneOf(['content']),
-  ]),
+  xs: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['content'])]),
   /**
    * The width of the column for screenclass `sm`, either a number between 0 and 12, or "content"
    */
-  sm: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.oneOf(['content']),
-  ]),
+  sm: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['content'])]),
   /**
    * The width of the column for screenclass `md`, either a number between 0 and 12, or "content"
    */
-  md: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.oneOf(['content']),
-  ]),
+  md: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['content'])]),
   /**
    * The width of the column for screenclass `lg`, either a number between 0 and 12, or "content"
    */
-  lg: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.oneOf(['content']),
-  ]),
+  lg: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['content'])]),
   /**
    * The width of the column for screenclass `xl`, either a number between 0 and 12, or "content"
    */
-  xl: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.oneOf(['content']),
-  ]),
+  xl: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['content'])]),
   /**
    * The offset of this column for all screenclasses
    */
