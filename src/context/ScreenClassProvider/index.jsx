@@ -8,8 +8,8 @@ export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
 export default function ScreenClassProvider(props) {
   const screenClassRef = React.createRef();
-  const { useOwnWidth, children } = props;
-  const screenClass = useScreenClass(screenClassRef);
+  const { useOwnWidth, children, fallbackScreenClass } = props;
+  const screenClass = useScreenClass(screenClassRef, fallbackScreenClass);
 
   return (
     <ScreenClassContext.Provider value={screenClass}>
@@ -31,8 +31,14 @@ ScreenClassProvider.propTypes = {
    * When provided, the screen class is derived from own dimensions instead of the window.
    */
   useOwnWidth: PropTypes.bool,
+  /**
+   * Screen class to use when it cannot be determined otherwise.
+   * Useful for server side rendering.
+   */
+  fallbackScreenClass: PropTypes.oneOf([null, 'xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 ScreenClassProvider.defaultProps = {
   useOwnWidth: false,
+  fallbackScreenClass: null,
 };
