@@ -24,13 +24,12 @@ export default ({
     flexGrow: 0,
     flexShrink: 0,
     alignItems,
-    justifyContent,
-    ...moreStyle,
+    justifyContent
   };
 
   if (debug) {
     styles.background = 'rgba(128,128,128,.05)';
   }
 
-  return styles;
+  return { ...styles, ...moreStyle };
 };
