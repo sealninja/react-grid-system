@@ -25,8 +25,7 @@ export default ({
     position: 'relative',
     paddingLeft: `${gutterWidth / 2}px`,
     paddingRight: `${gutterWidth / 2}px`,
-    width: '100%',
-    ...moreStyle,
+    width: '100%'
   };
 
   if (debug) {
@@ -61,5 +60,5 @@ export default ({
     styles.flexGrow = 1;
   }
 
-  return styles;
+  return { ...styles, ...moreStyle };
 };
