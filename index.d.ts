@@ -29,6 +29,7 @@ declare module 'react-grid-system' {
     }
 
     type ColProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+        width?: "auto" | number | string,
         debug?: boolean,
         xs?: number,
         sm?: number,

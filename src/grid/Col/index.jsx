@@ -20,9 +20,11 @@ export default class Col extends React.PureComponent {
       debug,
       style,
       component,
+      width,
       ...otherProps
     } = this.props;
     const theStyle = getStyle({
+      forceWidth: width,
       width: {
         xs,
         sm,
@@ -94,6 +96,13 @@ Col.propTypes = {
     PropTypes.oneOf(['content']),
   ]),
   /**
+   * The width of the column for screenclass `xl`, either a number between 0 and 12, or "content"
+   */
+  width: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  /**
    * The offset of this column for all screenclasses
    */
   offset: PropTypes.shape({
@@ -144,6 +153,7 @@ Col.defaultProps = {
   md: null,
   lg: null,
   xl: null,
+  width: null,
   offset: {},
   push: {},
   pull: {},

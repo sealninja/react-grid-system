@@ -9,6 +9,7 @@ const getWidth = (width, gridColumns) => {
 };
 
 export default ({
+  forceWidth = null,
   width = {},
   offset = {},
   pull = {},
@@ -59,6 +60,11 @@ export default ({
   if (!hasWidth(width)) {
     styles.flexBasis = 0;
     styles.flexGrow = 1;
+  }
+
+  if (forceWidth) {
+    styles.flex = 'unset';
+    styles.width = forceWidth;
   }
 
   return { ...styles, ...moreStyle };
