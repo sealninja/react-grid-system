@@ -1,6 +1,6 @@
 import { screenClasses } from '../../utils';
 
-const hasWidth = widths => Object.keys(widths).reduce((acc, cur) => acc || widths[cur], false);
+const hasWidth = (widths) => Object.keys(widths).reduce((acc, cur) => acc || widths[cur], false);
 
 const getWidth = (width, gridColumns) => {
   if (typeof width !== 'number') return undefined;
@@ -25,12 +25,13 @@ export default ({
     position: 'relative',
     paddingLeft: `${gutterWidth / 2}px`,
     paddingRight: `${gutterWidth / 2}px`,
-    width: '100%'
+    width: '100%',
   };
 
   if (debug) {
     styles.outline = '1px solid silver';
     styles.background = 'rgba(0,0,0,.05)';
+    styles.lineHeight = '32px';
   }
 
   styles.flexBasis = '100%';

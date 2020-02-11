@@ -16,7 +16,7 @@ export default ({
     marginLeft: 'auto',
     marginRight: 'auto',
     paddingLeft: `${gutterWidth / 2}px`,
-    paddingRight: `${gutterWidth / 2}px`
+    paddingRight: `${gutterWidth / 2}px`,
   };
 
   if (fluid && (!sm && !md && !lg && !xl)) {
@@ -39,7 +39,7 @@ export default ({
     styles.maxWidth = `${containerWidths[3]}px`;
   }
 
-  return {...styles, ...moreStyle};
+  return { ...styles, ...moreStyle };
 };
 
 export const getAfterStyle = () => ({

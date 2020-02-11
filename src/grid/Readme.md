@@ -7,7 +7,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Equal-width
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col debug>1 of 2</Col>
     <Col debug>2 of 2</Col>
@@ -24,7 +24,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Stacked to horizontal
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col md={1} debug>md=1</Col>
     <Col md={1} debug>md=1</Col>
@@ -61,7 +61,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Mix and match
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col xs={12} md={8} debug>xs=12 md=8</Col>
     <Col xs={6} md={4} debug>xs=6 md=4</Col>
@@ -83,7 +83,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Column wrapping
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col xs={9} debug>xs=9</Col>
     <Col xs={4} debug>xs=4<br/>Since 9 + 4 = 13 &gt; 12, this 4-column-wide Col gets wrapped onto a new line as one contiguous unit.</Col>
@@ -95,7 +95,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Vertical alignment
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row align="start" style={{ height: '75px' }} debug>
     <Col debug>1 of 3</Col>
     <Col debug>2 of 3</Col>
@@ -114,7 +114,7 @@ Resize your browser or load on different devices to test the grid system.
     <Col debug>3 of 3</Col>
   </Row>
   <br />
-  <Row align="stretch" debug>
+  <Row align="stretch" style={{ height: '75px' }} debug>
     <Col debug>1 of 3</Col>
     <Col debug>2 of 3</Col>
     <Col debug>3 of 3</Col>
@@ -125,7 +125,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Horizontal alignment
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row justify="start" debug>
     <Col xs={3} debug>1 of 3</Col>
     <Col xs={3} debug>2 of 3</Col>
@@ -173,7 +173,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Offsetting columns
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col md={4} debug>md=4</Col>
     <Col md={4} offset={{ md: 4 }} debug>md=4 offset-md=4</Col>
@@ -193,7 +193,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Nesting columns
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col sm={9} debug>
       Level 1: sm=9
@@ -213,7 +213,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Column ordering
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col md={9} push={{ md: 3 }} debug>md=9 push-md=3</Col>
     <Col md={3} pull={{ md: 9 }} debug>md=3 pull-md=9</Col>
@@ -224,7 +224,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Custom gutter width
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row nogutter debug>
     <Col md={8} debug>md=8</Col>
     <Col md={4} debug>md=4</Col>
@@ -240,7 +240,7 @@ Resize your browser or load on different devices to test the grid system.
 ### Example: Column width adapted to content
 
 ```
-<Container fluid style={{ lineHeight: '32px' }}>
+<Container fluid>
   <Row debug>
     <Col debug>Logo (Flexible column)</Col>
     <Col xs="content" debug> Menu with x-items</Col>

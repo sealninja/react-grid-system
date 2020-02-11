@@ -24,7 +24,7 @@ export default ({
     flexGrow: 0,
     flexShrink: 0,
     alignItems,
-    justifyContent
+    justifyContent,
   };
 
   if (debug) {
