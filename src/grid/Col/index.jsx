@@ -96,7 +96,7 @@ Col.propTypes = {
     PropTypes.oneOf(['content']),
   ]),
   /**
-   * The width of the column for screenclass `xl`, either a number between 0 and 12, or "content"
+   * A fixed width of the column for all screenclasses"
    */
   width: PropTypes.oneOfType([
     PropTypes.number,
