@@ -3,56 +3,28 @@ declare module 'react-grid-system' {
 
     type Align = 'normal' | 'start' | 'center' | 'end' | 'stretch'
     type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'initial' | 'inherit';
+    type ScreenClass = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    type ScreenClassMap<T> = Partial<Record<ScreenClass, T>>;
 
-    type Offsets = {
-        xs?: number,
-        sm?: number,
-        md?: number,
-        lg?: number,
-        xl?: number
-    }
-
-    type Push = {
-        xs?: number,
-        sm?: number,
-        md?: number,
-        lg?: number,
-        xl?: number
-    }
-
-    type Pull = {
-        xs?: number,
-        sm?: number,
-        md?: number,
-        lg?: number,
-        xl?: number
-    }
+    type Offsets = ScreenClassMap<number>;
+    type Push = ScreenClassMap<number>;
+    type Pull = ScreenClassMap<number>;
 
     type ColProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         width?: "auto" | number | string,
         debug?: boolean,
-        xs?: number | "content",
-        sm?: number | "content",
-        md?: number | "content",
-        lg?: number | "content",
-        xl?: number | "content",
         offset?: Offsets,
         push?: Push,
         pull?: Pull,
         style?: object,
         component?: () => string | string
-    }
+    } & ScreenClassMap<number | "content">;
 
     type ContainerProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
         fluid?: boolean,
         style?: object,
         component?: () => string | string
-    }
+    } & ScreenClassMap<boolean>;
 
     type RowProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         align?: Align,
@@ -64,44 +36,27 @@ declare module 'react-grid-system' {
         gutterWidth?: number
     }
 
-    type ClearFixProps = {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
-    }
-
-    type HiddenProps = {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
-    }
+    type ClearFixProps = ScreenClassMap<boolean>;
+    type HiddenProps = ScreenClassMap<boolean>;
 
     type ScreenClassRenderProps = {
         render?: Function
     }
 
-    type VisibleProps = {
-        xs?: boolean,
-        sm?: boolean,
-        md?: boolean,
-        lg?: boolean,
-        xl?: boolean
-    }
+    type VisibleProps = ScreenClassMap<boolean>;
 
     type Configuration = {
         breakpoints?: Array<number>,
         containerWidths?: Array<number>,
         gutterWidth?: number,
         gridColumns?: number,
-        defaultScreenClass?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+        defaultScreenClass?: ScreenClass
     }
 
     type ScreenClassProviderProps = {
-        children: React.ReactNode
+        children: React.ReactNode,
+        fallbackScreenClass?: ScreenClass,
+        useOwnWidth?: boolean
     }
 
     export function setConfiguration(configuration: Configuration): void
