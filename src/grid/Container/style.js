@@ -20,7 +20,7 @@ export default ({
   };
 
   if (fluid && (!sm && !md && !lg && !xl)) {
-    return styles;
+    return { ...styles, ...moreStyle };
   }
 
   if (screenClass === 'sm' && containerWidths[0] && !sm && !xs) {
