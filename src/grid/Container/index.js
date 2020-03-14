@@ -5,7 +5,16 @@ import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
 const Container = ({
-  children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
+  children,
+  fluid,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  style,
+  component,
+  ...otherProps
 }) => (
   <ScreenClassResolver>
     {(screenClass) => createElement(

@@ -5,40 +5,37 @@ import getStyle from './style';
 
 export const GutterWidthContext = React.createContext(false);
 
-class Row extends React.PureComponent {
-  render = () => {
-    const {
-      children,
-      style,
-      align,
-      justify,
-      debug,
-      nogutter,
-      gutterWidth,
-      component,
-      nowrap,
-      ...otherProps
-    } = this.props;
-    let theGutterWidth = getConfiguration().gutterWidth;
-    if (nogutter) theGutterWidth = 0;
-    if (typeof gutterWidth === 'number') theGutterWidth = gutterWidth;
-    const theStyle = getStyle({
-      gutterWidth: theGutterWidth,
-      align,
-      justify,
-      debug,
-      moreStyle: style,
-      nowrap,
-    });
-    return React.createElement(
-      component,
-      { style: theStyle, ...otherProps },
-      <GutterWidthContext.Provider value={theGutterWidth}>
-        {children}
-      </GutterWidthContext.Provider>,
-    );
-  };
-}
+const Row = ({
+  children,
+  style,
+  align,
+  justify,
+  debug,
+  nogutter,
+  gutterWidth,
+  component,
+  nowrap,
+  ...otherProps
+}) => {
+  let theGutterWidth = getConfiguration().gutterWidth;
+  if (nogutter) theGutterWidth = 0;
+  if (typeof gutterWidth === 'number') theGutterWidth = gutterWidth;
+  const theStyle = getStyle({
+    gutterWidth: theGutterWidth,
+    align,
+    justify,
+    debug,
+    moreStyle: style,
+    nowrap,
+  });
+  return React.createElement(
+    component,
+    { style: theStyle, ...otherProps },
+    <GutterWidthContext.Provider value={theGutterWidth}>
+      {children}
+    </GutterWidthContext.Provider>,
+  );
+};
 
 Row.propTypes = {
   /**

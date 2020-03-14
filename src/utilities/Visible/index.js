@@ -3,22 +3,27 @@ import PropTypes from 'prop-types';
 import * as style from './style';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-class Visible extends React.PureComponent {
-  render = () => (
-    <ScreenClassResolver>
-      {(screenClass) => (!style.visible({
-        screenClass,
-        xs: this.props.xs,
-        sm: this.props.sm,
-        md: this.props.md,
-        lg: this.props.lg,
-        xl: this.props.xl,
-      })
-        ? null
-        : this.props.children)}
-    </ScreenClassResolver>
-  );
-}
+const Visible = ({
+  children,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+}) => (
+  <ScreenClassResolver>
+    {(screenClass) => (!style.visible({
+      screenClass,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
+    })
+      ? null
+      : children)}
+  </ScreenClassResolver>
+);
 
 Visible.propTypes = {
   /**

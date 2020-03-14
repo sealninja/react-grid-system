@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-class ScreenClassRender extends React.PureComponent {
-  render = () => (
-    <ScreenClassResolver>
-      {(screenClass) => this.props.render(screenClass)}
-    </ScreenClassResolver>
-  );
-}
+const ScreenClassRender = ({ render }) => (
+  <ScreenClassResolver>
+    {(screenClass) => render(screenClass)}
+  </ScreenClassResolver>
+);
 
 ScreenClassRender.propTypes = {
   /**

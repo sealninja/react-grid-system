@@ -5,55 +5,50 @@ import { getConfiguration } from '../../config';
 import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-class Col extends React.PureComponent {
-  renderCol = (gutterWidth, screenClass) => {
-    const {
-      children,
-      xs,
-      sm,
-      md,
-      lg,
-      xl,
-      offset,
-      pull,
-      push,
-      debug,
-      style,
-      component,
-      width,
-      ...otherProps
-    } = this.props;
-    const theStyle = getStyle({
-      forceWidth: width,
-      width: {
-        xs,
-        sm,
-        md,
-        lg,
-        xl,
-      },
-      offset,
-      pull,
-      push,
-      debug,
-      screenClass,
-      gutterWidth,
-      gridColumns: getConfiguration().gridColumns,
-      moreStyle: style,
-    });
-    return createElement(component, { style: theStyle, ...otherProps, children });
-  };
-
-  render = () => (
-    <ScreenClassResolver>
-      {(screenClass) => (
-        <GutterWidthContext.Consumer>
-          {(gutterWidth) => this.renderCol(gutterWidth, screenClass)}
-        </GutterWidthContext.Consumer>
-      )}
-    </ScreenClassResolver>
-  );
-}
+const Col = ({
+  children,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  offset,
+  pull,
+  push,
+  debug,
+  style,
+  component,
+  width,
+  ...otherProps
+}) => (
+  <ScreenClassResolver>
+    {(screenClass) => (
+      <GutterWidthContext.Consumer>
+        {(gutterWidth) => {
+          const theStyle = getStyle({
+            forceWidth: width,
+            width: {
+              xs,
+              sm,
+              md,
+              lg,
+              xl,
+            },
+            offset,
+            pull,
+            push,
+            debug,
+            screenClass,
+            gutterWidth,
+            gridColumns: getConfiguration().gridColumns,
+            moreStyle: style,
+          });
+          return createElement(component, { style: theStyle, ...otherProps, children });
+        }}
+      </GutterWidthContext.Consumer>
+    )}
+  </ScreenClassResolver>
+);
 
 Col.propTypes = {
   /**

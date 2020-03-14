@@ -6,9 +6,8 @@ export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
 
 export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
-export default function ScreenClassProvider(props) {
+const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => {
   const screenClassRef = React.createRef();
-  const { useOwnWidth, children, fallbackScreenClass } = props;
   const screenClass = useScreenClass(screenClassRef, fallbackScreenClass);
 
   return (
@@ -18,7 +17,7 @@ export default function ScreenClassProvider(props) {
         : <>{children}</>}
     </ScreenClassContext.Provider>
   );
-}
+};
 
 ScreenClassProvider.propTypes = {
   /**
@@ -42,3 +41,5 @@ ScreenClassProvider.defaultProps = {
   useOwnWidth: false,
   fallbackScreenClass: null,
 };
+
+export default ScreenClassProvider;
