@@ -5,7 +5,7 @@ import { getConfiguration } from '../../config';
 import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class Col extends React.PureComponent {
+class Col extends React.PureComponent {
   renderCol = (gutterWidth, screenClass) => {
     const {
       children,
@@ -161,3 +161,5 @@ Col.defaultProps = {
   debug: false,
   component: 'div',
 };
+
+export default Col;

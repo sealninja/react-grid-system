@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class ScreenClassRender extends React.PureComponent {
+class ScreenClassRender extends React.PureComponent {
   render = () => (
     <ScreenClassResolver>
       {(screenClass) => this.props.render(screenClass)}
@@ -17,3 +17,5 @@ ScreenClassRender.propTypes = {
    */
   render: PropTypes.func.isRequired,
 };
+
+export default ScreenClassRender;

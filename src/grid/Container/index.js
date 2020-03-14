@@ -4,40 +4,34 @@ import getStyle, { getAfterStyle } from './style';
 import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class Container extends React.PureComponent {
-  render() {
-    const {
-      children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
-    } = this.props;
-
-    return (
-      <ScreenClassResolver>
-        {(screenClass) => createElement(
-          component,
-          {
-            style: getStyle({
-              fluid,
-              xs,
-              sm,
-              md,
-              lg,
-              xl,
-              screenClass: screenClass || this.state.screenClass,
-              containerWidths: getConfiguration().containerWidths,
-              gutterWidth: getConfiguration().gutterWidth,
-              moreStyle: style,
-            }),
-            ...otherProps,
-          },
-          <>
-            {children}
-            <span style={getAfterStyle()} />
-          </>,
-        )}
-      </ScreenClassResolver>
-    );
-  }
-}
+const Container = ({
+  children, fluid, xs, sm, md, lg, xl, style, component, ...otherProps
+}) => (
+  <ScreenClassResolver>
+    {(screenClass) => createElement(
+      component,
+      {
+        style: getStyle({
+          fluid,
+          xs,
+          sm,
+          md,
+          lg,
+          xl,
+          screenClass,
+          containerWidths: getConfiguration().containerWidths,
+          gutterWidth: getConfiguration().gutterWidth,
+          moreStyle: style,
+        }),
+        ...otherProps,
+      },
+      <>
+        {children}
+        <span style={getAfterStyle()} />
+      </>,
+    )}
+  </ScreenClassResolver>
+);
 
 Container.propTypes = {
   /**
@@ -93,3 +87,5 @@ Container.defaultProps = {
   style: {},
   component: 'div',
 };
+
+export default Container;

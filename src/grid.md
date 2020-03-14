@@ -1,12 +1,10 @@
-A powerful Bootstrap-like responsive grid system for React.
-
-For more information on these components, view this project on GitHub: [https://github.com/sealninja/react-grid-system](https://github.com/sealninja/react-grid-system)
-
 Resize your browser or load on different devices to test the grid system.
 
 ### Example: Equal-width
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col debug>1 of 2</Col>
@@ -23,7 +21,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Stacked to horizontal
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col md={1} debug>md=1</Col>
@@ -60,7 +60,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Mix and match
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col xs={12} md={8} debug>xs=12 md=8</Col>
@@ -82,7 +84,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Column wrapping
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col xs={9} debug>xs=9</Col>
@@ -94,7 +98,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Vertical alignment
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row align="start" style={{ height: '75px' }} debug>
     <Col debug>1 of 3</Col>
@@ -124,7 +130,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Horizontal alignment
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row justify="start" debug>
     <Col xs={3} debug>1 of 3</Col>
@@ -172,7 +180,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Offsetting columns
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col md={4} debug>md=4</Col>
@@ -192,7 +202,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Nesting columns
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col sm={9} debug>
@@ -212,7 +224,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Column ordering
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col md={9} push={{ md: 3 }} debug>md=9 push-md=3</Col>
@@ -223,7 +237,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Custom gutter width
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row nogutter debug>
     <Col md={8} debug>md=8</Col>
@@ -239,7 +255,9 @@ Resize your browser or load on different devices to test the grid system.
 
 ### Example: Column width adapted to content
 
-```
+```js
+import { Container, Row, Col } from '.';
+
 <Container fluid>
   <Row debug>
     <Col debug>Logo (Flexible column)</Col>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as style from './style';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-export default class Hidden extends React.PureComponent {
+class Hidden extends React.PureComponent {
   render = () => (
     <ScreenClassResolver>
       {(screenClass) => (style.hidden({
@@ -54,3 +54,5 @@ Hidden.defaultProps = {
   lg: false,
   xl: false,
 };
+
+export default Hidden;

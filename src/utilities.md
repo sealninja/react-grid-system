@@ -2,7 +2,9 @@ Resize your browser or load on different devices to test the responsive utility 
 
 Green indicates the element is visible in your current viewport.
 
-```
+```js
+import { Row, Col, Visible, Hidden } from '.';
+
 <Row>
   <Col xs={6} sm={2}>
     <Hidden xs><div style={{ color: 'gray' }}>Extra small</div></Hidden>
@@ -27,7 +29,9 @@ Green indicates the element is visible in your current viewport.
 </Row>
 ```
 
-```
+```js
+import { Row, Col, Visible, Hidden } from '.';
+
 <Row>
   <Col xs={6}>
     <Hidden xs sm><div style={{ color: 'gray' }}>Extra small and small</div></Hidden>
@@ -40,7 +44,9 @@ Green indicates the element is visible in your current viewport.
 </Row>
 ```
 
-```
+```js
+import { Row, Col, Visible, Hidden } from '.';
+
 <Row>
   <Col xs={6}>
     <Hidden xs md><div style={{ color: 'gray' }}>Extra small and medium</div></Hidden>
@@ -53,7 +59,9 @@ Green indicates the element is visible in your current viewport.
 </Row>
 ```
 
-```
+```js
+import { Row, Col, Visible, Hidden } from '.';
+
 <Row>
   <Col xs={6}>
     <Hidden xs lg><div style={{ color: 'gray' }}>Extra small and large</div></Hidden>
@@ -66,7 +74,9 @@ Green indicates the element is visible in your current viewport.
 </Row>
 ```
 
-```
+```js
+import { Row, Col, Visible, Hidden } from '.';
+
 <Row>
   <Col xs={6}>
     <Hidden xs xl><div style={{ color: 'gray' }}>Extra small and extra large</div></Hidden>

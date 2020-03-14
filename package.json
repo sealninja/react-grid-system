@@ -7,7 +7,7 @@
     "start": "styleguidist server",
     "build": "rimraf build && babel src -d build",
     "docs": "styleguidist build",
-    "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.jsx src/**/*.js",
+    "lint": "eslint --ignore-path .gitignore --fix *.js src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build"
   },
@@ -41,22 +41,22 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.2",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.12.0",
-    "react-styleguidist": "^8.0.5",
-    "rimraf": "^3.0.1",
-    "webpack": "^4.41.5"
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-styleguidist": "^11.0.1",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.42.0"
   }
 }

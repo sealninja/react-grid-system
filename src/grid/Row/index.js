@@ -5,7 +5,7 @@ import getStyle from './style';
 
 export const GutterWidthContext = React.createContext(false);
 
-export default class Row extends React.PureComponent {
+class Row extends React.PureComponent {
   render = () => {
     const {
       children,
@@ -99,3 +99,5 @@ Row.defaultProps = {
   component: 'div',
   nowrap: false,
 };
+
+export default Row;
