@@ -23,7 +23,7 @@ export const useScreenClass = (source, fallbackScreenClass) => {
     const viewport = getViewPort(source);
     if (viewport) {
       newScreenClass = 'xs';
-      if (newScreenClass[0] && viewport >= breakpoints[0]) newScreenClass = 'sm';
+      if (breakpoints[0] && viewport >= breakpoints[0]) newScreenClass = 'sm';
       if (breakpoints[1] && viewport >= breakpoints[1]) newScreenClass = 'md';
       if (breakpoints[2] && viewport >= breakpoints[2]) newScreenClass = 'lg';
       if (breakpoints[3] && viewport >= breakpoints[3]) newScreenClass = 'xl';
