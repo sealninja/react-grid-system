@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useScreenClass } from '../../utils';
+import { getConfiguration } from '../../config';
 
 export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
 
 export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
 const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => {
-  const screenClassRef = React.createRef();
-  const screenClass = useScreenClass(screenClassRef, fallbackScreenClass);
+  const screenClassRef = useRef();
+  const [mounted, setMounted] = useState(false);
+  const detectedScreenClass = useScreenClass(screenClassRef, fallbackScreenClass);
+  const { defaultScreenClass } = getConfiguration();
+
+  const screenClass = mounted ? detectedScreenClass : (fallbackScreenClass || defaultScreenClass);
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <ScreenClassContext.Provider value={screenClass}>
