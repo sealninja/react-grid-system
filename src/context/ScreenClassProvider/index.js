@@ -9,7 +9,9 @@ export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => {
   const screenClassRef = useRef();
   const [mounted, setMounted] = useState(false);
-  const screenClass = useScreenClass(screenClassRef, fallbackScreenClass);
+  const detectedScreenClass = useScreenClass(screenClassRef);
+
+  const screenClass = mounted ? fallbackScreenClass : detectedScreenClass;
 
   useEffect(() => setMounted(true), []);
 
