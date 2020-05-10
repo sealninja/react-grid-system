@@ -22,6 +22,10 @@ module.exports = {
       components: 'src/context/ScreenClassProvider/index.js',
       content: 'src/context.md',
     },
+    {
+      name: 'Decorated Components',
+      content: 'src/decoration.md',
+    },
   ],
   styleguideDir: './docs',
   exampleMode: 'expand',

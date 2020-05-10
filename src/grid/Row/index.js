@@ -17,6 +17,9 @@ const Row = ({
   nowrap,
   ...otherProps
 }) => {
+  const { componentDecorator } = getConfiguration();
+  const decoratedComponent = componentDecorator(component, 'Row');
+
   let theGutterWidth = getConfiguration().gutterWidth;
   if (nogutter) theGutterWidth = 0;
   if (typeof gutterWidth === 'number') theGutterWidth = gutterWidth;
@@ -29,7 +32,7 @@ const Row = ({
     nowrap,
   });
   return React.createElement(
-    component,
+    decoratedComponent,
     { style: theStyle, ...otherProps },
     <GutterWidthContext.Provider value={theGutterWidth}>
       {children}

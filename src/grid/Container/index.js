@@ -15,32 +15,37 @@ const Container = ({
   style,
   component,
   ...otherProps
-}) => (
-  <ScreenClassResolver>
-    {(screenClass) => createElement(
-      component,
-      {
-        style: getStyle({
-          fluid,
-          xs,
-          sm,
-          md,
-          lg,
-          xl,
-          screenClass,
-          containerWidths: getConfiguration().containerWidths,
-          gutterWidth: getConfiguration().gutterWidth,
-          moreStyle: style,
-        }),
-        ...otherProps,
-      },
-      <>
-        {children}
-        <span style={getAfterStyle()} />
-      </>,
-    )}
-  </ScreenClassResolver>
-);
+}) => {
+  const { componentDecorator } = getConfiguration();
+  const decoratedComponent = componentDecorator(component, 'Container');
+
+  return (
+    <ScreenClassResolver>
+      {(screenClass) => createElement(
+        decoratedComponent,
+        {
+          style: getStyle({
+            fluid,
+            xs,
+            sm,
+            md,
+            lg,
+            xl,
+            screenClass,
+            containerWidths: getConfiguration().containerWidths,
+            gutterWidth: getConfiguration().gutterWidth,
+            moreStyle: style,
+          }),
+          ...otherProps,
+        },
+        <>
+          {children}
+          <span style={getAfterStyle()} />
+        </>,
+      )}
+    </ScreenClassResolver>
+  );
+};
 
 Container.propTypes = {
   /**
