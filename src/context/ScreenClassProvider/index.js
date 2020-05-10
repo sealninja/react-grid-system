@@ -17,8 +17,6 @@ const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => 
 
   useEffect(() => setMounted(true), []);
 
-  console.log(mounted, screenClass);
-
   return (
     <ScreenClassContext.Provider value={screenClass}>
       {useOwnWidth
