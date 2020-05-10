@@ -41,7 +41,6 @@ export const useScreenClass = (source, fallbackScreenClass) => {
     const handleWindowResized = () => setScreenClass(getScreenClass());
 
     window.addEventListener('resize', handleWindowResized, false);
-    // handleWindowResized();
 
     return () => {
       window.removeEventListener('resize', handleWindowResized, false);
