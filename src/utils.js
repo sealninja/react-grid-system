@@ -1,6 +1,6 @@
 /* global window */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { getConfiguration } from './config';
 
 const getViewPort = (source) => {
@@ -16,7 +16,7 @@ const getViewPort = (source) => {
 export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 export const useScreenClass = (source, fallbackScreenClass) => {
-  const getScreenClass = useCallback(() => {
+  const getScreenClass = () => {
     const { breakpoints, defaultScreenClass } = getConfiguration();
     let newScreenClass = defaultScreenClass;
 
@@ -32,18 +32,16 @@ export const useScreenClass = (source, fallbackScreenClass) => {
     }
 
     return newScreenClass;
-  });
+  };
 
   const [screenClass, setScreenClass] = useState(getScreenClass());
 
 
   useEffect(() => {
-    function handleWindowResized() {
-      setScreenClass(getScreenClass());
-    }
+    const handleWindowResized = () => setScreenClass(getScreenClass());
 
     window.addEventListener('resize', handleWindowResized, false);
-    handleWindowResized();
+    // handleWindowResized();
 
     return () => {
       window.removeEventListener('resize', handleWindowResized, false);
