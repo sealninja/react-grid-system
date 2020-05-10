@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useScreenClass } from '../../utils';
 
@@ -7,7 +7,7 @@ export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
 export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
 const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => {
-  const screenClassRef = React.createRef();
+  const screenClassRef = useRef();
   const screenClass = useScreenClass(screenClassRef, fallbackScreenClass);
 
   return (
