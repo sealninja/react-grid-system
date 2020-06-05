@@ -41,7 +41,7 @@ ScreenClassProvider.propTypes = {
    * Screen class to use when it cannot be determined otherwise.
    * Useful for server side rendering.
    */
-  fallbackScreenClass: PropTypes.oneOf([null, 'xs', 'sm', 'md', 'lg', 'xl']),
+  fallbackScreenClass: PropTypes.oneOf([null, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
 };
 
 ScreenClassProvider.defaultProps = {

@@ -12,6 +12,7 @@ const Container = ({
   md,
   lg,
   xl,
+  xxl,
   style,
   component,
   ...otherProps
@@ -27,6 +28,7 @@ const Container = ({
           md,
           lg,
           xl,
+          xxl,
           screenClass,
           containerWidths: getConfiguration().containerWidths,
           gutterWidth: getConfiguration().gutterWidth,
@@ -77,6 +79,11 @@ Container.propTypes = {
    */
   xl: PropTypes.bool,
   /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in xxl, not present means fluid everywhere
+   */
+  xxl: PropTypes.bool,
+  /**
    * Optional styling
    */
   style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
@@ -93,6 +100,7 @@ Container.defaultProps = {
   md: false,
   lg: false,
   xl: false,
+  xxl: false,
   style: {},
   component: 'div',
 };

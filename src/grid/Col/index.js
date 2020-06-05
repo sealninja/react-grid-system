@@ -12,6 +12,7 @@ const Col = ({
   md,
   lg,
   xl,
+  xxl,
   offset,
   pull,
   push,
@@ -33,6 +34,7 @@ const Col = ({
               md,
               lg,
               xl,
+              xxl,
             },
             offset,
             pull,
@@ -91,6 +93,13 @@ Col.propTypes = {
     PropTypes.oneOf(['content']),
   ]),
   /**
+   * The width of the column for screenclass `xxl`, either a number between 0 and 12, or "content"
+   */
+  xxl: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(['content']),
+  ]),
+  /**
    * A fixed width of the column for all screenclasses"
    */
   width: PropTypes.oneOfType([
@@ -106,6 +115,7 @@ Col.propTypes = {
     md: PropTypes.number,
     lg: PropTypes.number,
     xl: PropTypes.number,
+    xxl: PropTypes.number,
   }),
   /**
    * The amount this column is pushed to the right for all screenclasses
@@ -116,6 +126,7 @@ Col.propTypes = {
     md: PropTypes.number,
     lg: PropTypes.number,
     xl: PropTypes.number,
+    xxl: PropTypes.number,
   }),
   /**
    * The amount this column is pulled to the left for all screenclasses
@@ -126,6 +137,7 @@ Col.propTypes = {
     md: PropTypes.number,
     lg: PropTypes.number,
     xl: PropTypes.number,
+    xxl: PropTypes.number,
   }),
   /**
    * Optional styling
@@ -148,6 +160,7 @@ Col.defaultProps = {
   md: null,
   lg: null,
   xl: null,
+  xxl: null,
   width: null,
   offset: {},
   push: {},

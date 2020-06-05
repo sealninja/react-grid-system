@@ -13,11 +13,12 @@ const getViewPort = (source) => {
   return null;
 };
 
-export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl'];
+export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
 export const useScreenClass = (source, fallbackScreenClass) => {
   const getScreenClass = () => {
-    const { breakpoints, defaultScreenClass } = getConfiguration();
+    const { breakpoints, defaultScreenClass, maxScreenClass } = getConfiguration();
+
     let newScreenClass = defaultScreenClass;
 
     const viewport = getViewPort(source);
@@ -27,8 +28,15 @@ export const useScreenClass = (source, fallbackScreenClass) => {
       if (breakpoints[1] && viewport >= breakpoints[1]) newScreenClass = 'md';
       if (breakpoints[2] && viewport >= breakpoints[2]) newScreenClass = 'lg';
       if (breakpoints[3] && viewport >= breakpoints[3]) newScreenClass = 'xl';
+      if (breakpoints[4] && viewport >= breakpoints[4]) newScreenClass = 'xxl';
     } else if (fallbackScreenClass) {
       newScreenClass = fallbackScreenClass;
+    }
+
+    const newScreenClassIndex = screenClasses.indexOf(newScreenClass);
+    const maxScreenClassIndex = screenClasses.indexOf(maxScreenClass);
+    if (maxScreenClassIndex >= 0 && newScreenClassIndex > maxScreenClassIndex) {
+      newScreenClass = screenClasses[maxScreenClassIndex];
     }
 
     return newScreenClass;

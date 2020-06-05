@@ -5,6 +5,16 @@ A powerful Bootstrap-like responsive grid system for React.
 [![Downloads](https://img.shields.io/npm/dm/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
 [![Dependency Status](https://img.shields.io/david/sealninja/react-grid-system?style=flat-square)](https://david-dm.org/sealninja/react-grid-system)
 
+### ⚠️ Upgrading to v7
+
+`react-grid-system` v7 adds a new screen class `xxl` for very large screens. This might have breaking consequences for your app. To opt out of this new screen class, use this:
+
+```javascript
+import { setConfiguration } from 'react-grid-system';
+
+setConfiguration({ maxScreenClass: 'xl' });
+```
+
 ## Installation
 
 ```
@@ -14,7 +24,7 @@ npm install react-grid-system --save
 
 ### Responsive grid
 
-`react-grid-system` provides a responsive grid similar to Bootstrap (see: https://getbootstrap.com/docs/4.1/layout/grid/). However, `react-grid-system` is purely React, even no CSS or class names are used. Moreover, it adds various powerful features, such as setting breakpoints and gutter widths through React's context.
+`react-grid-system` provides a responsive grid for React inspired by Bootstrap (see: https://getbootstrap.com/docs/4.5/layout/grid/). Moreover, it adds various powerful features, such as setting breakpoints and gutter widths through React's context.
 
 Three components are provided for creating responsive grids: `Container`, `Row`, and `Col`.
 
@@ -57,6 +67,7 @@ import { Visible } from 'react-grid-system';
   <Visible md><strong>md</strong></Visible>
   <Visible lg><strong>lg</strong></Visible>
   <Visible xl><strong>xl</strong></Visible>
+  <Visible xxl><strong>xxl</strong></Visible>
   <span>.</span>
 </p>
 ```
@@ -84,7 +95,7 @@ Next to that, the `ScreenClassRender` component is provided, for rendering a com
 import { ScreenClassRender } from 'react-grid-system';
 
 <ScreenClassRender render={screenClass => (
-  <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+  <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }} >
     Screen class: {screenClass}
   </p>
 )} />
@@ -100,7 +111,7 @@ import { useScreenClass } from 'react-grid-system';
 function Example1() {
   const screenClass = useScreenClass();
   return (
-    <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+    <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }} >
       Screen class: {screenClass}
     </p>
   );
@@ -112,7 +123,7 @@ function Example2() {
   const screenClass = useScreenClass(elementRef);
   return (
     <div ref={elementRef}>
-      <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+      <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }} >
         Screen class: {screenClass}
       </p>
     </div>
@@ -124,13 +135,14 @@ function Example2() {
 
 The following settings can be configured, to alter the responsive behavior of the grid components:
 
-| Setting              | Default Value           | Description                                                                                                                                                                                   |
-| -------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `breakpoints`        | `[576, 768, 992, 1200]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 breakpoints.                                           |
-| `containerWidths`    | `[540, 750, 960, 1140]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, and `xl`. The default values are based on the Bootstrap 4 container widths.                                       |
-| `gutterWidth`        | `30`                    | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column. The default value is based on the Bootstrap 4 gutter width.                                             |
-| `gridColumns`        | `12`                    | The number of columns in the grid .                                                                                                                                                            |
-| `defaultScreenClass` | `xl`                    | The screen class used when the view port cannot be determined using `window`. |
+| Setting              | Default Value                 | Description                                                                                     |
+| -------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------- |
+| `breakpoints`        | `[576, 768, 992, 1200, 1600]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, `xl`, and `xxl`.   |
+| `containerWidths`    | `[540, 740, 960, 1140, 1540]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, `xl`, and `xxl`.    |
+| `gutterWidth`        | `30`                          | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column.           |
+| `gridColumns`        | `12`                          | The number of columns in the grid .                                                             |
+| `defaultScreenClass` | `xxl`                         | The screen class used when the view port cannot be determined using `window`.                   |
+| `maxScreenClass`     | `xxl`                         | The maximum screen class to be used.                                                            |
 
 These settings can be configured in the following way:
 

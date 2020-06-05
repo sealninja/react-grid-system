@@ -5,6 +5,7 @@ export default ({
   md,
   lg,
   xl,
+  xxl,
   screenClass,
   containerWidths,
   gutterWidth,
@@ -37,6 +38,10 @@ export default ({
 
   if (screenClass === 'xl' && containerWidths[3] && !xl) {
     styles.maxWidth = `${containerWidths[3]}px`;
+  }
+
+  if (screenClass === 'xxl' && containerWidths[4] && !xxl) {
+    styles.maxWidth = `${containerWidths[4]}px`;
   }
 
   return { ...styles, ...moreStyle };
