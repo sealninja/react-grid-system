@@ -24,7 +24,7 @@ npm install react-grid-system --save
 
 ### Responsive grid
 
-`react-grid-system` provides a responsive grid for React inspired by [Bootstrap](https://getbootstrap.com/docs/4.5/layout/grid/). Moreover, it adds various powerful features, such as setting breakpoints and gutter widths through React's context.
+`react-grid-system` provides a responsive grid for React inspired by [Bootstrap](https://getbootstrap.com/docs/4.5/layout/grid/). Moreover, it has various additional powerful features, such as setting breakpoints and gutter widths through React's context.
 
 Three components are provided for creating responsive grids: `Container`, `Row`, and `Col`.
 
