@@ -7,7 +7,7 @@ A powerful Bootstrap-like responsive grid system for React.
 
 ### ⚠️ Upgrading to v7
 
-`react-grid-system` v7 adds a new screen class `xxl` for very large screens. This might have breaking consequences for your app. To opt out of this new screen class, use this:
+`react-grid-system` v7 adds a new screen class `xxl` for very large screens. This might have consequences for your app. To opt out of this new screen class, use this:
 
 ```javascript
 import { setConfiguration } from 'react-grid-system';
