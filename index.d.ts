@@ -3,7 +3,7 @@ declare module 'react-grid-system' {
 
     type Align = 'normal' | 'start' | 'center' | 'end' | 'stretch'
     type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'initial' | 'inherit';
-    type ScreenClass = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    type ScreenClass = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     type ScreenClassMap<T> = Partial<Record<ScreenClass, T>>;
 
     type Offsets = ScreenClassMap<number>;
