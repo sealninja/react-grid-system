@@ -32,6 +32,7 @@ declare module 'react-grid-system' {
         debug?: boolean,
         style?: object,
         nogutter?: boolean,
+        nowrap?: boolean,
         component?: () => string | string,
         gutterWidth?: number
     }
