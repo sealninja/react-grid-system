@@ -51,7 +51,8 @@ declare module 'react-grid-system' {
         containerWidths?: Array<number>,
         gutterWidth?: number,
         gridColumns?: number,
-        defaultScreenClass?: ScreenClass
+        defaultScreenClass?: ScreenClass,
+        maxScreenClass?: ScreenClass
     }
 
     type ScreenClassProviderProps = {
