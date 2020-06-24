@@ -17,13 +17,13 @@ declare module 'react-grid-system' {
         push?: Push,
         pull?: Pull,
         style?: object,
-        component?: () => string | string
+        component?: (() => string) | string
     } & ScreenClassMap<number | "content">;
 
     type ContainerProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
         fluid?: boolean,
         style?: object,
-        component?: () => string | string
+        component?: (() => string) | string
     } & ScreenClassMap<boolean>;
 
     type RowProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
@@ -33,7 +33,7 @@ declare module 'react-grid-system' {
         style?: object,
         nogutter?: boolean,
         nowrap?: boolean,
-        component?: () => string | string,
+        component?: (() => string) | string,
         gutterWidth?: number
     }
 
