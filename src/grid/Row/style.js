@@ -17,8 +17,8 @@ export default ({
   if (justify === 'inherit') justifyContent = 'inherit';
 
   const styles = {
-    marginLeft: `-${gutterWidth / 2}px`,
-    marginRight: `-${gutterWidth / 2}px`,
+    marginLeft: -gutterWidth / 2,
+    marginRight: -gutterWidth / 2,
     display: 'flex',
     flexWrap: nowrap ? 'nowrap' : 'wrap',
     flexGrow: 0,

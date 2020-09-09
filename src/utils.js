@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { getConfiguration } from './config';
+import { Window } from './primitives'
 
 const getViewPort = (source) => {
   if (source && source.current && source.current.clientWidth) {
     return source.current.clientWidth;
   }
-  if (typeof window !== 'undefined' && window.innerWidth) {
-    return window.innerWidth;
+  if (typeof Window !== 'undefined' && Window.innerWidth) {
+    return Window.innerWidth;
   }
   return null;
 };
@@ -48,10 +49,10 @@ export const useScreenClass = (source, fallbackScreenClass) => {
   useEffect(() => {
     const handleWindowResized = () => setScreenClass(getScreenClass());
 
-    window.addEventListener('resize', handleWindowResized, false);
+    Window.addEventListener('resize', handleWindowResized, false);
 
     return () => {
-      window.removeEventListener('resize', handleWindowResized, false);
+      Window.removeEventListener('resize', handleWindowResized, false);
     };
   }, []);
 

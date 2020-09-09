@@ -4,6 +4,7 @@ import getStyle from './style';
 import { getConfiguration } from '../../config';
 import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
+import { Div } from '../../primitives'
 
 const Col = ({
   children,
@@ -167,7 +168,7 @@ Col.defaultProps = {
   pull: {},
   style: {},
   debug: false,
-  component: 'div',
+  component: Div,
 };
 
 export default Col;

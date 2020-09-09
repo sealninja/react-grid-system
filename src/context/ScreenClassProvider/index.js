@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useScreenClass } from '../../utils';
 import { getConfiguration } from '../../config';
+import { Div } from '../../primitives'
 
 export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
 
@@ -20,7 +21,7 @@ const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => 
   return (
     <ScreenClassContext.Provider value={screenClass}>
       {useOwnWidth
-        ? <div ref={useOwnWidth ? screenClassRef : null}>{children}</div>
+        ? <Div ref={useOwnWidth ? screenClassRef : null}>{children}</Div>
         : <>{children}</>}
     </ScreenClassContext.Provider>
   );

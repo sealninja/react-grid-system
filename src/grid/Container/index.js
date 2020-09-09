@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import getStyle, { getAfterStyle } from './style';
 import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
+import { Div, Span } from '../../primitives'
 
 const Container = ({
   children,
@@ -38,7 +39,7 @@ const Container = ({
       },
       <>
         {children}
-        <span style={getAfterStyle()} />
+        <Span style={getAfterStyle()} />
       </>,
     )}
   </ScreenClassResolver>
@@ -102,7 +103,7 @@ Container.defaultProps = {
   xl: false,
   xxl: false,
   style: {},
-  component: 'div',
+  component: Div,
 };
 
 export default Container;
