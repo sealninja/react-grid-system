@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getConfiguration } from '../../config';
 import getStyle from './style';
+import { Div } from '../../primitives'
 
 export const GutterWidthContext = React.createContext(false);
 
@@ -93,7 +94,7 @@ Row.defaultProps = {
   gutterWidth: null,
   style: {},
   debug: false,
-  component: 'div',
+  component: Div,
   nowrap: false,
 };
 

@@ -22,17 +22,17 @@ export default ({
 }) => {
   const styles = {
     boxSizing: 'border-box',
-    minHeight: '1px',
+    minHeight: 1,
     position: 'relative',
-    paddingLeft: `${gutterWidth / 2}px`,
-    paddingRight: `${gutterWidth / 2}px`,
+    paddingLeft: gutterWidth / 2,
+    paddingRight: gutterWidth / 2,
     width: '100%',
   };
 
   if (debug) {
     styles.outline = '1px solid silver';
     styles.background = 'rgba(0,0,0,.05)';
-    styles.lineHeight = '32px';
+    styles.lineHeight = 32;
   }
 
   styles.flexBasis = '100%';
