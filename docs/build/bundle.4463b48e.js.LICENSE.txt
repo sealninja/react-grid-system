@@ -15,6 +15,13 @@ object-assign
 /*!
  * The buffer module from node.js, for the browser.
  *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
  * @author   Feross Aboukhadijeh <http://feross.org>
  * @license  MIT
  */
@@ -33,6 +40,15 @@ object-assign
  * @copyright Oleg Isonen (Slobodskoi) / Isonen 2014-present
  * @website https://github.com/cssinjs/jss
  * @license MIT
+ */
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
  */
 
 /** @license React v0.19.1
