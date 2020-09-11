@@ -1,11 +1,11 @@
 export {
   default as Div,
-} from './Div'
+} from './Div';
 
 export {
   default as Span,
-} from './Span'
+} from './Span';
 
 export {
   default as Window,
-} from './Window'
+} from './Window';

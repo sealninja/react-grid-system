@@ -32,7 +32,7 @@ export default ({
   if (debug) {
     styles.outline = '1px solid silver';
     styles.background = 'rgba(0,0,0,.05)';
-    styles.lineHeight = 32;
+    styles.lineHeight = '32px';
   }
 
   styles.flexBasis = '100%';
