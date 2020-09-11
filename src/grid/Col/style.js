@@ -63,7 +63,9 @@ export default ({
   }
 
   if (forceWidth) {
-    styles.flex = 'unset';
+    styles.flexBasis = 'unset';
+    styles.flexGrow = 'unset';
+    styles.flexShrink = 'unset';
     styles.width = forceWidth;
   }
 
