@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/sealninja/react-grid-system/issues",
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.8.0 || ^17.x"
   },
   "dependencies": {
     "prop-types": "^15.7.2"
