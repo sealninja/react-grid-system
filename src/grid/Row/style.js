@@ -1,5 +1,5 @@
 export default ({
-  gutterWidth, align, justify, debug, moreStyle, nowrap,
+  gutterWidth, align, justify, debug, moreStyle, nowrap, direction
 }) => {
   // Vertical alignment
   let alignItems = align;
@@ -16,6 +16,8 @@ export default ({
   if (justify === 'initial') justifyContent = 'initial';
   if (justify === 'inherit') justifyContent = 'inherit';
 
+  const flexDirection = ['column', 'row', 'column-reverse', 'row-reverse'].includes(direction) ? direction : undefined;
+
   const styles = {
     marginLeft: -gutterWidth / 2,
     marginRight: -gutterWidth / 2,
@@ -25,6 +27,7 @@ export default ({
     flexShrink: 0,
     alignItems,
     justifyContent,
+    flexDirection
   };
 
   if (debug) {
