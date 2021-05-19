@@ -184,28 +184,28 @@ import { Container, Row, Col } from '.';
 import { Container, Row, Col } from '.';
 
 <Container fluid>
-  <Row align="center" direction="row" style={{ height: '75px' }} debug>
-    <Col debug>1 of 3</Col>
-    <Col debug>2 of 3</Col>
-    <Col debug>3 of 3</Col>
+  <Row align="center" justify="center" direction="row" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
   </Row>
   <br />
-    <Row align="center" direction="row-reverse" style={{ height: '75px' }} debug>
-    <Col debug>1 of 3</Col>
-    <Col debug>2 of 3</Col>
-    <Col debug>3 of 3</Col>
+    <Row align="center" justify="center" direction="row-reverse" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
   </Row>
   <br />
-    <Row align="center" direction="column" style={{ height: '75px' }} debug>
-    <Col debug>1 of 3</Col>
-    <Col debug>2 of 3</Col>
-    <Col debug>3 of 3</Col>
+    <Row align="center" justify="center" direction="column" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
   </Row>
   <br />
-    <Row align="center" direction="column-reverse" style={{ height: '75px' }} debug>
-    <Col debug>1 of 3</Col>
-    <Col debug>2 of 3</Col>
-    <Col debug>3 of 3</Col>
+    <Row align="center" justify="center" direction="column-reverse" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
   </Row>
   <br />
 
