@@ -20,11 +20,15 @@ export default ({
     paddingRight: gutterWidth / 2,
   };
 
-  if (fluid && (!sm && !md && !lg && !xl)) {
+  if (fluid && !xs && !sm && !md && !lg && !xl) {
     return { ...styles, ...moreStyle };
   }
 
-  if (screenClass === 'sm' && containerWidths[0] && !sm && !xs) {
+  if (screenClass === 'xs' && containerWidths[0] && !xs) {
+    styles.maxWidth = containerWidths[0];
+  }
+
+  if (screenClass === 'sm' && containerWidths[0] && !sm) {
     styles.maxWidth = containerWidths[0];
   }
 
