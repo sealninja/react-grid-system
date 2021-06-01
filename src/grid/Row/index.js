@@ -16,6 +16,7 @@ const Row = ({
   gutterWidth,
   component,
   nowrap,
+  direction,
   ...otherProps
 }) => {
   let theGutterWidth = getConfiguration().gutterWidth;
@@ -28,6 +29,7 @@ const Row = ({
     debug,
     moreStyle: style,
     nowrap,
+    direction
   });
   return React.createElement(
     component,
@@ -60,6 +62,10 @@ Row.propTypes = {
     'inherit',
   ]),
   /**
+   * flex-direction style attribute
+   */
+  direction: PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
+  /**
    * No gutter for this row
    */
   nogutter: PropTypes.bool,
@@ -90,6 +96,7 @@ Row.propTypes = {
 Row.defaultProps = {
   align: 'normal',
   justify: 'start',
+  direction: 'row',
   nogutter: false,
   gutterWidth: null,
   style: {},

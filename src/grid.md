@@ -178,6 +178,40 @@ import { Container, Row, Col } from '.';
 </Container>
 ```
 
+### Example: Direction prop for order and orientation of Row children
+
+```js
+import { Container, Row, Col } from '.';
+
+<Container fluid>
+  <Row align="center" justify="center" direction="row" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+    <Row align="center" justify="center" direction="row-reverse" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+    <Row align="center" justify="center" direction="column" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+    <Row align="center" justify="center" direction="column-reverse" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>1 of 3</Col>
+    <Col xs={3} debug>2 of 3</Col>
+    <Col xs={3} debug>3 of 3</Col>
+  </Row>
+  <br />
+
+</Container>
+```
+
 ### Example: Offsetting columns
 
 ```js
