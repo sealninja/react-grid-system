@@ -43,7 +43,7 @@ export const useScreenClass = (source, fallbackScreenClass) => {
     return newScreenClass;
   };
 
-  const [screenClass, setScreenClass] = useState(getScreenClass());
+  const [screenClass, setScreenClass] = useState(() => getScreenClass());
 
 
   useEffect(() => {
