@@ -33,6 +33,7 @@
     "url": "https://github.com/sealninja/react-grid-system/issues"
   },
   "homepage": "https://github.com/sealninja/react-grid-system/issues",
+  "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
   "peerDependencies": {
     "react": "^16.8.0 || ^17.x"
   },
@@ -42,7 +43,6 @@
   "devDependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "babel-eslint": "^10.1.0",
