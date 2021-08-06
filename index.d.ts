@@ -64,7 +64,7 @@ declare module 'react-grid-system' {
     }
 
     export function setConfiguration(configuration: Configuration): void
-    export function useScreenClass(elementRef?: React.MutableRefObject<any>): string
+    export function useScreenClass(elementRef?: React.MutableRefObject<any>): ScreenClass
 
     export class Col extends React.Component<ColProps, any> { }
     export class Container extends React.Component<ContainerProps, any> { }
