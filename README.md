@@ -3,7 +3,6 @@ A powerful Bootstrap-like responsive grid system for React.
 
 [![NPM version](https://img.shields.io/npm/v/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
 [![Downloads](https://img.shields.io/npm/dm/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
-[![Dependency Status](https://img.shields.io/david/sealninja/react-grid-system?style=flat-square)](https://david-dm.org/sealninja/react-grid-system)
 
 ### ⚠️ Upgrading to v7
 
