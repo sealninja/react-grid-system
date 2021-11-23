@@ -1,6 +1,6 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
-import getStyle, { getAfterStyle } from './style';
+import getStyle from './style';
 import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 import { Div, Span } from '../../primitives'
@@ -37,10 +37,7 @@ const Container = ({
         }),
         ...otherProps,
       },
-      <>
-        {children}
-        <Span style={getAfterStyle()} />
-      </>,
+      children,
     )}
   </ScreenClassResolver>
 );

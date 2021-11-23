@@ -50,8 +50,3 @@ export default ({
 
   return { ...styles, ...moreStyle };
 };
-
-export const getAfterStyle = () => ({
-  display: 'table',
-  clear: 'both',
-});
