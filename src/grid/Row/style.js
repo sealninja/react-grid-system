@@ -1,5 +1,5 @@
 export default ({
-  gutterWidth, align, justify, debug, moreStyle, nowrap, direction
+  gutterWidth, align, justify, debug, moreStyle, direction, wrap
 }) => {
   // Vertical alignment
   let alignItems = align;
@@ -18,16 +18,21 @@ export default ({
 
   const flexDirection = ['column', 'row', 'column-reverse', 'row-reverse'].includes(direction) ? direction : undefined;
 
+  let flexWrap = wrap;
+  if (wrap === 'nowrap') flexWrap = 'nowrap';
+  if (wrap === 'wrap') flexWrap = 'wrap';
+  if (wrap === 'reverse') flexWrap = 'wrap-reverse';
+
   const styles = {
     marginLeft: -gutterWidth / 2,
     marginRight: -gutterWidth / 2,
     display: 'flex',
-    flexWrap: nowrap ? 'nowrap' : 'wrap',
     flexGrow: 0,
     flexShrink: 0,
     alignItems,
     justifyContent,
-    flexDirection
+    flexDirection,
+    flexWrap
   };
 
   if (debug) {

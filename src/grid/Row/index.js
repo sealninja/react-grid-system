@@ -11,11 +11,11 @@ const Row = ({
   style,
   align,
   justify,
+  wrap,
   debug,
   nogutter,
   gutterWidth,
   component,
-  nowrap,
   direction,
   ...otherProps
 }) => {
@@ -28,8 +28,8 @@ const Row = ({
     justify,
     debug,
     moreStyle: style,
-    nowrap,
-    direction
+    direction,
+    wrap
   });
   return React.createElement(
     component,
@@ -66,6 +66,10 @@ Row.propTypes = {
    */
   direction: PropTypes.oneOf(['column', 'row', 'column-reverse', 'row-reverse']),
   /**
+   * flex-wrap style attribute
+   */
+  wrap: PropTypes.oneOf(['nowrap', 'wrap', 'reverse']),
+  /**
    * No gutter for this row
    */
   nogutter: PropTypes.bool,
@@ -86,23 +90,19 @@ Row.propTypes = {
   /**
    * Use your own component
    */
-  component: PropTypes.elementType,
-  /**
-   * Whether the cols should not wrap
-   */
-  nowrap: PropTypes.bool,
+  component: PropTypes.elementType
 };
 
 Row.defaultProps = {
   align: 'normal',
   justify: 'start',
   direction: 'row',
+  wrap: 'wrap',
   nogutter: false,
   gutterWidth: null,
   style: {},
   debug: false,
   component: Div,
-  nowrap: false,
 };
 
 export default Row;

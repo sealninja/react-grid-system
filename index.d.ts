@@ -4,6 +4,7 @@ declare module 'react-grid-system' {
     type Align = 'normal' | 'start' | 'center' | 'end' | 'stretch'
     type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'initial' | 'inherit';
     type Direction = 'column' | 'row' | 'column-reverse' | 'row-reverse'
+    type Wrap = 'nowrap' | 'wrap' | 'reverse';
     type ScreenClass = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     type ScreenClassMap<T> = Partial<Record<ScreenClass, T>>;
 
@@ -31,10 +32,10 @@ declare module 'react-grid-system' {
         align?: Align,
         justify?: Justify,
         direction?: Direction,
+        wrap?: Wrap,
         debug?: boolean,
         style?: object,
         nogutter?: boolean,
-        nowrap?: boolean,
         component?: (() => string) | string,
         gutterWidth?: number
     }
