@@ -4,7 +4,13 @@ A powerful Bootstrap-like responsive grid system for React.
 [![NPM version](https://img.shields.io/npm/v/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
 [![Downloads](https://img.shields.io/npm/dm/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
 
-### ⚠️ Upgrading to v7
+### Migration guide
+
+## Upgrading to v8
+
+`react-grid-system` v8 removes the `nowrap` property of `Row` in favor of a new `wrap` property. If you were using `<Row nowrap>`, replace it with `<Row wrap="nowrap" />`.
+
+## Upgrading to v7
 
 `react-grid-system` v7 adds a new screen class `xxl` for very large screens. This might have consequences for your app. To opt out of this new screen class, use this:
 
