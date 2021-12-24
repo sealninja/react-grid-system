@@ -38,7 +38,7 @@
     "react": "^16.8.0 || ^17.x"
   },
   "dependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
