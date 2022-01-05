@@ -38,19 +38,19 @@
     "react": "^16.8.0 || ^17.x"
   },
   "dependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb": "^19.0.0",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -58,6 +58,6 @@
     "react-dom": "^17.0.2",
     "react-styleguidist": "^11.1.5",
     "rimraf": "^3.0.2",
-    "webpack": "^5.64.2"
+    "webpack": "^5.65.0"
   }
 }
