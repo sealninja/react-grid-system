@@ -48,9 +48,6 @@ export default ({
     if (screenClasses.indexOf(screenClass) >= index) {
       const currentWidth = getWidth(width[size], gridColumns);
       const isSizedToContent = width[size] === 'content';
-      // order[size] && console.log('order[size]', order[size])
-      // order && console.log('size', size)
-      // order && console.log('order', order)
 
       styles.flexBasis = (isSizedToContent ? 'auto' : (currentWidth || styles.flexBasis));
       styles.width = styles.flexBasis;
