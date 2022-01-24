@@ -14,6 +14,7 @@ export default ({
   offset = {},
   pull = {},
   push = {},
+  order = {},
   debug,
   screenClass,
   gutterWidth,
@@ -47,6 +48,9 @@ export default ({
     if (screenClasses.indexOf(screenClass) >= index) {
       const currentWidth = getWidth(width[size], gridColumns);
       const isSizedToContent = width[size] === 'content';
+      // order[size] && console.log('order[size]', order[size])
+      // order && console.log('size', size)
+      // order && console.log('order', order)
 
       styles.flexBasis = (isSizedToContent ? 'auto' : (currentWidth || styles.flexBasis));
       styles.width = styles.flexBasis;
@@ -54,6 +58,9 @@ export default ({
       styles.marginLeft = getWidth(offset[size], gridColumns) || styles.marginLeft;
       styles.right = getWidth(pull[size], gridColumns) || styles.right;
       styles.left = getWidth(push[size], gridColumns) || styles.left;
+      if(order[size]) {
+        styles.order = order[size]
+      }
     }
   });
 

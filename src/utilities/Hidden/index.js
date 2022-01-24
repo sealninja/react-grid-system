@@ -11,6 +11,7 @@ const Hidden = ({
   lg,
   xl,
   xxl,
+  xxxl,
 }) => (
   <ScreenClassResolver>
     {(screenClass) => (style.hidden({
@@ -21,6 +22,7 @@ const Hidden = ({
       lg,
       xl,
       xxl,
+      xxxl,
     })
       ? null
       : children)}
@@ -56,6 +58,10 @@ Hidden.propTypes = {
    * Hide on xxlarge devices
    */
   xxl: PropTypes.bool,
+  /**
+   * Hide on xxxlarge devices
+   */
+  xxxl: PropTypes.bool,
 };
 
 Hidden.defaultProps = {
@@ -65,6 +71,7 @@ Hidden.defaultProps = {
   lg: false,
   xl: false,
   xxl: false,
+  xxxl: false,
 };
 
 export default Hidden;

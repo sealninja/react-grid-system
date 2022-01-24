@@ -299,3 +299,18 @@ import { Container, Row, Col } from '.';
   </Row>
 </Container>
 ```
+
+
+
+### Example: Ordering Cols adapted to content
+
+```js
+import { Container, Row, Col } from '.';
+
+<Container fluid>
+  <Row debug>
+    <Col debug order={{md: 1, xl: 2}}>First on md, last on xl </Col>
+    <Col order={{md: 2, xl: 1}} debug>First on xl, last on md</Col>
+  </Row>
+</Container>
+```

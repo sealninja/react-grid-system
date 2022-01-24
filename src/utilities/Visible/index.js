@@ -11,6 +11,7 @@ const Visible = ({
   lg,
   xl,
   xxl,
+  xxxl,
 }) => (
   <ScreenClassResolver>
     {(screenClass) => (!style.visible({
@@ -21,6 +22,7 @@ const Visible = ({
       lg,
       xl,
       xxl,
+      xxxl,
     })
       ? null
       : children)}
@@ -56,6 +58,10 @@ Visible.propTypes = {
    * Show on xxlarge devices
    */
   xxl: PropTypes.bool,
+  /**
+   * Show on xxxlarge devices
+   */
+  xxxl: PropTypes.bool,
 };
 
 Visible.defaultProps = {
@@ -65,6 +71,7 @@ Visible.defaultProps = {
   lg: false,
   xl: false,
   xxl: false,
+  xxxl: false,
 };
 
 export default Visible;

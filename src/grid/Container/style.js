@@ -6,6 +6,7 @@ export default ({
   lg,
   xl,
   xxl,
+  xxxl,
   screenClass,
   containerWidths,
   gutterWidth,
@@ -46,6 +47,9 @@ export default ({
 
   if (screenClass === 'xxl' && containerWidths[4] && !xxl) {
     styles.maxWidth = containerWidths[4];
+  }
+  if (screenClass === 'xxxl' && containerWidths[5] && !xxxl) {
+    styles.maxWidth = containerWidths[5];
   }
 
   return { ...styles, ...moreStyle };
