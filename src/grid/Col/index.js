@@ -14,9 +14,11 @@ const Col = ({
   lg,
   xl,
   xxl,
+  xxxl,
   offset,
   pull,
   push,
+  order,
   debug,
   style,
   component,
@@ -36,10 +38,12 @@ const Col = ({
               lg,
               xl,
               xxl,
+              xxxl,
             },
             offset,
             pull,
             push,
+            order,
             debug,
             screenClass,
             gutterWidth,
@@ -101,6 +105,13 @@ Col.propTypes = {
     PropTypes.oneOf(['content']),
   ]),
   /**
+   * The width of the column for screenclass `xxl`, either a number between 0 and 12, or "content"
+   */
+  xxxl: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(['content']),
+  ]),
+  /**
    * A fixed width of the column for all screenclasses"
    */
   width: PropTypes.oneOfType([
@@ -117,6 +128,7 @@ Col.propTypes = {
     lg: PropTypes.number,
     xl: PropTypes.number,
     xxl: PropTypes.number,
+    xxxl: PropTypes.number,
   }),
   /**
    * The amount this column is pushed to the right for all screenclasses
@@ -128,6 +140,7 @@ Col.propTypes = {
     lg: PropTypes.number,
     xl: PropTypes.number,
     xxl: PropTypes.number,
+    xxxl: PropTypes.number,
   }),
   /**
    * The amount this column is pulled to the left for all screenclasses
@@ -139,6 +152,19 @@ Col.propTypes = {
     lg: PropTypes.number,
     xl: PropTypes.number,
     xxl: PropTypes.number,
+    xxxl: PropTypes.number,
+  }),
+  /**
+   * The order this column is pulled to the left for all screenclasses
+   */
+  order: PropTypes.shape({
+    xs: PropTypes.number,
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number,
+    xl: PropTypes.number,
+    xxl: PropTypes.number,
+    xxxl: PropTypes.number,
   }),
   /**
    * Optional styling
@@ -162,11 +188,13 @@ Col.defaultProps = {
   lg: null,
   xl: null,
   xxl: null,
+  xxxl: null,
   width: null,
   offset: {},
   push: {},
   pull: {},
   style: {},
+  order: {},
   debug: false,
   component: Div,
 };

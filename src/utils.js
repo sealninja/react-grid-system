@@ -14,7 +14,7 @@ const getViewPort = (source) => {
   return null;
 };
 
-export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
+export const screenClasses = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
 
 export const useScreenClass = (source, fallbackScreenClass) => {
   const getScreenClass = () => {
@@ -30,6 +30,7 @@ export const useScreenClass = (source, fallbackScreenClass) => {
       if (breakpoints[2] && viewport >= breakpoints[2]) newScreenClass = 'lg';
       if (breakpoints[3] && viewport >= breakpoints[3]) newScreenClass = 'xl';
       if (breakpoints[4] && viewport >= breakpoints[4]) newScreenClass = 'xxl';
+      if (breakpoints[5] && viewport >= breakpoints[5]) newScreenClass = 'xxxl';
     } else if (fallbackScreenClass) {
       newScreenClass = fallbackScreenClass;
     }

@@ -14,6 +14,7 @@ export default ({
   offset = {},
   pull = {},
   push = {},
+  order = {},
   debug,
   screenClass,
   gutterWidth,
@@ -54,6 +55,9 @@ export default ({
       styles.marginLeft = getWidth(offset[size], gridColumns) || styles.marginLeft;
       styles.right = getWidth(pull[size], gridColumns) || styles.right;
       styles.left = getWidth(push[size], gridColumns) || styles.left;
+      if(order[size]) {
+        styles.order = order[size]
+      }
     }
   });
 

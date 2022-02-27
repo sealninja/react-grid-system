@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
-import { Div, Span } from '../../primitives'
+import { Div } from '../../primitives'
 
 const Container = ({
   children,
@@ -14,6 +14,7 @@ const Container = ({
   lg,
   xl,
   xxl,
+  xxxl,
   style,
   component,
   ...otherProps
@@ -30,6 +31,7 @@ const Container = ({
           lg,
           xl,
           xxl,
+          xxxl,
           screenClass,
           containerWidths: getConfiguration().containerWidths,
           gutterWidth: getConfiguration().gutterWidth,
@@ -82,6 +84,11 @@ Container.propTypes = {
    */
   xxl: PropTypes.bool,
   /**
+   * This is in combination with fluid enabled
+   * True makes container fluid only in xxxl, not present means fluid everywhere
+   */
+  xxxl: PropTypes.bool,
+  /**
    * Optional styling
    */
   style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
@@ -99,6 +106,7 @@ Container.defaultProps = {
   lg: false,
   xl: false,
   xxl: false,
+  xxxl: false,
   style: {},
   component: Div,
 };
