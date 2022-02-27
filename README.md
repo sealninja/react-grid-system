@@ -140,14 +140,14 @@ function Example2() {
 
 The following settings can be configured, to alter the responsive behavior of the grid components:
 
-| Setting              | Default Value                 | Description                                                                                     |
-| -------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------- |
-| `breakpoints`        | `[576, 768, 992, 1200, 1600]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, `xl`, and `xxl`.   |
-| `containerWidths`    | `[540, 740, 960, 1140, 1540]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, `xl`, and `xxl`.    |
-| `gutterWidth`        | `30`                          | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column.           |
-| `gridColumns`        | `12`                          | The number of columns in the grid .                                                             |
-| `defaultScreenClass` | `xxl`                         | The screen class used when the view port cannot be determined using `window`.                   |
-| `maxScreenClass`     | `xxl`                         | The maximum screen class to be used.                                                            |
+| Setting              | Default Value                       | Description                                                                                           |
+| -------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `breakpoints`        | `[576, 768, 992, 1200, 1600, 1920]` | The breakpoints (minimum width) of devices in screen class `sm`, `md`, `lg`, `xl`, `xxl`, and `xxxl`. |
+| `containerWidths`    | `[540, 740, 960, 1140, 1540, 1810]` | The container widths in pixels of devices in screen class `sm`, `md`, `lg`, `xl`, `xxl`, and `xxxl`.  |
+| `gutterWidth`        | `30`                                | The gutter width in pixels. A gutter width of 30 means 15px on each side of a column.                 |
+| `gridColumns`        | `12`                                | The number of columns in the grid .                                                                   |
+| `defaultScreenClass` | `xxl`                               | The screen class used when the view port cannot be determined using `window`.                         |
+| `maxScreenClass`     | `xxl`                               | The maximum screen class to be used.                                                                  |
 
 These settings can be configured in the following way:
 
