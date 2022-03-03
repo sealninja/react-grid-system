@@ -5,10 +5,11 @@ declare module 'react-grid-system' {
     type Justify = 'start' | 'center' | 'end' | 'between' | 'around' | 'initial' | 'inherit';
     type Direction = 'column' | 'row' | 'column-reverse' | 'row-reverse'
     type Wrap = 'nowrap' | 'wrap' | 'reverse';
-    type ScreenClass = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    type ScreenClass = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'| 'xxxl';
     type ScreenClassMap<T> = Partial<Record<ScreenClass, T>>;
 
     type Offsets = ScreenClassMap<number>;
+    type Orders = ScreenClassMap<number>;
     type Push = ScreenClassMap<number>;
     type Pull = ScreenClassMap<number>;
 
@@ -16,6 +17,7 @@ declare module 'react-grid-system' {
         width?: "auto" | number | string,
         debug?: boolean,
         offset?: Offsets,
+        order?: Orders,
         push?: Push,
         pull?: Pull,
         style?: object,
