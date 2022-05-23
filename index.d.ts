@@ -42,14 +42,13 @@ declare module 'react-grid-system' {
         gutterWidth?: number
     }
 
-    type ClearFixProps = ScreenClassMap<boolean>;
-    type HiddenProps = ScreenClassMap<boolean>;
+    type ClearFixProps = { children: React.ReactNode } & ScreenClassMap<boolean>;
+    type VisibleProps = { children: React.ReactNode } & ScreenClassMap<boolean>;
+    type HiddenProps = { children: React.ReactNode } & ScreenClassMap<boolean>;
 
     type ScreenClassRenderProps = {
-        render?: Function
+        render?: (screenClass: ScreenClass) => Exclude<React.ReactNode, undefined>
     }
-
-    type VisibleProps = ScreenClassMap<boolean>;
 
     type Configuration = {
         breakpoints?: Array<number>,
