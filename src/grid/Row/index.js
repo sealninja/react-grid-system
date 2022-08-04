@@ -6,7 +6,7 @@ import { Div } from '../../primitives'
 
 export const GutterWidthContext = React.createContext(false);
 
-const Row = ({
+const Row = React.forwardRef(({
   children,
   style,
   align,
@@ -18,7 +18,7 @@ const Row = ({
   component,
   direction,
   ...otherProps
-}) => {
+}, ref) => {
   let theGutterWidth = getConfiguration().gutterWidth;
   if (nogutter) theGutterWidth = 0;
   if (typeof gutterWidth === 'number') theGutterWidth = gutterWidth;
@@ -33,12 +33,12 @@ const Row = ({
   });
   return React.createElement(
     component,
-    { style: theStyle, ...otherProps },
+    { ref, style: theStyle, ...otherProps },
     <GutterWidthContext.Provider value={theGutterWidth}>
       {children}
     </GutterWidthContext.Provider>,
   );
-};
+});
 
 Row.propTypes = {
   /**

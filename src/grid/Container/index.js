@@ -5,7 +5,7 @@ import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 import { Div } from '../../primitives'
 
-const Container = ({
+const Container = React.forwardRef(({
   children,
   fluid,
   xs,
@@ -18,11 +18,12 @@ const Container = ({
   style,
   component,
   ...otherProps
-}) => (
+}, ref) => (
   <ScreenClassResolver>
     {(screenClass) => createElement(
       component,
       {
+        ref,
         style: getStyle({
           fluid,
           xs,
@@ -42,7 +43,7 @@ const Container = ({
       children,
     )}
   </ScreenClassResolver>
-);
+));
 
 Container.propTypes = {
   /**

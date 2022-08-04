@@ -6,7 +6,7 @@ import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
 import { Div } from '../../primitives'
 
-const Col = ({
+const Col = React.forwardRef(({
   children,
   xs,
   sm,
@@ -24,7 +24,7 @@ const Col = ({
   component,
   width,
   ...otherProps
-}) => (
+}, ref) => (
   <ScreenClassResolver>
     {(screenClass) => (
       <GutterWidthContext.Consumer>
@@ -50,12 +50,12 @@ const Col = ({
             gridColumns: getConfiguration().gridColumns,
             moreStyle: style,
           });
-          return createElement(component, { style: theStyle, ...otherProps, children });
+          return createElement(component, { ref, style: theStyle, ...otherProps, children });
         }}
       </GutterWidthContext.Consumer>
     )}
   </ScreenClassResolver>
-);
+));
 
 Col.propTypes = {
   /**
