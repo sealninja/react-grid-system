@@ -4,7 +4,7 @@ import getStyle from './style';
 import { getConfiguration } from '../../config';
 import { GutterWidthContext } from '../Row';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
-import { Div } from '../../primitives'
+import { Div } from '../../primitives';
 
 const Col = React.forwardRef(({
   children,
@@ -198,5 +198,7 @@ Col.defaultProps = {
   debug: false,
   component: Div,
 };
+
+Col.displayName = "Col";
 
 export default Col;
