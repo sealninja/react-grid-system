@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getStyle from './style';
 import { getConfiguration } from '../../config';
 import ScreenClassResolver from '../../context/ScreenClassResolver';
-import { Div } from '../../primitives'
+import { Div } from '../../primitives';
 
 const Container = React.forwardRef(({
   children,
@@ -111,5 +111,7 @@ Container.defaultProps = {
   style: {},
   component: Div,
 };
+
+Container.displayName = "Container";
 
 export default Container;
