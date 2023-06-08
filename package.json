@@ -58,6 +58,6 @@
     "react-dom": "18.2.0",
     "react-styleguidist": "13.1.1",
     "rimraf": "5.0.1",
-    "webpack": "5.85.1"
+    "webpack": "5.86.0"
   }
 }
