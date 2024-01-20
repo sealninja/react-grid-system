@@ -5068,10 +5068,10 @@ react-simple-code-editor@^0.13.1:
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.13.1.tgz#4514553fa132dcaffec33a6612c58f1613c52416"
   integrity sha512-XYeVwRZwgyKtjNIYcAEgg2FaQcCZwhbarnkJIV20U2wkCU9q/CPFBo8nRXrK4GXUz3AvbqZFsZRrpUTkqqEYyQ==
 
-react-styleguidist@13.1.1:
-  version "13.1.1"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-13.1.1.tgz#cc5c6a3d0575616236aa48576e26e44707b09468"
-  integrity sha512-TUCBTB6+/eLrTKYCJ+7moW8nVKUNhE1Q+C8gJLDgb+z1Vuf3PydHR5uaIzVOnqItygNOI3NLGLgSuPT7MKLfsA==
+react-styleguidist@13.1.2:
+  version "13.1.2"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-13.1.2.tgz#2c1eccba44e462b3a527616dfa37717315ab099f"
+  integrity sha512-5Tl2nqDUkbpwffF/3Gu/75ROOaUEtwiBGW5mWvBoHRTH9M0Q4JK7T384hjsoZFvA6Xw4tYylsdWJDMx2ngSabw==
   dependencies:
     "@tippyjs/react" "4.1.0"
     "@types/react-test-renderer" "^18.0.0"
