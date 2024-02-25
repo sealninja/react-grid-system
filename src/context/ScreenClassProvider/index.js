@@ -1,28 +1,39 @@
-import React, { useRef, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useScreenClass } from '../../utils';
-import { getConfiguration } from '../../config';
-import { Div } from '../../primitives'
+import React, { useRef, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useScreenClass } from "../../utils";
+import { getConfiguration } from "../../config";
+import { Div } from "../../primitives";
 
-export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
+export const NO_PROVIDER_FLAG = "NO_PROVIDER_FLAG";
 
 export const ScreenClassContext = React.createContext(NO_PROVIDER_FLAG);
 
-const ScreenClassProvider = ({ useOwnWidth, children, fallbackScreenClass }) => {
+const ScreenClassProvider = ({
+  useOwnWidth = false,
+  children,
+  fallbackScreenClass = null,
+}) => {
   const screenClassRef = useRef();
   const [mounted, setMounted] = useState(false);
-  const detectedScreenClass = useScreenClass(screenClassRef, fallbackScreenClass);
+  const detectedScreenClass = useScreenClass(
+    screenClassRef,
+    fallbackScreenClass
+  );
   const { defaultScreenClass } = getConfiguration();
 
-  const screenClass = mounted ? detectedScreenClass : (fallbackScreenClass || defaultScreenClass);
+  const screenClass = mounted
+    ? detectedScreenClass
+    : fallbackScreenClass || defaultScreenClass;
 
   useEffect(() => setMounted(true), []);
 
   return (
     <ScreenClassContext.Provider value={screenClass}>
-      {useOwnWidth
-        ? <Div ref={useOwnWidth ? screenClassRef : null}>{children}</Div>
-        : <>{children}</>}
+      {useOwnWidth ? (
+        <Div ref={useOwnWidth ? screenClassRef : null}>{children}</Div>
+      ) : (
+        <>{children}</>
+      )}
     </ScreenClassContext.Provider>
   );
 };
@@ -42,12 +53,16 @@ ScreenClassProvider.propTypes = {
    * Screen class to use when it cannot be determined otherwise.
    * Useful for server side rendering.
    */
-  fallbackScreenClass: PropTypes.oneOf([null, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl' , 'xxxl']),
-};
-
-ScreenClassProvider.defaultProps = {
-  useOwnWidth: false,
-  fallbackScreenClass: null,
+  fallbackScreenClass: PropTypes.oneOf([
+    null,
+    "xs",
+    "sm",
+    "md",
+    "lg",
+    "xl",
+    "xxl",
+    "xxxl",
+  ]),
 };
 
 export default ScreenClassProvider;
