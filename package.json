@@ -35,7 +35,7 @@
   "homepage": "https://github.com/sealninja/react-grid-system/issues",
   "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.x || ^18.x"
+    "react": "^16.8.0 || ^17.x || ^18.x || ^19.x"
   },
   "dependencies": {
     "prop-types": "15.8.1"
