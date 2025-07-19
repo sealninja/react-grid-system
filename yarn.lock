@@ -2702,10 +2702,10 @@ eslint-config-airbnb@19.0.4:
     object.assign "^4.1.2"
     object.entries "^1.1.5"
 
-eslint-config-prettier@9.1.1:
-  version "9.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-9.1.1.tgz#dd4a5f7c804818e9b358489c7f8c0d63c4be8bdd"
-  integrity sha512-jeeI5lD4PrC1NPaugxD+JcFvelVATpVMRyK7MoW/QPLlwDjvZoOwq39SDRdiKzYIOjPG6nxOeXRHk3cFYj/psg==
+eslint-config-prettier@10.1.8:
+  version "10.1.8"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-10.1.8.tgz#15734ce4af8c2778cc32f0b01b37b0b5cd1ecb97"
+  integrity sha512-82GZUjRS0p/jganf6q1rEO25VSoHH0hKPCTrgillPjdI/3bgBhAE1QzHrHTizjpRvy6pGAvKjDJtk2pF9NDq8w==
 
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
