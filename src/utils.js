@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { getConfiguration } from './config';
-import { Window } from './primitives'
+import { Window } from './primitives';
 
 const getViewPort = (source) => {
   if (source && source.current && source.current.clientWidth) {
@@ -45,7 +45,6 @@ export const useScreenClass = (source, fallbackScreenClass) => {
   };
 
   const [screenClass, setScreenClass] = useState(() => getScreenClass());
-
 
   useEffect(() => {
     const handleWindowResized = () => setScreenClass(getScreenClass());

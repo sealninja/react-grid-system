@@ -1,17 +1,4 @@
-export default ({
-  fluid,
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
-  xxl,
-  xxxl,
-  screenClass,
-  containerWidths,
-  gutterWidth,
-  moreStyle,
-}) => {
+export default ({ fluid, xs, sm, md, lg, xl, xxl, xxxl, screenClass, containerWidths, gutterWidth, moreStyle }) => {
   const styles = {
     boxSizing: 'border-box',
     position: 'relative',

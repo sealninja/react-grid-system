@@ -8,9 +8,7 @@ const ScreenClassResolver = ({ children }) => (
       if (screenClassCheck === NO_PROVIDER_FLAG) {
         return (
           <ScreenClassProvider>
-            <ScreenClassContext.Consumer>
-              {(screenClassResolved) => children(screenClassResolved)}
-            </ScreenClassContext.Consumer>
+            <ScreenClassContext.Consumer>{(screenClassResolved) => children(screenClassResolved)}</ScreenClassContext.Consumer>
           </ScreenClassProvider>
         );
       }

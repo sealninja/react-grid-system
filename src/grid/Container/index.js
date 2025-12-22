@@ -1,28 +1,12 @@
-import React, { createElement } from "react";
-import PropTypes from "prop-types";
-import getStyle from "./style";
-import { getConfiguration } from "../../config";
-import ScreenClassResolver from "../../context/ScreenClassResolver";
-import { Div } from "../../primitives";
+import React, { createElement } from 'react';
+import PropTypes from 'prop-types';
+import getStyle from './style';
+import { getConfiguration } from '../../config';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
+import { Div } from '../../primitives';
 
 const Container = React.forwardRef(
-  (
-    {
-      children,
-      fluid = false,
-      xs = false,
-      sm = false,
-      md = false,
-      lg = false,
-      xl = false,
-      xxl = false,
-      xxxl = false,
-      style = {},
-      component = Div,
-      ...otherProps
-    },
-    ref
-  ) => (
+  ({ children, fluid = false, xs = false, sm = false, md = false, lg = false, xl = false, xxl = false, xxxl = false, style = {}, component = Div, ...otherProps }, ref) => (
     <ScreenClassResolver>
       {(screenClass) =>
         createElement(
@@ -45,11 +29,11 @@ const Container = React.forwardRef(
             }),
             ...otherProps,
           },
-          children
+          children,
         )
       }
     </ScreenClassResolver>
-  )
+  ),
 );
 
 Container.propTypes = {
@@ -99,15 +83,13 @@ Container.propTypes = {
   /**
    * Optional styling
    */
-  style: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  ),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
   /**
    * Use your own component
    */
   component: PropTypes.elementType,
 };
 
-Container.displayName = "Container";
+Container.displayName = 'Container';
 
 export default Container;

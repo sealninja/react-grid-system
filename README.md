@@ -1,4 +1,5 @@
 # React Grid System
+
 A powerful Bootstrap-like responsive grid system for React.
 
 [![NPM version](https://img.shields.io/npm/v/react-grid-system.svg?style=flat-square)](https://npmjs.org/package/react-grid-system)
@@ -25,6 +26,7 @@ setConfiguration({ maxScreenClass: 'xl' });
 ```
 npm install react-grid-system --save
 ```
+
 ## Getting started
 
 ### Responsive grid
@@ -40,17 +42,11 @@ import { Container, Row, Col } from 'react-grid-system';
 
 <Container>
   <Row>
-    <Col sm={4}>
-      One of three columns
-    </Col>
-    <Col sm={4}>
-      One of three columns
-    </Col>
-    <Col sm={4}>
-      One of three columns
-    </Col>
+    <Col sm={4}>One of three columns</Col>
+    <Col sm={4}>One of three columns</Col>
+    <Col sm={4}>One of three columns</Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 For all features of these components, please have a look at the API documentation: https://sealninja.github.io/react-grid-system/
@@ -67,14 +63,26 @@ import { Visible } from 'react-grid-system';
 
 <p>
   <span>Your current screen class is </span>
-  <Visible xs><strong>xs</strong></Visible>
-  <Visible sm><strong>sm</strong></Visible>
-  <Visible md><strong>md</strong></Visible>
-  <Visible lg><strong>lg</strong></Visible>
-  <Visible xl><strong>xl</strong></Visible>
-  <Visible xxl><strong>xxl</strong></Visible>
+  <Visible xs>
+    <strong>xs</strong>
+  </Visible>
+  <Visible sm>
+    <strong>sm</strong>
+  </Visible>
+  <Visible md>
+    <strong>md</strong>
+  </Visible>
+  <Visible lg>
+    <strong>lg</strong>
+  </Visible>
+  <Visible xl>
+    <strong>xl</strong>
+  </Visible>
+  <Visible xxl>
+    <strong>xxl</strong>
+  </Visible>
   <span>.</span>
-</p>
+</p>;
 ```
 
 ```javascript
@@ -99,11 +107,7 @@ Next to that, the `ScreenClassRender` component is provided, for rendering a com
 ```javascript
 import { ScreenClassRender } from 'react-grid-system';
 
-<ScreenClassRender render={screenClass => (
-  <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }} >
-    Screen class: {screenClass}
-  </p>
-)} />
+<ScreenClassRender render={(screenClass) => <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }}>Screen class: {screenClass}</p>} />;
 ```
 
 Alternatively, the `useScreenClass` hook can be used for rendering a component differently based on the screen class. Some examples on how to use this:
@@ -115,11 +119,7 @@ import { useScreenClass } from 'react-grid-system';
 // responsive component based the screen width
 function Example1() {
   const screenClass = useScreenClass();
-  return (
-    <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }} >
-      Screen class: {screenClass}
-    </p>
-  );
+  return <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }}>Screen class: {screenClass}</p>;
 }
 
 // responsive component based the div width
@@ -128,9 +128,7 @@ function Example2() {
   const screenClass = useScreenClass(elementRef);
   return (
     <div ref={elementRef}>
-      <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }} >
-        Screen class: {screenClass}
-      </p>
+      <p style={{ fontSize: ['lg', 'xl', 'xxl'].includes(screenClass) ? '2rem' : '1rem' }}>Screen class: {screenClass}</p>
     </div>
   );
 }
@@ -157,7 +155,7 @@ import { setConfiguration } from 'react-grid-system';
 setConfiguration({ defaultScreenClass: 'sm', gridColumns: 20 });
 ```
 
- An example on how to use them can be found in the [Example application with SSR](#example-application-with-ssr) below.
+An example on how to use them can be found in the [Example application with SSR](#example-application-with-ssr) below.
 
 ## ScreenClass Context API
 
@@ -166,7 +164,6 @@ Internally, every component that requires the current `screenClass` (which is a 
 ### Do I need to change anything in my code?
 
 This new API is entirely opt-in and current implementations will continue to work. However, for a signficiant performance increase, you will need to add the `ScreenClassProvider` to your application, typically at the highest level in the React node tree (i.e, App.js).
-
 
 ### How do I use the ScreenClassProvider?
 
@@ -188,7 +185,6 @@ export default function App() {
 Internally, the `ScreenClassProvider` attaches a `resize` listener and then updates `state.screenClass` exclusively when a new breakpoint is hit. The `state.screenClass` value is then attached to `ScreenClassContext.Provider`. ScreenClass-dependent components are wrapped with `ScreenClassResolver` which checks to see if there is a valid provider above it and provides one if there is not.
 
 The performance benefit comes from _you_ adding a `ScreenClassProvider` to your application which allows `react-grid-system` components to subscribe to **one source of truth** for the ScreenClass.
-
 
 ## API documentation
 

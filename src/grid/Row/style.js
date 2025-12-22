@@ -1,6 +1,4 @@
-export default ({
-  gutterWidth, align, justify, debug, moreStyle, direction, wrap
-}) => {
+export default ({ gutterWidth, align, justify, debug, moreStyle, direction, wrap }) => {
   // Vertical alignment
   let alignItems = align;
   if (align === 'start') alignItems = 'flex-start';
@@ -32,7 +30,7 @@ export default ({
     alignItems,
     justifyContent,
     flexDirection,
-    flexWrap
+    flexWrap,
   };
 
   if (debug) {

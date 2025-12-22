@@ -16,7 +16,7 @@ import { Container, Row, Col } from '.';
     <Col debug>2 of 3</Col>
     <Col debug>3 of 3</Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Stacked to horizontal
@@ -26,36 +26,74 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row debug>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
-    <Col md={1} debug>md=1</Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
+    <Col md={1} debug>
+      md=1
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col md={8} debug>md=8</Col>
-    <Col md={4} debug>md=4</Col>
+    <Col md={8} debug>
+      md=8
+    </Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col md={4} debug>md=4</Col>
-    <Col md={4} debug>md=4</Col>
-    <Col md={4} debug>md=4</Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col md={6} debug>md=6</Col>
-    <Col md={6} debug>md=6</Col>
+    <Col md={6} debug>
+      md=6
+    </Col>
+    <Col md={6} debug>
+      md=6
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Mix and match
@@ -65,21 +103,35 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row debug>
-    <Col xs={12} md={8} debug>xs=12 md=8</Col>
-    <Col xs={6} md={4} debug>xs=6 md=4</Col>
+    <Col xs={12} md={8} debug>
+      xs=12 md=8
+    </Col>
+    <Col xs={6} md={4} debug>
+      xs=6 md=4
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col xs={6} md={4} debug>xs=6 md=4</Col>
-    <Col xs={6} md={4} debug>xs=6 md=4</Col>
-    <Col xs={6} md={4} debug>xs=6 md=4</Col>
+    <Col xs={6} md={4} debug>
+      xs=6 md=4
+    </Col>
+    <Col xs={6} md={4} debug>
+      xs=6 md=4
+    </Col>
+    <Col xs={6} md={4} debug>
+      xs=6 md=4
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col xs={6} debug>xs=6</Col>
-    <Col xs={6} debug>xs=6</Col>
+    <Col xs={6} debug>
+      xs=6
+    </Col>
+    <Col xs={6} debug>
+      xs=6
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Column wrapping
@@ -89,11 +141,21 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row debug>
-    <Col xs={9} debug>xs=9</Col>
-    <Col xs={4} debug>xs=4<br/>Since 9 + 4 = 13 &gt; 12, this 4-column-wide Col gets wrapped onto a new line as one contiguous unit.</Col>
-    <Col xs={6} debug>xs=6<br/>Subsequent columns continue along the new line.</Col>
+    <Col xs={9} debug>
+      xs=9
+    </Col>
+    <Col xs={4} debug>
+      xs=4
+      <br />
+      Since 9 + 4 = 13 &gt; 12, this 4-column-wide Col gets wrapped onto a new line as one contiguous unit.
+    </Col>
+    <Col xs={6} debug>
+      xs=6
+      <br />
+      Subsequent columns continue along the new line.
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Vertical alignment
@@ -125,7 +187,7 @@ import { Container, Row, Col } from '.';
     <Col debug>2 of 3</Col>
     <Col debug>3 of 3</Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Horizontal alignment
@@ -135,47 +197,89 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row justify="start" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
   <Row justify="center" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
   <Row justify="end" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
   <Row justify="between" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
   <Row justify="around" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
   <Row justify="initial" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
   <Row justify="inherit" debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Direction prop for order and orientation of Row children
@@ -185,31 +289,54 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row align="center" justify="center" direction="row" style={{ height: '300px' }} debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
-    <Row align="center" justify="center" direction="row-reverse" style={{ height: '300px' }} debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+  <Row align="center" justify="center" direction="row-reverse" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
-    <Row align="center" justify="center" direction="column" style={{ height: '300px' }} debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+  <Row align="center" justify="center" direction="column" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
-    <Row align="center" justify="center" direction="column-reverse" style={{ height: '300px' }} debug>
-    <Col xs={3} debug>1 of 3</Col>
-    <Col xs={3} debug>2 of 3</Col>
-    <Col xs={3} debug>3 of 3</Col>
+  <Row align="center" justify="center" direction="column-reverse" style={{ height: '300px' }} debug>
+    <Col xs={3} debug>
+      1 of 3
+    </Col>
+    <Col xs={3} debug>
+      2 of 3
+    </Col>
+    <Col xs={3} debug>
+      3 of 3
+    </Col>
   </Row>
   <br />
-
-</Container>
+</Container>;
 ```
 
 ### Example: Offsetting columns
@@ -219,19 +346,29 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row debug>
-    <Col md={4} debug>md=4</Col>
-    <Col md={4} offset={{ md: 4 }} debug>md=4 offset-md=4</Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
+    <Col md={4} offset={{ md: 4 }} debug>
+      md=4 offset-md=4
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col md={3} offset={{ md: 3 }} debug>md=3 offset-md=3</Col>
-    <Col md={3} offset={{ md: 3 }} debug>md=3 offset-md=3</Col>
+    <Col md={3} offset={{ md: 3 }} debug>
+      md=3 offset-md=3
+    </Col>
+    <Col md={3} offset={{ md: 3 }} debug>
+      md=3 offset-md=3
+    </Col>
   </Row>
   <br />
   <Row debug>
-    <Col md={6} offset={{ md: 3 }} debug>md=6 offset-md=3</Col>
+    <Col md={6} offset={{ md: 3 }} debug>
+      md=6 offset-md=3
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Nesting columns
@@ -253,7 +390,7 @@ import { Container, Row, Col } from '.';
       </Row>
     </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Column ordering
@@ -263,10 +400,14 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row debug>
-    <Col md={9} push={{ md: 3 }} debug>md=9 push-md=3</Col>
-    <Col md={3} pull={{ md: 9 }} debug>md=3 pull-md=9</Col>
+    <Col md={9} push={{ md: 3 }} debug>
+      md=9 push-md=3
+    </Col>
+    <Col md={3} pull={{ md: 9 }} debug>
+      md=3 pull-md=9
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Custom gutter width
@@ -276,15 +417,23 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row nogutter debug>
-    <Col md={8} debug>md=8</Col>
-    <Col md={4} debug>md=4</Col>
+    <Col md={8} debug>
+      md=8
+    </Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
   </Row>
   <br />
   <Row gutterWidth={16} debug>
-    <Col md={8} debug>md=8</Col>
-    <Col md={4} debug>md=4</Col>
+    <Col md={8} debug>
+      md=8
+    </Col>
+    <Col md={4} debug>
+      md=4
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
 
 ### Example: Column width adapted to content
@@ -295,12 +444,13 @@ import { Container, Row, Col } from '.';
 <Container fluid>
   <Row debug>
     <Col debug>Logo (Flexible column)</Col>
-    <Col xs="content" debug> Menu with x-items</Col>
+    <Col xs="content" debug>
+      {' '}
+      Menu with x-items
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```
-
-
 
 ### Example: Ordering Cols adapted to content
 
@@ -309,8 +459,12 @@ import { Container, Row, Col } from '.';
 
 <Container fluid>
   <Row debug>
-    <Col debug order={{md: 1, xl: 2}}>First on md, last on xl </Col>
-    <Col order={{md: 2, xl: 1}} debug>First on xl, last on md</Col>
+    <Col debug order={{ md: 1, xl: 2 }}>
+      First on md, last on xl{' '}
+    </Col>
+    <Col order={{ md: 2, xl: 1 }} debug>
+      First on xl, last on md
+    </Col>
   </Row>
-</Container>
+</Container>;
 ```

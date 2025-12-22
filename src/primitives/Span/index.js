@@ -1,1 +1,1 @@
-export default 'span'
+export default 'span';

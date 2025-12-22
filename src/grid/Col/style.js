@@ -8,19 +8,7 @@ const getWidth = (width, gridColumns) => {
   return `${(100 / gridColumns) * normalizedWidth}%`;
 };
 
-export default ({
-  forceWidth = null,
-  width = {},
-  offset = {},
-  pull = {},
-  push = {},
-  order = {},
-  debug,
-  screenClass,
-  gutterWidth,
-  moreStyle,
-  gridColumns,
-}) => {
+export default ({ forceWidth = null, width = {}, offset = {}, pull = {}, push = {}, order = {}, debug, screenClass, gutterWidth, moreStyle, gridColumns }) => {
   const styles = {
     boxSizing: 'border-box',
     minHeight: 1,
@@ -49,14 +37,14 @@ export default ({
       const currentWidth = getWidth(width[size], gridColumns);
       const isSizedToContent = width[size] === 'content';
 
-      styles.flexBasis = (isSizedToContent ? 'auto' : (currentWidth || styles.flexBasis));
+      styles.flexBasis = isSizedToContent ? 'auto' : currentWidth || styles.flexBasis;
       styles.width = styles.flexBasis;
       styles.maxWidth = currentWidth || styles.maxWidth;
       styles.marginLeft = getWidth(offset[size], gridColumns) || styles.marginLeft;
       styles.right = getWidth(pull[size], gridColumns) || styles.right;
       styles.left = getWidth(push[size], gridColumns) || styles.left;
-      if(order[size]) {
-        styles.order = order[size]
+      if (order[size]) {
+        styles.order = order[size];
       }
     }
   });

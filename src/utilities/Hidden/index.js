@@ -1,18 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import * as style from "./style";
-import ScreenClassResolver from "../../context/ScreenClassResolver";
+import React from 'react';
+import PropTypes from 'prop-types';
+import * as style from './style';
+import ScreenClassResolver from '../../context/ScreenClassResolver';
 
-const Hidden = ({
-  children,
-  xs = false,
-  sm = false,
-  md = false,
-  lg = false,
-  xl = false,
-  xxl = false,
-  xxxl = false,
-}) => (
+const Hidden = ({ children, xs = false, sm = false, md = false, lg = false, xl = false, xxl = false, xxxl = false }) => (
   <ScreenClassResolver>
     {(screenClass) =>
       style.hidden({

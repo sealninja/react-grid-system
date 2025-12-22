@@ -1,6 +1,4 @@
-export const hidden = ({
-  screenClass, xs, sm, md, lg, xl, xxl, xxxl,
-}) => {
+export const hidden = ({ screenClass, xs, sm, md, lg, xl, xxl, xxxl }) => {
   if (screenClass === 'xxl') return xxl;
   if (screenClass === 'xxxl') return xxxl;
   if (screenClass === 'xl') return xl;

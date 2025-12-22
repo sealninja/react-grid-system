@@ -5,17 +5,20 @@
   "main": "./build/index.js",
   "scripts": {
     "start": "styleguidist server",
-    "build": "rimraf build && npx browserslist --update-db && babel src -d build",
+    "build": "rimraf build && npx update-browserslist-db@latest && babel src -d build",
     "docs": "styleguidist build",
-    "lint": "eslint *.js src/**/*.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md|mdx|html)\"",
+    "prettier:check": "prettier --check \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md|mdx|html)\""
   },
-  "types": "./index.d.ts",
+  "types": "./types/index.d.ts",
   "files": [
     "build",
     "src",
-    "index.d.ts"
+    "types/index.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -35,7 +38,7 @@
   "homepage": "https://github.com/sealninja/react-grid-system/issues",
   "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.x || ^18.x"
+    "react": "^16.8.0 || ^17.x || ^18.x || ^19.x"
   },
   "dependencies": {
     "prop-types": "15.8.1"
@@ -43,22 +46,16 @@
   "devDependencies": {
     "@babel/cli": "7.28.3",
     "@babel/core": "7.28.5",
-    "@babel/eslint-parser": "7.28.5",
+    "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-env": "7.28.5",
     "@babel/preset-react": "7.28.5",
-    "babel-eslint": "10.1.0",
-    "babel-loader": "9.2.1",
-    "eslint": "9.39.1",
-    "@eslint/compat": "2.0.0",
-    "@eslint/eslintrc": "3.3.1",
-    "@eslint/js": "9.39.1",
-    "eslint-config-airbnb": "19.0.4",
+    "@babel/register": "7.28.3",
+    "@dr.pogodin/eslint-configs": "0.1.2",
+    "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",
+    "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-prettier": "5.5.4",
-    "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "7.0.1",
     "prettier": "3.6.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -1,52 +1,50 @@
-import prettier from 'eslint-plugin-prettier';
 import babelParser from '@babel/eslint-parser';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
-import { fixupPluginRules, fixupConfigRules } from '@eslint/compat';
-import importPlugin from 'eslint-plugin-import';
+import prettier from 'eslint-plugin-prettier';
+import { defineConfig } from 'eslint/config';
+import prettierConfig from 'eslint-plugin-prettier/recommended';
+import eslintConfigs from '@dr.pogodin/eslint-configs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-
-export default [
-  ...fixupConfigRules(compat.extends('airbnb', 'airbnb/hooks')),
-  ...compat.extends('prettier', 'plugin:prettier/recommended'),
+export default defineConfig([
   {
+    ignores: ['**/node_modules', '**/build', '**/.yarn', '**/docs', '**/*.tsx'],
+  },
+  {
+    extends: [eslintConfigs.configs.javascript, prettierConfig, eslintConfigs.configs.react],
     plugins: {
       prettier,
-      import: fixupPluginRules(importPlugin),
     },
-
     languageOptions: {
       globals: {
         fetch: 'readonly',
         JSX: true,
       },
-
       parser: babelParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true },
+        requireConfigFile: false,
+        babelOptions: { presets: ['@babel/preset-react'] },
+      },
     },
-
     settings: {
       'import/resolver': {
         node: {},
         exports: {},
       },
+      react: { version: 'detect' },
     },
-
     rules: {
-      'react/jsx-filename-extension': 'off',
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
+      'no-eq-null': 'off',
       'no-underscore-dangle': 'off',
-      'react/forbid-prop-types': 'off',
-      'react/jsx-fragments': 'off',
-      'import/no-named-as-default': 'off',
-      'import/no-named-as-default-member': 'off',
+      'no-useless-assignment': 'off',
+      'sort-keys': 'off',
+      camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],
+      'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.config.*', '**/__test__/**/*'] }],
+      'import/no-unassigned-import': 'off',
+      'no-unused-vars': ['error', { caughtErrors: 'none', ignoreRestSiblings: true, varsIgnorePattern: '^React$' }],
+      'react/jsx-filename-extension': 'off',
     },
   },
-];
+]);
